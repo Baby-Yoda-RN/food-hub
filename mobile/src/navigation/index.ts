@@ -1,1 +1,1 @@
-export {AuthNavigation} from './authNavigation/AuthNavigation';
+export * from '../navigation'
