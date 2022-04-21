@@ -8,20 +8,32 @@ import {
 import {color} from '../../theme';
 import {style} from './TextInput.style';
 
-export const TextInput = ({isSensitive = false, isFocused = false}) => {
+type TextInputProps = {
+  isSensitive?: boolean;
+  isFocused?: boolean;
+};
+
+export const TextInput = ({
+  isSensitive = false,
+  isFocused = false,
+}: TextInputProps) => {
   const [containerStyle, setContainerStyle] = useState([style.container]);
+  const [focus, set] = useState();
+  const [blur, setBlur] = useState();
+
   return (
-    <TouchableOpacity
-      style={containerStyle}
-      onPress={() =>
-        setContainerStyle([style.container, {borderColor: color.primary}])
-      }>
+    <TouchableOpacity style={containerStyle}>
       <Text>LeftIcon</Text>
       <NativeInput
         style={style.textInput}
         placeholder="Hello"
-        autoFocus={false}
         secureTextEntry={isSensitive}
+        onFocus={() =>
+          setContainerStyle([style.container, {borderColor: color.primary}])
+        }
+        onBlur={() =>
+          setContainerStyle([style.container, {borderColor: color.grayLow}])
+        }
       />
       <Text>RightIcon</Text>
     </TouchableOpacity>
