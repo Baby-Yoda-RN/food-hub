@@ -19,7 +19,7 @@ export const Card = ({item}: {item: Restaurant}) => {
         <Text style={styles.deliveryDetails}>
           {`${item.freeDelivery}    ${item.deliveryTime} mins`}
         </Text>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.tagContainer}>
           {item.items?.map((item, key) => (
             <Text style={styles.itemTags} key={key}>
               {item.toUpperCase()}

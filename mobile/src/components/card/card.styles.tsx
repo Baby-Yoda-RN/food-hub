@@ -35,4 +35,7 @@ export const styles = StyleSheet.create({
   restaurantImage: {
     height: 136,
   },
+  tagContainer: {
+    flexDirection: 'row',
+  },
 });
