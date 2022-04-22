@@ -1,6 +1,4 @@
-type Color = {
-  [colorName: string]: string;
-};
+import {Color} from './color.type';
 
 export const color: Color = {
   primary: '#FE724C',
@@ -9,4 +7,6 @@ export const color: Color = {
   grayLow: '#E9E9E9',
   grayMid: '#9EA1B1',
   textOrange: '#C4C4C4',
+  textSearchBG: '#EFEFEF',
+  textRegularBG: '#E9E9E940',
 };

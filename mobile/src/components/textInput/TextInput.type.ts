@@ -5,4 +5,5 @@ export type TTextInputProps = {
   rightIcon?: string;
   isSensitive?: boolean;
   placeholder?: string;
+  type: 'phone' | 'password' | 'email' | 'regular' | 'search';
 };

@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 import {
   TextInput as NativeInput,
   Text,
@@ -14,12 +14,28 @@ export const TextInput: FC<TTextInputProps> = ({
   rightIcon,
   isSensitive = false,
   placeholder = 'Enter Text',
+  type,
   ...rest
 }) => {
   const [containerStyle, setContainerStyle] = useState([style.container]);
   const [text, setText] = useState('');
   const max = 30;
+  const whenFocused = () => {
+    setContainerStyle([...containerStyle, {borderColor: color.primary}]);
+  };
+  const whenBlurred = () => {
+    setContainerStyle([...containerStyle, {borderColor: color.grayLow}]);
+  };
+  useEffect(() => {
+    if (type === 'search') {
+      setContainerStyle([...containerStyle, {justifyContent: 'flex-start'}]);
+    } else if (type === 'phone') {
+      setText('(+ )    -   -    ');
+    }
+  }, []);
+
   //TODO create to accept with Phone number and set Phone number Input
+  useEffect(() => {});
   return (
     <TouchableOpacity style={containerStyle} {...rest}>
       {leftIcon && (
@@ -31,14 +47,10 @@ export const TextInput: FC<TTextInputProps> = ({
         style={style.textInput}
         placeholder={placeholder}
         secureTextEntry={isSensitive}
-        onFocus={() =>
-          setContainerStyle([style.container, {borderColor: color.primary}])
-        }
-        onBlur={() =>
-          setContainerStyle([style.container, {borderColor: color.grayLow}])
-        }
+        onFocus={whenFocused}
+        onBlur={whenBlurred}
         onChangeText={e => setText(e)}
-        value={text.length < max - 3 ? text : text + '...'}
+        value={text}
         maxLength={max}
       />
       {rightIcon && (

@@ -8,6 +8,10 @@ const App = () => {
   return (
     <>
       <Text>{message}</Text>
+      <TextInput type="regular" />
+      <TextInput type="password" isSensitive={true} rightIcon={'right'} />
+      <TextInput type="search" leftIcon="left" />
+      <TextInput type="phone" rightIcon="right" />
     </>
   );
 };
