@@ -12,7 +12,8 @@ export const style: Styles = {
     borderColor: color.grayLow,
     borderRadius: size.sm,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  textInput: {},
+  textInput: {}, //TODO
 };

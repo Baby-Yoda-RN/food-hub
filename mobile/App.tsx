@@ -8,8 +8,6 @@ const App = () => {
   return (
     <>
       <Text>{message}</Text>
-      <TextInput />
-      <TextInput />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import {
   TextInput as NativeInput,
   Text,
@@ -7,26 +7,29 @@ import {
 } from 'react-native';
 import {color} from '../../theme';
 import {style} from './TextInput.style';
+import {TTextInputProps} from './TextInput.type';
 
-type TextInputProps = {
-  isSensitive?: boolean;
-  isFocused?: boolean;
-};
-
-export const TextInput = ({
+export const TextInput: FC<TTextInputProps> = ({
+  leftIcon,
+  rightIcon,
   isSensitive = false,
-  isFocused = false,
-}: TextInputProps) => {
+  placeholder = 'Enter Text',
+  ...rest
+}) => {
   const [containerStyle, setContainerStyle] = useState([style.container]);
-  const [focus, set] = useState();
-  const [blur, setBlur] = useState();
-
+  const [text, setText] = useState('');
+  const max = 30;
+  //TODO create to accept with Phone number and set Phone number Input
   return (
-    <TouchableOpacity style={containerStyle}>
-      <Text>LeftIcon</Text>
+    <TouchableOpacity style={containerStyle} {...rest}>
+      {leftIcon && (
+        <TouchableOpacity>
+          <Text>LeftIcon-TODO</Text>
+        </TouchableOpacity>
+      )}
       <NativeInput
         style={style.textInput}
-        placeholder="Hello"
+        placeholder={placeholder}
         secureTextEntry={isSensitive}
         onFocus={() =>
           setContainerStyle([style.container, {borderColor: color.primary}])
@@ -34,8 +37,15 @@ export const TextInput = ({
         onBlur={() =>
           setContainerStyle([style.container, {borderColor: color.grayLow}])
         }
+        onChangeText={e => setText(e)}
+        value={text.length < max - 3 ? text : text + '...'}
+        maxLength={max}
       />
-      <Text>RightIcon</Text>
+      {rightIcon && (
+        <TouchableOpacity>
+          <Text>RightIcon-TODO</Text>
+        </TouchableOpacity>
+      )}
     </TouchableOpacity>
   );
 };
