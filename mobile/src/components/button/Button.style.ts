@@ -2,20 +2,23 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    borderRadius: 10,
+    borderRadius: 28,
     alignItems: 'center',
     justifyContent: 'center',
+    width: 258,
+    height: 60,
+  
   },
   buttonDisabled: {
     backgroundColor: 'blue',
   },
   buttonEnabled: {
-    backgroundColor: 'green',
+    backgroundColor: '#FE724C',
   },
   title: {
-    color: 'black',
-    fontSize: 10,
-    lineHeight: 10,
+    color: 'white',
+    fontSize: 15,
+    lineHeight: 15,
     textAlign: 'center',
   },
 });
