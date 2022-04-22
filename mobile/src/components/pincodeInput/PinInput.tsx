@@ -3,12 +3,10 @@ import {View, Text, StyleProp, TextInput} from 'react-native';
 import {styles} from './PinInput.styles';
 
 interface Props {
-  PinStyle?: StyleProp<styles>;
-  digitCount: int;
   keyBoardType: string;
 }
 
-export const PinInput: React.FC<Props> = ({title = 'pin'}) => {
+export const PinInput: React.FC<Props> = ({keyBoardType = 'numeric'}) => {
   const [text, onChangeText] = useState('');
   const [text2, onChangeText2] = useState('');
   const [text3, onChangeText3] = useState('');
@@ -28,7 +26,7 @@ export const PinInput: React.FC<Props> = ({title = 'pin'}) => {
           ref={ref_to_input1}
           style={onRef === '1' ? styles.inputColor : styles.input}
           textAlign={'center'}
-          keyboardType={'numeric'}
+          keyboardType={keyBoardType}
           maxLength={1}
           blurOnSubmit={false}
           value={text}
@@ -50,7 +48,7 @@ export const PinInput: React.FC<Props> = ({title = 'pin'}) => {
           ref={ref_to_input2}
           style={onRef === '2' ? styles.inputColor : styles.input}
           textAlign={'center'}
-          keyboardType={'numeric'}
+          keyboardType={keyBoardType}
           maxLength={1}
           blurOnSubmit={false}
           value={text2}
@@ -72,7 +70,7 @@ export const PinInput: React.FC<Props> = ({title = 'pin'}) => {
           ref={ref_to_input3}
           style={onRef === '3' ? styles.inputColor : styles.input}
           textAlign={'center'}
-          keyboardType={'numeric'}
+          keyboardType={keyBoardType}
           maxLength={1}
           blurOnSubmit={false}
           value={text3}
@@ -94,7 +92,7 @@ export const PinInput: React.FC<Props> = ({title = 'pin'}) => {
           ref={ref_to_input4}
           style={onRef === '4' ? styles.inputColor : styles.input}
           textAlign={'center'}
-          keyboardType={'numeric'}
+          keyboardType={keyBoardType}
           maxLength={1}
           blurOnSubmit={false}
           value={text4}
