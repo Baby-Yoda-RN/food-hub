@@ -17,9 +17,9 @@ export const styles = StyleSheet.create({
     backgroundColor: color.primary,
   },
   title: {
-    color: 'white',
-    fontSize: 15,
-    lineHeight: 15,
+    color: color.white,
+    fontSize: size.rg,
+    lineHeight: size.rg,
     textAlign: 'center',
   },
 });
