@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {ButtonView} from './Button.view';
-import {ButtonProps} from './Button.type';
+import {TButtonProps} from './Button.type';
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<TButtonProps> = ({
   title,
   isDisabled,
   onPress,

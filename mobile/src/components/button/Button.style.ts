@@ -6,8 +6,6 @@ export const styles = StyleSheet.create({
     borderRadius: 28,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '66%',
-    height: '07%',
   
   },
   buttonDisabled: {

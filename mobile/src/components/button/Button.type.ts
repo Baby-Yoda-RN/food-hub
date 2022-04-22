@@ -1,6 +1,6 @@
 import  {StyleProp, ViewStyle} from 'react-native';
 
-export type ButtonProps = {
+export type TButtonProps = {
     title?: string;
     isDisabled?: boolean;
     onPress?: Function;

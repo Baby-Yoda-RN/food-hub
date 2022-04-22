@@ -1,19 +1,17 @@
 import React, {FC} from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './Button.style';
-import {ButtonProps} from './Button.type';
+import {TButtonProps} from './Button.type';
 
-export const ButtonView: FC<ButtonProps> = ({
+export const ButtonView: FC<TButtonProps> = ({
   title  = 'Button',
   isDisabled = false,
   press, 
   buttonStyle,
   titleStyle,
 }) => {
-  let buttonClickableStyle;
-  isDisabled
-    ? (buttonClickableStyle = styles.buttonDisabled)
-    : (buttonClickableStyle = styles.buttonEnabled);
+  
+  let buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
 
   return (
     <TouchableOpacity
