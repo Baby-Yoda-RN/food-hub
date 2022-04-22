@@ -1,2 +1,1 @@
-// This is probably incorrect
-export * from '../components';
+export * from './categoryRadio/CategoryRadio';
