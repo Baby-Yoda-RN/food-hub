@@ -9,8 +9,6 @@ export const ButtonView: FC<ButtonProps> = ({
   press, 
   buttonStyle,
   titleStyle,
-  rightIcon,
-  leftIcon,
 }) => {
   let buttonClickableStyle;
   isDisabled
