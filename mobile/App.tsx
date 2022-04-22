@@ -1,10 +1,15 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {CardView} from './src/components/card/card.view';
+import {Text, View} from 'react-native';
+import {Card} from './src/components/card/card';
 const App = () => {
   const message: string = 'Testing Text';
 
-  return <CardView />;
+  return (
+    <View>
+      <Text>Testing Text</Text>
+      <Card />
+    </View>
+  );
 };
 
 export default App;

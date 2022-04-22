@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Text, View, Image} from 'react-native';
 import {Restaurant} from '../../types/data';
-import {styles} from './card.styles';
+import {styles} from './card.style';
+import {TCardProps} from './card.type';
 
-export const Card = ({item}: {item: Restaurant}) => {
+export const Card: FC<TCardProps> = ({restaurant}) => {
+  const dummy: Restaurant = {
+    name: "McDonald's",
+    rating: 4,
+    usersVoted: 25,
+    favorite: true,
+    freeDelivery: 'Free Delivery',
+    deliveryTime: 10,
+    items: ['Burger', 'Chicken', 'Fast Food'],
+  };
+
+  restaurant = dummy;
+
+  // Rating Component and Favorite Component needed
+  // All data is dummy data, until server is set up
+
   return (
     <View style={styles.container}>
       <View>
@@ -15,12 +31,12 @@ export const Card = ({item}: {item: Restaurant}) => {
         />
       </View>
       <View style={styles.restaurantInformation}>
-        <Text style={styles.restaurantName}>{item.name}</Text>
+        <Text style={styles.restaurantName}>{restaurant?.name}</Text>
         <Text style={styles.deliveryDetails}>
-          {`${item.freeDelivery}    ${item.deliveryTime} mins`}
+          {`${restaurant?.freeDelivery}    ${restaurant?.deliveryTime} mins`}
         </Text>
         <View style={styles.tagContainer}>
-          {item.items?.map((item, key) => (
+          {restaurant?.items?.map((item, key) => (
             <Text style={styles.itemTags} key={key}>
               {item.toUpperCase()}
             </Text>
