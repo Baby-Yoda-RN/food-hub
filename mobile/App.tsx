@@ -7,7 +7,8 @@ const App = () => {
   return (
     <View>
       <Text>Testing Text</Text>
-      <Card />
+      <Card type="foodCard" />
+      <Card type="restaurantCard" />
     </View>
   );
 };

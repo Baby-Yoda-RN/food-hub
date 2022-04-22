@@ -1,39 +1,40 @@
 import {StyleSheet} from 'react-native';
+import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    borderRadius: 10,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
-    borderWidth: 2,
-    backgroundColor: '#fff',
-    paddingBottom: 12,
+    borderRadius: size.sm,
+    borderColor: color.grayLow,
+    borderWidth: size.xxs,
+    backgroundColor: color.white,
+    paddingBottom: size.md,
   },
-  restaurantInformation: {
+  information: {
     alignItems: 'flex-start',
-    marginLeft: 12,
-    marginTop: 12,
+    marginLeft: size.md,
+    marginTop: size.md,
   },
-  restaurantName: {
-    color: '#000',
-    fontSize: 18,
+  title: {
+    color: color.black,
+    fontSize: size.rg,
     fontWeight: 'bold',
   },
-  deliveryDetails: {
-    marginBottom: 6,
-    fontSize: 14,
-    marginLeft: 12,
+  details: {
+    marginBottom: size.sm,
+    fontSize: size.md,
   },
   itemTags: {
-    borderColor: 'rgba(0, 0, 0, 0.0)',
-    borderWidth: 2,
-    color: '#8A8E9B',
-    backgroundColor: '#F6F6F6',
-    paddingHorizontal: 4,
-    fontSize: 12,
-    marginRight: 4,
+    color: color.grayMid,
+    backgroundColor: color.grayLow,
+    paddingHorizontal: size.sm,
+    fontSize: size.md,
+    marginRight: size.xs,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    borderRadius: size.xs,
   },
-  restaurantImage: {
-    height: 136,
+  cardImage: {
+    height: size.xxl,
   },
   tagContainer: {
     flexDirection: 'row',
