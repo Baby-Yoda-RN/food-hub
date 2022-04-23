@@ -49,30 +49,29 @@ export const Card: FC<TCardProps> = ({cardType, containerStyle}) => {
           }}
         />
       </View>
-      {cardItem === restaurantDummy ? (
-        <View style={styles.information}>
-          <Text style={styles.title}>{cardItem?.name}</Text>
-          <Text style={styles.details}>
-            {`${cardItem?.freeDelivery}    ${cardItem?.deliveryTime} mins`}
-          </Text>
-          <View style={styles.tagContainer}>
-            {cardItem?.items?.map((item, key) => (
-              <Text style={styles.itemTags} key={key}>
-                {item.toUpperCase()}
-              </Text>
-            ))}
+      <View style={styles.information}>
+        <Text style={styles.title}>{cardItem?.name}</Text>
+        {cardItem === restaurantDummy ? (
+          <View>
+            <Text style={styles.details}>
+              {`${cardItem?.freeDelivery}    ${cardItem?.deliveryTime} mins`}
+            </Text>
+            <View style={styles.tagContainer}>
+              {cardItem?.items?.map((item, key) => (
+                <Text style={styles.itemTags} key={key}>
+                  {item.toUpperCase()}
+                </Text>
+              ))}
+            </View>
           </View>
-        </View>
-      ) : (
-        <View>
-          <View style={styles.information}>
-            <Text style={styles.title}>{cardItem?.name}</Text>
+        ) : (
+          <View>
             <Text style={styles.details}>
               {(cardItem as FoodItem).description}
             </Text>
           </View>
-        </View>
-      )}
+        )}
+      </View>
     </View>
   );
 };
