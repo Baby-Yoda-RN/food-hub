@@ -17,14 +17,21 @@ export const TextInput: FC<TTextInputProps> = ({
   type,
   ...rest
 }) => {
-  const [containerStyle, setContainerStyle] = useState([style.container]);
+  const [isActive, setIsActive] = useState(Boolean);
   const [text, setText] = useState('');
   let max = type === 'phone' ? 17 : 30;
+  let currentContainerStyle = isActive
+    ? style.containerFocus
+    : style.containerBlur;
+
+  if (type === 'phone' || type === 'search') {
+    const flexEnd = {justifyContent: 'flex-start'};
+  }
   const whenFocused = () => {
-    setContainerStyle([...containerStyle, {borderColor: color.primary}]);
+    setIsActive(true);
   };
   const whenBlurred = () => {
-    setContainerStyle([...containerStyle, {borderColor: color.grayLow}]);
+    setIsActive(false);
   };
   const onTextChange = (text: string) => {
     if (type === 'phone') {
@@ -38,17 +45,10 @@ export const TextInput: FC<TTextInputProps> = ({
     }
     setText(text);
   };
-  useEffect(() => {
-    if (type === 'search') {
-      setContainerStyle([...containerStyle, {justifyContent: 'flex-start'}]);
-    } else if (type === 'phone') {
-      setContainerStyle([...containerStyle, {justifyContent: 'flex-start'}]);
-    }
-  }, []);
 
   useEffect(() => {});
   return (
-    <TouchableOpacity style={containerStyle} {...rest}>
+    <TouchableOpacity style={currentContainerStyle} {...rest}>
       {leftIcon && (
         <TouchableOpacity>
           <Text>LeftIcon-TODO</Text>
