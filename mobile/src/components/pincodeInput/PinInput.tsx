@@ -4,112 +4,69 @@ import {styles} from './PinInput.styles';
 
 interface Props {
   keyBoardType: string;
+  digitCount: int;
 }
 
-export const PinInput: React.FC<Props> = ({keyBoardType = 'numeric'}) => {
-  const [text, onChangeText] = useState('');
-  const [text2, onChangeText2] = useState('');
-  const [text3, onChangeText3] = useState('');
-  const [text4, onChangeText4] = useState('');
+export const PinInput: React.FC<Props> = ({
+  keyBoardType = 'numeric',
+  digitCount = 4,
+}) => {
+  const [textArray, onChangeTextArray] = useState([]);
+  const [onRef, onRefChange] = useState(-1);
+  const ref = [];
+  const textInputArray = [];
 
-  const [onRef, onRefChange] = useState('0');
+  for (let i = 0; i < digitCount; i++) {
+    let current = i;
+    let next = i + 1;
+    ref[current] = useRef();
+    ref[next] = useRef();
 
-  const ref_to_input1 = useRef();
-  const ref_to_input2 = useRef();
-  const ref_to_input3 = useRef();
-  const ref_to_input4 = useRef();
+    textInputArray.push(
+      <TextInput
+        ref={ref[current]}
+        style={onRef === i ? styles.inputColor : styles.input}
+        textAlign={'center'}
+        keyboardType={keyBoardType}
+        maxLength={1}
+        blurOnSubmit={false}
+        value={textArray[current]}
+        onChangeText={t => {
+          onChangeTextArray(array => {
+            let newArray = [...array];
+            newArray[current] = t;
+            return newArray;
+          });
+
+          if (t.length === 1) {
+            if (next === digitCount) {
+              ref[current].current.blur();
+            } else {
+              ref[next].current.focus();
+            }
+          }
+        }}
+        onFocus={() => {
+          onRefChange(current);
+          onChangeTextArray(array => {
+            let newArray = [...array];
+            newArray[current] = '';
+            return newArray;
+          });
+        }}
+        onBlur={() => onRefChange(-1)}
+        onSubmitEditing={() =>
+          next === digitCount
+            ? ref[current].current.blur()
+            : ref[next].current.focus()
+        }
+      />,
+    );
+  }
 
   return (
     <>
-      <View style={styles.container}>
-        <TextInput
-          ref={ref_to_input1}
-          style={onRef === '1' ? styles.inputColor : styles.input}
-          textAlign={'center'}
-          keyboardType={keyBoardType}
-          maxLength={1}
-          blurOnSubmit={false}
-          value={text}
-          onChangeText={text => {
-            onChangeText(text);
-            if (text.length === 1) {
-              ref_to_input2.current.focus();
-            }
-          }}
-          onFocus={() => {
-            onRefChange('1');
-            onChangeText('');
-          }}
-          onBlur={() => onRefChange('0')}
-          onSubmitEditing={() => ref_to_input2.current.focus()}
-        />
-
-        <TextInput
-          ref={ref_to_input2}
-          style={onRef === '2' ? styles.inputColor : styles.input}
-          textAlign={'center'}
-          keyboardType={keyBoardType}
-          maxLength={1}
-          blurOnSubmit={false}
-          value={text2}
-          onChangeText={text2 => {
-            onChangeText2(text2);
-            if (text2.length === 1) {
-              ref_to_input3.current.focus();
-            }
-          }}
-          onFocus={() => {
-            onRefChange('2');
-            onChangeText2('');
-          }}
-          onBlur={() => onRefChange('0')}
-          onSubmitEditing={() => ref_to_input3.current.focus()}
-        />
-
-        <TextInput
-          ref={ref_to_input3}
-          style={onRef === '3' ? styles.inputColor : styles.input}
-          textAlign={'center'}
-          keyboardType={keyBoardType}
-          maxLength={1}
-          blurOnSubmit={false}
-          value={text3}
-          onChangeText={text3 => {
-            onChangeText3(text3);
-            if (text3.length === 1) {
-              ref_to_input4.current.focus();
-            }
-          }}
-          onFocus={() => {
-            onRefChange('3');
-            onChangeText3('');
-          }}
-          onBlur={() => onRefChange('0')}
-          onSubmitEditing={() => ref_to_input4.current.focus()}
-        />
-
-        <TextInput
-          ref={ref_to_input4}
-          style={onRef === '4' ? styles.inputColor : styles.input}
-          textAlign={'center'}
-          keyboardType={keyBoardType}
-          maxLength={1}
-          blurOnSubmit={false}
-          value={text4}
-          onChangeText={text4 => {
-            onChangeText4(text4);
-            if (text4.length === 1) {
-              onRefChange('0');
-              ref_to_input4.current.blur();
-            }
-          }}
-          onFocus={() => {
-            onRefChange('4');
-            onChangeText4('');
-          }}
-          onBlur={() => onRefChange('0')}
-        />
-      </View>
+      <View style={styles.container}>{textInputArray}</View>
     </>
   );
 };
