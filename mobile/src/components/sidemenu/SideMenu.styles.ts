@@ -1,59 +1,59 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { size, color } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    padding: size.rg,
     height: '100%',
   },
   image: {
-    borderRadius: 100,
-    height: 70,
-    width: 70,
+    borderRadius: size.xl,
+    height: size.xl,
+    width: size.xl,
   },
   name: {
-    color: '#000',
-    fontSize: 20,
+    color: color.black,
+    fontSize: size.rg,
     fontWeight: 'bold',
-    marginVertical: 3.5,
+    marginVertical: size.xs,
   },
   email: {
-    fontSize: 14,
-    marginVertical: 3.5,
+    fontSize: size.rg,
+    marginVertical: size.xs,
   },
   itemContainer: {
-    marginVertical: 20,
+    marginVertical: size.rg,
     flexDirection: 'row',
     alignItems: 'center',
   },
   itemText: {
-    color: '#000',
-    fontSize: 16,
+    color: color.black,
+    fontSize: size.rg,
     fontWeight: 'bold',
-    marginHorizontal: 17,
-  },
-  icon: {
-    height: 19,
-    width: 17,
+    marginHorizontal: size.rg,
   },
   button: {
-    backgroundColor: '#FE724C',
-    borderRadius: 100,
+    backgroundColor: color.textOrange,
+    borderRadius: size.xl,
     alignItems: 'center',
     alignSelf: 'flex-start',
-    position: 'absolute',
     flexDirection: 'row',
-    bottom: 32,
-    left: 22,
+    marginTop: 'auto',
   },
   logoutIcon: {
-    borderRadius: 100,
-    height: 29,
-    width: 29,
-    marginLeft: 9,
+    borderRadius: size.xl,
+    height: size.lg,
+    width: size.lg,
+    marginLeft: size.sm,
   },
   buttonText: {
-    color: '#fff',
+    color: color.white,
     fontWeight: 'bold',
-    margin: 15,
+    marginRight: size.sm,
+  },
+  buttonIconContainer: {
+    backgroundColor: 'white',
+    borderRadius: size.xl,
+    margin: size.sm,
   },
 });
