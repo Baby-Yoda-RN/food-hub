@@ -25,7 +25,7 @@ export const PinInput: React.FC<Props> = ({
     textInputArray.push(
       <TextInput
         ref={ref[current]}
-        style={onRef === i ? styles.inputColor : styles.input}
+        style={onRef === current ? styles.inputColor : styles.input}
         textAlign={'center'}
         keyboardType={keyBoardType}
         maxLength={1}
