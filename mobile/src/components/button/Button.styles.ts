@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     borderRadius: size.xl,
     alignItems: 'center',
     justifyContent: 'center',
-  
+    flexDirection: 'row',
+    paddingVertical: size.sm,
   },
   buttonDisabled: {
     backgroundColor: color.grayDisabled,
