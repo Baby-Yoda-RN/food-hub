@@ -1,6 +1,5 @@
-import {Size} from './size.type';
 
-export const size: Size = {
+export const size = {
   xxs: 2,
   xs: 4,
   sm: 8,
