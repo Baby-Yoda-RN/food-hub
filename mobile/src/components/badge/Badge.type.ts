@@ -1,7 +1,7 @@
-import {ColorValue, StyleProp} from 'react-native'
+import {StyleProp, TextStyle, ViewStyle} from 'react-native'
 
 export type BadgeProps = {
   value: Number | String,
-  backgroundColor?: ColorValue,
-  color?: ColorValue,
+  containerStyle?: StyleProp<ViewStyle>,
+  textStyle?: StyleProp<TextStyle>,
 }
