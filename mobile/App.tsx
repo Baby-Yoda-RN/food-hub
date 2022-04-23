@@ -1,14 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {Card} from './src/components/card/card';
+import {Text} from 'react-native';
+import {TextInput} from './src/components/textInput/TextInput';
+
 const App = () => {
   const message: string = 'Testing Text';
-
   return (
-    <View>
-      <Text>Testing Text</Text>
-      <Card />
-    </View>
+    <>
+      <Text>{message}</Text>
+      <TextInput type="regular" />
+      <TextInput type="password" />
+      <TextInput type="search" />
+      <TextInput type="phone" />
+    </>
   );
 };
 
