@@ -4,7 +4,7 @@ import {FoodItem, Restaurant} from '../../types/data';
 import {styles} from './card.style';
 import {TCardProps} from './card.type';
 
-export const Card: FC<TCardProps> = ({type, containerStyle}) => {
+export const Card: FC<TCardProps> = ({cardType, containerStyle}) => {
   const restaurantDummy: Restaurant = {
     name: "McDonald's",
     rating: 4,
@@ -30,9 +30,9 @@ export const Card: FC<TCardProps> = ({type, containerStyle}) => {
 
   let cardItem;
 
-  if (type === 'foodCard') {
+  if (cardType === 'foodCard') {
     cardItem = foodItemDummy as FoodItem;
-  } else if (type === 'restaurantCard') {
+  } else if (cardType === 'restaurantCard') {
     cardItem = restaurantDummy as Restaurant;
   }
 
@@ -41,36 +41,30 @@ export const Card: FC<TCardProps> = ({type, containerStyle}) => {
 
   return (
     <View style={[styles.container, containerStyle]}>
+      <View>
+        <Image
+          style={styles.cardImage}
+          source={{
+            uri: cardItem?.imageName,
+          }}
+        />
+      </View>
       {cardItem === restaurantDummy ? (
-        <View>
-          <Image
-            style={styles.cardImage}
-            source={{
-              uri: cardItem.imageName,
-            }}
-          />
-          <View style={styles.information}>
-            <Text style={styles.title}>{cardItem?.name}</Text>
-            <Text style={styles.details}>
-              {`${cardItem?.freeDelivery}    ${cardItem?.deliveryTime} mins`}
-            </Text>
-            <View style={styles.tagContainer}>
-              {cardItem?.items?.map((item, key) => (
-                <Text style={styles.itemTags} key={key}>
-                  {item.toUpperCase()}
-                </Text>
-              ))}
-            </View>
+        <View style={styles.information}>
+          <Text style={styles.title}>{cardItem?.name}</Text>
+          <Text style={styles.details}>
+            {`${cardItem?.freeDelivery}    ${cardItem?.deliveryTime} mins`}
+          </Text>
+          <View style={styles.tagContainer}>
+            {cardItem?.items?.map((item, key) => (
+              <Text style={styles.itemTags} key={key}>
+                {item.toUpperCase()}
+              </Text>
+            ))}
           </View>
         </View>
       ) : (
         <View>
-          <Image
-            style={styles.cardImage}
-            source={{
-              uri: cardItem?.imageName,
-            }}
-          />
           <View style={styles.information}>
             <Text style={styles.title}>{cardItem?.name}</Text>
             <Text style={styles.details}>
