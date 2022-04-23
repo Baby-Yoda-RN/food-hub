@@ -8,9 +8,9 @@ const App = () => {
     <>
       <Text>{message}</Text>
       <TextInput type="regular" />
-      <TextInput type="password" />
-      <TextInput type="search" />
-      <TextInput type="phone" />
+      <TextInput type="password" rightIcon="pass" />
+      <TextInput type="search" leftIcon="left" />
+      <TextInput type="phone" leftIcon="flag" />
     </>
   );
 };

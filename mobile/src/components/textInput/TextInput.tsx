@@ -23,10 +23,22 @@ export const TextInput: FC<TTextInputProps> = ({
   let currentContainerStyle = isActive
     ? style.containerFocus
     : style.containerBlur;
+  let flexStart;
 
-  if (type === 'phone' || type === 'search') {
-    const flexEnd = {justifyContent: 'flex-start'};
+  switch (type) {
+    case 'phone':
+    case 'search':
+      currentContainerStyle = {
+        ...currentContainerStyle,
+        justifyContent: 'flex-start',
+      };
+      break;
+    case 'password':
+      isSensitive = true;
+    default:
+      break;
   }
+
   const whenFocused = () => {
     setIsActive(true);
   };
@@ -49,7 +61,7 @@ export const TextInput: FC<TTextInputProps> = ({
   useEffect(() => {});
   return (
     <TouchableOpacity style={currentContainerStyle} {...rest}>
-      {leftIcon && (
+      {!!leftIcon && (
         <TouchableOpacity>
           <Text>LeftIcon-TODO</Text>
         </TouchableOpacity>
@@ -65,7 +77,7 @@ export const TextInput: FC<TTextInputProps> = ({
         maxLength={max}
       />
 
-      {rightIcon && (
+      {!!rightIcon && (
         <TouchableOpacity>
           <Text>RightIcon-TODO</Text>
         </TouchableOpacity>
