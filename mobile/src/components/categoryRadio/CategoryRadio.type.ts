@@ -1,4 +1,4 @@
-import type {ViewStyle, StyleProp} from 'react-native';
+import type {ViewStyle, StyleProp, Image} from 'react-native';
 
 export type TCategoryRadioProps = {
     containerStyle?: StyleProp<ViewStyle>;
