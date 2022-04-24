@@ -3,11 +3,10 @@ import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    borderRadius: size.xl,
+    borderRadius: 27,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     flexDirection: 'row',
-    paddingVertical: size.sm,
   },
   buttonDisabled: {
     backgroundColor: color.grayDisabled,
@@ -17,8 +16,10 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: color.white,
-    fontSize: size.m,
-    lineHeight: size.m,
+    fontSize: 13,
+    lineHeight: 13,
     textAlign: 'center',
+    
   },
+
 });
