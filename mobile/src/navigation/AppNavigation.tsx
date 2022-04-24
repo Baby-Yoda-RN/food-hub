@@ -3,15 +3,16 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login, Signup} from '../screens';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParams = {
+  Login: {
+    name: string;
+  };
+  Signup: {
+    name: string;
+  };
+};
 
-type TNavigation = {
-    Login: {
-        name: string | undefined,
-        
-    }
-    Signup: string | undefined;
-}
+const Stack = createNativeStackNavigator<RootStackParams>();
 
 export const AppNavigation: any = () => {
   return (

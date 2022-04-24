@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Text, Button} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParams} from '../../navigation';
 
-export const Signup: any = () => {
-    const navigation = useNavigation();
+type Props = NativeStackScreenProps<RootStackParams, 'Signup'>;
+
+export const Signup: FC<Props> = ({navigation}: Props) => {
   return (
     <>
-      <Button title="Go To Login" onPress={() => {navigation.navigate('Login')}} />
-      <Text>Signup</Text>
+      <Button
+        title="Go To Login!"
+        onPress={() => {
+          navigation.navigate('Login', {name: 'Login'});
+        }}
+      />
+      <Text>Signup Screen</Text>
     </>
   );
 };
