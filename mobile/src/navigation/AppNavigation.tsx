@@ -1,16 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {RootStackParams} from './AppNavigation.type';
 import {Login, Signup} from '../screens';
-
-export type RootStackParams = {
-  Login: {
-    name: string;
-  };
-  Signup: {
-    name: string;
-  };
-};
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
