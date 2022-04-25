@@ -1,72 +1,76 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, FC} from 'react';
 import {View, Text, StyleProp, TextInput} from 'react-native';
 import {styles} from './PinInput.styles';
+import {TPinEntryProps} from './PinInput.type';
 
-interface Props {
-  keyBoardType: string;
-  digitCount: int;
-}
-
-export const PinInput: React.FC<Props> = ({
+export const PinInput: FC<TPinEntryProps> = ({
   keyBoardType = 'numeric',
   digitCount = 4,
+  onChangePinEntry = () => {},
 }) => {
   const [textArray, onChangeTextArray] = useState([]);
   const [onRef, onRefChange] = useState(-1);
-  const ref = [];
-  const textInputArray = [];
 
-  for (let i = 0; i < digitCount; i++) {
-    let current = i;
-    let next = i + 1;
-    ref[current] = useRef();
-    ref[next] = useRef();
+  const renderTextBoxes = () => {
+    const refTextBox = [];
+    const textInputArray = [];
 
-    textInputArray.push(
-      <TextInput
-        ref={ref[current]}
-        style={onRef === current ? styles.inputColor : styles.input}
-        textAlign={'center'}
-        keyboardType={keyBoardType}
-        maxLength={1}
-        blurOnSubmit={false}
-        value={textArray[current]}
-        onChangeText={t => {
-          onChangeTextArray(array => {
-            let newArray = [...array];
-            newArray[current] = t;
-            return newArray;
-          });
+    for (let i = 0; i < digitCount; i++) {
+      let current = i;
+      let next = i + 1;
+      refTextBox[current] = useRef();
+      refTextBox[next] = useRef();
 
-          if (t.length === 1) {
-            if (next === digitCount) {
-              ref[current].current.blur();
-            } else {
-              ref[next].current.focus();
+      textInputArray.push(
+        <TextInput
+          ref={refTextBox[current]}
+          style={onRef === current ? styles.inputColor : styles.input}
+          textAlign={'center'}
+          keyboardType={keyBoardType}
+          maxLength={1}
+          blurOnSubmit={false}
+          value={textArray[current]}
+          onChangeText={t => {
+            onChangeTextArray(array => {
+              let newArray = [...array];
+              newArray[current] = t;
+              onChangePinEntry(newArray.join(''));
+              return newArray;
+            });
+
+            if (t.length === 1) {
+              if (next === digitCount) {
+                refTextBox[current].current.blur();
+              } else {
+                refTextBox[next].current.focus();
+              }
             }
+          }}
+          onFocus={() => {
+            onRefChange(current);
+            onChangeTextArray(array => {
+              let newArray = [...array];
+              newArray[current] = '';
+              onChangePinEntry(newArray.join(''));
+              return newArray;
+            });
+          }}
+          onBlur={() => onRefChange(-1)}
+          onSubmitEditing={() =>
+            next === digitCount
+              ? refTextBox[current].current.blur()
+              : refTextBox[next].current.focus()
           }
-        }}
-        onFocus={() => {
-          onRefChange(current);
-          onChangeTextArray(array => {
-            let newArray = [...array];
-            newArray[current] = '';
-            return newArray;
-          });
-        }}
-        onBlur={() => onRefChange(-1)}
-        onSubmitEditing={() =>
-          next === digitCount
-            ? ref[current].current.blur()
-            : ref[next].current.focus()
-        }
-      />,
-    );
-  }
+        />,
+      );
+    }
+
+    return textInputArray;
+  };
 
   return (
     <>
-      <View style={styles.container}>{textInputArray}</View>
+      <View style={styles.container}>{renderTextBoxes()}</View>
     </>
   );
 };
