@@ -1,11 +1,11 @@
-import React, {FC, useState, useEffect} from 'react';
+import React, {FC, useState, useLayoutEffect} from 'react';
 import {
   TextInput as NativeInput,
   Text,
   View,
   TouchableOpacity,
 } from 'react-native';
-import {color, size} from '../../theme';
+import {size} from '../../theme';
 import {phone_validator} from '../../utilities/phone_validator';
 import {Icon} from '../icon/Icon';
 import {style} from './TextInput.style';
@@ -21,25 +21,11 @@ export const TextInput: FC<TTextInputProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(Boolean);
   const [text, setText] = useState('');
+  const [secureTextEntry, setSecureTextEntry] = useState(Boolean);
   let max = type === 'phone' ? 17 : 30;
   let currentContainerStyle = isActive
     ? style.containerFocus
     : style.containerBlur;
-  let flexStart;
-
-  switch (type) {
-    case 'phone':
-    case 'search':
-      currentContainerStyle = {
-        ...currentContainerStyle,
-        justifyContent: 'flex-start',
-      };
-      break;
-    case 'password':
-      isSensitive = true;
-    default:
-      break;
-  }
 
   const whenFocused = () => {
     setIsActive(true);
@@ -54,6 +40,30 @@ export const TextInput: FC<TTextInputProps> = ({
     }
     setText(input);
   };
+  const whenPressIn = () => {
+    setSecureTextEntry(false);
+  };
+  const whenPressOut = () => {
+    setSecureTextEntry(true);
+  };
+
+  switch (type) {
+    case 'phone':
+    case 'search':
+      currentContainerStyle = {
+        ...currentContainerStyle,
+        justifyContent: 'flex-start',
+      };
+      break;
+    default:
+      break;
+  }
+
+  useLayoutEffect(() => {
+    if (type === 'password') {
+      setSecureTextEntry(true);
+    }
+  }, []);
 
   return (
     <TouchableOpacity style={currentContainerStyle} {...rest}>
@@ -65,17 +75,16 @@ export const TextInput: FC<TTextInputProps> = ({
       <NativeInput
         style={style.textInput}
         placeholder={placeholder}
-        secureTextEntry={isSensitive}
+        secureTextEntry={secureTextEntry}
         onFocus={whenFocused}
         onBlur={whenBlurred}
         onChangeText={e => onTextChange(e)}
         value={text}
         maxLength={max}
-        // keyboardType={'numeric'}
       />
 
       {!!rightIcon && (
-        <TouchableOpacity>
+        <TouchableOpacity onPressIn={whenPressIn} onPressOut={whenPressOut}>
           <Icon name={rightIcon} height={size.lg} width={size.lg} />
         </TouchableOpacity>
       )}
