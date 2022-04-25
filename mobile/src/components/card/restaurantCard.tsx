@@ -2,8 +2,12 @@ import React, {FC} from 'react';
 import {Restaurant} from '../../types/data';
 import {Card} from './card';
 import {TCardProps} from './card.type';
+import {Text, View, ScrollView} from 'react-native';
+import {styles} from './card.style';
+import {Icon} from '../icon/Icon';
+import {size} from '../../theme';
 
-export const RestaurantCard: FC<TCardProps> = ({restaurant}) => {
+export const RestaurantCard = (restaurant?: Restaurant) => {
   const restaurantDummy: Restaurant = {
     name: "McDonald's",
     rating: 4,
@@ -27,17 +31,36 @@ export const RestaurantCard: FC<TCardProps> = ({restaurant}) => {
     imageName,
   } = restaurantDummy;
 
-  return (
-    <Card
-      isRestaurant={true}
-      image={imageName}
-      title={name}
-      tags={items}
-      rating={rating}
-      usersVoted={usersVoted}
-      favorite={favorite}
-      freeDelivery={freeDelivery}
-      deliveryTime={deliveryTime}
-    />
+  const render = () => (
+    <View>
+      <View style={styles.detailsContainer}>
+        <Icon
+          name="Motorcycle"
+          height={size.md}
+          width={size.md}
+          containerStyle={styles.iconContainer}
+        />
+        <Text style={styles.details}>{freeDelivery}</Text>
+        <Icon
+          name="Clock"
+          height={size.md}
+          width={size.md}
+          containerStyle={styles.iconContainer}
+        />
+        <Text style={styles.details}>{`${deliveryTime} mins`}</Text>
+      </View>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.tagsContainer}>
+        {items?.map((item, key) => (
+          <Text style={styles.itemTags} key={key}>
+            {item}
+          </Text>
+        ))}
+      </ScrollView>
+    </View>
   );
+
+  return <Card image={imageName} title={name} renderDetails={render} />;
 };

@@ -14,6 +14,6 @@ export type TCardProps = {
   deliveryTime?: number;
   restaurant?: Restaurant;
   foodItem?: FoodItem;
-  isRestaurant: boolean;
+  renderDetails: () => {};
   containerStyle?: StyleProp<ViewStyle>;
 };

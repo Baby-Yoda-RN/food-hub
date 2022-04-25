@@ -1,9 +1,10 @@
-import React, {FC} from 'react';
+import React from 'react';
+import {Text} from 'react-native';
 import {FoodItem} from '../../types/data';
 import {Card} from './card';
-import {TCardProps} from './card.type';
+import {styles} from './card.style';
 
-export const FoodCard: FC<TCardProps> = ({foodItem}) => {
+export const FoodCard = (foodItem: FoodItem) => {
   const foodItemDummy: FoodItem = {
     name: 'Chicken Hawaiian',
     description: 'Chicken, Chesse and Pineapple',
@@ -18,16 +19,7 @@ export const FoodCard: FC<TCardProps> = ({foodItem}) => {
   const {name, description, rating, usersVoted, price, favorite, imageName} =
     foodItemDummy;
 
-  return (
-    <Card
-      isRestaurant={false}
-      image={imageName}
-      title={name}
-      rating={rating}
-      usersVoted={usersVoted}
-      favorite={favorite}
-      price={price}
-      subtitle={description}
-    />
-  );
+  const render = () => <Text style={styles.details}>{description}</Text>;
+
+  return <Card image={imageName} title={name} renderDetails={render} />;
 };
