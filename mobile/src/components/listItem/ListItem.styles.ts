@@ -17,7 +17,11 @@ export const styles = StyleSheet.create({
   IconContainer: {
     flexDirection:'row',
     paddingHorizontal: size.xs,
-    paddingTop: size.lg,
+    paddingTop: size.rg,
+  },
+
+  TopRightIconContainer:{
+    paddingLeft: 48,
   },
 
   Title: {
@@ -33,16 +37,25 @@ export const styles = StyleSheet.create({
     paddingHorizontal: size.rg,
   },
 
+  ItemQuantity: {
+    fontFamily: 'Sofia Pro',
+    fontSize: size.rg,
+    color: color.black,
+    paddingVertical: 6,
+  },
+
   Price:{
     fontFamily: 'Sofia Pro',
     fontSize: size.rg,
     color: color.primary,
     paddingHorizontal: size.rg,
-    paddingTop:size.sm,
+    paddingTop:size.xs,
   },
   
   Image:{
+    borderRadius: size.rg, 
     width:size.xl,
     height: size.xl,
   }
+
 });
