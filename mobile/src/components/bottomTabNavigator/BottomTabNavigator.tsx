@@ -54,29 +54,29 @@ export const BottomTabNavigator: FC<BottomTabNavigatorProps> = ({}) => {
         <TouchableOpacity onPress={handleOnPress}>
         <Icon name="Compass" height={SIZE} width={SIZE} fill={PRIMARY_COLOR} />
         </TouchableOpacity>
-        <Badge value={'LGGg'} />
+        <Badge value={'2'} />
       </View>
       <View style={styles.tabContainer}>
         <TouchableOpacity onPress={handleOnPress}>
-        <Icon name="Pin" height={SIZE} width={SIZE} fill={PRIMARY_COLOR} />
+        <Icon name="Pin" height={SIZE} width={SIZE} />
         </TouchableOpacity>
         <Badge value={120} />
       </View>
       <View style={styles.tabContainer}>
         <TouchableOpacity onPress={handleOnPress}>
-        <Icon name="Bag" height={SIZE} width={SIZE} fill={PRIMARY_COLOR} />
+        <Icon name="Bag" height={SIZE} width={SIZE}/>
         </TouchableOpacity>
         <Badge value={30} />
       </View>
       <View style={styles.tabContainer}>
         <TouchableOpacity onPress={handleOnPress}>
-        <Icon name="Heart" height={SIZE} width={SIZE} fill={PRIMARY_COLOR} />
+        <Icon name="Heart" height={SIZE} width={SIZE}/>
         </TouchableOpacity>
         <Badge value={1}/>
       </View>
       <View style={styles.tabContainer}>
         <TouchableOpacity onPress={handleOnPress}>
-        <Icon name="Bell" height={SIZE} width={SIZE} fill={PRIMARY_COLOR} />
+        <Icon name="Bell" height={SIZE} width={SIZE}/>
         </TouchableOpacity>
         <Badge value={3}/>
       </View>
