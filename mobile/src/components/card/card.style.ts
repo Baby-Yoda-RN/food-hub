@@ -3,16 +3,15 @@ import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    borderRadius: size.sm,
-    borderColor: color.grayLow,
-    borderWidth: size.xxs,
+    borderRadius: size.rg,
     backgroundColor: color.white,
+    margin: size.md,
     paddingBottom: size.md,
   },
   information: {
-    alignItems: 'flex-start',
     marginLeft: size.md,
     marginTop: size.md,
+    justifyContent: 'flex-start',
   },
   title: {
     color: color.black,
@@ -20,8 +19,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   details: {
-    marginBottom: size.sm,
     fontSize: size.md,
+    marginBottom: size.xs,
   },
   itemTags: {
     color: color.grayMid,
@@ -29,14 +28,24 @@ export const styles = StyleSheet.create({
     paddingHorizontal: size.sm,
     fontSize: size.md,
     marginRight: size.xs,
-    textAlign: 'center',
-    textAlignVertical: 'center',
     borderRadius: size.xs,
+    textTransform: 'uppercase',
   },
   cardImage: {
     height: size.xxl,
+    borderTopLeftRadius: size.md,
+    borderTopRightRadius: size.md,
   },
-  tagContainer: {
+  detailsContainer: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     flexDirection: 'row',
+  },
+  tagsContainer: {
+    flexGrow: 0,
+  },
+  iconContainer: {
+    paddingLeft: 0,
+    paddingRight: size.xs,
   },
 });
