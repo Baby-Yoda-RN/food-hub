@@ -4,7 +4,7 @@ import {
   View, 
   Text, 
   TouchableOpacity } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
+import {Icon} from '../icon/Icon';
 import styles, {
   _container,
   _innerContainer,
@@ -26,6 +26,12 @@ interface IProps {
   rightComponentDisable: boolean;
   leftComponentOnPress: () => void;
   rightComponentOnPress: () => void;
+  leftIconName: any;
+  rightIconName: any;
+  leftIconStyle: any;
+  rightIconStyle: any;
+  iconWidth: number;
+  iconHeight: number;
 }
 
 const Header = (props: IProps) => {
@@ -45,6 +51,12 @@ const Header = (props: IProps) => {
     leftComponentOnPress,
     rightComponentDisable,
     rightComponentOnPress,
+    leftIconName,
+    rightIconName,
+    leftIconStyle,
+    rightIconStyle,
+    iconWidth,
+    iconHeight,
   } = props;
 
   const renderLeftIconComp = () =>
@@ -54,13 +66,7 @@ const Header = (props: IProps) => {
         onPress={leftComponentOnPress}
         style={[styles.leftComponentStyle, leftComponentStyle]}
       >
-        <Icon
-          size={30}
-          type="Ionicon"
-          name="ios-arrow-back"
-          color="rgba(110, 157, 251, 1.0)"
-          {...props}
-        />
+      <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconWidth} height={iconHeight}/>
       </TouchableOpacity>
     ));
 
@@ -71,13 +77,7 @@ const Header = (props: IProps) => {
         onPress={rightComponentOnPress}
         style={[styles.rightComponentStyle, rightComponentStyle]}
       >
-        <Icon
-          size={30}
-          color="white"
-          type="Ionicon"
-          name="ios-menu"
-          {...props}
-        />
+        <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconWidth} height={iconHeight}/>
       </TouchableOpacity>
     ));
 
