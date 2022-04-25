@@ -3,7 +3,7 @@ import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './Button.styles';
 import {TButtonProps} from './Button.type';
 import {Icon} from '../icon/Icon';
-import {color,size} from '../../theme';
+import {color} from '../../theme';
 
 export const Button: FC<TButtonProps> = ({
   title  = 'Button',
@@ -25,8 +25,6 @@ export const Button: FC<TButtonProps> = ({
   
   let buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
   let currentButtonOutline = buttonOutline ? 1 : 0;
-
-
 
   return (
     
