@@ -1,26 +1,23 @@
 import { StyleSheet } from 'react-native'
+import { color, size } from '../../theme'
 
 export const styles = StyleSheet.create({
   container:{
     flexDirection:'row',
-    backgroundColor:'white',
-    justifyContent:'space-between',
-    padding:16,
+    backgroundColor:color.white,
+    justifyContent:'space-around',
+    paddingTop:size.rg,
+    paddingBottom:size.sm,
+    shadowColor:color.black,
+    shadowOffset:{
+      width:0,
+      height:12,
+    },
+    shadowOpacity:0.8,
+    shadowRadius:20,
+    elevation:20,
   },
-  iconContainer:{
-    padding:16,
+  tabContainer:{
+    padding:6,
   },
-  icon:{
-    padding:20,
-    backgroundColor:'#FE724C',
-    borderRadius:50,
-  },
-  notification:{
-    position:'absolute',
-    top:0,
-    right:0,
-    padding:12,
-    backgroundColor:'#FFC529',
-    borderRadius:8,
-  }
 })
