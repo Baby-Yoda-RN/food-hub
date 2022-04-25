@@ -5,7 +5,9 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {color} from '../../theme';
+import {color, size} from '../../theme';
+import {phone_validator} from '../../utilities/phone_validator';
+import {Icon} from '../icon/Icon';
 import {style} from './TextInput.style';
 import {TTextInputProps} from './TextInput.type';
 
@@ -45,25 +47,19 @@ export const TextInput: FC<TTextInputProps> = ({
   const whenBlurred = () => {
     setIsActive(false);
   };
-  const onTextChange = (text: string) => {
+  const onTextChange = (input: string) => {
     if (type === 'phone') {
-      const cleaned = ('' + text).replace(/\D/g, '');
-      const match = cleaned.match(/^(\d)?(\d{3})(\d{3})(\d{4})$/);
-      if (match) {
-        var intlCode = match[1] ? `+${match[1]} ` : '';
-        setText(`${intlCode} (${match[2]})${match[3]}-${match[4]}`);
-        return;
-      }
+      setText(phone_validator(input));
+      return;
     }
-    setText(text);
+    setText(input);
   };
 
-  useEffect(() => {});
   return (
     <TouchableOpacity style={currentContainerStyle} {...rest}>
       {!!leftIcon && (
         <TouchableOpacity>
-          <Text>LeftIcon-TODO</Text>
+          <Icon name={leftIcon} height={size.lg} width={size.lg} />
         </TouchableOpacity>
       )}
       <NativeInput
@@ -75,11 +71,12 @@ export const TextInput: FC<TTextInputProps> = ({
         onChangeText={e => onTextChange(e)}
         value={text}
         maxLength={max}
+        // keyboardType={'numeric'}
       />
 
       {!!rightIcon && (
         <TouchableOpacity>
-          <Text>RightIcon-TODO</Text>
+          <Icon name={rightIcon} height={size.lg} width={size.lg} />
         </TouchableOpacity>
       )}
     </TouchableOpacity>
