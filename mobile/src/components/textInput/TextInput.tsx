@@ -1,4 +1,4 @@
-import React, {FC, useState, useLayoutEffect} from 'react';
+import React, {FC, useState, useLayoutEffect, useRef} from 'react';
 import {
   TextInput as NativeInput,
   Text,
@@ -22,6 +22,7 @@ export const TextInput: FC<TTextInputProps> = ({
   const [isActive, setIsActive] = useState(Boolean);
   const [text, setText] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(Boolean);
+  const textInputRef = useRef(null);
   let max = type === 'phone' ? 17 : 30;
   let currentContainerStyle = isActive
     ? style.containerFocus
@@ -46,6 +47,9 @@ export const TextInput: FC<TTextInputProps> = ({
   const whenPressOut = () => {
     setSecureTextEntry(true);
   };
+  const onPress = () => {
+    textInputRef.current.focus();
+  };
 
   switch (type) {
     case 'phone':
@@ -66,7 +70,7 @@ export const TextInput: FC<TTextInputProps> = ({
   }, []);
 
   return (
-    <TouchableOpacity style={currentContainerStyle} {...rest}>
+    <TouchableOpacity style={currentContainerStyle} {...rest} onPress={onPress}>
       {!!leftIcon && (
         <TouchableOpacity>
           <Icon name={leftIcon} height={size.lg} width={size.lg} />
@@ -78,14 +82,15 @@ export const TextInput: FC<TTextInputProps> = ({
         secureTextEntry={secureTextEntry}
         onFocus={whenFocused}
         onBlur={whenBlurred}
-        onChangeText={e => onTextChange(e)}
+        onChangeText={onTextChange}
         value={text}
         maxLength={max}
+        ref={textInputRef}
       />
 
       {!!rightIcon && (
         <TouchableOpacity onPressIn={whenPressIn} onPressOut={whenPressOut}>
-          <Icon name={rightIcon} height={size.lg} width={size.lg} />
+          <Icon name={rightIcon} height={size.rg} width={size.rg} />
         </TouchableOpacity>
       )}
     </TouchableOpacity>

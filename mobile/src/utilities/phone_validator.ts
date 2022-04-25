@@ -1,6 +1,5 @@
 export const phone_validator = (input: string) => {
   const cleaned = input.replace(/\D/g, '');
-  console.log(cleaned);
   const match = cleaned.match(/^(\d)?(\d{3})(\d{3})(\d{4})$/);
   if (match) {
     var intlCode = match[1] ? `+${match[1]} ` : '';
