@@ -10,16 +10,8 @@ const App = () => {
       <Text>{message}</Text>
       <TextInput type="regular" placeholder="Your email or phone" />
       <TextInput type="password" rightIcon="Eye" placeholder="Password" />
-      <TextInput
-        type="search"
-        leftIcon="Magnify"
-        placeholder="Find for food or restaurant"
-      />
-      <TextInput
-        type="phone"
-        leftIcon="FlagUSA"
-        placeholder="(+ ) (___)___-____"
-      />
+      <TextInput type="search" leftIcon="Magnify" />
+      <TextInput type="phone" leftIcon="FlagUSA" />
       <Icon name="Heart" height={100} width={100} fill="orange" />
       <Icon name="Bullet" height={10} width={10} fill="green" />
     </>
