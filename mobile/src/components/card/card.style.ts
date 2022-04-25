@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
   details: {
     fontSize: size.md,
     marginBottom: size.xs,
+    marginRight: size.md,
   },
   itemTags: {
     color: color.grayMid,
