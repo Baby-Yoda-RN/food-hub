@@ -11,7 +11,6 @@ export const Button: FC<TButtonProps> = ({
   onPress, 
   buttonStyle,
   titleStyle,
-  buttonSize = 'regular',
   buttonTheme = color.primary,
   buttonOutline = false,
   buttonOutlineColor = 'white',
@@ -27,31 +26,7 @@ export const Button: FC<TButtonProps> = ({
   let buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
   let currentButtonOutline = buttonOutline ? 1 : 0;
 
-  let currentButtonHeight: number = size.rg, currentButtonWidth: number = size.rg;
-  switch(buttonSize){
-    case 'extra small':
-      currentButtonHeight = 38;
-      currentButtonWidth = 38;
-      break;
-    case 'small': 
-      currentButtonHeight = 32;
-      currentButtonWidth = 55;
-      break;
-    case 'regular': 
-      currentButtonHeight = 54;
-      currentButtonWidth = 140;
-      break;
-    case 'large': 
-      currentButtonHeight = 60;
-      currentButtonWidth = 248;
-      break;
-    case 'extra large': 
-      currentButtonHeight = 54;
-      currentButtonWidth = 315;
-      break;
-  }
-  
-  
+
 
   return (
     
@@ -62,8 +37,6 @@ export const Button: FC<TButtonProps> = ({
         buttonClickableStyle,
         {
           backgroundColor: buttonTheme, 
-          width: currentButtonWidth, 
-          height: currentButtonHeight,
           borderWidth: currentButtonOutline,
           borderColor: buttonOutlineColor
         }

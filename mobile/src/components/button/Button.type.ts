@@ -6,7 +6,6 @@ export type TButtonProps = {
     onPress?: Function;
     buttonStyle?: StyleProp<ViewStyle>;
     titleStyle?: StyleProp<ViewStyle>;
-    buttonSize?: string;
     buttonTheme?: string;
     buttonOutline?: boolean;
     buttonOutlineColor?: string;
