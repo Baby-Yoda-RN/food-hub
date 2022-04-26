@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from '../button/Button';
-import {size} from '../../theme';
+import {color, size} from '../../theme';
 import {styles} from './Footer.style';
 
 export const Footer = () => {
   const footerNote = 'Already have an account?';
   const wideSpaces = '                         ';
   const shortSpaces = '     ';
+  const emailOrPhone = 'Start with email or phone';
 
   const lineThrough = (
     <Text style={{textDecorationLine: 'line-through'}}>{wideSpaces}</Text>
@@ -19,7 +20,7 @@ export const Footer = () => {
         {shortSpaces}sign in with{shortSpaces}
         {lineThrough}
       </Text>
-      <View style={{flexDirection: 'row'}}>
+      <View style={styles.topButtons}>
         <Button
           title="FACEBOOK"
           buttonOutlineColor="black"
@@ -27,6 +28,8 @@ export const Footer = () => {
           leftIconName="Facebook"
           iconWidth={20}
           iconHeight={size.lg}
+          buttonTheme={color.white}
+          titleStyle={{color: color.primary}}
         />
         <Button
           title="GOOGLE"
@@ -35,14 +38,16 @@ export const Footer = () => {
           leftIconName="Google"
           iconWidth={20}
           iconHeight={size.lg}
+          buttonTheme={color.white}
+          titleStyle={{color: color.primary}}
         />
       </View>
-      <View style={{backgroundColor: 'red'}}>
-        <Button title="Start with email or phone" />
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <Text>{footerNote} </Text>
-        <Text style={{textDecorationLine: 'underline'}}>Sign in</Text>
+      <TouchableOpacity style={styles.bottomButtons}>
+        <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>
+      </TouchableOpacity>
+      <View style={styles.bottomText}>
+        <Text style={styles.text}>{footerNote} </Text>
+        <Text style={styles.linkText}>Sign in</Text>
       </View>
     </View>
   );

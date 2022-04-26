@@ -3,7 +3,7 @@ import {View, Text, ImageBackground} from 'react-native';
 import {Button} from '../../components';
 import {Footer} from '../../components/footer/Footer';
 import {style} from '../../components/textInput/TextInput.style';
-import {size} from '../../theme';
+import {color, size} from '../../theme';
 import {styles} from './WelcomeScreen.style';
 
 export const WelcomeScreen = () => {
@@ -23,10 +23,14 @@ fast at your door.`;
         resizeMode="cover"
         style={styles.imageBackground}>
         <View style={styles.container}>
-          <View>
-            <View style={styles.header}>
-              <Button title="skip" />
-            </View>
+          <View style={styles.header}>
+            <Button
+              title="skip"
+              buttonTheme={color.white}
+              titleStyle={{color: color.primary}}
+            />
+          </View>
+          <View style={styles.topSection}>
             <Text style={styles.title1}>
               Welcome to <Text style={styles.title2}>{title}</Text>
             </Text>

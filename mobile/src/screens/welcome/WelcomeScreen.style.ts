@@ -8,9 +8,6 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     margin: size.m,
   },
-  header: {
-    alignItems: 'flex-end',
-  },
   title1: {
     fontSize: size.lg,
     fontWeight: 'bold',
@@ -27,6 +24,13 @@ export const styles = StyleSheet.create({
   },
   imageBackground: {
     flex: 1,
+  },
+  header: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  topSection: {
+    flex: 4,
   },
   footer: {
     flex: 3,
