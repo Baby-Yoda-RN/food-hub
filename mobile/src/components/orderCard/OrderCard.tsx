@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, Image} from 'react-native';
-import {color, size} from '../../theme';
+import {color} from '../../theme';
 import {Button} from '../button/Button';
 import {styles} from './OrderCard.styles';
 import {TOrderCard} from './OrderCard.type';
@@ -13,7 +13,7 @@ export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightB
         <View style={[styles.imageContainer, styles.shadow]}>
           <Image source={{uri: order.restaurantImage}} style={styles.image} />
         </View>
-        <View style={{width: '50%', justifyContent: 'space-evenly'}}>
+        <View style={styles.orderInfoContainer}>
           <View style={styles.rowDirection}>
             {delivered && (
               <Text style={styles.grayText}>{order.date + ' • '}</Text>
@@ -21,11 +21,11 @@ export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightB
             <Text style={styles.grayText}>{order.items.length + ' Items'}</Text>
           </View>
           <Text
-            style={{color: color.black, fontWeight: '600', fontSize: size.m}}>
+            style={styles.restaurantText}>
             {order.restaurantName}
           </Text>
           {delivered && (
-            <Text style={{color: color.success, fontSize: size.m}}>
+            <Text style={styles.orderStatusText}>
               {'• ' + order.status}
             </Text>
           )}
@@ -39,19 +39,19 @@ export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightB
       {!delivered && (
         <View style={styles.rowContainer}>
           <View>
-            <Text style={{color: color.grayMid}}>
+            <Text style={styles.subtitle}>
               Estimated Arrival
             </Text>
-            <Text style={{color: color.black, fontSize: size.lg, fontWeight: '600'}}>
+            <Text style={styles.estimatedTimeText}>
               {order.estimatedTime}
             </Text>
           </View>
           <View>
             <Text
-              style={{textAlign: 'right', color: color.grayMid}}>
+              style={styles.subtitle}>
               Now
             </Text>
-            <Text style={{color: color.black, fontSize: 14}}>
+            <Text style={styles.orderStatus2}>
               {order.status}
             </Text>
           </View>

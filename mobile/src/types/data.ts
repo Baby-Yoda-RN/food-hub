@@ -11,7 +11,7 @@ export interface Restaurant {
   items?: string[];
 }
 
-export interface IOrder {
+export type IOrder = {
   uuid?:string
   restaurantName:string
   date:string //dev
