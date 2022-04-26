@@ -26,7 +26,7 @@ export const Footer = () => {
           buttonOutlineColor="black"
           buttonWidth={120}
           leftIconName="Facebook"
-          iconWidth={20}
+          iconWidth={size.m + size.s}
           iconHeight={size.lg}
           buttonTheme={color.white}
           titleStyle={{color: color.primary}}
@@ -36,7 +36,7 @@ export const Footer = () => {
           buttonOutlineColor="black"
           buttonWidth={120}
           leftIconName="Google"
-          iconWidth={20}
+          iconWidth={size.m + size.s}
           iconHeight={size.lg}
           buttonTheme={color.white}
           titleStyle={{color: color.primary}}
