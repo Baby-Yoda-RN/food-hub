@@ -8,7 +8,9 @@ export const CategoryRadio:FC<TCategoryRadioProps> = ({
     title = 'Burgers',
 }) =>{
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+            style={styles.container}
+        >
             <Image
                 source={{ 
                     uri: image
