@@ -1,3 +1,4 @@
+
 export const color = {
   primary: '#FE724C',
   white: '#FFFFFF',
@@ -9,4 +10,5 @@ export const color = {
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
   red: '#FE724C',
+
 };
