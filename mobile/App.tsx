@@ -3,9 +3,6 @@ import {Text} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
 import { Button } from './src/components';
-import { color, size } from './src/theme';
-import {styles} from './src/components/button/Button.styles';
-import { style } from './src/components/textInput/TextInput.style';
 
 const App = () => {
   const message: string = 'Testing Text';
@@ -15,6 +12,7 @@ const App = () => {
     < Button 
         title="GOOGLE"
         buttonOutlineColor='black'
+        buttonWidth= {120}
         leftIconName="Google"
         iconWidth = {20}
         iconHeight = {20}

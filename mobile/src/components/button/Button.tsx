@@ -3,17 +3,18 @@ import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './Button.styles';
 import {TButtonProps} from './Button.type';
 import {Icon} from '../icon/Icon';
-import {color} from '../../theme';
+import {color,size} from '../../theme';
 
 export const Button: FC<TButtonProps> = ({
   title  = 'Button',
   isDisabled = false,
-  onPress, 
-  buttonStyle,
+  containerStyle,
   titleStyle,
+  buttonHeight = size.rg,
+  buttonWidth = size.lg,
   buttonTheme = color.primary,
   buttonOutline = false,
-  buttonOutlineColor = 'white',
+  buttonOutlineColor = color.white,
   leftIconName,
   rightIconName,
   leftIconStyle,
@@ -23,24 +24,25 @@ export const Button: FC<TButtonProps> = ({
   ...rest
 }) => {
   
-  let buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
-  let currentButtonOutline = buttonOutline ? 1 : 0;
+  const buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
+  const currentButtonOutline = buttonOutline ? 1 : 0;
 
   return (
     
     <TouchableOpacity 
       style={[
         styles.container, 
-        buttonStyle, 
+        containerStyle, 
         buttonClickableStyle,
         {
           backgroundColor: buttonTheme, 
           borderWidth: currentButtonOutline,
-          borderColor: buttonOutlineColor
+          borderColor: buttonOutlineColor,
+          height: buttonHeight,
+          width: buttonWidth,
         }
       ]}
       disabled={isDisabled}
-      onPress={() => onPress?.()}
       {...rest}>
       {leftIconName && <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconWidth} height={iconHeight}/>}
       <Text style={[styles.title, titleStyle]}>{title}</Text>

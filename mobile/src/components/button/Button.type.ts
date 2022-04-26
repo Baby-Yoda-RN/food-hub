@@ -1,11 +1,12 @@
-import  {StyleProp, ViewStyle} from 'react-native';
+import  {GestureResponderEvent, StyleProp, ViewStyle} from 'react-native';
 
 export type TButtonProps = {
     title?: string;
     isDisabled?: boolean;
-    onPress?: Function;
-    buttonStyle?: StyleProp<ViewStyle>;
+    containerStyle?: StyleProp<ViewStyle>;
     titleStyle?: StyleProp<ViewStyle>;
+    buttonHeight?: number;
+    buttonWidth?: number;
     buttonTheme?: string;
     buttonOutline?: boolean;
     buttonOutlineColor?: string;
