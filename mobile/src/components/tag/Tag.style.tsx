@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    margin: 20,
   },
   priceText: {
     fontSize: size.rg,
