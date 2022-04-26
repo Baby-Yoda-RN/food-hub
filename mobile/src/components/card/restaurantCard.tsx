@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import {Restaurant} from '../../types/data';
 import {Card} from './card';
-import {TCardProps} from './card.type';
 import {Text, View, ScrollView} from 'react-native';
 import {styles} from './card.style';
 import {Icon} from '../icon/Icon';
@@ -20,6 +19,8 @@ export const RestaurantCard = (restaurant?: Restaurant) => {
       'https://www.tasteofhome.com/wp-content/uploads/2021/03/mcdonalds-1200x630-GettyImages-1285446341.jpg',
   };
 
+  restaurant = restaurantDummy;
+
   const {
     name,
     rating,
@@ -29,7 +30,7 @@ export const RestaurantCard = (restaurant?: Restaurant) => {
     deliveryTime,
     items,
     imageName,
-  } = restaurantDummy;
+  } = restaurant;
 
   const render = () => (
     <View>

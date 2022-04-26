@@ -16,8 +16,10 @@ export const FoodCard = (foodItem: FoodItem) => {
       'https://www.cookingclassy.com/wp-content/uploads/2015/03/hawaiian-bbq-chicken-pizza6-srgb..jpg',
   };
 
+  foodItem = foodItemDummy;
+
   const {name, description, rating, usersVoted, price, favorite, imageName} =
-    foodItemDummy;
+    foodItem;
 
   const render = () => <Text style={styles.details}>{description}</Text>;
 
