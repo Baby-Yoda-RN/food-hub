@@ -4,7 +4,7 @@ import { size, color } from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     padding: size.rg,
-    height: '100%',
+    flex: 1,
   },
   image: {
     borderRadius: size.xl,

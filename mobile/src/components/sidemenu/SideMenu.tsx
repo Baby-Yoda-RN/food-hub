@@ -6,9 +6,9 @@ import {TSideMenuProps} from './SideMenu.type';
 import {size} from '../../theme';
 
 export const SideMenu: FC<TSideMenuProps> = ({
-  photo = 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-  name = 'First Last',
-  email = 'first.last@gmail.com',
+  photo,
+  name,
+  email,
   pressOrder,
   pressProfile,
   pressDelivery,
@@ -17,9 +17,10 @@ export const SideMenu: FC<TSideMenuProps> = ({
   pressSetting,
   pressHelp,
   pressLogout,
+  ...rest
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} {...rest}>
       <Image
         style={styles.image}
         source={{
