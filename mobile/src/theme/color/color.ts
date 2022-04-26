@@ -1,5 +1,6 @@
+import {Color} from './color.type';
 
-export const color = {
+export const color: Color = {
   primary: '#FE724C',
   white: '#FFFFFF',
   black: '#000000',
@@ -10,5 +11,4 @@ export const color = {
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
   red: '#FE724C',
-
 };

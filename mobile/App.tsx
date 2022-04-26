@@ -6,6 +6,7 @@ import {Button} from './src/components';
 import {ToggleButton} from './src/components';
 import SplashScreen from 'react-native-splash-screen';
 import {color} from './src/theme';
+import {Tag} from './src/components/tag/Tag';
 
 const App = () => {
   const message: string = 'Testing Text';
@@ -38,6 +39,7 @@ const App = () => {
         buttonTheme={color.primary}
         switchData={false}
       />
+      <Tag isPrice={false} />
     </>
   );
 };

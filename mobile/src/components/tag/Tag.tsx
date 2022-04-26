@@ -5,28 +5,39 @@ import {Icon} from '../icon/Icon';
 import {styles} from './Tag.style';
 import {TTagProps} from './Tag.type';
 
-export const Tag: FC<TTagProps> = ({rating, price = 10.95, usersVoted}) => {
+export const Tag: FC<TTagProps> = ({
+  rating = 4.5,
+  price = 10.95,
+  usersVoted = 30,
+  isPrice,
+  limit = 25,
+}) => {
   const renderPrice = () => (
-    <View>
-      {/* <Icon name='ChevronRightOrange' height={size.} /> */}
-      <Text>{price}</Text>
-    </View>
+    <>
+      <Text style={styles.dollarSign}>$</Text>
+      <Text style={styles.priceText}>{price}</Text>
+    </>
   );
 
-  const render = () => null;
-
-  return (
-    <View style={styles.container}>
-      {renderPrice()}
-      {/* <Text>4.5</Text>
-      <Icon
-        name="Star"
-        height={12}
-        width={12}
-        containerStyle={{
-          paddingVertical: 4,
-        }}
-      /> */}
-    </View>
+  const renderRating = () => (
+    <>
+      <Text style={styles.ratingText}>{rating}</Text>
+      <Icon name="Star" height={size.md} width={size.md} />
+      {usersVoted >= limit ? (
+        <Text style={styles.votesText}>{`(${limit}+)`}</Text>
+      ) : (
+        <Text style={styles.votesText}>{`(${usersVoted})`}</Text>
+      )}
+    </>
   );
+
+  const render = () => {
+    if (isPrice) {
+      return renderPrice();
+    } else {
+      return renderRating();
+    }
+  };
+
+  return <View style={styles.container}>{render()}</View>;
 };
