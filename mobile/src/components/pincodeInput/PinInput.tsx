@@ -56,6 +56,14 @@ export const PinInput: FC<TPinEntryProps> = ({
             });
           }}
           onBlur={() => onRefChange(-1)}
+          onKeyPress={({nativeEvent}) => {
+            if (nativeEvent.key === 'Backspace') {
+              if (current === 0) {
+              } else {
+                refTextBox[current - 1].current.focus();
+              }
+            }
+          }}
           onSubmitEditing={() =>
             next === digitCount
               ? refTextBox[current].current.blur()
