@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {Image, Text, TouchableOpacity} from 'react-native';
-import { styles } from './CategoryRadio.styles';
+import { color, size } from '../../theme';
+import { Button } from '../button/Button';
 import { TCategoryRadioProps } from './CategoryRadio.type';
 
 export const CategoryRadio:FC<TCategoryRadioProps> = ({
@@ -8,8 +9,9 @@ export const CategoryRadio:FC<TCategoryRadioProps> = ({
     title = 'Burgers',
 }) =>{
     return (
-        <TouchableOpacity 
-            style={styles.container}
+        <Button
+            buttonWidth={size.sm}
+            buttonHeight={size.rg}
         >
             <Image
                 source={{ 
@@ -19,6 +21,6 @@ export const CategoryRadio:FC<TCategoryRadioProps> = ({
             <Text>
                 {title}
             </Text>
-        </TouchableOpacity>
+        </Button>
     )
 }
