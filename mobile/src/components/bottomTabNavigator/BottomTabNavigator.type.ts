@@ -1,4 +1,4 @@
-export type BottomTabNavigatorProps = {
+export type TBottomTabNavigator = {
   state?:string,
   icons?: string[],
   navigation?:[],
