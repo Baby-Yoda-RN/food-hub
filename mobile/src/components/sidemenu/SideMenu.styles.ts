@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: size.rg,
   },
   button: {
-    backgroundColor: color.textOrange,
+    backgroundColor: color.primary,
     borderRadius: size.xl,
     alignItems: 'center',
     alignSelf: 'flex-start',
