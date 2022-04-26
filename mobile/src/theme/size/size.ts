@@ -1,8 +1,8 @@
 export const size = {
-  xxs: 2,
-  xs: 4,
+  xs: 2,
+  s: 4,
   sm: 8,
-  rg: 16,
-  lg: 32,
-  xl: 64,
+  m: 16,
+  rg: 32,
+  lg: 64,
 };
