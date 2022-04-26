@@ -21,11 +21,8 @@ const App = () => {
       image = {'https://www.positronx.io/wp-content/uploads/2020/02/react-native-150x150-1.jpg'}
       price = "$12.00"
       itemQuantity= {2}
-      leftIconName ='Minus' 
-      rightIconName = 'Plus'
-      topRightIconName = 'Cross'
-      iconWidth={25} 
-      iconHeight = {25}
+      iconSize={25} 
+
       />
     </>
   );

@@ -4,14 +4,14 @@ import {size, color} from '../../theme';
 export const styles = StyleSheet.create({
   Container: {
     backgroundColor: color.white,
-    borderRadius: 8, 
+    borderRadius: size.rg, 
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: size.rg,
     paddingVertical: size.sm,
     alignItems: 'center',
   },
   TextContainer: {
+    paddingHorizontal: 27,
     flex: 1,
   },
   IconContainer: {
@@ -26,29 +26,32 @@ export const styles = StyleSheet.create({
 
   Title: {
     fontFamily: 'Sofia Pro',
-    fontSize: size.rg,
+    fontSize: 18,
+    fontWeight: 'bold',
     color: color.black,
-    paddingHorizontal: size.rg,
+
   },
 
   SubTitle: {
     fontFamily: 'Sofia Pro',
+    fontSize: 14,
     color: color.grayMid,
-    paddingHorizontal: size.rg,
+
   },
 
   ItemQuantity: {
     fontFamily: 'Sofia Pro',
     fontSize: size.rg,
+    fontWeight: 'bold',
     color: color.black,
     paddingVertical: 6,
+    marginHorizontal: size.sm,
   },
 
   Price:{
     fontFamily: 'Sofia Pro',
     fontSize: size.rg,
     color: color.primary,
-    paddingHorizontal: size.rg,
     paddingTop:size.xs,
   },
   
