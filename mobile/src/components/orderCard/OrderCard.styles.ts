@@ -6,9 +6,6 @@ export const styles = StyleSheet.create({
     backgroundColor: color.white,
     borderRadius:size.sm,
     padding: 18,
-    top: 20, //dev
-    marginHorizontal: 20, //dev
-    height:240 //dev
   },
   imageContainer:{
     backgroundColor:color.white,
@@ -28,6 +25,34 @@ export const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 6.27,
-    elevation: 10,
+    elevation: 15,
   },
+  rowContainer:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    paddingVertical:size.sm,
+  },
+  orderId:{
+    color: color.primary,
+    fontSize: 16
+  },
+  grayText:{
+    color:color.grayMid
+  },
+  button:{
+    paddingVertical:size.m,
+    minWidth:'45%',
+  },
+  rowDirection:{
+    flexDirection:'row'
+  },
+  blackText:{
+    color:color.black
+  },
+  whiteText:{
+    color:color.white
+  },
+  primaryText:{
+    color:color.primary
+  }
 });

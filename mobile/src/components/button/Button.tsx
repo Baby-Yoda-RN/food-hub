@@ -38,8 +38,8 @@ export const Button: FC<TButtonProps> = ({
           backgroundColor: buttonTheme, 
           borderWidth: currentButtonOutline,
           borderColor: buttonOutlineColor,
-          height: buttonHeight,
-          width: buttonWidth,
+          // height: buttonHeight,
+          // width: buttonWidth,
         }
       ]}
       disabled={isDisabled}

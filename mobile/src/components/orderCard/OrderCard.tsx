@@ -1,101 +1,79 @@
-import React, {CSSProperties, FC} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import React, {FC} from 'react';
+import {View, Text, Image} from 'react-native';
 import {color, size} from '../../theme';
+import {Button} from '../button/Button';
 import {styles} from './OrderCard.styles';
-import {OrderCardProps} from './OrderCard.type';
+import {TOrderCard} from './OrderCard.type';
 
-const logo =
-  'https://logodownload.org/wp-content/uploads/2017/10/Starbucks-logo.png';
-
-const Button: FC<{title: string; outlined?: boolean}> = ({title, outlined}) => {
-  let newStyles: StyleProp<ViewStyle> = {};
-
-  if (outlined) {
-    newStyles = {
-      backgroundColor: color.white,
-      borderColor: color.primary,
-      borderWidth: 1,
-    };
-  }
-
-  return (
-    <TouchableOpacity
-      style={[
-        {
-          backgroundColor: color.primary,
-          paddingHorizontal: 16,
-          paddingVertical:12,
-          borderRadius: 25,
-          justifyContent: 'center',
-          alignItems: 'center',
-          width:'45%'
-        },
-        newStyles,
-      ]}>
-      <Text style={{color: outlined ? color.primary : color.white}}>
-        {title}
-      </Text>
-    </TouchableOpacity>
-  );
-};
-
-export const OrderCard: FC<OrderCardProps> = () => {
+export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightButton}) => {
+  const {delivered} = order;
   return (
     <View style={[styles.container, styles.shadow]}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
+      <View style={styles.rowContainer}>
         <View style={[styles.imageContainer, styles.shadow]}>
-          <Image source={{uri: logo}} style={styles.image} />
+          <Image source={{uri: order.restaurantImage}} style={styles.image} />
         </View>
         <View style={{width: '50%', justifyContent: 'space-evenly'}}>
-          <Text style={{color: color.grayMid, fontSize: 12}}>3 Items</Text>
+          <View style={styles.rowDirection}>
+            {delivered && (
+              <Text style={styles.grayText}>{order.date + ' • '}</Text>
+            )}
+            <Text style={styles.grayText}>{order.items.length + ' Items'}</Text>
+          </View>
           <Text
-            style={{color: color.black, fontWeight: '600', fontSize: size.rg}}>
-            Starbuck
+            style={{color: color.black, fontWeight: '600', fontSize: size.m}}>
+            {order.restaurantName}
           </Text>
+          {delivered && (
+            <Text style={{color: color.success, fontSize: size.m}}>
+              {'• ' + order.status}
+            </Text>
+          )}
         </View>
         <View>
-          <Text style={{color: color.primary, fontSize: 16}}>#264100</Text>
-        </View>
-      </View>
-      <View
-        style={{
-          marginVertical: 10,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
-        <View>
-          <Text style={{color: color.grayMid, fontSize: 12}}>
-            Estimated Arrival
-          </Text>
-          <Text style={{color: color.black, fontSize: 36, fontWeight: '600'}}>
-            25 min
-          </Text>
-        </View>
-        <View>
-          <Text
-            style={{textAlign: 'right', color: color.grayMid, fontSize: 12}}>
-            Now
-          </Text>
-          <Text style={{fontWeight: '400', color: color.black, fontSize: 14}}>
-            Food on the way
+          <Text style={styles.orderId}>
+            {delivered ? order.total : '#' + order.uuid}
           </Text>
         </View>
       </View>
-      <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-        <Button title="Cancel" outlined />
-        <View style={{width:'5%'}}/>
-        <Button title="Track Order" />
+      {!delivered && (
+        <View style={styles.rowContainer}>
+          <View>
+            <Text style={{color: color.grayMid}}>
+              Estimated Arrival
+            </Text>
+            <Text style={{color: color.black, fontSize: size.lg, fontWeight: '600'}}>
+              {order.estimatedTime}
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={{textAlign: 'right', color: color.grayMid}}>
+              Now
+            </Text>
+            <Text style={{color: color.black, fontSize: 14}}>
+              {order.status}
+            </Text>
+          </View>
+        </View>
+      )}
+      <View style={styles.rowContainer}>
+        <Button
+          title={delivered?'Rate':'Cancel'}
+          containerStyle={[styles.button,styles.shadow]}
+          titleStyle={styles.primaryText}
+          buttonOutline
+          buttonOutlineColor={color.primary}
+          buttonTheme={color.white}
+          onPress={handleLeftButton}
+        />
+        <View style={{width: '5%'}} />
+        <Button
+          title={delivered?'Re-Order':"Track Order"}
+          containerStyle={[styles.button,styles.shadow]}
+          titleStyle={styles.whiteText}
+          onPress={handleRightButton}
+        />
       </View>
     </View>
   );

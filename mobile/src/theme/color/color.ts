@@ -9,4 +9,5 @@ export const color = {
   textOrange: '#C4C4C4',
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
+  success:'#4EE476',
 };
