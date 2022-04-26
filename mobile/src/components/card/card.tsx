@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Text, View, Image} from 'react-native';
-import {styles} from './Card.style';
-import {TCardProps} from './Card.type';
+import {styles} from './card.style';
+import {TCardProps} from './card.type';
 
 export const Card: FC<TCardProps> = ({
   image,

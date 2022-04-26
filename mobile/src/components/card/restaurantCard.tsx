@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {Restaurant} from '../../types/data';
-import {Card} from './Card';
+import {Card} from './card';
 import {Text, View, ScrollView} from 'react-native';
-import {styles} from './Card.style';
+import {styles} from './card.style';
 import {Icon} from '../icon/Icon';
 import {size} from '../../theme';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {FoodItem} from '../../types/data';
-import {Card} from './Card';
-import {styles} from './Card.style';
+import {Card} from './card';
+import {styles} from './card.style';
 
 export const FoodCard = (foodItem: FoodItem) => {
   const foodItemDummy: FoodItem = {
