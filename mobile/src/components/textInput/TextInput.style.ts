@@ -9,26 +9,26 @@ type Styles = {
 
 export const style = StyleSheet.create({
   containerFocus: {
-    borderWidth: size.xxs,
+    borderWidth: size.xs,
     borderColor: color.primary,
     borderRadius: size.sm,
-    height: size.xl,
+    height: size.lg,
     backgroundColor: color.textRegularBG,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: size.rg,
+    paddingHorizontal: size.m,
   },
   containerBlur: {
-    borderWidth: size.xxs,
+    borderWidth: size.xs,
     borderColor: color.grayLow,
     borderRadius: size.sm,
-    height: size.xl,
+    height: size.lg,
     backgroundColor: color.textRegularBG,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: size.rg,
+    paddingHorizontal: size.m,
   },
-  textInput: {fontSize: size.rg},
+  textInput: {fontSize: size.m},
 });

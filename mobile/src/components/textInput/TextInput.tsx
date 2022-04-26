@@ -19,9 +19,9 @@ export const TextInput: FC<TTextInputProps> = ({
   type,
   ...rest
 }) => {
-  const [isActive, setIsActive] = useState(Boolean);
+  const [isActive, setIsActive] = useState(false);
   const [text, setText] = useState('');
-  const [secureTextEntry, setSecureTextEntry] = useState(Boolean);
+  const [secureTextEntry, setSecureTextEntry] = useState(false);
   const textInputRef = useRef(null);
   let max = type === 'phone' ? 17 : 30;
   let currentContainerStyle = isActive
@@ -73,7 +73,7 @@ export const TextInput: FC<TTextInputProps> = ({
     <TouchableOpacity style={currentContainerStyle} {...rest} onPress={onPress}>
       {!!leftIcon && (
         <TouchableOpacity>
-          <Icon name={leftIcon} height={size.lg} width={size.lg} />
+          <Icon name={leftIcon} height={size.rg} width={size.rg} />
         </TouchableOpacity>
       )}
       <NativeInput
@@ -90,7 +90,7 @@ export const TextInput: FC<TTextInputProps> = ({
 
       {!!rightIcon && (
         <TouchableOpacity onPressIn={whenPressIn} onPressOut={whenPressOut}>
-          <Icon name={rightIcon} height={size.rg} width={size.rg} />
+          <Icon name={rightIcon} height={size.m} width={size.m} />
         </TouchableOpacity>
       )}
     </TouchableOpacity>
