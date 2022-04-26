@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { TToggleButtonProps } from './ToggleButton.type';
-import { styles } from './toggleButton.styles';
+import { styles } from './ToggleButton.styles';
 import { color, size } from '../../theme';
 
 export const ToggleButton: FC<TToggleButtonProps> = ({
