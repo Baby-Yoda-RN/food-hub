@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
-import {Tag} from './src/components/tag/tag';
+import {Tag} from './src/components/tag/Tag';
 
 const App = () => {
   const message: string = 'Testing Text';
