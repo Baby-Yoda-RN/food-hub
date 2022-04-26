@@ -1,4 +1,4 @@
-export interface Restaurant {
+export type TRestaurant = {
   uuid?: string;
   name?: string;
   rating?: number;
@@ -9,9 +9,9 @@ export interface Restaurant {
   foodItems?: string;
   imageName?: string;
   items?: string[];
-}
+};
 
-export interface FoodItem {
+export type TFoodItem = {
   uuid?: string;
   name?: string;
   description?: string;
@@ -20,4 +20,4 @@ export interface FoodItem {
   price?: number;
   favorite?: boolean;
   imageName?: string;
-}
+};

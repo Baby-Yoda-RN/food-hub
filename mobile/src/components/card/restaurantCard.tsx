@@ -1,13 +1,13 @@
 import React from 'react';
-import {Restaurant} from '../../types/data';
+import {TRestaurant} from '../../types/data';
 import {Card} from './card';
 import {Text, View, ScrollView} from 'react-native';
 import {styles} from './card.style';
 import {Icon} from '../icon/Icon';
 import {size} from '../../theme';
 
-export const RestaurantCard = (restaurant?: Restaurant) => {
-  const restaurantDummy: Restaurant = {
+export const RestaurantCard = (restaurant?: TRestaurant) => {
+  const restaurantDummy: TRestaurant = {
     name: "McDonald's",
     rating: 4,
     usersVoted: 25,
