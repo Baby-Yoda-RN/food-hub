@@ -1,3 +1,3 @@
-export * from './card/card';
+export * from './card/Card';
 export * from './icon/Icon';
 export * from './textInput/TextInput';
