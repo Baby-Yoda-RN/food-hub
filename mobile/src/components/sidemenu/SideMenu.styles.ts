@@ -44,16 +44,13 @@ export const styles = StyleSheet.create({
     borderRadius: size.xl,
     height: size.lg,
     width: size.lg,
-    marginLeft: size.sm,
   },
   buttonText: {
     color: color.white,
     fontWeight: 'bold',
-    marginRight: size.sm,
   },
   buttonIconContainer: {
     backgroundColor: 'white',
     borderRadius: size.xl,
-    margin: size.sm,
   },
 });
