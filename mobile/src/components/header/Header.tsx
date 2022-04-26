@@ -1,106 +1,71 @@
-import * as React from "react";
-import { 
-  SafeAreaView, 
-  View, 
-  Text, 
-  TouchableOpacity } from "react-native";
+import React, {FC} from 'react';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 import {Icon} from '../icon/Icon';
-import styles, {
-  _container,
-  _innerContainer,
-} from "./Header.style";
+import {styles} from './Header.style';
 
 interface IProps {
-  title: string;
-  leftComponent: any;
-  rightComponent: any;
-  titleComponent: any;
-  containerStyle: any;
-  width: number | string;
-  height: number | string;
-  backgroundColor: string;
-  leftComponentStyle: any;
-  statusBarHidden: boolean;
-  rightComponentStyle: any;
-  leftComponentDisable: boolean;
-  rightComponentDisable: boolean;
-  leftComponentOnPress: () => void;
-  rightComponentOnPress: () => void;
-  leftIconName: any;
-  rightIconName: any;
-  leftIconStyle: any;
-  rightIconStyle: any;
-  iconWidth: number;
-  iconHeight: number;
+  title?: string;
+  containerStyle?: ViewStyle;
+  leftPress?: () => void;
+  rightPress?: () => void;
+  leftIconName?: string;
+  rightIconLocation?: string;
+  leftIconStyle?: ViewStyle;
+  rightIconStyle?: ViewStyle;
+  iconWidth?: number;
+  iconHeight?: number;
+  location?: string;
 }
 
-const Header = (props: IProps) => {
+export const Header: FC<IProps> = props => {
   const {
-    width,
     title,
-    height,
-    leftComponent,
-    rightComponent,
     containerStyle,
-    titleComponent,
-    backgroundColor,
-    statusBarHidden,
-    leftComponentStyle,
-    rightComponentStyle,
-    leftComponentDisable,
-    leftComponentOnPress,
-    rightComponentDisable,
-    rightComponentOnPress,
+    leftPress,
+    rightPress,
     leftIconName,
-    rightIconName,
+    rightIconLocation,
     leftIconStyle,
-    rightIconStyle,
     iconWidth,
     iconHeight,
+    location,
   } = props;
-
-  const renderLeftIconComp = () =>
-    !leftComponentDisable &&
-    (leftComponent || (
-      <TouchableOpacity
-        onPress={leftComponentOnPress}
-        style={[styles.leftComponentStyle, leftComponentStyle]}
-      >
-      <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconWidth} height={iconHeight}/>
-      </TouchableOpacity>
-    ));
-
-  const renderRightIconComp = () =>
-    !rightComponentDisable &&
-    (rightComponent || (
-      <TouchableOpacity
-        onPress={rightComponentOnPress}
-        style={[styles.rightComponentStyle, rightComponentStyle]}
-      >
-        <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconWidth} height={iconHeight}/>
-      </TouchableOpacity>
-    ));
-
-  const renderTitleComp = () =>
-    titleComponent || <Text style={styles.titleTextStyle}>{title}</Text>;
 
   return (
     <SafeAreaView>
-      <View
-        style={[
-          _container(height, width, backgroundColor, statusBarHidden),
-          containerStyle,
-        ]}
-      >
-        <View style={_innerContainer(statusBarHidden)}>
-          {renderLeftIconComp()}
-          {renderTitleComp()}
-          {renderRightIconComp()}
-        </View>
+      <View style={[styles.container, containerStyle]}>
+        {leftIconName && (
+          <TouchableOpacity
+            onPress={leftPress}
+            style={[styles.leftComponentStyle]}>
+            <Icon
+              name={leftIconName}
+              containerStyle={[styles.leftIcon, leftIconStyle]}
+              width={iconWidth}
+              height={iconHeight}
+            />
+          </TouchableOpacity>
+        )}
+        <View style={[styles.textContainer]}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.location}>{location}</Text>
+        </View>  
+
+        {rightIconLocation && (
+          <TouchableOpacity
+            onPress={rightPress}
+            style={[styles.rightComponentStyle]}>
+            <Image style={[styles.image]} source={{uri: rightIconLocation}} />
+          </TouchableOpacity>
+        )}
       </View>
     </SafeAreaView>
   );
 };
-
-
-export default Header;
