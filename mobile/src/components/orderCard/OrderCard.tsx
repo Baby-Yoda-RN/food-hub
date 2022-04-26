@@ -51,7 +51,7 @@ export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightB
               style={styles.subtitle}>
               Now
             </Text>
-            <Text style={styles.orderStatus2}>
+            <Text style={styles.status2}>
               {order.status}
             </Text>
           </View>
@@ -67,7 +67,7 @@ export const OrderCard: FC<TOrderCard> = ({order, handleLeftButton, handleRightB
           buttonTheme={color.white}
           onPress={handleLeftButton}
         />
-        <View style={{width: '5%'}} />
+        <View style={styles.divider} />
         <Button
           title={delivered?'Re-Order':"Track Order"}
           containerStyle={[styles.button,styles.shadow]}

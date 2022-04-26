@@ -77,8 +77,11 @@ export const styles = StyleSheet.create({
     fontSize: size.rg,
     fontWeight: '600',
   },
-  orderStatus2:{
+  status2:{
     color: color.black,
     fontSize: size.m
+  },
+  divider:{
+    width:'5%'
   }
 });
