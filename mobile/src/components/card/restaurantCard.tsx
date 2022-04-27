@@ -1,7 +1,7 @@
 import React from 'react';
 import {TRestaurant} from '../../types/data';
 import {Card} from './card';
-import {Text, View, ScrollView} from 'react-native';
+import {Text, View, ScrollView, Image} from 'react-native';
 import {styles} from './card.style';
 import {Icon} from '../icon/Icon';
 import {size} from '../../theme';
@@ -33,35 +33,46 @@ export const RestaurantCard = (restaurant?: TRestaurant) => {
   } = restaurant;
 
   const render = () => (
-    <View>
-      <View style={styles.detailsContainer}>
-        <Icon
-          name="Motorcycle"
-          height={size.md}
-          width={size.md}
-          containerStyle={styles.iconContainer}
+    <>
+      <View>
+        <Image
+          style={styles.cardImage}
+          source={{
+            uri: imageName,
+          }}
         />
-        <Text style={styles.details}>{freeDelivery}</Text>
-        <Icon
-          name="Clock"
-          height={size.md}
-          width={size.md}
-          containerStyle={styles.iconContainer}
-        />
-        <Text style={styles.details}>{`${deliveryTime} mins`}</Text>
       </View>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.tagsContainer}>
-        {items?.map((item, key) => (
-          <Text style={styles.itemTags} key={key}>
-            {item}
-          </Text>
-        ))}
-      </ScrollView>
-    </View>
+      <View style={styles.information}>
+        <Text style={styles.title}>{name}</Text>
+        <View style={styles.detailsContainer}>
+          <Icon
+            name="Motorcycle"
+            height={size.md}
+            width={size.md}
+            containerStyle={styles.iconContainer}
+          />
+          <Text style={styles.details}>{freeDelivery}</Text>
+          <Icon
+            name="Clock"
+            height={size.md}
+            width={size.md}
+            containerStyle={styles.iconContainer}
+          />
+          <Text style={styles.details}>{`${deliveryTime} mins`}</Text>
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.tagsContainer}>
+          {items?.map((item, key) => (
+            <Text style={styles.itemTags} key={key}>
+              {item}
+            </Text>
+          ))}
+        </ScrollView>
+      </View>
+    </>
   );
 
-  return <Card image={imageName} title={name} renderDetails={render} />;
+  return <Card renderDetails={render} />;
 };
