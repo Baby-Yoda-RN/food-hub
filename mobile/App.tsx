@@ -5,9 +5,10 @@ import {Icon} from './src/components';
 import {Button} from './src/components';
 import SplashScreen from 'react-native-splash-screen';
 import {font} from './src/theme';
+import StorybookUIRoot from './storybook';
 
 const App = () => {
-  const message: string = 'Testing Text';
+  const message:string = 'Hello World'
   useEffect(() => {
     setTimeout(() => {}, 1000);
     SplashScreen.hide();
