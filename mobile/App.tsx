@@ -7,7 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 import {TOrder} from './src/types/data';
 
 //mock data
-const orders:Array<TOrder> = [
+const orders: Array<TOrder> = [
   {
     uuid: '264100',
     restaurantName: 'Starbucks',
@@ -29,11 +29,10 @@ const orders:Array<TOrder> = [
     total: '$25.19',
     restaurantImage:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Jersey_Mike%27s_logo.svg/2560px-Jersey_Mike%27s_logo.svg.png',
-  }
-]
+  },
+];
 
 const App = () => {
-
   // const message: string = 'Testing Text';
   useEffect(() => {
     setTimeout(() => {}, 1000);
@@ -51,9 +50,16 @@ const App = () => {
   //   </>
   // );
   return (
-    <View style={{padding:20, flex:1, justifyContent:'space-evenly'}}>
-      {orders.map((order) => {
-        return <OrderCard order={order} key={order.uuid}/>
+    <View style={{padding: 20, flex: 1, justifyContent: 'space-evenly'}}>
+      {orders.map(order => {
+        return (
+          <OrderCard
+            order={order}
+            key={order.uuid}
+            leftButtonTitle={order.delivered ? 'Rate' : 'Cancel'}
+            rightButtonTitle={order.delivered ? 'Track Order': 'Re-Order'}
+          />
+        );
       })}
     </View>
   );

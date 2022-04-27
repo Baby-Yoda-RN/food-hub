@@ -10,6 +10,8 @@ export const OrderCard: FC<TOrderCard> = ({
   order,
   handleLeftButton,
   handleRightButton,
+  leftButtonTitle,
+  rightButtonTitle,
 }) => {
   const {delivered} = order;
   return (
@@ -26,7 +28,7 @@ export const OrderCard: FC<TOrderCard> = ({
                 <Icon name="Bullet" width={4} height={4} fill={color.grayMid}/>
               </View>
             )}
-            <Text style={styles.grayText}>{order.items.length + ' Items'}</Text>
+            <Text style={styles.grayText}>{order.items + ' Items'}</Text>
           </View>
           <View style={[styles.rowDirection, styles.centerer]}>
             <Text style={styles.restaurantText}>{order.restaurantName}</Text>
@@ -59,7 +61,7 @@ export const OrderCard: FC<TOrderCard> = ({
       )}
       <View style={styles.rowContainer}>
         <Button
-          title={delivered ? 'Rate' : 'Cancel'}
+          title={leftButtonTitle}
           containerStyle={[styles.button, styles.shadow]}
           titleStyle={styles.primaryText}
           buttonOutline
@@ -69,7 +71,7 @@ export const OrderCard: FC<TOrderCard> = ({
         />
         <View style={styles.divider} />
         <Button
-          title={delivered ? 'Re-Order' : 'Track Order'}
+          title={rightButtonTitle}
           containerStyle={[styles.button, styles.shadow]}
           titleStyle={styles.whiteText}
           onPress={handleRightButton}

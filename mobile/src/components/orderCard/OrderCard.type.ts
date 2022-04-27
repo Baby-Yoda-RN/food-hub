@@ -1,7 +1,9 @@
-import { IOrder } from "../../types/data";
+import { TOrder } from "../../types/data";
 
 export type TOrderCard = {
-  order:IOrder,
-  handleLeftButton?:()=>{},
-  handleRightButton?:()=>{},
+  order:TOrder,
+  handleLeftButton?:()=>{}
+  handleRightButton?:()=>{}
+  leftButtonTitle?:string
+  rightButtonTitle?:string
 }
