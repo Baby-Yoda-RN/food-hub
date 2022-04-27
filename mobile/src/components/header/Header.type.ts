@@ -1,6 +1,6 @@
 import  { StyleProp, ViewStyle} from 'react-native';
 
-export type HProps = {
+export type THeaderProps = {
     title?: string;
     deliveryLocation?: string;
     containerStyle?: ViewStyle;

@@ -8,10 +8,10 @@ import {
   ViewStyle,
 } from 'react-native';
 import {Icon} from '../icon/Icon';
-import {HProps} from './Header.type'
+import {THeaderProps} from './Header.type'
 import {styles} from './Header.style';
 
-export const Header: FC<HProps> = ({
+export const Header: FC<THeaderProps> = ({
     title,
     deliveryLocation,
     containerStyle,
