@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: size.rg,
     fontWeight: 'bold',
     marginVertical: size.xs,
+    fontFamily:  "Sofia_Pro_Regular"
   },
   email: {
     fontSize: size.rg,
@@ -39,6 +40,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     flexDirection: 'row',
     marginTop: 'auto',
+    padding: size.sm,
   },
   logoutIcon: {
     borderRadius: size.xl,
@@ -47,7 +49,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     color: color.white,
-    fontWeight: 'bold',
+    marginHorizontal: size.sm,
   },
   buttonIconContainer: {
     backgroundColor: 'white',
