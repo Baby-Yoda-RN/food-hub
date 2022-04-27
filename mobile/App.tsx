@@ -18,11 +18,8 @@ const App = () => {
     <>
       <Button
         title="GOOGLE"
-        buttonOutlineColor="black"
-        buttonWidth={120}
         leftIconName="Google"
-        iconWidth={20}
-        iconHeight={20}
+        iconSize={20}
       />
       <Text>{message}</Text>
       <Text style={{fontFamily: font.regular}}>{message}</Text>
