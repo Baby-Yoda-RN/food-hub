@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {Text} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
-import { Button } from './src/components';
+import {Button} from './src/components';
 import SplashScreen from 'react-native-splash-screen';
+import {font} from './src/theme';
 
 const App = () => {
   const message: string = 'Testing Text';
@@ -14,15 +15,17 @@ const App = () => {
 
   return (
     <>
-    < Button 
+      <Button
         title="GOOGLE"
-        buttonOutlineColor='black'
-        buttonWidth= {120}
+        buttonOutlineColor="black"
+        buttonWidth={120}
         leftIconName="Google"
-        iconWidth = {20}
-        iconHeight = {20}
+        iconWidth={20}
+        iconHeight={20}
       />
       <Text>{message}</Text>
+      <Text style={{fontFamily: font.regular}}>{message}</Text>
+      <Text style={{fontFamily: font.semiBold}}>{message}</Text>
       <TextInput type="regular" />
       <TextInput type="password" />
       <TextInput type="search" />
