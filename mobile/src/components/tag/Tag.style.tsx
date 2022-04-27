@@ -4,14 +4,14 @@ import {color, size} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     borderRadius: size.lg,
-    borderColor: color.transparentBlack,
-    borderWidth: size.xxs,
     backgroundColor: color.white,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'flex-start',
-    paddingHorizontal: size.xs,
+    padding: size.sm,
+    shadowColor: color.grayMid,
+    elevation: size.xxs,
   },
   priceText: {
     fontSize: size.rg,
