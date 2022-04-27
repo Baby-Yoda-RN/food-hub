@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
+import {color, font, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
   },
   restaurantText: {
     color: color.black,
-    fontWeight: '600',
+    fontFamily:font.semiBold,
     fontSize: size.rg,
   },
   orderStatusText: {
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
   estimatedTimeText:{
     color: color.black,
     fontSize: size.lg,
-    fontWeight: '600',
+    fontFamily:font.semiBold,
   },
   status2:{
     color: color.black,
