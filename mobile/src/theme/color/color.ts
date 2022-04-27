@@ -1,5 +1,6 @@
+import {Color} from './color.type';
 
-export const color = {
+export const color: Color = {
   primary: '#FE724C',
   white: '#FFFFFF',
   black: '#000000',
