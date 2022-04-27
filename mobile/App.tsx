@@ -1,14 +1,16 @@
 import React, {useEffect} from 'react';
-import {Text} from 'react-native';
+import {Alert, Text} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
+import {ListItem} from './src/components/listItem/ListItem';
 import {Button} from './src/components';
+import {ToggleButton} from './src/components';
 import SplashScreen from 'react-native-splash-screen';
-import {font} from './src/theme';
-import StorybookUIRoot from './storybook';
+import {color} from './src/theme';
+import {AppNavigation} from './src/navigation';
 
 const App = () => {
-  const message:string = 'Hello World'
+  const message: string = 'Testing Text';
   useEffect(() => {
     setTimeout(() => {}, 1000);
     SplashScreen.hide();
@@ -16,20 +18,39 @@ const App = () => {
 
   return (
     <>
+      <AppNavigation />
       <Button
         title="GOOGLE"
+        buttonOutlineColor="black"
+        buttonWidth={120}
         leftIconName="Google"
-        iconSize={20}
+        iconWidth={20}
+        iconHeight={20}
       />
       <Text>{message}</Text>
-      <Text style={{fontFamily: font.regular}}>{message}</Text>
-      <Text style={{fontFamily: font.semiBold}}>{message}</Text>
       <TextInput type="regular" />
       <TextInput type="password" />
       <TextInput type="search" />
       <TextInput type="phone" />
       <Icon name="Heart" height={100} width={100} fill="orange" />
       <Icon name="Bullet" height={10} width={10} fill="green" />
+      <ListItem
+        title="Greek salad"
+        subTitle="with backed salmon"
+        image={
+          'https://www.positronx.io/wp-content/uploads/2020/02/react-native-150x150-1.jpg'
+        }
+        price="$12.00"
+        itemQuantity={2}
+        iconSize={25}
+      />
+      <ToggleButton
+        primaryText={'Test'}
+        secondaryText={'Test2'}
+        selectionMode={true}
+        buttonTheme={color.primary}
+        switchData={false}
+      />
     </>
   );
 };

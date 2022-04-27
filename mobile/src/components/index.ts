@@ -5,4 +5,5 @@ export * from './icon/Icon';
 export * from './textInput/TextInput';
 export * from './button/Button';
 export * from './toggleButton/ToggleButton';
+export * from './tag/Tag';
 export * from './sidemenu/SideMenu';
