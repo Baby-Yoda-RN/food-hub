@@ -12,8 +12,6 @@ export const Button: FC<TButtonProps> = ({
   containerStyle,
   titleStyle,
   buttonTheme = color.primary,
-  buttonOutline = false,
-  buttonOutlineColor = color.white,
   leftIconName,
   rightIconName,
   leftIconStyle,
@@ -23,7 +21,7 @@ export const Button: FC<TButtonProps> = ({
 }) => {
   
   const buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
-  const currentButtonOutline = buttonOutline ? 1 : 0;
+
 
   return (
     
@@ -31,13 +29,11 @@ export const Button: FC<TButtonProps> = ({
       onPress={onPress}
       style={[
         styles.container, 
-        containerStyle, 
         buttonClickableStyle,
         {
           backgroundColor: buttonTheme, 
-          borderWidth: currentButtonOutline,
-          borderColor: buttonOutlineColor,
-        }
+        },
+        containerStyle, 
       ]}
       disabled={isDisabled}
       {...rest}>

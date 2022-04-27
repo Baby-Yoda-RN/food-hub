@@ -7,8 +7,6 @@ export type TButtonProps = {
     containerStyle?: StyleProp<ViewStyle>;
     titleStyle?: StyleProp<TextStyle>;
     buttonTheme?: string;
-    buttonOutline?: boolean;
-    buttonOutlineColor?: string;
     rightIconName?: string;
     leftIconName?: string;
     leftIconStyle?: StyleProp<ViewStyle>;
