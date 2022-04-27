@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, Image} from 'react-native';
-import {color} from '../../theme';
+import {color, size} from '../../theme';
 import {Button} from '../button/Button';
 import {Icon} from '../icon/Icon';
 import {styles} from './OrderCard.styles';
@@ -25,18 +25,18 @@ export const OrderCard: FC<TOrderCard> = ({
             {delivered && (
               <View style={[styles.rowDirection,styles.centerer]}>
                 <Text style={styles.grayText}>{order.date}</Text>
-                <Icon name="Bullet" width={4} height={4} fill={color.grayMid}/>
+                <Icon name="Bullet" width={size.xs} height={size.xs} fill={color.grayMid}/>
               </View>
             )}
             <Text style={styles.grayText}>{order.items + ' Items'}</Text>
           </View>
           <View style={[styles.rowDirection, styles.centerer]}>
             <Text style={styles.restaurantText}>{order.restaurantName}</Text>
-            <Icon name="CheckMark" width={8} height={8} />
+            <Icon name="CheckMark" width={size.sm} height={size.sm} />
           </View>
           {delivered && (
             <View style={[styles.rowDirection, styles.centerer]}>
-              <Icon name="Bullet" width={8} height={8} fill={color.success} />
+              <Icon name="Bullet" width={size.sm} height={size.sm} fill={color.success} />
               <Text style={styles.orderStatusText}>{order.status}</Text>
             </View>
           )}
