@@ -13,5 +13,4 @@ export const color: Color = {
   success:'#4EE476',
   yellow: '#FFC529',
   red: '#FE724C',
-
 };
