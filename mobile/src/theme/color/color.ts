@@ -12,5 +12,4 @@ export const color: Color = {
   textRegularBG: '#E9E9E940',
   yellow: '#FFC529',
   red: '#FE724C',
-  transparentBlack: 'rgba(0, 0, 0, 0.1)',
 };
