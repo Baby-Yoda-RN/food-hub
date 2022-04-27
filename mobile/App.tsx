@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
 import {OrderCard} from './src/components/orderCard/OrderCard';
@@ -33,35 +33,31 @@ const orders: Array<TOrder> = [
 ];
 
 const App = () => {
-  // const message: string = 'Testing Text';
+  const message: string = 'Testing Text';
   useEffect(() => {
     setTimeout(() => {}, 1000);
     SplashScreen.hide();
   }, []);
-  // return (
-  //   <>
-  //     <Text>{message}</Text>
-  //     <TextInput type="regular" />
-  //     <TextInput type="password" />
-  //     <TextInput type="search" />
-  //     <TextInput type="phone" />
-  //     <Icon name="Heart" height={100} width={100} fill='orange' />
-  //     <Icon name="Bullet" height={10} width={10} fill='green' />
-  //   </>
-  // );
   return (
-    <View style={{padding: 20, flex: 1, justifyContent: 'space-evenly'}}>
+    <ScrollView>
+      <Text>{message}</Text>
+      <TextInput type="regular" />
+      <TextInput type="password" />
+      <TextInput type="search" />
+      <TextInput type="phone" />
+      <Icon name="Heart" height={100} width={100} fill="orange" />
+      <Icon name="Bullet" height={10} width={10} fill="green" />
       {orders.map(order => {
         return (
           <OrderCard
             order={order}
             key={order.uuid}
             leftButtonTitle={order.delivered ? 'Rate' : 'Cancel'}
-            rightButtonTitle={order.delivered ? 'Track Order': 'Re-Order'}
+            rightButtonTitle={order.delivered ? 'Track Order' : 'Re-Order'}
           />
         );
       })}
-    </View>
+    </ScrollView>
   );
 };
 
