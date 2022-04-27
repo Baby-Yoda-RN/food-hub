@@ -10,6 +10,7 @@ export const color: Color = {
   textOrange: '#C4C4C4',
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
+  yellow: '#FFC529',
   red: '#FE724C',
 
 };
