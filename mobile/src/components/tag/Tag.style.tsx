@@ -4,14 +4,14 @@ import {color, size} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     borderRadius: size.lg,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
-    borderWidth: 2,
+    borderColor: color.transparentBlack,
+    borderWidth: size.xxs,
     backgroundColor: color.white,
-    paddingVertical: size.xs,
-    width: '20%',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    alignSelf: 'flex-start',
+    paddingHorizontal: size.xs,
   },
   priceText: {
     fontSize: size.rg,
@@ -29,5 +29,9 @@ export const styles = StyleSheet.create({
   votesText: {
     fontSize: size.sm,
     color: color.grayMid,
+  },
+  iconContainer: {
+    paddingVertical: 0,
+    paddingHorizontal: size.xxs,
   },
 });

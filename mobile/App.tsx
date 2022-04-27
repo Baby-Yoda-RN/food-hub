@@ -8,6 +8,8 @@ import {ListItem} from './src/components/listItem/ListItem';
 import SplashScreen from 'react-native-splash-screen';
 import {color} from './src/theme';
 import {Tag} from './src/components/tag/Tag';
+import {PriceTag} from './src/components/tag/PriceTag';
+import {RatingTag} from './src/components/tag/RatingTag';
 
 const App = () => {
   const message: string = 'Testing Text';
@@ -50,7 +52,8 @@ const App = () => {
         buttonTheme={color.primary}
         switchData={false}
       />
-      <Tag isPrice={false} />
+      <PriceTag price={5.0} />
+      <RatingTag rating={5} usersVoted={30} />
     </>
   );
 };

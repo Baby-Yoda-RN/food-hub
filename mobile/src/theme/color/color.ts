@@ -11,4 +11,5 @@ export const color: Color = {
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
   red: '#FE724C',
+  transparentBlack: 'rgba(0, 0, 0, 0.1)',
 };

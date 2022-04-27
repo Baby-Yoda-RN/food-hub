@@ -1,7 +1,6 @@
+import {StyleProp, ViewStyle} from 'react-native';
+
 export type TTagProps = {
-  isPrice: boolean;
-  rating?: number;
-  usersVoted?: number;
-  price?: number;
-  limit?: number;
+  renderTag: () => {};
+  containerStyle?: StyleProp<ViewStyle>;
 };
