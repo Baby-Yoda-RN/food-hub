@@ -11,18 +11,17 @@ export type TRestaurant = {
   items?: string[];
 }
 
-export type IOrder = {
+export type TOrder = {
   uuid?:string
   restaurantName:string
   date:string //dev
   status:string
-  items:number[] //dev
+  items:number //dev
   delivered?:boolean
   restaurantImage?:string
   estimatedTime?:string
   total?:string
 }
-};
 
 export type TFoodItem = {
   uuid?: string;

@@ -4,32 +4,35 @@ import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
 import {OrderCard} from './src/components/orderCard/OrderCard';
 import SplashScreen from 'react-native-splash-screen';
-import {IOrder} from './src/types/data';
+import {TOrder} from './src/types/data';
 
-const App = () => {
-  const order: IOrder = {
+//mock data
+const orders:Array<TOrder> = [
+  {
     uuid: '264100',
     restaurantName: 'Starbucks',
-    items: [1, 2, 3],
+    items: 3,
     date: '20 Jun, 2021',
     status: 'On the run',
     delivered: false,
     estimatedTime: '25 min',
     restaurantImage:
       'https://w7.pngwing.com/pngs/282/834/png-transparent-seattle-s-best-coffee-the-starbucks-coffee-logo-coffee.png',
-  };
-
-  const order2: IOrder = {
-    uuid: '264100',
+  },
+  {
+    uuid: '264101',
     restaurantName: "Jersey Mike's",
-    items: [1, 2, 3],
+    items: 3,
     date: '20 Jun, 2021',
     status: 'Order Delivered',
     delivered: true,
     total: '$25.19',
     restaurantImage:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Jersey_Mike%27s_logo.svg/2560px-Jersey_Mike%27s_logo.svg.png',
-  };
+  }
+]
+
+const App = () => {
 
   // const message: string = 'Testing Text';
   useEffect(() => {
@@ -49,8 +52,9 @@ const App = () => {
   // );
   return (
     <View style={{padding:20, flex:1, justifyContent:'space-evenly'}}>
-      <OrderCard order={order} />
-      <OrderCard order={order2} />
+      {orders.map((order) => {
+        return <OrderCard order={order} key={order.uuid}/>
+      })}
     </View>
   );
 };

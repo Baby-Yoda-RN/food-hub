@@ -4,12 +4,12 @@ import {color, size} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: color.white,
-    borderRadius: size.sm,
-    padding: size.m,
+    borderRadius: size.md,
+    padding: size.rg,
   },
   imageContainer: {
     backgroundColor: color.white,
-    borderRadius: size.sm,
+    borderRadius: size.md,
     padding: size.sm,
   },
   image: {
@@ -34,14 +34,14 @@ export const styles = StyleSheet.create({
   },
   orderId: {
     color: color.primary,
-    fontSize: size.m,
+    fontSize: size.rg,
   },
   grayText: {
     color: color.grayMid,
   },
   button: {
-    paddingVertical: size.m,
-    minWidth: '45%',
+    paddingVertical: size.md,
+    flex:1,
   },
   rowDirection: {
     flexDirection: 'row',
@@ -62,11 +62,11 @@ export const styles = StyleSheet.create({
   restaurantText: {
     color: color.black,
     fontWeight: '600',
-    fontSize: size.m,
+    fontSize: size.rg,
   },
   orderStatusText: {
     color: color.success,
-    fontSize: size.m,
+    fontSize: size.rg,
   },
   subtitle:{
     textAlign: 'right',
@@ -74,14 +74,17 @@ export const styles = StyleSheet.create({
   },
   estimatedTimeText:{
     color: color.black,
-    fontSize: size.rg,
+    fontSize: size.lg,
     fontWeight: '600',
   },
   status2:{
     color: color.black,
-    fontSize: size.m
+    fontSize: size.rg
   },
   divider:{
     width:'5%'
+  },
+  centerer:{
+    alignItems:'center',
   }
 });
