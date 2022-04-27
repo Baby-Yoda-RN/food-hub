@@ -24,22 +24,24 @@ export const Footer = () => {
         <Button
           title="FACEBOOK"
           buttonOutlineColor="black"
-          buttonWidth={120}
+          buttonHeight={size.lg + size.rg}
+          buttonWidth={size.xxl + size.sm}
           leftIconName="Facebook"
-          iconWidth={size.m + size.s}
+          iconWidth={size.lg}
           iconHeight={size.lg}
           buttonTheme={color.white}
-          titleStyle={{color: color.primary}}
+          titleStyle={{color: color.black}}
         />
         <Button
           title="GOOGLE"
           buttonOutlineColor="black"
-          buttonWidth={120}
+          buttonHeight={size.lg + size.rg}
+          buttonWidth={size.xxl + size.sm}
           leftIconName="Google"
-          iconWidth={size.m + size.s}
+          iconWidth={size.lg}
           iconHeight={size.lg}
           buttonTheme={color.white}
-          titleStyle={{color: color.primary}}
+          titleStyle={{color: color.black}}
         />
       </View>
       <TouchableOpacity style={styles.bottomButtons}>

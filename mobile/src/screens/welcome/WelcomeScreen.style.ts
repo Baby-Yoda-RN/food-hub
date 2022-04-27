@@ -6,20 +6,20 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
-    margin: size.m,
+    margin: size.md,
   },
   title1: {
-    fontSize: size.lg,
+    fontSize: size.xl - size.rg,
     fontWeight: 'bold',
     color: 'black',
   },
   title2: {
-    fontSize: size.lg,
+    fontSize: size.xl - size.rg,
     fontWeight: 'bold',
     color: color.primary,
   },
   subTitle: {
-    fontSize: size.m,
+    fontSize: size.rg,
     color: color.black,
   },
   imageBackground: {

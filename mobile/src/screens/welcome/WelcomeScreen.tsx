@@ -27,6 +27,8 @@ fast at your door.`;
             <Button
               title="skip"
               buttonTheme={color.white}
+              buttonHeight={size.lg}
+              buttonWidth={size.xl}
               titleStyle={{color: color.primary}}
             />
           </View>

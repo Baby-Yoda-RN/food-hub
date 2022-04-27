@@ -13,14 +13,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   bottomButtons: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    borderWidth: size.xs,
+    backgroundColor: 'rgba(255, 255, 255, .1)',
+    borderWidth: size.xxs,
     borderRadius: size.lg,
     borderColor: color.white,
     justifyContent: 'center',
+    height: size.lg + size.rg,
   },
   bottomButtonText: {
-    marginHorizontal: size.lg,
+    marginHorizontal: size.xl,
     padding: size.sm,
     color: color.white,
   },
