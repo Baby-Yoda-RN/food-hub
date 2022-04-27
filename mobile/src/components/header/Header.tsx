@@ -8,25 +8,10 @@ import {
   ViewStyle,
 } from 'react-native';
 import {Icon} from '../icon/Icon';
+import {HProps} from './Header.type'
 import {styles} from './Header.style';
 
-interface IProps {
-  title?: string;
-  deliveryLocation?: string;
-  containerStyle?: ViewStyle;
-  leftPress?: () => void;
-  rightPress?: () => void;
-  leftIconName?: string;
-  rightIconName?: string;
-  rightIconLocation?: string;
-  leftIconStyle?: ViewStyle;
-  rightIconStyle?: ViewStyle;
-  iconWidth?: number;
-  iconHeight?: number;
-}
-
-export const Header: FC<IProps> = props => {
-  const {
+export const Header: FC<HProps> = ({
     title,
     deliveryLocation,
     containerStyle,
@@ -39,7 +24,7 @@ export const Header: FC<IProps> = props => {
     rightIconStyle,
     iconWidth,
     iconHeight,
-  } = props;
+  }) => {
 
   return (
     <SafeAreaView>
@@ -75,8 +60,6 @@ export const Header: FC<IProps> = props => {
               <Text style={styles.deliveryLocation}>{deliveryLocation}</Text>
             </View>
         )}
-
-
 
         {rightIconLocation && (
           <TouchableOpacity
