@@ -8,10 +8,9 @@ import {color,size} from '../../theme';
 export const Button: FC<TButtonProps> = ({
   title  = 'Button',
   isDisabled = false,
+  onPress,
   containerStyle,
   titleStyle,
-  buttonHeight = size.rg,
-  buttonWidth = size.lg,
   buttonTheme = color.primary,
   buttonOutline = false,
   buttonOutlineColor = color.white,
@@ -19,8 +18,7 @@ export const Button: FC<TButtonProps> = ({
   rightIconName,
   leftIconStyle,
   rightIconStyle,
-  iconWidth,
-  iconHeight,
+  iconSize,
   ...rest
 }) => {
   
@@ -30,6 +28,7 @@ export const Button: FC<TButtonProps> = ({
   return (
     
     <TouchableOpacity 
+      onPress={onPress}
       style={[
         styles.container, 
         containerStyle, 
@@ -38,15 +37,13 @@ export const Button: FC<TButtonProps> = ({
           backgroundColor: buttonTheme, 
           borderWidth: currentButtonOutline,
           borderColor: buttonOutlineColor,
-          height: buttonHeight,
-          width: buttonWidth,
         }
       ]}
       disabled={isDisabled}
       {...rest}>
-      {leftIconName && <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconWidth} height={iconHeight}/>}
+      {leftIconName && <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconSize} height={iconSize}/>}
       <Text style={[styles.title, titleStyle]}>{title}</Text>
-      {rightIconName && <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconWidth} height={iconHeight}/>}
+      {rightIconName && <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconSize} height={iconSize}/>}
     </TouchableOpacity>
   );
 };

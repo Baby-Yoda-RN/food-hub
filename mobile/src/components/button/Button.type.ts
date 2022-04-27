@@ -1,12 +1,11 @@
-import  {GestureResponderEvent, StyleProp, ViewStyle} from 'react-native';
+import  {GestureResponderEvent, StyleProp, TextStyle, ViewStyle} from 'react-native';
 
 export type TButtonProps = {
     title?: string;
     isDisabled?: boolean;
+    onPress?: (event: GestureResponderEvent) => void;
     containerStyle?: StyleProp<ViewStyle>;
-    titleStyle?: StyleProp<ViewStyle>;
-    buttonHeight?: number;
-    buttonWidth?: number;
+    titleStyle?: StyleProp<TextStyle>;
     buttonTheme?: string;
     buttonOutline?: boolean;
     buttonOutlineColor?: string;
@@ -14,7 +13,6 @@ export type TButtonProps = {
     leftIconName?: string;
     leftIconStyle?: StyleProp<ViewStyle>;
     rightIconStyle?: StyleProp<ViewStyle>;
-    iconWidth?: number;
-    iconHeight?: number;
+    iconSize?: number;
 
 }
