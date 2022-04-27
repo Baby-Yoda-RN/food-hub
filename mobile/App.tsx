@@ -2,14 +2,12 @@ import React, {useEffect} from 'react';
 import {Alert, Text} from 'react-native';
 import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
+import {ListItem} from './src/components/listItem/ListItem';
 import {Button} from './src/components';
 import {ToggleButton} from './src/components';
-import {ListItem} from './src/components/listItem/ListItem';
 import SplashScreen from 'react-native-splash-screen';
 import {color} from './src/theme';
-import {Tag} from './src/components/tag/Tag';
-import {PriceTag} from './src/components/tag/PriceTag';
-import {RatingTag} from './src/components/tag/RatingTag';
+import {AppNavigation} from './src/navigation';
 
 const App = () => {
   const message: string = 'Testing Text';
@@ -20,6 +18,7 @@ const App = () => {
 
   return (
     <>
+      <AppNavigation />
       <Button
         title="GOOGLE"
         buttonOutlineColor="black"
@@ -52,8 +51,6 @@ const App = () => {
         buttonTheme={color.primary}
         switchData={false}
       />
-      <PriceTag price={5.0} />
-      <RatingTag rating={5} usersVoted={30} />
     </>
   );
 };
