@@ -1,3 +1,7 @@
+export enum ERootStackRoutes {
+  PHONE_REGISTRATION_SCREEN = 'PHONE_REGISTRATION_SCREEN',
+}
+
 export type RootStackParams = {
   Login: {
     name: string;
@@ -5,7 +9,5 @@ export type RootStackParams = {
   Signup: {
     name: string;
   };
-  PhoneRegistration: {
-    name: string;
-  };
+  [ERootStackRoutes.PHONE_REGISTRATION_SCREEN]: undefined;
 };
