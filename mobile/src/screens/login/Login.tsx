@@ -11,7 +11,13 @@ export const Login: FC<Props> = () => {
   return (
     <>
       <Button
-        title="Go To ResetPassword!"
+        title="Go To SignUp!"
+        onPress={() => {
+          navigation.navigate('Signup', {name: 'Signup'});
+        }}
+      />
+      <Button
+        title="Go to ResetPassword"
         onPress={() => {
           navigation.navigate('ResetPassword', {name: 'ResetPassword'});
         }}

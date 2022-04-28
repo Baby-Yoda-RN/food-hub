@@ -1,12 +1,16 @@
 import React, {FC} from "react";
-import { Text } from "react-native";
-import {NativeStackNavigationProp, NativeStackScreenProps} from '@react-navigation/native-stack';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParams} from '../../navigation'
+import { useNavigation } from "@react-navigation/native";
+import { TResetPassword } from "./ResetPassword.type";
+import { ResetPasswordView } from "./ResetPassword.view";
 
-type Props = NativeStackScreenProps<RootStackParams, "ResetPassword">;
-
-export const ResetPassword: FC<Props> = () => {
+export const ResetPassword: FC<TResetPassword> = () => {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+    const press = () => {
+        navigation.navigate('ResetPassword', {name: 'ResetPassword'});
+    };
     return(
-        <Text>Hello World</Text>
+        <ResetPasswordView press={press}/>
     )
 }
