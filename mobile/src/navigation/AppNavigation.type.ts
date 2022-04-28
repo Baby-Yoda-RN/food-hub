@@ -1,8 +1,11 @@
 export type RootStackParams = {
-    Login: {
-        name: string;
-    };
-    Signup: {
-        name: string;
-    };
-}; 
+  Login: {
+    name: string;
+  };
+  Signup: {
+    name: string;
+  };
+  Category: {
+    name: string;
+  };
+};
