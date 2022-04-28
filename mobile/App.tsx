@@ -4,7 +4,6 @@ import {TextInput} from './src/components/textInput/TextInput';
 import {Icon} from './src/components';
 import {WelcomeScreen} from './src/screens/welcome/WelcomeScreen';
 import {Button} from './src/components';
-import {ToggleButton} from './src/components';
 import SplashScreen from 'react-native-splash-screen';
 import {color} from './src/theme';
 
