@@ -3,50 +3,43 @@ import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './Button.styles';
 import {TButtonProps} from './Button.type';
 import {Icon} from '../icon/Icon';
-import {color,size} from '../../theme';
+import {color} from '../../theme';
 
 export const Button: FC<TButtonProps> = ({
   title  = 'Button',
   isDisabled = false,
+  onPress,
   containerStyle,
   titleStyle,
-  buttonHeight = size.rg,
-  buttonWidth = size.lg,
   buttonTheme = color.primary,
-  buttonOutline = false,
-  buttonOutlineColor = color.white,
   leftIconName,
   rightIconName,
   leftIconStyle,
   rightIconStyle,
-  iconWidth,
-  iconHeight,
+  iconSize,
   ...rest
 }) => {
   
   const buttonClickableStyle = isDisabled ? styles.buttonDisabled : styles.buttonEnabled;
-  const currentButtonOutline = buttonOutline ? 1 : 0;
+
 
   return (
     
     <TouchableOpacity 
+      onPress={onPress}
       style={[
         styles.container, 
-        containerStyle, 
         buttonClickableStyle,
         {
           backgroundColor: buttonTheme, 
-          borderWidth: currentButtonOutline,
-          borderColor: buttonOutlineColor,
-          height: buttonHeight,
-          width: buttonWidth,
-        }
+        },
+        containerStyle, 
       ]}
       disabled={isDisabled}
       {...rest}>
-      {leftIconName && <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconWidth} height={iconHeight}/>}
+      {leftIconName && <Icon  name={leftIconName} containerStyle={[leftIconStyle]} width={iconSize} height={iconSize}/>}
       <Text style={[styles.title, titleStyle]}>{title}</Text>
-      {rightIconName && <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconWidth} height={iconHeight}/>}
+      {rightIconName && <Icon name={rightIconName} containerStyle={rightIconStyle} width={iconSize} height={iconSize}/>}
     </TouchableOpacity>
   );
 };
