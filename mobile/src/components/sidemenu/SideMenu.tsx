@@ -102,10 +102,6 @@ export const SideMenu: FC<TSideMenuProps> = ({
         titleStyle={styles.buttonText}
         leftIconName="Logout"
         leftIconStyle={styles.buttonIconContainer}
-        iconHeight={size.rg}
-        iconWidth={size.rg}
-        buttonHeight={"auto"}
-        buttonWidth={"auto"}
         onPress={pressLogout}
       />
     </View>
