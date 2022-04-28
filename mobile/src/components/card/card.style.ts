@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {color, size} from '../../theme';
+import {font} from '../../theme/font/font';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
   title: {
     color: color.black,
     fontSize: size.rg,
-    fontWeight: 'bold',
+    fontFamily: font.semiBold,
   },
   details: {
     fontSize: size.md,

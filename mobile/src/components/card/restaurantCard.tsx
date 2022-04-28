@@ -1,26 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {TRestaurant} from '../../types/data';
 import {Card} from './card';
 import {Text, View, ScrollView, Image} from 'react-native';
 import {styles} from './card.style';
 import {Icon} from '../icon/Icon';
 import {size} from '../../theme';
+import {TRestaurantCardProps} from './card.type';
 
-export const RestaurantCard = (restaurant?: TRestaurant) => {
-  const restaurantDummy: TRestaurant = {
-    name: "McDonald's",
-    rating: 4,
-    usersVoted: 25,
-    favorite: true,
-    freeDelivery: 'Free Delivery',
-    deliveryTime: 10,
-    items: ['Burger', 'Chicken', 'Fast Food', 'Breakfast', 'American'],
-    imageName:
-      'https://www.tasteofhome.com/wp-content/uploads/2021/03/mcdonalds-1200x630-GettyImages-1285446341.jpg',
-  };
-
-  restaurant = restaurantDummy;
-
+export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
   const {
     name,
     rating,

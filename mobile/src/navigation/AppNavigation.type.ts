@@ -10,4 +10,7 @@ export type RootStackParams = {
     name: string;
   };
   [ERootStackRoutes.PHONE_REGISTRATION_SCREEN]: undefined;
+  Rating: {
+    name: string;
+  };
 };
