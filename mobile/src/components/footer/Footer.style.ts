@@ -3,7 +3,6 @@ import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
@@ -11,6 +10,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    marginTop: size.rg,
   },
   bottomButtons: {
     backgroundColor: 'rgba(255, 255, 255, .1)',
@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     borderColor: color.white,
     justifyContent: 'center',
     height: size.lg + size.rg,
+    marginTop: size.rg,
   },
   bottomButtonText: {
     marginHorizontal: size.xl,
@@ -27,6 +28,7 @@ export const styles = StyleSheet.create({
   },
   bottomText: {
     flexDirection: 'row',
+    marginTop: size.rg,
   },
   text: {
     color: color.white,
@@ -34,5 +36,8 @@ export const styles = StyleSheet.create({
   linkText: {
     color: color.white,
     textDecorationLine: 'underline',
+  },
+  lineThrough: {
+    textDecorationLine: 'line-through',
   },
 });

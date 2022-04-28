@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {View, Text, ImageBackground} from 'react-native';
-import {Button} from '../../components';
-import {Footer} from '../../components/footer/Footer';
-import {style} from '../../components/textInput/TextInput.style';
+import {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
+import {Button, Footer} from '../../components';
+import {RootStackParams} from '../../navigation';
 import {color, size} from '../../theme';
 import {styles} from './WelcomeScreen.style';
+import {useNavigation} from '@react-navigation/native';
 
-export const WelcomeScreen = () => {
+type Props = NativeStackScreenProps<RootStackParams, 'Welcome'>;
+
+export const WelcomeScreen: FC<Props> = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const title = 'FoodHub';
   const subTitle = `Your favourite foods delivered 
 fast at your door.`;
@@ -27,7 +35,7 @@ fast at your door.`;
             <Button
               title="skip"
               buttonTheme={color.white}
-              buttonHeight={size.lg}
+              buttonHeight={size.md}
               buttonWidth={size.xl}
               titleStyle={{color: color.primary}}
             />
@@ -40,7 +48,7 @@ fast at your door.`;
           </View>
 
           <View style={styles.footer}>
-            <Footer />
+            <Footer navigation={navigation} />
           </View>
         </View>
       </ImageBackground>
