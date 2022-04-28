@@ -1,4 +1,2 @@
 export type TPhoneRegistrationProps = {};
-export type TPhoneRegistrationViewProps = {
-  message: string;
-};
+export type TPhoneRegistrationViewProps = {};
