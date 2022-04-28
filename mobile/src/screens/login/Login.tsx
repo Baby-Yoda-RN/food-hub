@@ -11,9 +11,9 @@ export const Login: FC<Props> = () => {
   return (
     <>
       <Button
-        title="Go To SignUp!"
+        title="Go To ResetPassword!"
         onPress={() => {
-          navigation.navigate('Signup', {name: 'Signup'});
+          navigation.navigate('ResetPassword', {name: 'ResetPassword'});
         }}
       />
       <Text>Login Screen</Text>
