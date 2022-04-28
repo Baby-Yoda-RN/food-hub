@@ -3,5 +3,14 @@ import { RootStackParams } from "../../navigation";
 export type TResetPassword = NativeStackScreenProps<RootStackParams, 'ResetPassword'>
 
 export type TResetPasswordView = {
-    press: () => void;
+    values: {
+        email: string;
+    };
+    isLoading: boolean;
+    errors: {
+        emailError: string;
+        credentialError: string;
+    };
+    setValues: Function;
+    handleResetPasswordButtonPress: Function;
 }
