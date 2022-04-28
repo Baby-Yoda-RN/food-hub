@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {Card, Header, PinInput, TextInput} from '../../components';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
-import {size} from '../../theme';
+import {size, color} from '../../theme';
 import {TRestaurant} from '../../types/data';
 import {styles} from './Home.style';
 import {THomeView} from './Home.type';
@@ -23,7 +23,7 @@ const restaurantDummy: TRestaurant = {
 export const HomeView: FC<THomeView> = () => {
   return (
     <View style={styles.container}>
-      <Header deliveryLocation={'Delivery Location'} leftIconName="Burger" />
+      {/* <Header title='Hello' leftIconName='Chevron' containerStyle={{backgroundColor:color.primary}}/> */}
       <Text>What would you like to order</Text>
       <TextInput leftIcon="Bag" type="search" placeholder="Find food by name" />
       <View style={{flexDirection: 'row'}}>
