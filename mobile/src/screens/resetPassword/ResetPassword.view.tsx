@@ -38,7 +38,7 @@ export const ResetPasswordView: FC<TResetPasswordView> = ({
                             values.email.length > 0 ? false : true
                         }
                         title={"SEND NEW PASSWORD"}
-                        onPress={handleResetPasswordButtonPress}
+                        // onPress={handleResetPasswordButtonPress}
                     />
                 )}
             </View>

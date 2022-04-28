@@ -6,11 +6,11 @@ export type TResetPasswordView = {
     values: {
         email: string;
     };
-    isLoading: boolean;
+    isLoading?: boolean;
     errors: {
         emailError: string;
         credentialError: string;
     };
-    setValues: Function;
-    handleResetPasswordButtonPress: Function;
+    setValues?: Function;
+    handleResetPasswordButtonPress?: Function;
 }

@@ -19,22 +19,22 @@ export const ResetPassword: FC<TResetPassword> = () => {
     const handleResetPasswordButtonPress = async () => {
         setErrors({emailError: '',credentialError: ''});
         setIsLoading(true);
-        if (isValidEmail(values.email) || !values.email) {
-            setErrors(prevState => ({
-              ...prevState,
-              emailError: 'Valid email is required',
-            }));
-            setIsLoading(false);
-        }   else{
-                const response = await signIn(values);
-                if (response.error) {
-                    setErrors(prevState => ({
-                    ...prevState,
-                    credentialError: response.error,
-                }));
-                setIsLoading(false);
-            }
-        }
+        // if (isValidEmail(values.email) || !values.email) {
+        //     setErrors(prevState => ({
+        //       ...prevState,
+        //       emailError: 'Valid email is required',
+        //     }));
+        //     setIsLoading(false);
+        // }   else{
+        //         const response = await signIn(values);
+        //         if (response.error) {
+        //             setErrors(prevState => ({
+        //             ...prevState,
+        //             credentialError: response.error,
+        //         }));
+        //         setIsLoading(false);
+        //     }
+        // }
     }
 
     return(
