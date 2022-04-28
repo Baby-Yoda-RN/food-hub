@@ -16,7 +16,7 @@ export const RatingScreenView: FC<TRatingView> = ({
 }) => {
     return (
         <>
-            <Text>Hello World</Text>
+            <Text>Test</Text>
         </>
     )
 }
