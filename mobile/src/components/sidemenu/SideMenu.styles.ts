@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { size, color } from '../../theme';
+import { size, color, font } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     color: color.black,
     fontSize: size.rg,
     marginVertical: size.xs,
-    fontFamily: "Poppins-SemiBold",
+    fontFamily: font.semiBold,
   },
   email: {
     fontSize: size.rg,
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   itemText: {
     color: color.black,
     fontSize: size.rg,
-    fontFamily: "Poppins-SemiBold",
+    fontFamily: font.semiBold,
     marginHorizontal: size.rg,
   },
   button: {
