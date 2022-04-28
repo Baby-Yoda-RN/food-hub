@@ -8,11 +8,20 @@ import {TRestaurant} from '../../types/data';
 import {styles} from './Profile.style';
 import {TProfileView} from './Profile.type';
 
-export const ProfileView: FC<TProfileView> = () => {
+export const ProfileView: FC<TProfileView> = ({
+    name,
+
+ }) => {
   return (
     <View style={styles.container}>
         <Header leftIconName="ChevronLeft" />
-        <Text>Hello World</Text>
+        <Text>{name}</Text>
+        <Text>Full name</Text>
+        <TextInput type={'search'}/>
+        <Text>E-mail</Text>
+        <TextInput type={'search'}/>
+        <Text>Phone number</Text>
+        <TextInput type={'search'}/>
     </View>
   );
 };
