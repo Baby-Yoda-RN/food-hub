@@ -7,6 +7,6 @@ import { RatingScreenView } from "./Rating.view";
 
 export const Rating: FC<TRating> = () => {
     return (
-        <RatingScreenView/>
+        <RatingScreenView isLoading={false}/>
     )
 }

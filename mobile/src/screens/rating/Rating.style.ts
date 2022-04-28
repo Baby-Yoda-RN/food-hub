@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     },
     buttonContainer: {
         justifyContent: 'center',
-        marginTop: 4,
+        marginTop: 5,
     },
     container: {
         flex: 1,

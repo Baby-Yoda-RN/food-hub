@@ -4,5 +4,4 @@ export type TRating = NativeStackScreenProps<RootStackParams, 'Rating'>
 
 export type TRatingView = {
     isLoading?: boolean;
-
 }
