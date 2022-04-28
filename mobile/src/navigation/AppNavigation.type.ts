@@ -8,4 +8,7 @@ export type RootStackParams = {
     Rating: {
         name: string;
     }
+    FavoriteFoodItems:{
+        name: string;
+    }
 }; 
