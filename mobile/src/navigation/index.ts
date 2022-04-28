@@ -1,2 +1,3 @@
-export * from '../navigation/AppNavigation';
-export * from '../navigation/AppNavigation.type';
+export * from './appNavigation/AppNavigation';
+export * from './appNavigation/AppNavigation.type';
+export * from './router/Router';

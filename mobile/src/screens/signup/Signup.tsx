@@ -1,27 +1,13 @@
 import React, {FC} from 'react';
-import {Text, Button} from 'react-native';
-import {
-  NativeStackNavigationProp,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../navigation';
-import {useNavigation} from '@react-navigation/native';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
+import {TSignUpScreenProps} from './SignUp.type';
+import {SignUpScreenView} from './SignUp.view';
 
-type Props = NativeStackScreenProps<RootStackParams, 'Signup'>;
-
-export const Signup: FC<Props> = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
-
+export const SignUpScreen: FC<TSignUpScreenProps> = ({route, navigation}) => {
   return (
-    <>
-      <Button
-        title="Go To Login!"
-        onPress={() => {
-          navigation.navigate('Login', {name: 'Login'});
-        }}
-      />
-      <Text>Signup Screen</Text>
-    </>
+    <SignUpScreenView
+      title={route.name}
+      press={() => navigation.navigate(EAppNavigationRoutes.LOGIN)}
+    />
   );
 };
