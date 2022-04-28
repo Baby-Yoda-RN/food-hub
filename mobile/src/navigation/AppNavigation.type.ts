@@ -5,6 +5,9 @@ export type RootStackParams = {
   Signup: {
     name: string;
   };
+  Rating: {
+    name: string;
+  };
   Category: {
     name: string;
   };
