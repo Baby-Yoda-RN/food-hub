@@ -10,12 +10,12 @@ export const AppNavigation: any = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen
           name={ERootStackRoutes.PHONE_REGISTRATION_SCREEN}
           component={PhoneRegistration}
         />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </NavigationContainer>
   );
