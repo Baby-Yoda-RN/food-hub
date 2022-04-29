@@ -2,17 +2,28 @@ import {StyleSheet} from 'react-native';
 import { color, size } from '../../theme';
 
 export const styles = StyleSheet.create({
-    container:{
+    profileContainer:{
+        backgroundColor:color.white,
+        justifyContent:'space-evenly',
+        alignItems:'center',
+        paddingBottom: size.xl,
+        flexFlow: 'column',  
+    },
+    inputContainer:{
        backgroundColor:color.white,
        justifyContent:'space-evenly',
+       alignContent:'space-around',
+       padding:size.sm,
        flexFlow: 'column',
-       paddingVertical: size.xl,
-       borderRadius: size.sm,   
    },
+   header: {
+        paddingLeft: 0,
+        backgroundColor:color.white,
+    },  
    name:{
     color: color.black,
     marginVertical: size.sm,
-     fontSize: size.rg,
+    fontSize: size.rg,
     },
    text:{
        color: color.grayMid,
