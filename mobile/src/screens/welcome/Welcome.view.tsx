@@ -1,21 +1,12 @@
 import React, {FC} from 'react';
 import {View, Text, ImageBackground} from 'react-native';
-import {
-  NativeStackNavigationProp,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
 import {Button, Footer} from '../../components';
-import {RootStackParams} from '../../navigation';
 import {color, size} from '../../theme';
-import {styles} from './WelcomeScreen.style';
-import {useNavigation} from '@react-navigation/native';
+import {styles} from './Welcome.style';
+import {TWelcomeScreenViewProps} from './Welcome.type';
 
-type Props = NativeStackScreenProps<RootStackParams, 'Welcome'>;
-
-export const WelcomeScreen: FC<Props> = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const title = 'FoodHub';
+export const WelcomeScreenView: FC<TWelcomeScreenViewProps> = ({press}) => {
+  const newTitle = 'FoodHub';
   const subTitle = `Your favourite foods delivered 
 fast at your door.`;
   const imagesrc = '../../assets/images/WelcomeScreen.png';
@@ -42,13 +33,13 @@ fast at your door.`;
           </View>
           <View style={styles.topSection}>
             <Text style={styles.title1}>
-              Welcome to <Text style={styles.title2}>{title}</Text>
+              Welcome to <Text style={styles.title2}>{newTitle}</Text>
             </Text>
             <Text style={styles.subTitle}>{subTitle}</Text>
           </View>
 
           <View style={styles.footer}>
-            <Footer navigation={navigation} isWelcome />
+            <Footer navigation={press} isWelcome />
           </View>
         </View>
       </ImageBackground>

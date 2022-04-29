@@ -8,10 +8,6 @@ const Stack = createStackNavigator<TAppNavigationRoutes>();
 export const AppNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen
-        name={EAppNavigationRoutes.WELCOME}
-        component={WelcomeScreen}
-      />
       <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
       <Stack.Screen
         name={EAppNavigationRoutes.REVIEW}
