@@ -1,16 +1,11 @@
-export enum ERootStackRoutes {
-  PHONE_REGISTRATION_SCREEN = 'PHONE_REGISTRATION_SCREEN',
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+export enum EAppNavigationRoutes {
+  PHONE_REGISTRATION = 'PHONE_REGISTRATION',
 }
 
-export type RootStackParams = {
-  Login: {
-    name: string;
-  };
-  Signup: {
-    name: string;
-  };
-  [ERootStackRoutes.PHONE_REGISTRATION_SCREEN]: undefined;
-  Rating: {
-    name: string;
-  };
+export type TAppNavigationRoutes = {
+  [EAppNavigationRoutes.PHONE_REGISTRATION]: undefined;
 };
+
+export type TAppNavigation = NativeStackNavigationProp<TAppNavigationRoutes>;
