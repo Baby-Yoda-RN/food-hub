@@ -6,10 +6,19 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
+  reviewHeaderContainer: {
+    flexDirection: 'row',
+  },
   userInformationContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: size.rg,
+    width: '90%',
+  },
+  colonIcon: {
+    width: '10%',
+    alignItems: 'center',
+    paddingTop: size.rg,
   },
   userDetailsContainer: {
     flexDirection: 'column',
