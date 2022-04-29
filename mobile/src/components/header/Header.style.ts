@@ -1,50 +1,36 @@
-import { StyleSheet } from "react-native";
-import { color, size} from "../../theme";
+import {StyleSheet} from 'react-native';
+import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: size.rg,
-    paddingVertical: size.sm,
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
   },
-
   locationContainer: {
     flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: size.lg,
-  },
-
-
-  leftComponentStyle: {
-  },
-  rightComponentStyle: {
-
   },
   title: {
     fontSize: 18,
-    textAlign: "center",
+    textAlign: 'center',
     color: color.black,
     flex: 1,
     padding: 10,
   },
-
   deliverTo: {
     fontSize: size.md,
-    textAlign: "center",
+    textAlign: 'center',
     color: color.grayMid,
-    flex: 1,
     padding: size.sm,
   },
-
   deliveryLocation: {
     fontSize: size.rg,
-    textAlign: "center",
+    textAlign: 'center',
     color: color.primary,
-    flex: 1,
-    padding: size.sm,
   },
-
   leftIcon: {
     alignItems: 'center',
     padding: size.sm,
@@ -53,11 +39,10 @@ export const styles = StyleSheet.create({
     borderBottomWidth: size.xxs,
     borderRightWidth: size.xxs,
     shadowColor: color.black,
-    shadowOffset: { width: size.xxs, height: size.xxs },
+    shadowOffset: {width: size.xxs, height: size.xxs},
     shadowOpacity: 0.9,
     shadowRadius: size.sm,
   },
-
   rightIcon: {
     alignItems: 'center',
     padding: 10,
@@ -66,15 +51,14 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderRightWidth: 2,
     shadowColor: color.black,
-    shadowOffset: { width: 2, height: 2 },
+    shadowOffset: {width: 2, height: 2},
     shadowOpacity: 0.9,
     shadowRadius: 10,
   },
-
   image: {
     borderRadius: 12,
     alignItems: 'center',
     height: 38,
     width: 38,
-  }
+  },
 });
