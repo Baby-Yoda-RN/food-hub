@@ -3,7 +3,7 @@ import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigat
 import {TaddNewAddressNavigation} from './addNewAddress.type';
 import {AddNewAddressScreenView} from './addNewAddress.view';
 
-export const addNewAddress: FC<TaddNewAddressNavigation> = ({navigation}) => {
+export const AddNewAddressScreen: FC<TaddNewAddressNavigation> = ({navigation}) => {
   return (
     <AddNewAddressScreenView
       title="Save"
