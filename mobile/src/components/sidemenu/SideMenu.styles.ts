@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { size, color } from '../../theme';
+import { size, color, font } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,9 +14,8 @@ export const styles = StyleSheet.create({
   name: {
     color: color.black,
     fontSize: size.rg,
-    fontWeight: 'bold',
     marginVertical: size.xs,
-    fontFamily:  "Sofia_Pro_Regular"
+    fontFamily: font.semiBold,
   },
   email: {
     fontSize: size.rg,
@@ -30,7 +29,7 @@ export const styles = StyleSheet.create({
   itemText: {
     color: color.black,
     fontSize: size.rg,
-    fontWeight: 'bold',
+    fontFamily: font.semiBold,
     marginHorizontal: size.rg,
   },
   button: {
@@ -42,17 +41,14 @@ export const styles = StyleSheet.create({
     marginTop: 'auto',
     padding: size.sm,
   },
-  logoutIcon: {
-    borderRadius: size.xl,
-    height: size.lg,
-    width: size.lg,
-  },
   buttonText: {
     color: color.white,
     marginHorizontal: size.sm,
   },
   buttonIconContainer: {
-    backgroundColor: 'white',
+    backgroundColor: color.white,
     borderRadius: size.xl,
+    height: size.lg,
+    width: size.lg,
   },
 });
