@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {Alert} from 'react-native';
 import {TFoodItem, TRestaurant} from '../../types/data';
-import {TGetItemId, THome} from './Home.type';
-import {HomeView} from './Home.view';
+import {TGetItemId, THomeScreen} from './Home.type';
+import {HomeScreenView} from './Home.view';
 
 const restaurantDummy: TRestaurant = {
   uuid: '1234',
@@ -39,7 +39,7 @@ const popularItems = [
   foodDummy,
 ];
 
-export const Home: FC<THome> = () => {
+export const HomeScreen: FC<THomeScreen> = () => {
 
 
   const handleViewAll = () => {
@@ -51,7 +51,7 @@ export const Home: FC<THome> = () => {
   };
 
   return (
-    <HomeView
+    <HomeScreenView
       featuredRestaurants={featuredRestaurants}
       popularItems={popularItems}
       onPressRestaurantCard={handleOnPressCard}

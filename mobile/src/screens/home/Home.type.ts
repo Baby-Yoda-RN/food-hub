@@ -1,7 +1,7 @@
-export type THome = {
+export type THomeScreen = {
 }
 
-export type THomeView = {
+export type THomeScreenView = {
   featuredRestaurants:Array<Object>
   popularItems:Array<Object>
   onPressViewAll?:()=> any

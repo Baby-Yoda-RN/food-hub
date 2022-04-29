@@ -7,9 +7,9 @@ import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
 import {color} from '../../theme';
 import {styles} from './Home.style';
-import {THomeView} from './Home.type';
+import {THomeScreenView} from './Home.type';
 
-export const HomeView: FC<THomeView> = ({
+export const HomeScreenView: FC<THomeScreenView> = ({
   onPressViewAll,
   onPressRestaurantCard,
   onPressFoodCard,
