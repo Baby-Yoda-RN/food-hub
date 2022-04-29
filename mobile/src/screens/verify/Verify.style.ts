@@ -5,22 +5,35 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: size.rg,
+    flexDirection: 'column',
   },
   header: {
-    paddingLeft: 0,
+    padding: size.rg,
   },
   title: {
+    padding: size.rg,
     fontSize: size.lg,
     fontFamily: font.semiBold,
     color: color.black,
   },
-  button: {
+  subtext: {
     padding: size.rg,
-    borderRadius: size.xxl,
+    borderRadius: size.rg,
   },
-  text: {
-    textAlign: 'center',
+
+  container2: {
+    flex: 1,
     margin: size.rg,
-    fontFamily: font.semiBold,
+    flexDirection: 'row',
+  },
+
+  subtext2: {
+    padding: size.rg,
+    borderRadius: size.rg,
+  },
+  subtextbutton: {
+    padding: size.rg,
+    borderRadius: size.rg,
+    color: color.red,
   },
 });

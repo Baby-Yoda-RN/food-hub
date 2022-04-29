@@ -12,6 +12,8 @@ export type TVerifyScreenProps = StackScreenProps<
 
 export type TVerifyScreenViewProps = {
   title: string;
+  emailName: string;
+  pinEntry: string;
 };
 
 export type TVerifyScreenNavigation = {

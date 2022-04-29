@@ -6,6 +6,7 @@ import {TPinEntryProps} from './PinInput.type';
 export const PinInput: FC<TPinEntryProps> = ({
   keyBoardType = 'numeric',
   digitCount = 4,
+  containerStyle = styles.container,
   onChangePinEntry = () => {},
 }) => {
   const [textArray, onChangeTextArray] = useState([]);
@@ -78,7 +79,7 @@ export const PinInput: FC<TPinEntryProps> = ({
 
   return (
     <>
-      <View style={styles.container}>{renderTextBoxes()}</View>
+      <View style={containerStyle}>{renderTextBoxes()}</View>
     </>
   );
 };
