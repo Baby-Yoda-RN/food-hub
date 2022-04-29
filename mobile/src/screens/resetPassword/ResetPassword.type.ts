@@ -1,5 +1,19 @@
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParams } from "../../navigation";
-export type TResetPassword = NativeStackScreenProps<RootStackParams, 'ResetPassword'>
+import {StackScreenProps} from '@react-navigation/stack';
+import {
+  EAuthNavigationRoutes,
+  TAuthNavigation,
+  TAuthNavigationRoutes,
+} from '../../navigation';
 
-export type TResetPasswordView = {}
+export type TResetPasswordProps = StackScreenProps<
+  TAuthNavigationRoutes,
+  EAuthNavigationRoutes.RESET_PASSWORD
+>;
+export type TResetPasswordViewProps = {
+  title: string;
+  subtitle: string;
+  press: () => void;
+};
+export type TResetPasswordNavigation = {
+  navigation: TAuthNavigation;
+};

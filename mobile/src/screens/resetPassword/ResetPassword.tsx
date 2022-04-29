@@ -1,10 +1,12 @@
-import React, {FC, useState} from "react";
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../navigation'
-import { useNavigation } from "@react-navigation/native";
-import { TResetPassword } from "./ResetPassword.type";
+import React, {FC} from "react";
+import { EAuthNavigationRoutes } from "../../navigation";
+import { TResetPasswordNavigation, TResetPasswordProps } from "./ResetPassword.type";
 import { ResetPasswordView } from "./ResetPassword.view";
 
-export const ResetPassword: FC<TResetPassword> = () => {
-    return <ResetPasswordView />
+export const ResetPasswordScreen: FC<TResetPasswordNavigation> = ({navigation}) => {
+    return <ResetPasswordView 
+        title="Reset Password"
+        subtitle="Please enter your email address to request a password reset"
+        press={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+    />
 }
