@@ -1,42 +1,69 @@
-import { StyleSheet } from "react-native";
-import { color, font, size } from "../../theme";
+import {Dimensions, StyleSheet} from 'react-native';
+import {color, font, size} from '../../theme';
+
+const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:color.white,
+  container: {
+    flex: 1,
+    backgroundColor: color.white,
   },
-  scrollView:{
-    marginTop:size.rg
+  content: {
+    flex: 1,
+    marginHorizontal: size.rg,
   },
-  horizontalContainer:{
-    flexDirection:'row',
+  scrollView: {
+    marginTop: size.rg,
   },
-  featuredRestaurantsTitleContainer:{
-    justifyContent:'space-between',
-    alignItems:'center',
+  scrollViewStyle: {
+    flex: 1,
   },
-  foodCardContainer:{
-    flex:1,
-    flexWrap:'wrap',
+  horizontalContainer: {
+    flexDirection: 'row',
   },
-  sectionContainer:{
-    marginVertical:size.md,
+  featuredRestaurantsTitleContainer: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  title:{
-    fontFamily:font.bold,
-    fontSize:size.lg+4,
-    color:'#323643',
-    lineHeight:size.lg+10,
-    marginBottom:size.sm,
+  foodCardContainer: {
+    flex: 1,
+    flexWrap: 'wrap',
   },
-  subtitle:{
-    fontFamily:font.bold,
-    fontSize:size.rg+5,
-    color:'#323643',
+  foodItemContainer:{
+    width:'50%',
   },
-  viewAll:{
-    color:color.primary,
-    textTransform:'capitalize',
-  }
-})
+  headerContainer: {
+    marginHorizontal: size.rg,
+    paddingBottom: size.rg,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10,
+  },
+  sectionContainer: {
+    marginVertical: size.md,
+  },
+  title: {
+    fontFamily: font.bold,
+    fontSize: 32,
+    color: '#323643',
+    lineHeight: size.lg + 10,
+    marginBottom: size.sm,
+  },
+  subtitle: {
+    fontFamily: font.bold,
+    fontSize: size.rg + 5,
+    color: '#323643',
+  },
+  viewAll: {
+    color: color.primary,
+    textTransform: 'capitalize',
+  },
+  restaurantContainer: {
+    width: windowWidth - 100,
+  },
+});

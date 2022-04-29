@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
-import { TFoodItem, TRestaurant } from '../../types/data';
-import { THome } from './Home.type'
-import { HomeView } from './Home.view'
-
-
+import React, {FC} from 'react';
+import {Alert} from 'react-native';
+import {TFoodItem, TRestaurant} from '../../types/data';
+import {TGetItemId, THome} from './Home.type';
+import {HomeView} from './Home.view';
 
 const restaurantDummy: TRestaurant = {
+  uuid: '1234',
   name: "McDonald's",
   rating: 4,
   usersVoted: 25,
@@ -20,7 +20,7 @@ const restaurantDummy: TRestaurant = {
 const foodDummy: TFoodItem = {
   uuid: '12345',
   name: 'Vegan Pizza',
-  description: 'Vegan Pizza',
+  description: 'Vegan Pizzaaaaaaaaaaaa',
   rating: 5,
   usersVoted: 100,
   price: 5.5,
@@ -28,20 +28,35 @@ const foodDummy: TFoodItem = {
   imageName: 'https://foodish-api.herokuapp.com/images/pizza/pizza29.jpg',
 };
 
-const featuredRestaurants = [
-  restaurantDummy,
-  restaurantDummy,
-  restaurantDummy,
-]
+const featuredRestaurants = [restaurantDummy, restaurantDummy, restaurantDummy];
 
 const popularItems = [
   foodDummy,
   foodDummy,
   foodDummy,
-]
+  foodDummy,
+  foodDummy,
+  foodDummy,
+];
 
-export const Home:FC<THome> = () => {
+export const Home: FC<THome> = () => {
+
+
+  const handleViewAll = () => {
+    console.log('navigate to Restaurants Screen')
+  }
+
+  const handleOnPressCard: TGetItemId = (id: string) => {
+    Alert.alert('Card Pressed', id);
+  };
+
   return (
-    <HomeView featuredRestaurants={featuredRestaurants} popularItems={popularItems}/>
-  )
-}
+    <HomeView
+      featuredRestaurants={featuredRestaurants}
+      popularItems={popularItems}
+      onPressRestaurantCard={handleOnPressCard}
+      onPressFoodCard={handleOnPressCard}
+      onPressViewAll={handleViewAll}
+    />
+  );
+};

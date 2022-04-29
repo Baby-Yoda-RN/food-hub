@@ -1,9 +1,12 @@
 export type THome = {
-  
 }
 
 export type THomeView = {
-  featuredRestaurants:Array<Object>,
-  popularItems:Array<Object>,
-  handleViewAll?:any,
+  featuredRestaurants:Array<Object>
+  popularItems:Array<Object>
+  onPressViewAll?:()=> any
+  onPressRestaurantCard:(id:string)=>any
+  onPressFoodCard:(id:string)=> any
 }
+
+export type TGetItemId = (id:string) => any
