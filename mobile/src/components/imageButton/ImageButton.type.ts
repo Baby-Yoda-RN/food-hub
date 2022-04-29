@@ -5,10 +5,9 @@ type TData = {
   image:string,
 }
 
-export type TRadioButton = {
-  data:TData[],
+export type TImageButton = {
+  data:TData,
   selected:string | null,
   onPressButton:(value:string|null)=> void,
   buttonStyle?:StyleProp<ViewStyle>
-  containerStyle?:StyleProp<ViewStyle>
 }

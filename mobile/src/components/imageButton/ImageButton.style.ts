@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../../theme';
+import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   divider:{
@@ -14,8 +14,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     borderRadius: 50,
+    backgroundColor: color.white,
   },
-  img: {
+  imageContainer: {
     backgroundColor:color.white,
     borderRadius: 50,
     width: 50,
@@ -29,9 +30,6 @@ export const styles = StyleSheet.create({
   },
   selected: {
     backgroundColor: color.primary,
-  },
-  unselected: {
-    backgroundColor: color.white,
   },
   shadow: {
     shadowColor: color.black,
