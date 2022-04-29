@@ -19,7 +19,7 @@ export const Footer: FC<Props> = ({navigation}) => {
   const lineThrough = <Text style={styles.lineThrough}>{wideSpaces}</Text>;
 
   const onNavigate = () => {
-    navigation.navigate('Login', {name: 'Login'});
+    navigation.navigate('Cart', {name: 'Cart'});
   };
   return (
     <View style={styles.container}>
