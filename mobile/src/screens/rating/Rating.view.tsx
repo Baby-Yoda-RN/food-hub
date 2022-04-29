@@ -35,7 +35,8 @@ export const RatingScreenView: FC<TRatingView> = ({
             </Text>
             <Text style={styles.title}>Please Rate Delivery Service</Text>
             <Text style={styles.rating}>{textRating[starRating]}</Text>
-            
+            <TextInput type={"regular"} />
+            <Button title="SUBMIT" containerStyle={styles.buttonContainer}/>
         </SafeAreaView>
     )
 }

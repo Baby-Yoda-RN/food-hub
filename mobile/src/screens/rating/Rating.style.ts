@@ -36,5 +36,5 @@ export const styles = StyleSheet.create({
         fontSize: size.lg,
         color: color.primary,
         marginTop: size.rg,
-    }
+    },
 })
