@@ -1,17 +1,18 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
-import {CartScreen, ReviewScreen} from '../../screens';
+import {CartScreen, CategoryScreen, ReviewScreen} from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
 
 export const AppNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown:false}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen
-        name={EAppNavigationRoutes.CART}
-        component={CartScreen}
+        name={EAppNavigationRoutes.CATEGORY}
+        component={CategoryScreen}
       />
+      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
       <Stack.Screen
         name={EAppNavigationRoutes.REVIEW}
         component={ReviewScreen}

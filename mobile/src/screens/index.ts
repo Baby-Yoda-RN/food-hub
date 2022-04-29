@@ -3,4 +3,4 @@ export * from './signup/SignUp';
 export * from './rating/Rating';
 export * from './cart/Cart';
 export * from './review/Review';
-export * from './category/CategoryScreen';
+export * from './category/Category';
