@@ -26,8 +26,6 @@ fast at your door.`;
             <Button
               title="skip"
               buttonTheme={color.white}
-              buttonHeight={size.md}
-              buttonWidth={size.xl}
               titleStyle={{color: color.primary}}
             />
           </View>
@@ -39,7 +37,7 @@ fast at your door.`;
           </View>
 
           <View style={styles.footer}>
-            <Footer navigation={press} isWelcome />
+            <Footer onPress={press} type="welcome" />
           </View>
         </View>
       </ImageBackground>

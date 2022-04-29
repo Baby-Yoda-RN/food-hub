@@ -3,29 +3,23 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from '../button/Button';
 import {color, size} from '../../theme';
 import {styles} from './Footer.style';
-import {Icon} from '../icon/Icon';
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParams} from '../../navigation';
+import {TFooter} from './Footer.type';
 
-type Props = NativeStackScreenProps<RootStackParams, 'Welcome'>;
-
-export const Footer: FC<Props> = ({navigation, isWelcome}) => {
+export const Footer: FC<TFooter> = ({onPress, type}) => {
   const footerNote = 'Already have an account?';
   const wideSpaces = '                         ';
   const shortSpaces = '     ';
   const emailOrPhone = 'Start with email or phone';
+  const text = type === 'welcome' || type === 'signup' ? 'Sign in' : 'Sign up';
 
   const lineThrough = <Text style={styles.lineThrough}>{wideSpaces}</Text>;
 
-  const onNavigate = () => {
-    navigation.navigate('Cart', {name: 'Cart'});
-  };
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
         {lineThrough}
-        {shortSpaces}sign in with{shortSpaces}
+        {shortSpaces}
+        {text} in with{shortSpaces}
         {lineThrough}
       </Text>
       <View style={styles.topButtons}>
@@ -46,9 +40,9 @@ export const Footer: FC<Props> = ({navigation, isWelcome}) => {
           containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
         />
       </View>
-      {!!isWelcome && (
+      {type === 'welcome' && (
         <>
-          <TouchableOpacity style={styles.bottomButtons} onPress={onNavigate}>
+          <TouchableOpacity style={styles.bottomButtons} onPress={onPress}>
             <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>
           </TouchableOpacity>
           <View style={styles.bottomText}>
