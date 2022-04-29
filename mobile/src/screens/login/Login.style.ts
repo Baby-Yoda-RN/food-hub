@@ -2,11 +2,6 @@ import { StyleSheet } from 'react-native';
 import { color, font, size } from '../../theme';
 
 export const styles = StyleSheet.create({
-    container:
-    {
-        flex: 1,
-        margin: size.rg,
-    },
     header: {
         paddingLeft: 0
     },
@@ -14,15 +9,26 @@ export const styles = StyleSheet.create({
         fontSize: size.lg,
         fontFamily: font.semiBold,
         color: color.black,
+        marginTop: size.xl,
+    },
+    textInputContainer: {
+        marginVertical: size.rg,
     },
     button: {
         padding: size.rg,
         borderRadius: size.xxl
     },
+    textContainer: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+    },
     text: {
-        textAlign: 'center',
-        margin: size.rg,
+        marginVertical: size.rg,
+        marginBottom: size.md,
         fontFamily: font.semiBold,
-    }
+    },
+    textNavigate: {
+        color: color.primary,
+    },
 
 });
