@@ -2,23 +2,20 @@ import {StyleSheet} from 'react-native';
 import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    padding: size.lg,
-  },
   headerContainer: {
-    paddingLeft: size.lg,
     paddingTop: size.lg,
   },
   title: {
     fontFamily: font.semiBold,
     fontSize: size.lg,
     color: color.black,
-    marginTop: size.rg,
+    marginTop: size.xl,
   },
   subtitle: {
-    width: '65%',
     marginBottom: size.lg,
+  },
+  textInputContainer: {
+    shadowColor: color.black,
   },
   buttonText: {
     fontFamily: font.regular,
@@ -26,5 +23,7 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: size.lg,
     padding: size.rg,
+    shadowColor: color.black,
+    elevation: size.lg,
   },
 });

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {EAuthNavigationRoutes} from '../../navigation';
+import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
 import {
   TPhoneRegistrationNavigation,
   TPhoneRegistrationProps,
