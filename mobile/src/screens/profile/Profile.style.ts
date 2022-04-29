@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
        flexFlow: 'column',
    },
    header: {
-        paddingLeft: 0,
+        padding: size.sm,
         backgroundColor:color.white,
     },  
    name:{
