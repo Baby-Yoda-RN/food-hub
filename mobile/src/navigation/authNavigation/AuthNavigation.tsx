@@ -1,19 +1,19 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
+import {TAuthNavigationRoutes, EAuthNavigationRoutes} from './AuthNavigation.type';
 import {SignUpScreen, LoginScreen} from '../../screens';
 
-const Stack = createStackNavigator<TAppNavigationRoutes>();
+const Stack = createStackNavigator<TAuthNavigationRoutes>();
 
-export const AppNavigation = () => {
+export const AuthNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={EAppNavigationRoutes.SIGNUP}
+        name={EAuthNavigationRoutes.SIGNUP}
         component={SignUpScreen}
       />
       <Stack.Screen
-        name={EAppNavigationRoutes.LOGIN}
+        name={EAuthNavigationRoutes.LOGIN}
         component={LoginScreen}
       />
     </Stack.Navigator>

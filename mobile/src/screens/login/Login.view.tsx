@@ -4,16 +4,16 @@ import {TextInput, Header, Button} from '../../components';
 import {TLoginScreenViewProps} from './Login.type';
 import {styles} from './Login.style';
 import {size} from '../../theme';
-import style from '../../../storybook/stories/CenterView/style';
 
 export const LoginScreenView: FC<TLoginScreenViewProps> = ({title, press}) => {
+  
   return (
     <View style={styles.container}>
       <Header
         leftIconName="ChevronLeft"
         iconWidth={size.rg}
         iconHeight={size.rg}
-        containerStyle={{paddingLeft: 0}}
+        containerStyle={styles.header}
       />
       <Text style={styles.title}>{title}</Text>
       <Text>E-mail</Text>

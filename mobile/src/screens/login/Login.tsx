@@ -1,13 +1,15 @@
 import React, {FC} from 'react';
-import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
-import {TLoginScreenProps} from './Login.type';
+import {EAuthNavigationRoutes,} from '../../navigation/authNavigation/AuthNavigation.type';
+import {TLoginNavigation} from './Login.type';
 import {LoginScreenView} from './Login.view';
 
-export const LoginScreen: FC<TLoginScreenProps> = ({route, navigation}) => {
+export const LoginScreen: FC<TLoginNavigation> = ({navigation}) => {
+
+  
   return (
     <LoginScreenView
-      title={route.name}
-      press={() => navigation.navigate(EAppNavigationRoutes.SIGNUP)}
+      title="Login"
+      press={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
     />
   );
 };
