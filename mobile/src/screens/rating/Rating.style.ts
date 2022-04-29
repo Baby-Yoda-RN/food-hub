@@ -1,20 +1,40 @@
 import { StyleSheet } from "react-native";
-import { color, size } from "../../theme";
+import { color, font, size } from "../../theme";
 
 export const styles = StyleSheet.create({
-    textInputContainer: {
-        marginBottom: size.lg,
-    },
     buttonContainer: {
-        justifyContent: 'center',
-        marginTop: 5,
+        padding: size.rg,
+        marginTop: size.lg,
+    },
+    buttonText: {
+        fontFamily: font.regular,
     },
     container: {
-        flex: 1,
-        backgroundColor: color.white,
-        alignContent: 'center',
         justifyContent: 'center',
-        flexDirection: 'row',
-        marginHorizontal: size.lg,
+        padding: size.lg,
     },
+    headerContainer: {
+        paddingLeft: size.lg,
+        paddingTop: size.lg,
+    },
+    title: {
+        fontFamily: font.semiBold,
+        fontSize: size.lg,
+        color: color.black,
+        marginTop: size.rg,
+    },
+    subtitle: {
+        width: '65%',
+        marginBottom: size.lg,
+    },
+    delivered: {
+        width: '65%',
+        color: color.green,
+        marginBottom: size.lg,
+    },
+    rating: {
+        fontSize: size.lg,
+        color: color.primary,
+        marginTop: size.rg,
+    }
 })
