@@ -5,7 +5,11 @@ import {size} from '../../theme';
 import {styles} from './PhoneRegistration.style';
 import {TPhoneRegistrationViewProps} from './PhoneRegistration.type';
 
-export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = () => {
+export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
+  title,
+  subtitle,
+  press,
+}) => {
   return (
     <View>
       <Header
@@ -15,15 +19,14 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = () => {
         containerStyle={styles.headerContainer}
       />
       <View style={styles.container}>
-        <Text style={styles.title}>Registration</Text>
-        <Text style={styles.subtitle}>
-          Enter your phone number to verify your account
-        </Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
         <TextInput type="phone" leftIcon="FlagUSA" />
         <Button
           title="SEND"
           containerStyle={styles.buttonContainer}
           titleStyle={styles.buttonText}
+          onPress={press}
         />
       </View>
     </View>
