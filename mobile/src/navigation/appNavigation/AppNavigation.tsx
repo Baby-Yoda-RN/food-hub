@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
-import {CartScreen, ReviewScreen} from '../../screens';
+import {CartScreen, ReviewScreen, FavoriteFoodItems} from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
 
@@ -15,6 +15,10 @@ export const AppNavigation = () => {
       <Stack.Screen
         name={EAppNavigationRoutes.REVIEW}
         component={ReviewScreen}
+      />
+      <Stack.Screen
+        name={EAppNavigationRoutes.FAVORITEFOODITEMS}
+        component={FavoriteFoodItems}
       />
     </Stack.Navigator>
   );
