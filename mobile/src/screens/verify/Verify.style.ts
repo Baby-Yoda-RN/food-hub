@@ -36,4 +36,8 @@ export const styles = StyleSheet.create({
     borderRadius: size.rg,
     color: color.red,
   },
+  buttonContainer: {
+    marginTop: size.lg,
+    padding: size.rg,
+  },
 });

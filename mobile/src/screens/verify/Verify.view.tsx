@@ -35,6 +35,8 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
           {'Please resend'}
         </Text>
       </View>
+
+      <Button containerStyle={styles.buttonContainer} title="Submit" />
     </View>
   );
 };
