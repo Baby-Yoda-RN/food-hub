@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {EAuthNavigationRoutes,} from '../../navigation/authNavigation/AuthNavigation.type';
+import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
 import {TLoginNavigation} from './Login.type';
 import {LoginScreenView} from './Login.view';
 
