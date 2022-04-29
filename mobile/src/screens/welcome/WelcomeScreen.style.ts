@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   topSection: {
-    flex: 5,
+    flex: 6,
   },
   footer: {
     flex: 3,

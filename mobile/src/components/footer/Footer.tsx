@@ -10,7 +10,7 @@ import {RootStackParams} from '../../navigation';
 
 type Props = NativeStackScreenProps<RootStackParams, 'Welcome'>;
 
-export const Footer: FC<Props> = ({navigation}) => {
+export const Footer: FC<Props> = ({navigation, isWelcome}) => {
   const footerNote = 'Already have an account?';
   const wideSpaces = '                         ';
   const shortSpaces = '     ';
@@ -35,6 +35,7 @@ export const Footer: FC<Props> = ({navigation}) => {
           iconSize={size.lg}
           buttonTheme={color.white}
           titleStyle={{color: color.black}}
+          containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
         />
         <Button
           title="GOOGLE"
@@ -42,15 +43,20 @@ export const Footer: FC<Props> = ({navigation}) => {
           iconSize={size.lg}
           buttonTheme={color.white}
           titleStyle={{color: color.black}}
+          containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
         />
       </View>
-      <TouchableOpacity style={styles.bottomButtons} onPress={onNavigate}>
-        <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>
-      </TouchableOpacity>
-      <View style={styles.bottomText}>
-        <Text style={styles.text}>{footerNote} </Text>
-        <Text style={styles.linkText}>Sign in</Text>
-      </View>
+      {!!isWelcome && (
+        <>
+          <TouchableOpacity style={styles.bottomButtons} onPress={onNavigate}>
+            <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>
+          </TouchableOpacity>
+          <View style={styles.bottomText}>
+            <Text style={styles.text}>{footerNote} </Text>
+            <Text style={styles.linkText}>Sign in</Text>
+          </View>
+        </>
+      )}
     </View>
   );
 };

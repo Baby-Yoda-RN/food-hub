@@ -48,7 +48,7 @@ fast at your door.`;
           </View>
 
           <View style={styles.footer}>
-            <Footer navigation={navigation} />
+            <Footer navigation={navigation} isWelcome />
           </View>
         </View>
       </ImageBackground>
