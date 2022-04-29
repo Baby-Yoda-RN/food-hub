@@ -5,7 +5,7 @@ export type TSignUpScreenProps = StackScreenProps<TAuthNavigationRoutes, EAuthNa
 
 export type TSignUpScreenViewProps = {
     title: string;
-    press: () => void;
+    onPress: () => void;
 };
 
 export type TSignUpNavigation = {
