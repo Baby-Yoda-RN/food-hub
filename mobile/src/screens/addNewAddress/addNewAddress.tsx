@@ -4,8 +4,6 @@ import {TaddNewAddressNavigation} from './addNewAddress.type';
 import {AddNewAddressScreenView} from './addNewAddress.view';
 
 export const addNewAddress: FC<TaddNewAddressNavigation> = ({navigation}) => {
-
-  
   return (
     <AddNewAddressScreenView
       title="Save"

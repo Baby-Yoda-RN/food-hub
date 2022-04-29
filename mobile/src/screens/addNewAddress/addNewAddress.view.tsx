@@ -11,20 +11,20 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({title, pre
     <View style={styles.container}>
       <Header
         leftIconName="ChevronLeft"
+        title='Add new Address'
         iconWidth={size.rg}
         iconHeight={size.rg}
         containerStyle={styles.header}
       />
-      <Text style={styles.title}>{title}</Text>
-      <Text>E-mail</Text>
+      <Text>Full Name</Text>
       <TextInput type="regular" />
-      <Text>Password</Text>
-      <TextInput type="password" rightIcon="Eye" />
-      <Text style={styles.text}>Forgot password?</Text>
-      <Button title="LOGIN" containerStyle={styles.button} />
-      <Text style={styles.text} onPress={press}>
-        Don't have an account? Sign Up
-      </Text>
+      <Text>Mobile Number</Text>
+      <TextInput type="regular" />
+      <Text>State</Text>
+      <TextInput type="search" />
+      <Text>City</Text>
+      <TextInput type="search" />
+      <Button title="SAVE" containerStyle={styles.button} />
     </View>
   );
 };
