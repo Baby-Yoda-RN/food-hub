@@ -4,7 +4,7 @@ import { color } from '../../theme';
 import {styles} from './Container.style';
 import {TContainer} from './Container.type';
 
-export const Containe: FC<TContainer> = ({
+export const Container: FC<TContainer> = ({
   children,
   isLoading = false,
   safeAreaStyle: customSafeAreaStyle,
