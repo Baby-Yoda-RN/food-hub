@@ -2,8 +2,13 @@ import {StyleSheet} from 'react-native';
 import {color, font, size} from '../../theme';
 
 export const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
+    backgroundColor: color.white,
+  },
+
+  container: {
+    flex: 2,
     margin: size.rg,
     flexDirection: 'column',
   },
@@ -22,7 +27,7 @@ export const styles = StyleSheet.create({
   },
 
   container2: {
-    flex: 1,
+    flex: 2,
     margin: size.rg,
     flexDirection: 'row',
   },
@@ -38,6 +43,6 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: size.lg,
-    padding: size.rg,
+    padding: size.md,
   },
 });
