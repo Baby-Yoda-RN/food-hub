@@ -41,11 +41,11 @@ export const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
   },
   lineStyle: {
-    borderColor: 'white',
+    borderColor: color.white,
     borderWidth: 1,
     width: '27%',
     marginHorizontal: size.rg,
-    opacity: 0.3,
+    opacity: 0.2,
   },
   divider: {
     flexDirection: 'row',

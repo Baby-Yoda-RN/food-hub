@@ -5,16 +5,22 @@ import {color, size} from '../../theme';
 import {styles} from './Footer.style';
 import {TFooter} from './Footer.type';
 
-export const Footer: FC<TFooter> = ({onPress, divider, isEmailorPhone}) => {
+export const Footer: FC<TFooter> = ({
+  onPress,
+  divider,
+  dividerStyle,
+  dividerTextStyle,
+  isEmailorPhone,
+}) => {
   const footerNote = 'Already have an account?';
   const emailOrPhone = 'Start with email or phone';
 
   return (
     <View style={styles.container}>
       <View style={styles.divider}>
-        <View style={styles.lineStyle} />
-        <Text style={styles.text}>{divider}</Text>
-        <View style={styles.lineStyle} />
+        <View style={[styles.lineStyle, dividerStyle]} />
+        <Text style={[styles.text, dividerTextStyle]}>{divider}</Text>
+        <View style={[styles.lineStyle, dividerStyle]} />
       </View>
       <View style={styles.topButtons}>
         <Button
