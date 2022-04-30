@@ -4,7 +4,11 @@ import { TAuthNavigationRoutes, EAuthNavigationRoutes, TAuthNavigation } from '.
 export type TLoginScreenProps = StackScreenProps<TAuthNavigationRoutes, EAuthNavigationRoutes.LOGIN>;
 
 export type TaddNewAddressViewProps = {
-    title: string;
+    name: string;
+    phoneNumber: string;
+    state: string;
+    city: string;
+    street: string;
     press: () => void;
 };
 

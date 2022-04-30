@@ -6,7 +6,11 @@ import {AddNewAddressScreenView} from './addNewAddress.view';
 export const AddNewAddressScreen: FC<TaddNewAddressNavigation> = ({navigation}) => {
   return (
     <AddNewAddressScreenView
-      title="Save"
+      name='Eljad Eendaz'
+      phoneNumber='(201)867-5309'
+      state='California'
+      city='Sacramento'
+      street='4102 Pretty View Lane'
       press={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
     />
   );
