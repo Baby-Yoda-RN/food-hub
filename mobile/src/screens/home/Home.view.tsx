@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Header, TextInput} from '../../components';
+import {Header, Icon, TextInput} from '../../components';
 import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
@@ -18,14 +18,14 @@ export const HomeScreenView: FC<THomeScreenView> = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header
+      {/* <Header
         deliveryLocation="4102 Pretty View Lane"
         leftIconName="Hamburger"
         iconHeight={20}
         iconWidth={20}
         rightIconName="Hamburger"
         containerStyle={styles.headerContainer}
-      />
+      /> */}
       <ScrollView
         style={styles.scrollViewStyle}
         nestedScrollEnabled
@@ -45,7 +45,10 @@ export const HomeScreenView: FC<THomeScreenView> = ({
               ]}>
               <Text style={styles.subtitle}>Featured Restaurants</Text>
               <TouchableOpacity onPress={onPressViewAll}>
-                <Text style={styles.viewAll}>{'View All >'}</Text>
+                <View style={styles.viewAllContainer}>
+                  <Text style={styles.viewAll}>{'View All'}</Text>
+                  <Icon name='ChevronRightOrange' height={12} width={12}/>
+                </View>
               </TouchableOpacity>
             </View>
             <ScrollView

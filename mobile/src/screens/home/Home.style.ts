@@ -63,6 +63,12 @@ export const styles = StyleSheet.create({
     color: color.primary,
     textTransform: 'capitalize',
   },
+  viewAllContainer:{
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:color.midGray
+  },
   restaurantContainer: {
     width: windowWidth - 100,
   },
