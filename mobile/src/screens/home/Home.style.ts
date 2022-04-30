@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    marginHorizontal: size.rg,
   },
   scrollView: {
     marginTop: size.rg,

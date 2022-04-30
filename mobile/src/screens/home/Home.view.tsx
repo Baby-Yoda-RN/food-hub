@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Header, Icon, TextInput} from '../../components';
+import {Container, Header, Icon, TextInput} from '../../components';
 import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
@@ -30,7 +30,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         style={styles.scrollViewStyle}
         nestedScrollEnabled
         contentContainerStyle={styles.scrollView}>
-        <View style={styles.content}>
+        <Container>
           <Text style={styles.title}>What would you like to order</Text>
           <TextInput
             leftIcon="Magnify"
@@ -83,9 +83,15 @@ export const HomeScreenView: FC<THomeScreenView> = ({
               })}
             </View>
           </View>
-        </View>
+        </Container>
       </ScrollView>
       <BottomTabNavigator fillPin={color.primary} />
     </SafeAreaView>
   );
 };
+
+<View style={{flexDirection: 'row'}}>
+  <View style={{borderColor: 'white', borderWidth: 1}} />
+  <Text>some text</Text>
+  <View style={{borderColor: 'white', borderWidth: 1}} />
+</View>;
