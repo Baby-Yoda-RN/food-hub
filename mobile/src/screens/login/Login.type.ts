@@ -5,7 +5,9 @@ export type TLoginScreenProps = StackScreenProps<TAuthNavigationRoutes, EAuthNav
 
 export type TLoginScreenViewProps = {
     title: string;
-    press: () => void;
+    goToSignUp: () => void;
+    goBack: () => void;
+    goToResetPassword: () => void;
 };
 
 export type TLoginNavigation = {

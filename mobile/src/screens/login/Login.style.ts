@@ -2,8 +2,16 @@ import { StyleSheet } from 'react-native';
 import { color, font, size } from '../../theme';
 
 export const styles = StyleSheet.create({
+    backgroundImageContainer: {
+        position: 'absolute',
+        backgroundColor: 'white',
+    },
     header: {
-        paddingLeft: 0
+        backgroundColor: 'transparent',
+        borderColor: 'grey',
+        height: '100%',
+        marginTop: size.md,
+        paddingLeft: size.md,
     },
     title: {
         fontSize: size.lg,
@@ -12,11 +20,13 @@ export const styles = StyleSheet.create({
         marginTop: size.xl,
     },
     textInputContainer: {
-        marginVertical: size.rg,
+        marginVertical: size.md,
     },
     button: {
         padding: size.rg,
-        borderRadius: size.xxl
+        borderRadius: size.xxl,
+        shadowColor: color.black,
+        elevation: size.md,
     },
     textContainer: {
         justifyContent: 'center',
