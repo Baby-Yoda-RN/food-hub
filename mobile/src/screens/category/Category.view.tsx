@@ -1,18 +1,16 @@
 import React, {FC} from 'react';
 import {FlatList, ImageBackground, Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Header, Icon, DropDown} from '../../components';
+import {Header, Icon, Dropdown, TextInput} from '../../components';
 import {FoodCard} from '../../components/card/foodCard';
 import {size} from '../../theme';
 import {TFoodItem} from '../../types/data';
-import {Rating} from '../rating/Rating';
 import {styles} from './Category.styles';
 import {TCategoryViewProps} from './Category.type';
 
 const foodTypeList: Array<TFoodItem> = [
   {
     uuid: '1',
-    name: 'pineapple1',
+    name: 'pineapple12',
     description: 'pineapple1 desc',
     rating: 1,
     usersVoted: 1,
@@ -52,6 +50,11 @@ const foodTypeList: Array<TFoodItem> = [
   },
 ];
 
+const DropdownList = [
+  {label: 'Popular', value: 'popular'},
+  {label: 'Price', value: 'price'},
+];
+
 export const CategoryScreenView: FC<TCategoryViewProps> = () => {
   const titleCategory1 = 'Fast';
   const titleCategory2 = 'Food';
@@ -87,18 +90,16 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
           <View style={styles.aligner}>
             <Text style={styles.text}>Sort by: </Text>
           </View>
-          <DropDown />
+          <Dropdown data={DropdownList} />
           <View style={styles.aligner}>
             <Icon name="Slide" width={size.rg} height={size.rg} />
           </View>
         </View>
-        <View>
-          <FlatList
-            data={foodTypeList}
-            renderItem={({item}) => <FoodCard foodItem={item} />}
-            keyExtractor={item => item.uuid}
-          />
-        </View>
+        <FlatList
+          data={foodTypeList}
+          renderItem={({item}) => <FoodCard foodItem={item} />}
+          keyExtractor={item => item.uuid}
+        />
       </View>
     </View>
   );

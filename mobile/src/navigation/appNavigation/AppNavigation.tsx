@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
-import {CartScreen, CategoryScreen, ReviewScreen} from '../../screens';
+import {CartScreen, ReviewScreen, CategoryScreen} from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
 

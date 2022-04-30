@@ -10,3 +10,4 @@ export * from './tag/Tag';
 export * from './sidemenu/SideMenu';
 export * from './dropdown/Dropdown';
 export * from './container/Container';
+export * from './footer/Footer';
