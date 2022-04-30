@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, TouchableOpacity} from 'react-native';
 import {size} from '../../theme';
 import {Badge} from '../badge/Badge';
 import {Card} from '../card/card';
@@ -16,7 +16,7 @@ export const ReviewCard: FC<TReviewCardProps> = ({
     return (
       <>
         <View style={styles.reviewHeaderContainer}>
-          <View style={styles.userInformationContainer}>
+          <TouchableOpacity onPress={handleProfilePicture}>
             <View style={styles.profileImageContainer}>
               <Image source={{uri: review.profileImage}} style={styles.image} />
               <View style={styles.badgeContainer}>
@@ -26,18 +26,20 @@ export const ReviewCard: FC<TReviewCardProps> = ({
                 />
               </View>
             </View>
-            <View style={styles.userDetailsContainer}>
-              <Text style={styles.nameText}>{review.name}</Text>
-              <Text style={styles.dateText}>{review.date}</Text>
+          </TouchableOpacity>
+          <View style={styles.userDetailsContainer}>
+            <Text style={styles.nameText}>{review.name}</Text>
+            <Text style={styles.dateText}>{review.date}</Text>
+          </View>
+          <TouchableOpacity onPress={handleRightIcon}>
+            <View style={styles.colonIcon}>
+              <Icon name="Colon" height={size.rg} width={size.rg} />
             </View>
-          </View>
-          <View style={styles.colonIcon}>
-            <Icon name="Colon" height={size.rg} width={size.rg} />
-          </View>
+          </TouchableOpacity>
         </View>
         <Text style={styles.reviewText}>{review.reviewText}</Text>
       </>
     );
   };
-  return <Card renderDetails={render} />;
+  return <Card renderDetails={render} containerStyle={{padding: 10}} />;
 };

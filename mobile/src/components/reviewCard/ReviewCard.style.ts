@@ -4,30 +4,28 @@ import {color, font, size} from '../../theme';
 export const styles = StyleSheet.create({
   profileImageContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    flexShrink: 1,
+    flexGrow: 0,
   },
   reviewHeaderContainer: {
     flexDirection: 'row',
   },
-  userInformationContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: size.rg,
-    width: '90%',
-  },
   colonIcon: {
-    width: '10%',
     alignItems: 'center',
     paddingTop: size.rg,
+    flexShrink: 1,
+    flexGrow: 0,
+    flexBasis: 50,
   },
   userDetailsContainer: {
-    flexDirection: 'column',
+    flexShrink: 0,
+    flexGrow: 1,
+    justifyContent: 'center',
   },
   nameText: {
     color: color.black,
     fontSize: size.rg,
     fontFamily: font.semiBold,
-    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   dateText: {
