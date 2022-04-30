@@ -5,12 +5,11 @@ import {color, size} from '../../theme';
 import {styles} from './Footer.style';
 import {TFooter} from './Footer.type';
 
-export const Footer: FC<TFooter> = ({onPress, type}) => {
+export const Footer: FC<TFooter> = ({onPress, divider, isEmailorPhone}) => {
   const footerNote = 'Already have an account?';
   const wideSpaces = '                         ';
   const shortSpaces = '     ';
   const emailOrPhone = 'Start with email or phone';
-  const text = type === 'welcome' || type === 'signup' ? 'Sign in' : 'Sign up';
 
   const lineThrough = <Text style={styles.lineThrough}>{wideSpaces}</Text>;
 
@@ -19,7 +18,8 @@ export const Footer: FC<TFooter> = ({onPress, type}) => {
       <Text style={styles.text}>
         {lineThrough}
         {shortSpaces}
-        {text} in with{shortSpaces}
+        {divider}
+        {shortSpaces}
         {lineThrough}
       </Text>
       <View style={styles.topButtons}>
@@ -40,7 +40,7 @@ export const Footer: FC<TFooter> = ({onPress, type}) => {
           containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
         />
       </View>
-      {type === 'welcome' && (
+      {!!isEmailorPhone && (
         <>
           <TouchableOpacity style={styles.bottomButtons} onPress={onPress}>
             <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>

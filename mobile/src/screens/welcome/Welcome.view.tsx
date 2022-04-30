@@ -37,7 +37,7 @@ fast at your door.`;
           </View>
 
           <View style={styles.footer}>
-            <Footer onPress={press} type="welcome" />
+            <Footer onPress={press} divider={'Sign in with'} isEmailorPhone />
           </View>
         </View>
       </ImageBackground>

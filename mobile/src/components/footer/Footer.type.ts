@@ -1,4 +1,5 @@
 export type TFooter = {
   onPress: () => void;
-  type: 'welcome' | 'login' | 'signup';
+  divider: string;
+  isEmailorPhone?: boolean;
 };
