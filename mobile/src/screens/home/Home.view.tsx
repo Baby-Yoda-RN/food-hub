@@ -18,14 +18,14 @@ export const HomeScreenView: FC<THomeScreenView> = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Header
+      <Header
         deliveryLocation="4102 Pretty View Lane"
         leftIconName="Hamburger"
         iconHeight={20}
         iconWidth={20}
         rightIconName="Hamburger"
         containerStyle={styles.headerContainer}
-      /> */}
+      />
       <ScrollView
         style={styles.scrollViewStyle}
         nestedScrollEnabled
@@ -44,11 +44,11 @@ export const HomeScreenView: FC<THomeScreenView> = ({
                 styles.featuredRestaurantsTitleContainer,
               ]}>
               <Text style={styles.subtitle}>Featured Restaurants</Text>
-              <TouchableOpacity onPress={onPressViewAll}>
-                <View style={styles.viewAllContainer}>
-                  <Text style={styles.viewAll}>{'View All'}</Text>
-                  <Icon name='ChevronRightOrange' height={12} width={12}/>
-                </View>
+              <TouchableOpacity
+                onPress={onPressViewAll}
+                style={styles.viewAllContainer}>
+                <Text style={styles.viewAll}>{'View All'}</Text>
+                <Icon name="ChevronRightOrange" height={12} width={12} />
               </TouchableOpacity>
             </View>
             <ScrollView
