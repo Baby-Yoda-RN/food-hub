@@ -15,13 +15,16 @@ export const styles = StyleSheet.create({
   header: {
     padding: size.rg,
   },
+
   title: {
+    marginTop: size.lg,
     padding: size.rg,
     fontSize: size.lg,
     fontFamily: font.semiBold,
     color: color.black,
   },
   subtext: {
+    marginBottom: size.lg,
     padding: size.rg,
     borderRadius: size.rg,
   },
