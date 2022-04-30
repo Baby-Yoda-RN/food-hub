@@ -5,6 +5,7 @@ import {Container, Header, Icon, TextInput} from '../../components';
 import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
+import { ImageButton } from '../../components/imageButton/ImageButton';
 import {color} from '../../theme';
 import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
@@ -15,7 +16,10 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   onPressFoodCard,
   featuredRestaurants,
   popularItems,
+  categories,
+  categoryState
 }) => {
+  const [category, setCategory] = categoryState
   return (
     <SafeAreaView style={styles.container}>
       <Header
@@ -37,6 +41,11 @@ export const HomeScreenView: FC<THomeScreenView> = ({
             type="search"
             placeholder="Find food by name"
           />
+          <ScrollView horizontal>
+            {categories?.map((item) => {
+              return <ImageButton key={item.value} data={item} selected={category} onPressButton={setCategory}/>
+            })}
+          </ScrollView>
           <View style={styles.sectionContainer}>
             <View
               style={[

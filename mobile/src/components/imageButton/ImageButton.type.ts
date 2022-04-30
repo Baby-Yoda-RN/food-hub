@@ -1,6 +1,6 @@
 import { StyleProp, ViewStyle } from "react-native"
 
-type TData = {
+export type TData = {
   value: string,
   image:string,
 }

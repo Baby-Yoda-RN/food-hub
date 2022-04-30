@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Alert} from 'react-native';
 import {TFoodItem, TRestaurant} from '../../types/data';
 import {TGetItemId, THomeScreen} from './Home.type';
@@ -15,17 +15,6 @@ const restaurantDummy: TRestaurant = {
   items: ['Burger', 'Chicken', 'Fast Food', 'Breakfast', 'American'],
   imageName:
     'https://www.tasteofhome.com/wp-content/uploads/2021/03/mcdonalds-1200x630-GettyImages-1285446341.jpg',
-};
-
-const foodDummy: TFoodItem = {
-  uuid: '12345',
-  name: 'Vegan Pizza',
-  description: 'Vegan Pizzaaaaaaaaaaaa',
-  rating: 5,
-  usersVoted: 100,
-  price: 5.5,
-  favorite: false,
-  imageName: 'https://foodish-api.herokuapp.com/images/pizza/pizza29.jpg',
 };
 
 const featuredRestaurants = [restaurantDummy, restaurantDummy, restaurantDummy];
@@ -83,7 +72,18 @@ const popularItems = [
   },
 ];
 
+
+const categories = [
+  {value:'Burger',image:'https://flyclipart.com/thumb2/burger-energy-food-junk-food-meal-veggie-burger-icon-587826.png'},
+  {value:'Pizza',image:'https://cdn-icons-png.flaticon.com/512/3132/3132693.png'},
+  {value:'Mexican',image:'https://i.pinimg.com/originals/1b/ec/81/1bec818c51ca78276ffa641f2a210612.png'},
+  {value:'Asian',image:'https://cdn.iconscout.com/icon/free/png-256/sushi-hotel-food-fastfood-emoj-symbol-30705.png'},
+  {value:'Coffee',image:'https://cdn-icons-png.flaticon.com/512/924/924514.png'},
+]
+
 export const HomeScreen: FC<THomeScreen> = () => {
+
+  const [category, setCategory] = useState<null|string>(null)
   const handleViewAll = () => {
     console.log('navigate to Restaurants Screen');
   };
@@ -99,6 +99,8 @@ export const HomeScreen: FC<THomeScreen> = () => {
       onPressRestaurantCard={handleOnPressCard}
       onPressFoodCard={handleOnPressCard}
       onPressViewAll={handleViewAll}
+      categories={categories}
+      categoryState={[category,setCategory]}
     />
   );
 };
