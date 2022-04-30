@@ -12,6 +12,7 @@ export type TFoodDetailsProps = StackScreenProps<
 
 export type TFoodDetailsScreenViewProps = {
   title: string;
+  description: string;
 };
 
 export type TFoodDetailsNavigation = {

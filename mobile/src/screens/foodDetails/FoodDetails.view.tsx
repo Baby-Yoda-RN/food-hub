@@ -7,7 +7,10 @@ import {styles} from './FoodDetails.style';
 
 export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   title,
+  description = 'food description',
 }) => {
+  const renderAddOn = () => {};
+
   return (
     <View>
       <Header
@@ -15,9 +18,8 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
         leftIconName="ChevronLeft"
         iconHeight={size.rg}
         iconWidth={size.rg}
-        leftPress={onPress}
       />
-      <Text>{title} Screen</Text>
+      <Text>{title}</Text>
     </View>
   );
 };
