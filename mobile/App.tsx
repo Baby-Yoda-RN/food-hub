@@ -18,8 +18,7 @@ const App = () => {
     reviewScore: 5,
     reviewText: 'Very good food. Fast delivery.',
   };
-
-  return <ReviewCard review={review} />;
+  return <Router/>;
 };
 
 export default App;

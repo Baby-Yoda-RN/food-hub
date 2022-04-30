@@ -7,7 +7,7 @@ export const SignUpScreen: FC<TSignUpNavigation> = ({navigation}) => {
   return (
     <SignUpScreenView
       title="Sign Up"
-      onPress={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      onPressGoToLogin={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
     />
   );
 };
