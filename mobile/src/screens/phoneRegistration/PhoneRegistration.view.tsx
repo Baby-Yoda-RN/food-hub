@@ -9,7 +9,7 @@ import {TPhoneRegistrationViewProps} from './PhoneRegistration.type';
 export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   title,
   subtitle,
-  press,
+  handleSendRequest,
 }) => {
   return (
     <Container>
@@ -29,7 +29,7 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
           title="SEND"
           containerStyle={styles.buttonContainer}
           titleStyle={styles.buttonText}
-          onPress={press}
+          onPress={handleSendRequest}
         />
       </Container>
     </Container>

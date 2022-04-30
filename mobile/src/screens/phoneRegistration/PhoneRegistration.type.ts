@@ -12,7 +12,7 @@ export type TPhoneRegistrationProps = StackScreenProps<
 export type TPhoneRegistrationViewProps = {
   title: string;
   subtitle: string;
-  press: () => void;
+  handleSendRequest: () => void;
 };
 export type TPhoneRegistrationNavigation = {
   navigation: TAuthNavigation;
