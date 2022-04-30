@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
-import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
-import {TLoginNavigation} from './Category.type';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
+import {TCategoryNavigation} from './Category.type';
 import {CategoryScreenView} from './Category.view';
 
-export const CategoryScreen: FC<TLoginNavigation> = ({navigation}) => {
+export const CategoryScreen: FC<TCategoryNavigation> = ({navigation}) => {
   return (
     <CategoryScreenView
       title="Category"
-      press={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
+      press={() => navigation.navigate(EAppNavigationRoutes.CART)}
     />
   );
 };

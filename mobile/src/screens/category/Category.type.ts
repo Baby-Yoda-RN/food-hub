@@ -1,13 +1,13 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import {
-  TAuthNavigationRoutes,
-  EAuthNavigationRoutes,
-  TAuthNavigation,
+  TAppNavigationRoutes,
+  EAppNavigationRoutes,
+  TAppNavigation,
 } from '../../navigation';
 
 export type TCategoryScreenProps = StackScreenProps<
-  TAuthNavigationRoutes,
-  EAuthNavigationRoutes.CATEGORY
+  TAppNavigationRoutes,
+  EAppNavigationRoutes.CATEGORY
 >;
 
 export type TCategoryViewProps = {
@@ -15,6 +15,6 @@ export type TCategoryViewProps = {
   press: () => void;
 };
 
-export type TLoginNavigation = {
-  navigation: TAuthNavigation;
+export type TCategoryNavigation = {
+  navigation: TAppNavigation;
 };
