@@ -40,4 +40,16 @@ export const styles = StyleSheet.create({
   lineThrough: {
     textDecorationLine: 'line-through',
   },
+  lineStyle: {
+    borderColor: 'white',
+    borderWidth: 1,
+    width: '27%',
+    marginHorizontal: size.rg,
+    opacity: 0.3,
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
 });
