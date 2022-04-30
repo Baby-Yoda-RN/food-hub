@@ -4,11 +4,10 @@ import { color, font, size } from '../../theme';
 export const styles = StyleSheet.create({
     backgroundImageContainer: {
         position: 'absolute',
-        backgroundColor: 'white',
+        backgroundColor: color.white,
     },
     header: {
         backgroundColor: 'transparent',
-        borderColor: 'grey',
         height: '100%',
         marginTop: size.md,
         paddingLeft: size.md,
