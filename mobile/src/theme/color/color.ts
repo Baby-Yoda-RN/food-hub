@@ -7,6 +7,7 @@ export const color: Color = {
   grayDisabled: '#D3D1D8',
   grayLow: '#E9E9E9',
   grayMid: '#9EA1B1',
+  textGray:'#67666D',
   textOrange: '#C4C4C4',
   textSearchBG: '#EFEFEF',
   textRegularBG: '#E9E9E940',
