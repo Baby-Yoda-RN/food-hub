@@ -6,8 +6,8 @@ import {AppNavigation} from '../appNavigation/AppNavigation';
 export const Router = () => {
   return (
     <NavigationContainer>
-      <AuthNavigation />
-      {/* <AppNavigation /> */}
+      {/* <AuthNavigation /> */}
+      <AppNavigation />
     </NavigationContainer>
   );
 };

@@ -34,6 +34,17 @@ export type TFoodItem = {
   imageName?: string;
 };
 
+export type TListItem = {
+  id: number;
+  title: string;
+  subTitle: string;
+  image: string;
+  price: number;
+  quantity: number;
+};
+
+export type TListItemArray = Array<TListItem>;
+
 export type TReview = {
   name: string;
   date: string;
