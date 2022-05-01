@@ -4,7 +4,13 @@ import {
   TAuthNavigationRoutes,
   EAuthNavigationRoutes,
 } from './AuthNavigation.type';
-import {SignUpScreen, LoginScreen, VerifyScreen} from '../../screens';
+import {
+  SignUpScreen,
+  LoginScreen,
+  PhoneRegistration,
+  WelcomeScreen,
+  VerifyScreen,
+} from '../../screens';
 
 const Stack = createStackNavigator<TAuthNavigationRoutes>();
 
@@ -14,6 +20,14 @@ export const AuthNavigation = () => {
       <Stack.Screen
         name={EAuthNavigationRoutes.VERIFY}
         component={VerifyScreen}
+      />
+      <Stack.Screen
+        name={EAuthNavigationRoutes.PHONE_REGISTRATION}
+        component={PhoneRegistration}
+      />
+      <Stack.Screen
+        name={EAuthNavigationRoutes.WELCOME}
+        component={WelcomeScreen}
       />
     </Stack.Navigator>
   );

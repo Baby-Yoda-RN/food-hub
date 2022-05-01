@@ -6,7 +6,9 @@ import {TPinEntryProps} from './PinInput.type';
 export const PinInput: FC<TPinEntryProps> = ({
   keyBoardType = 'numeric',
   digitCount = 4,
-  containerStyle = styles.container,
+  containerStyle,
+  textInputStyle,
+  onSelectTextInputStyle,
   onChangePinEntry = () => {},
 }) => {
   const [textArray, onChangeTextArray] = useState([]);
@@ -25,8 +27,13 @@ export const PinInput: FC<TPinEntryProps> = ({
       textInputArray.push(
         <TextInput
           ref={refTextBox[current]}
-          style={onRef === current ? styles.inputColor : styles.input}
+          style={
+            onRef === current
+              ? [styles.inputColor, onSelectTextInputStyle]
+              : [styles.input, textInputStyle]
+          }
           textAlign={'center'}
+          textAlignVertical={'center'}
           keyboardType={keyBoardType}
           maxLength={1}
           blurOnSubmit={false}
@@ -79,7 +86,9 @@ export const PinInput: FC<TPinEntryProps> = ({
 
   return (
     <>
-      <View style={containerStyle}>{renderTextBoxes()}</View>
+      <View style={[styles.container, containerStyle]}>
+        {renderTextBoxes()}
+      </View>
     </>
   );
 };
