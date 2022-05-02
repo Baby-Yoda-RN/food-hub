@@ -1,7 +1,13 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { ReactNode, Requireable } from "react";
+import { ImageSourcePropType, ViewStyle } from "react-native";
 
 export type TContainer = {
   isLoading?:boolean,
-  safeAreaStyle?: StyleProp<ViewStyle>,
-  containerStyle?: StyleProp<ViewStyle>,
+  safeAreaStyle?: ViewStyle,
+  containerStyle?: ViewStyle,
+  contentStyle?:ViewStyle,
+  header?:ReactNode,
+  headerStyle?:ViewStyle,
+  isScrollViewDisabled?: boolean,
+  backgroundImage?:ImageSourcePropType
 }
