@@ -48,6 +48,7 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
           <Text style={styles.details}>{`${deliveryTime} mins`}</Text>
         </View>
         <ScrollView
+          nestedScrollEnabled
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.tagsContainer}>
