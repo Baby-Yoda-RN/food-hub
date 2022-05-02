@@ -3,10 +3,13 @@ import { color, font, size } from "../../theme";
 
 export const styles = StyleSheet.create({
     container: {
-
+        flexGrow: 1,
+        justifyContent: 'space-between',
+        flexDirection: 'column',
     },
     header: {
         paddingLeft: 0,
+        marginTop: size.md,
     },
     billContainer: {
         flexDirection: 'column',
