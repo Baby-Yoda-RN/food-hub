@@ -7,4 +7,5 @@ export type TMyOrdersScreen = {
 export type TMyOrdersScreenView = {
   upcomingOrders?:Array<TOrder>,
   lastOrders?:Array<TOrder>
+  showUpcoming?:boolean
 }
