@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import {Icon} from '../icon/Icon';
 import {THeaderProps} from './Header.type';
 import {styles} from './Header.style';
@@ -19,53 +19,48 @@ export const Header: FC<THeaderProps> = ({
   iconHeight,
 }) => {
   return (
-    <View style={[styles.container, containerStyle]}>
-      {leftIconName && (
-        <TouchableOpacity
-          onPress={leftPress}
-          style={leftIconStyle}>
-          <Icon
-            name={leftIconName}
-            containerStyle={[styles.leftIcon, leftIconStyle]}
-            width={iconWidth}
-            height={iconHeight}
-          />
-        </TouchableOpacity>
-      )}
-      {title && <Text style={styles.title}>{title}</Text>}
-      {deliveryLocation && (
-        <View style={[styles.locationContainer]}>
-          <View>
-            <Text style={styles.deliverTo}>
-              Deliver To
-              <Icon name={'ChevronDown'} />
-            </Text>
-            <Text numberOfLines={1} style={styles.deliveryLocation}>
-              {deliveryLocation}
-            </Text>
+    <SafeAreaView>
+      <View style={[styles.container, containerStyle]}>
+        {leftIconName && (
+          <TouchableOpacity onPress={leftPress} style={leftIconStyle}>
+            <Icon
+              name={leftIconName}
+              containerStyle={[styles.leftIcon, leftIconStyle]}
+              width={iconWidth}
+              height={iconHeight}
+            />
+          </TouchableOpacity>
+        )}
+        {title && <Text style={styles.title}>{title}</Text>}
+        {deliveryLocation && (
+          <View style={[styles.locationContainer]}>
+            <View>
+              <Text style={styles.deliverTo}>
+                Deliver To
+                <Icon name={'ChevronDown'} />
+              </Text>
+              <Text numberOfLines={1} style={styles.deliveryLocation}>
+                {deliveryLocation}
+              </Text>
+            </View>
           </View>
-        </View>
-      )}
-      {rightIconLocation && (
-        <TouchableOpacity
-          onPress={rightPress}
-          style={rightIconStyle}>
-          <Image style={[styles.image]} source={{uri: rightIconLocation}} />
-        </TouchableOpacity>
-      )}
-      {rightIconName && (
-        <TouchableOpacity
-          onPress={leftPress}
-          style={leftIconStyle}
-          >
-          <Icon
-            name={rightIconName}
-            containerStyle={[styles.rightIcon, rightIconStyle]}
-            width={iconWidth}
-            height={iconHeight}
-          />
-        </TouchableOpacity>
-      )}
-    </View>
+        )}
+        {rightIconLocation && (
+          <TouchableOpacity onPress={rightPress} style={rightIconStyle}>
+            <Image style={[styles.image]} source={{uri: rightIconLocation}} />
+          </TouchableOpacity>
+        )}
+        {rightIconName && (
+          <TouchableOpacity onPress={leftPress} style={leftIconStyle}>
+            <Icon
+              name={rightIconName}
+              containerStyle={[styles.rightIcon, rightIconStyle]}
+              width={iconWidth}
+              height={iconHeight}
+            />
+          </TouchableOpacity>
+        )}
+      </View>
+    </SafeAreaView>
   );
 };

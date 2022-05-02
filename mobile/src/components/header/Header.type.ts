@@ -1,4 +1,4 @@
-import  { StyleProp, ViewStyle} from 'react-native';
+import {ViewStyle} from 'react-native';
 
 export type THeaderProps = {
     title?: string;
