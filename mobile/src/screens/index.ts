@@ -4,3 +4,4 @@ export * from './rating/Rating';
 export * from './cart/Cart';
 export * from './review/Review';
 export * from './welcome/Welcome';
+export * from './myOrders/MyOrders';
