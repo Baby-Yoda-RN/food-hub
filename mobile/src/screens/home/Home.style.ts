@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
   headerContainer: {
     marginHorizontal: size.rg,
     paddingBottom: size.rg,
-    shadowColor: '#000',
+    shadowColor: color.black,
     shadowOffset: {
       width: 0,
       height: 5,
@@ -49,14 +49,12 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: font.bold,
     fontSize: 32,
-    color: '#323643',
     lineHeight: size.lg + 10,
     marginBottom: size.sm,
   },
   subtitle: {
     fontFamily: font.bold,
     fontSize: size.rg + 5,
-    color: '#323643',
   },
   viewAll: {
     color: color.primary,

@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {Container, Header, Icon, TextInput} from '../../components';
 import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
