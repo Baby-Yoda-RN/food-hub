@@ -1,12 +1,8 @@
 import React, {FC} from 'react';
-import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
-import {Card, Header, PinInput, TextInput, Icon} from '../../components';
-import {FoodCard} from '../../components/card/foodCard';
-import {RestaurantCard} from '../../components/card/restaurantCard';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {Header, TextInput} from '../../components';
 import {size, color} from '../../theme';
-import {TRestaurant} from '../../types/data';
 import {styles} from './Profile.style';
-import BackgroundImage from '../../assets/background/background.svg';
 import {TProfileViewProps} from './Profile.type';
 
 export const ProfileView: FC<TProfileViewProps> = ({
@@ -15,25 +11,11 @@ export const ProfileView: FC<TProfileViewProps> = ({
   phoneNumber,
   profileURL,
   goBack,
-
 }) => {
-  const screenWidth = Dimensions.get('window').width;
-  const ratioWidthHeight = 383.13 / 88.51;
 
   return (
     <>
-      <View
-        style={{height: screenWidth / ratioWidthHeight, width: screenWidth}}>
-        <View
-          style={[
-            {
-              height: screenWidth / ratioWidthHeight,
-              width: screenWidth,
-            },
-            styles.backgroundImageContainer,
-          ]}>
-          <BackgroundImage />
-        </View>
+      <View>
         <Header
           leftIconName="ChevronLeft"
           iconWidth={size.rg}
