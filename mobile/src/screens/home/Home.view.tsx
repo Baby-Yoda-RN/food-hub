@@ -5,7 +5,7 @@ import {Container, Header, Icon, TextInput} from '../../components';
 import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
-import { ImageButton } from '../../components/imageButton/ImageButton';
+import {ImageButton} from '../../components/imageButton/ImageButton';
 import {color} from '../../theme';
 import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
@@ -17,90 +17,154 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   featuredRestaurants,
   popularItems,
   categories,
-  categoryState
+  categoryState,
 }) => {
-  const [category, setCategory] = categoryState
+  const [category, setCategory] = categoryState;
   return (
-    <SafeAreaView style={styles.container}>
-      <Header
-        deliveryLocation="4102 Pretty View Lane"
-        leftIconName="Hamburger"
-        iconHeight={20}
-        iconWidth={20}
-        rightIconName="Hamburger"
-        containerStyle={styles.headerContainer}
+    <Container
+      header={
+        <Header
+          deliveryLocation="4102 Pretty View Lane"
+          leftIconName="Hamburger"
+          iconHeight={20}
+          iconWidth={20}
+          rightIconLocation={
+            'https://icons.veryicon.com/png/o/business/multi-color-financial-and-business-icons/user-139.png'
+          }
+          containerStyle={styles.headerContainer}
+        />
+      }>
+      <Text style={styles.title}>What would you like to order</Text>
+      <TextInput
+        leftIcon="Magnify"
+        type="search"
+        placeholder="Find food by name"
       />
-      <ScrollView
-        style={styles.scrollViewStyle}
-        nestedScrollEnabled
-        contentContainerStyle={styles.scrollView}>
-        <Container>
-          <Text style={styles.title}>What would you like to order</Text>
-          <TextInput
-            leftIcon="Magnify"
-            type="search"
-            placeholder="Find food by name"
-          />
-          <ScrollView horizontal>
-            {categories?.map((item) => {
-              return <ImageButton key={item.value} data={item} selected={category} onPressButton={setCategory}/>
-            })}
-          </ScrollView>
-          <View style={styles.sectionContainer}>
-            <View
-              style={[
-                styles.horizontalContainer,
-                styles.featuredRestaurantsTitleContainer,
-              ]}>
-              <Text style={styles.subtitle}>Featured Restaurants</Text>
-              <TouchableOpacity
-                onPress={onPressViewAll}
-                style={styles.viewAllContainer}>
-                <Text style={styles.viewAll}>{'View All'}</Text>
-                <Icon name="ChevronRightOrange" height={12} width={12} />
-              </TouchableOpacity>
-            </View>
-            <ScrollView
-              nestedScrollEnabled
-              horizontal
-              contentContainerStyle={[styles.horizontalContainer]}>
-              {featuredRestaurants.map((restaurant, index) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => onPressRestaurantCard(String(index))}
-                    style={styles.restaurantContainer}
-                    key={String(index)}>
-                    <RestaurantCard restaurant={restaurant} />
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
-          </View>
-          <View style={styles.sectionContainer}>
-            <Text style={styles.subtitle}>Popular Items</Text>
-            <View
-              style={[styles.horizontalContainer, styles.foodCardContainer]}>
-              {popularItems.map((food, index) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => onPressFoodCard(String(index))}
-                    style={styles.foodItemContainer}
-                    key={String(index)}>
-                    <FoodCard foodItem={food} />
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
-          </View>
-        </Container>
+      <ScrollView horizontal>
+        {categories?.map(item => {
+          return (
+            <ImageButton
+              key={item.value}
+              data={item}
+              selected={category}
+              onPressButton={setCategory}
+            />
+          );
+        })}
       </ScrollView>
-      <BottomTabNavigator fillPin={color.primary} />
-    </SafeAreaView>
+      <View style={styles.sectionContainer}>
+        <View
+          style={[
+            styles.horizontalContainer,
+            styles.featuredRestaurantsTitleContainer,
+          ]}>
+          <Text style={styles.subtitle}>Featured Restaurants</Text>
+          <TouchableOpacity
+            onPress={onPressViewAll}
+            style={styles.viewAllContainer}>
+            <Text style={styles.viewAll}>{'View All'}</Text>
+            <Icon name="ChevronRightOrange" height={12} width={12} />
+          </TouchableOpacity>
+        </View>
+        <ScrollView
+          nestedScrollEnabled
+          horizontal
+          contentContainerStyle={[styles.horizontalContainer]}>
+          {featuredRestaurants.map((restaurant, index) => {
+            return (
+              <TouchableOpacity
+                onPress={() => onPressRestaurantCard(String(index))}
+                style={styles.restaurantContainer}
+                key={String(index)}>
+                <RestaurantCard restaurant={restaurant} />
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
+      <View style={styles.sectionContainer}>
+        <Text style={styles.subtitle}>Popular Items</Text>
+        <View style={[styles.horizontalContainer, styles.foodCardContainer]}>
+          {popularItems.map((food, index) => {
+            return (
+              <TouchableOpacity
+                onPress={() => onPressFoodCard(String(index))}
+                style={styles.foodItemContainer}
+                key={String(index)}>
+                <FoodCard foodItem={food} />
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
+    </Container>
+    // <SafeAreaView style={styles.container}>
+
+    // <ScrollView
+    //   style={styles.scrollViewStyle}
+    //   nestedScrollEnabled
+    //   contentContainerStyle={styles.scrollView}>
+    //   <Container>
+    //     <Text style={styles.title}>What would you like to order</Text>
+    //     <TextInput
+    //       leftIcon="Magnify"
+    //       type="search"
+    //       placeholder="Find food by name"
+    //     />
+    //     <ScrollView horizontal>
+    //       {categories?.map((item) => {
+    //         return <ImageButton key={item.value} data={item} selected={category} onPressButton={setCategory}/>
+    //       })}
+    //     </ScrollView>
+    //     <View style={styles.sectionContainer}>
+    //       <View
+    //         style={[
+    //           styles.horizontalContainer,
+    //           styles.featuredRestaurantsTitleContainer,
+    //         ]}>
+    //         <Text style={styles.subtitle}>Featured Restaurants</Text>
+    //         <TouchableOpacity
+    //           onPress={onPressViewAll}
+    //           style={styles.viewAllContainer}>
+    //           <Text style={styles.viewAll}>{'View All'}</Text>
+    //           <Icon name="ChevronRightOrange" height={12} width={12} />
+    //         </TouchableOpacity>
+    //       </View>
+    //       <ScrollView
+    //         nestedScrollEnabled
+    //         horizontal
+    //         contentContainerStyle={[styles.horizontalContainer]}>
+    //         {featuredRestaurants.map((restaurant, index) => {
+    //           return (
+    //             <TouchableOpacity
+    //               onPress={() => onPressRestaurantCard(String(index))}
+    //               style={styles.restaurantContainer}
+    //               key={String(index)}>
+    //               <RestaurantCard restaurant={restaurant} />
+    //             </TouchableOpacity>
+    //           );
+    //         })}
+    //       </ScrollView>
+    //     </View>
+    //     <View style={styles.sectionContainer}>
+    //       <Text style={styles.subtitle}>Popular Items</Text>
+    //       <View
+    //         style={[styles.horizontalContainer, styles.foodCardContainer]}>
+    //         {popularItems.map((food, index) => {
+    //           return (
+    //             <TouchableOpacity
+    //               onPress={() => onPressFoodCard(String(index))}
+    //               style={styles.foodItemContainer}
+    //               key={String(index)}>
+    //               <FoodCard foodItem={food} />
+    //             </TouchableOpacity>
+    //           );
+    //         })}
+    //       </View>
+    //     </View>
+    //   </Container>
+    // </ScrollView>
+    // <BottomTabNavigator fillPin={color.primary} />
+    // </SafeAreaView>
   );
 };
-
-<View style={{flexDirection: 'row'}}>
-  <View style={{borderColor: 'white', borderWidth: 1}} />
-  <Text>some text</Text>
-  <View style={{borderColor: 'white', borderWidth: 1}} />
-</View>;
