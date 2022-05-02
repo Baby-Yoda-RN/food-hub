@@ -9,6 +9,7 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   title = 'Verification Code',
   emailName = 'test@gmail.com',
   pinEntry,
+  OnPressResend,
 }) => {
   return (
     <Container>
@@ -19,28 +20,26 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         containerStyle={styles.header}
       />
 
-      <Container>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtext}>
-          {`Please type the verification code send to \n${emailName}`}
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtext}>
+        {`Please type the verification code send to \n${emailName}`}
+      </Text>
+
+      <PinInput
+        keyBoardType="numeric"
+        digitCount={4}
+        onChangePinEntry={pinEntry}
+        containerStyle={styles.pinContainer}
+      />
+
+      <View style={styles.container2}>
+        <Text style={styles.subtext2}>{"I don't receive a code!"}</Text>
+        <Text style={styles.subtext2Link} onPress={OnPressResend}>
+          {'Please resend'}
         </Text>
+      </View>
 
-        <PinInput
-          keyBoardType="numeric"
-          digitCount={4}
-          onChangePinEntry={pinEntry}
-          containerStyle={styles.PinContainer}
-        />
-
-        <View style={styles.container2}>
-          <Text style={styles.subtext2}>{"I don't receive a code!"}</Text>
-          <Text style={styles.subtext2button} onPress={() => {}}>
-            {'Please resend'}
-          </Text>
-        </View>
-
-        <Button containerStyle={styles.button} title="Submit" />
-      </Container>
+      <Button containerStyle={styles.button} title="Submit" />
     </Container>
   );
 };
