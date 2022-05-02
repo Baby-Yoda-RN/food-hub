@@ -11,6 +11,7 @@ import {Footer} from '../../components';
 export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
   title,
   onPressGoToLogin,
+  isLoading = false,
 }) => {
 
     return (
@@ -21,7 +22,7 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
           <BackgroundImage />
       </View>
 
-      <Container isLoading={false}>
+      <Container isLoading={isLoading}>
         <Text style={styles.title}>{title}</Text>
 
         <View style={styles.textInputContainer}>
