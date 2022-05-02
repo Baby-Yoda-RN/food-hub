@@ -35,6 +35,7 @@ export type TFoodItem = {
 };
 
 export type TReview = {
+  uuid?: string;
   name: string;
   date: string;
   profileImage: string;

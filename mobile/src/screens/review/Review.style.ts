@@ -1,4 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
+import {size} from '../../theme';
 
-export const styles = StyleSheet.create({});
+export const styles = StyleSheet.create({
+  headerContainer: {
+    paddingVertical: size.lg,
+  },
+  listContainer: {
+    marginTop: size.rg,
+  },
+});

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
 import {size} from '../../theme';
 import {Badge} from '../badge/Badge';
 import {Card} from '../card/card';
@@ -41,5 +41,5 @@ export const ReviewCard: FC<TReviewCardProps> = ({
       </>
     );
   };
-  return <Card renderDetails={render} containerStyle={{padding: 10}} />;
+  return <Card renderDetails={render} />;
 };

@@ -23,7 +23,7 @@ export const TextInput: FC<TTextInputProps> = ({
   const [text, setText] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(Boolean);
   const textInputRef = useRef(null);
-  let max = type === 'phone' ? 17 : 30;
+  let max = type === 'phone' ? 17 : 300;
   let currentContainerStyle = isActive
     ? style.containerFocus
     : style.containerBlur;
