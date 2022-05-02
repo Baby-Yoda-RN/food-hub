@@ -97,6 +97,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           })}
         </View>
       </View>
+      <BottomTabNavigator fillPin={color.primary} />
     </Container>
   );
 };
