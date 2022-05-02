@@ -5,8 +5,9 @@ export * from './icon/Icon';
 export * from './textInput/TextInput';
 export * from './button/Button';
 export * from './toggleButton/ToggleButton';
-export * from './header/Header'
+export * from './header/Header';
 export * from './tag/Tag';
 export * from './sidemenu/SideMenu';
 export * from './card/foodCard';
-
+export * from './container/Container';
+export * from './footer/Footer';

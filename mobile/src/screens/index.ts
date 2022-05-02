@@ -3,4 +3,8 @@ export * from './signup/SignUp';
 export * from './rating/Rating';
 export * from './cart/Cart';
 export * from './review/Review';
+<<<<<<< HEAD
 export * from './favoriteFoodItems/FavoriteFoodItems';
+=======
+export * from './welcome/Welcome';
+>>>>>>> main
