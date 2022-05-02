@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     paddingVertical: size.lg,
   },
   listContainer: {
+    flex: 1,
     marginTop: size.rg,
   },
 });

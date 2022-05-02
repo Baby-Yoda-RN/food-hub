@@ -37,7 +37,9 @@ export const ReviewCard: FC<TReviewCardProps> = ({
             </View>
           </TouchableOpacity>
         </View>
-        <Text style={styles.reviewText}>{review.reviewText}</Text>
+        <Text style={styles.reviewText} numberOfLines={5}>
+          {review.reviewText}
+        </Text>
       </>
     );
   };

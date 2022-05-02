@@ -35,14 +35,14 @@ const reviewsList: Array<TReview> = [
     profileImage:
       'https://media.istockphoto.com/photos/millennial-male-team-leader-organize-virtual-workshop-with-employees-picture-id1300972574?b=1&k=20&m=1300972574&s=170667a&w=0&h=2nBGC7tr0kWIU8zRQ3dMg-C5JLo9H2sNUuDjQ5mlYfo=',
     reviewText:
-      "The food is good, the price is reasonable and some staff are friendly, but the host is very bitter, rude and ugly, she never apologized when i got trap inside the bathroom for more that half hour because the door knob doesn't work. the owners should hire for that position people with great attitude, with happy face, friendly and hamble.",
+      "The food is good, the price is reasonable and some staff are friendly, but the host is very bitter, she never apologized when i got trap inside the bathroom for more that half hour because the door knob doesn't work. the owners should hire for that position people with great attitude, with happy face, friendly and hamble.",
     reviewScore: 3,
   },
 ];
 
 export const ReviewScreenView: FC<TReviewScreenViewProps> = ({}) => {
   return (
-    <Container>
+    <Container isScrollViewDisabled={true}>
       <Header
         title="Reviews"
         leftIconName="ChevronLeft"
