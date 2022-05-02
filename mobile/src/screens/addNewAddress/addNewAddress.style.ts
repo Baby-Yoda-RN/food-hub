@@ -18,8 +18,11 @@ export const styles = StyleSheet.create({
         color: color.black,
     },
     button: {
-        padding: size.lg,
-        borderRadius: size.xxl
+        padding: size.rg,
+        borderRadius: size.xxl,
+        shadowColor: color.black,
+        elevation: size.md,
+        margin: size.rg
     },
     text: {
         fontFamily: font.medium,

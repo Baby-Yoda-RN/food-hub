@@ -11,7 +11,7 @@ export const AddNewAddressScreen: FC<TaddNewAddressNavigation> = ({navigation}) 
       state='California'
       city='Sacramento'
       street='4102 Pretty View Lane'
-      press={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
+      goBack={() => navigation.goBack()}
     />
   );
 };

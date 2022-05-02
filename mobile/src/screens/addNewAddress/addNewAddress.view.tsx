@@ -11,7 +11,8 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
   state,
   city,
   street,
-  press
+  saveButton,
+  goBack,
 
 }) => {
 
@@ -24,6 +25,7 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
       iconWidth={size.rg}
       iconHeight={size.rg}
       containerStyle={styles.header}
+      leftPress={goBack}
       />
       <View style={styles.container}>
         <Text style={styles.text}>Full name</Text>
