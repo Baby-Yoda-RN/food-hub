@@ -5,6 +5,7 @@ import {Container} from '../../components/container/Container';
 import {size} from '../../theme';
 import {styles} from './PhoneRegistration.style';
 import {TPhoneRegistrationViewProps} from './PhoneRegistration.type';
+import {BackgroundImage} from '../../assets/background/auth_background.png';
 
 export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   title,
@@ -12,13 +13,17 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   handleSendRequest,
 }) => {
   return (
-    <Container isScrollViewDisabled={true}>
-      <Header
-        leftIconName="ChevronLeft"
-        iconWidth={size.md}
-        iconHeight={size.md}
-        containerStyle={styles.headerContainer}
-      />
+    <Container
+      isScrollViewDisabled={true}
+      backgroundImage={BackgroundImage}
+      headerStyle={styles.headerContainer}
+      header={
+        <Header
+          leftIconName="ChevronLeft"
+          iconWidth={size.md}
+          iconHeight={size.md}
+        />
+      }>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
       <View style={styles.textInputContainer}>

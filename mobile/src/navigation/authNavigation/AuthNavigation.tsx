@@ -17,12 +17,12 @@ export const AuthNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen
-        name={EAuthNavigationRoutes.WELCOME}
-        component={WelcomeScreen}
-      />
-      <Stack.Screen
         name={EAuthNavigationRoutes.PHONE_REGISTRATION}
         component={PhoneRegistration}
+      />
+      <Stack.Screen
+        name={EAuthNavigationRoutes.WELCOME}
+        component={WelcomeScreen}
       />
       <Stack.Screen
         name={EAuthNavigationRoutes.SIGNUP}
