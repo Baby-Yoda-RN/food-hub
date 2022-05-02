@@ -1,15 +1,17 @@
 import {StackNavigationProp} from '@react-navigation/stack';
 
 export enum EAuthNavigationRoutes {
-  WELCOME = 'Welcome',
   SIGNUP = 'SignUp',
   LOGIN = 'Login',
+  PHONE_REGISTRATION = 'Phone_Registration',
+  WELCOME = 'Welcome',
 }
 
 export type TAuthNavigationRoutes = {
-  [EAuthNavigationRoutes.WELCOME]: undefined;
   [EAuthNavigationRoutes.SIGNUP]: undefined;
   [EAuthNavigationRoutes.LOGIN]: undefined;
+  [EAuthNavigationRoutes.PHONE_REGISTRATION]: undefined;
+  [EAuthNavigationRoutes.WELCOME]: undefined;
 };
 
 export type TAuthNavigation = StackNavigationProp<TAuthNavigationRoutes>;
