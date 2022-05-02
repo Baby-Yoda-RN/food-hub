@@ -12,26 +12,24 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   handleSendRequest,
 }) => {
   return (
-    <Container>
+    <Container isScrollViewDisabled={true}>
       <Header
         leftIconName="ChevronLeft"
         iconWidth={size.md}
         iconHeight={size.md}
         containerStyle={styles.headerContainer}
       />
-      <Container>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
-        <View style={styles.textInputContainer}>
-          <TextInput type="phone" leftIcon="FlagUSA" />
-        </View>
-        <Button
-          title="SEND"
-          containerStyle={styles.buttonContainer}
-          titleStyle={styles.buttonText}
-          onPress={handleSendRequest}
-        />
-      </Container>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
+      <View style={styles.textInputContainer}>
+        <TextInput type="phone" leftIcon="FlagUSA" />
+      </View>
+      <Button
+        title="SEND"
+        containerStyle={styles.buttonContainer}
+        titleStyle={styles.buttonText}
+        onPress={handleSendRequest}
+      />
     </Container>
   );
 };
