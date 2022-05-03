@@ -79,7 +79,6 @@ const categories = [
   {value:'Mexican',image:'https://i.pinimg.com/originals/1b/ec/81/1bec818c51ca78276ffa641f2a210612.png'},
   {value:'Asian',image:'https://cdn.iconscout.com/icon/free/png-256/sushi-hotel-food-fastfood-emoj-symbol-30705.png'},
   {value:'Coffee',image:'https://cdn-icons-png.flaticon.com/512/924/924514.png'},
-  {value:'Coffee',image:'https://cdn-icons-png.flaticon.com/512/924/924514.png'},
 ]
 
 export const HomeScreen: FC<THomeScreen> = () => {
