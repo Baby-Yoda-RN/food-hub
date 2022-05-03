@@ -22,6 +22,10 @@ export const styles = StyleSheet.create({
     zIndex: 1,
     elevation: 1,
   },
+  footer:{
+    zIndex:1,
+    elevation:1,
+  },
   loading: {
     flex: 1,
     justifyContent: 'center',
