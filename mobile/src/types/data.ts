@@ -23,18 +23,29 @@ export type TOrder = {
   total?: string;
 };
 
-export type TFoodItem = {
+export type TItem = {
   uuid?: string;
   name?: string;
   description?: string;
+  price?: number;
+  imageName?: string;
+}
+
+export type TFoodItem = TItem & {
   rating?: number;
   usersVoted?: number;
-  price?: number;
   favorite?: boolean;
-  imageName?: string;
 };
 
+export type TListItem = Omit<TItem, 'price'> & {
+  quantity: number;
+  price: number;
+};
+
+export type TListItemArray = Array<TListItem>;
+
 export type TReview = {
+  uuid?: string;
   name: string;
   date: string;
   profileImage: string;

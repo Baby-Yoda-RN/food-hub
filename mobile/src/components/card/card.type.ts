@@ -4,7 +4,6 @@ import {TFoodItem, TRestaurant} from '../../types/data';
 export type TCardProps = {
   image?: string;
   title?: string;
-  renderDetails: () => {};
   containerStyle?: StyleProp<ViewStyle>;
 };
 

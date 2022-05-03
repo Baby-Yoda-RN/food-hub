@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
   container: {
     borderRadius: size.rg,
     backgroundColor: color.white,
-    margin: size.md,
     paddingBottom: size.md,
+    marginVertical: size.sm,
   },
   information: {
     marginLeft: size.md,

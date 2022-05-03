@@ -16,13 +16,10 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
 
     return (
 
-      <>
-      <View
-        style={styles.backgroundImageContainer}>
-          <BackgroundImage />
-      </View>
-
-      <Container isLoading={isLoading}>
+      <Container 
+      isLoading={isLoading}
+      backgroundImage={require('../../assets/background/auth_background.png')}
+      isScrollViewDisabled={false}>
         <Text style={styles.title}>{title}</Text>
 
         <View style={styles.textInputContainer}>
@@ -48,10 +45,12 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
 
         <Footer
           divider="Sign in with"
+          dividerTextStyle={styles.footerText}
+          dividerStyle={styles.footerLine}
           isEmailorPhone={false}
           onPress={() => {}}
         />
       </Container>
-    </>
+ 
   );
 };

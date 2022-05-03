@@ -34,5 +34,13 @@ export const styles = StyleSheet.create({
     textNavigate: {
         color: color.primary,
     },
+    footerText: {
+        color: color.textGray,
+        fontFamily: font.semiBold,
+        fontSize: size.md,
+    },
+    footerLine: {
+        borderBottomColor: color.textGray,
+    }
 
 });
