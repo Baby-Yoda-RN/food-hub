@@ -21,6 +21,6 @@ export const Router = () => {
   // removeToken('key')
 
   if (token) return <AppNavigation />;
-  else if (!token) return <AppNavigation />;
+  else if (!token) return <AuthNavigation />;
   else return <></>;
 };
