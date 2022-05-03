@@ -9,8 +9,8 @@ export const FoodCard: FC<TFoodItemCardProps> = ({foodItem}) => {
   const {name, description, rating, usersVoted, price, favorite, imageName} =
     foodItem;
 
-  const render = () => (
-    <>
+  return (
+    <Card>
       <View>
         <Image
           style={styles.cardImage}
@@ -23,8 +23,6 @@ export const FoodCard: FC<TFoodItemCardProps> = ({foodItem}) => {
         <Text style={styles.title}>{name}</Text>
         <Text style={styles.details}>{description}</Text>
       </View>
-    </>
+    </Card>
   );
-
-  return <Card renderDetails={render} />;
 };
