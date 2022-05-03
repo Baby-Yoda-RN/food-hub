@@ -1,8 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Router} from './src/navigation/router/Router';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
-  return <Router />;
+  return (
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
+  );
 };
 
 export default App;
