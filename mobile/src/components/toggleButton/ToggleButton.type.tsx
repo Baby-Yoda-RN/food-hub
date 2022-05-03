@@ -1,12 +1,11 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, View, ViewStyle } from "react-native";
 
 export type TToggleButtonProps = {
     primaryText: string;
     secondaryText: string;
-    selectionMode: boolean;
     containerStyle?: StyleProp<ViewStyle>;
-    buttonHeight?: number;
-    buttonWidth?: number;
+    activeButtonStyle?: StyleProp<ViewStyle>
+    option: boolean | null;
+    setOption:(option:boolean) => void;
     buttonTheme: string;
-    switchData: boolean;
 }
