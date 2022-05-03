@@ -12,7 +12,7 @@ export const RatingStars: FC<TRatingStarsProps> = () => {
     return(
         <>
         <View style={styles.titleContainer}>
-            <Text style = {styles.title}>hi</Text>
+            <Text style = {styles.title}>Good </Text>
         </View>
         <View style = {styles.container}>
             
