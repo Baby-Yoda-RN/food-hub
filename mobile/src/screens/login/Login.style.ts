@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: 'transparent',
-        height: '100%',
         marginTop: size.md,
         paddingLeft: size.md,
     },
@@ -16,10 +15,10 @@ export const styles = StyleSheet.create({
         fontSize: size.lg,
         fontFamily: font.semiBold,
         color: color.black,
-        marginTop: size.xl,
+        marginTop: size.xxl,
     },
     textInputContainer: {
-        marginVertical: size.md,
+        marginVertical: size.xxs,
     },
     button: {
         padding: size.rg,
@@ -39,5 +38,12 @@ export const styles = StyleSheet.create({
     textNavigate: {
         color: color.primary,
     },
-
+    footerText: {
+        color: color.textGray,
+        fontFamily: font.semiBold,
+        fontSize: size.md,
+    },
+    footerLine: {
+        borderBottomColor: color.textGray,
+    }
 });

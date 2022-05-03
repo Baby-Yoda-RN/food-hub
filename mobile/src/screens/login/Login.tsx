@@ -7,12 +7,11 @@ export const LoginScreen: FC<TLoginNavigation> = ({navigation}) => {
   return (
     <LoginScreenView
       title="Login"
+      isLoading={false}
       goToSignUp={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
       goBack={() => navigation.goBack()}
-      goToResetPassword={() => {
-        /******** Blocker: Reset Password Screen ********/
-        // navigation.navigate(EAuthNavigationRoutes.RESET_PASSWORD)
-      }}
+      goToResetPassword={() =>
+        navigation.navigate(EAuthNavigationRoutes.RESET_PASSWORD)}
     />
   );
 };
