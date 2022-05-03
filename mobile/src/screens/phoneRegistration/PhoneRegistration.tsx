@@ -13,7 +13,8 @@ export const PhoneRegistration: FC<TPhoneRegistrationNavigation> = ({
     <PhoneRegistrationView
       title="Registration"
       subtitle="Enter your phone number to verify your account"
-      press={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      handleSendRequest={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      handleBackRequest={() => navigation.goBack()}
     />
   );
 };
