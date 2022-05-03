@@ -42,14 +42,17 @@ const reviewsList: Array<TReview> = [
 
 export const ReviewScreenView: FC<TReviewScreenViewProps> = ({}) => {
   return (
-    <Container isScrollViewDisabled={true}>
-      <Header
-        title="Reviews"
-        leftIconName="ChevronLeft"
-        iconWidth={size.md}
-        iconHeight={size.md}
-        containerStyle={styles.headerContainer}
-      />
+    <Container
+      isScrollViewDisabled={true}
+      headerStyle={styles.headerContainer}
+      header={
+        <Header
+          title="Reviews"
+          leftIconName="ChevronLeft"
+          iconWidth={size.md}
+          iconHeight={size.md}
+        />
+      }>
       <TextInput
         type="search"
         leftIcon="Profile"

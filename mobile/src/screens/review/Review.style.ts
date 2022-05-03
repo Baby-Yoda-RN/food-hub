@@ -3,10 +3,10 @@ import {size} from '../../theme';
 
 export const styles = StyleSheet.create({
   headerContainer: {
-    paddingVertical: size.lg,
+    padding: size.rg,
+    marginBottom: size.rg,
   },
   listContainer: {
-    flex: 1,
     marginTop: size.rg,
   },
 });
