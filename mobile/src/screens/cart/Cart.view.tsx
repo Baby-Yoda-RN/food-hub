@@ -28,15 +28,21 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
   ];
 
   return (
-    <Container containerStyle={styles.container} isScrollViewDisabled={false}>
-      <Header
-        containerStyle={styles.header}
-        title={title}
-        leftIconName="ChevronLeft"
-        iconHeight={size.rg}
-        iconWidth={size.rg}
-        leftPress={onPress}
-      />
+    <Container
+      containerStyle={styles.container}
+      isScrollViewDisabled={false}
+      header={
+        <Header
+          containerStyle={styles.header}
+          title={title}
+          leftIconName="ChevronLeft"
+          iconHeight={size.rg}
+          iconWidth={size.rg}
+          leftPress={onPress}
+        />
+      }
+      headerStyle={styles.headerContainer}
+      >
       {listItemArray.map(listItem => (
         <ListItem
           key={listItem.uuid}
