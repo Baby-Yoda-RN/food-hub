@@ -9,6 +9,7 @@ import {
   LoginScreen,
   PhoneRegistration,
   WelcomeScreen,
+  VerifyScreen,
 } from '../../screens';
 
 const Stack = createStackNavigator<TAuthNavigationRoutes>();
@@ -31,6 +32,11 @@ export const AuthNavigation = () => {
       <Stack.Screen
         name={EAuthNavigationRoutes.SIGNUP}
         component={SignUpScreen}
+      />
+
+      <Stack.Screen
+        name={EAuthNavigationRoutes.VERIFY}
+        component={VerifyScreen}
       />
     </Stack.Navigator>
   );
