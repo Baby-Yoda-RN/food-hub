@@ -8,6 +8,7 @@ export * from './toggleButton/ToggleButton';
 export * from './header/Header';
 export * from './tag/Tag';
 export * from './sidemenu/SideMenu';
+export * from './dropdown/Dropdown';
 export * from './container/Container';
 export * from './footer/Footer';
 export * from './listItem/ListItem';
