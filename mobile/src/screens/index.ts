@@ -5,4 +5,5 @@ export * from './rating/Rating';
 export * from './cart/Cart';
 export * from './review/Review';
 export * from './home/Home';
+export * from './category/Category';
 export * from './welcome/Welcome';
