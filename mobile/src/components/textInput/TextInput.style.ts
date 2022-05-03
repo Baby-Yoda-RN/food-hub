@@ -1,12 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {color, size} from '../../theme';
 
-type Styles = {
-  [styleName: string]: {
-    [attributeName: string]: string | number;
-  };
-};
-
 export const style = StyleSheet.create({
   containerFocus: {
     borderWidth: size.xxs,

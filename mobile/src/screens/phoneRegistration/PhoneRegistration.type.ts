@@ -13,6 +13,7 @@ export type TPhoneRegistrationViewProps = {
   title: string;
   subtitle: string;
   handleSendRequest: () => void;
+  handleBackRequest: () => void;
 };
 export type TPhoneRegistrationNavigation = {
   navigation: TAuthNavigation;
