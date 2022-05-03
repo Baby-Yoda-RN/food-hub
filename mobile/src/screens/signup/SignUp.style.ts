@@ -2,9 +2,6 @@ import { StyleSheet } from 'react-native';
 import { color, font, size } from '../../theme';
 
 export const styles = StyleSheet.create({
-    backgroundImageContainer: {
-        height: 20,
-    },
     
     title: {
         fontSize: size.lg,
