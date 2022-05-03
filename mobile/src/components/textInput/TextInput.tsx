@@ -105,6 +105,8 @@ export const TextInput: FC<TTextInputProps> = ({
         value={text}
         maxLength={max}
         ref={textInputRef}
+        numberOfLines={1}
+        multiline={false}
       />
 
       {!!rightElement && (

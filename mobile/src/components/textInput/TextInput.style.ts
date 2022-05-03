@@ -10,7 +10,7 @@ export const style = StyleSheet.create({
     backgroundColor: color.textRegularBG,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     paddingHorizontal: size.rg,
   },
   containerBlur: {
@@ -21,7 +21,7 @@ export const style = StyleSheet.create({
     backgroundColor: color.textRegularBG,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     paddingHorizontal: size.rg,
   },
   textInput: {fontSize: size.rg},

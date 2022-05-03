@@ -1,10 +1,10 @@
 import React, {FC} from "react";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useNavigation } from "@react-navigation/native";
-import { TRating } from "./Rating.type";
+import { TRatingNavigation } from "./Rating.type";
 import { RatingScreenView } from "./Rating.view";
 
-export const Rating: FC<TRating> = () => {
+export const RatingScreen: FC<TRatingNavigation> = ({
+    navigation,
+}) => {
     return (
         <RatingScreenView />
     )

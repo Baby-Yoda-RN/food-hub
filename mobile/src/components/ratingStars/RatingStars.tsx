@@ -1,73 +1,45 @@
-import React, {FC} from "react";
-import { View,TouchableOpacity } from "react-native";
+import React, {FC, useState} from "react";
+import { View,TouchableOpacity, Animated } from "react-native";
 import { Icon } from "../icon/Icon";
 import { TRatingStarsProps } from "./ratingStars.type";
 import { color } from "../../theme";
+import { styles } from "./RatingStars.style";
 
 export const RatingStars: FC<TRatingStarsProps> = ({
-    score,
-    descriptions,
+    fill,
+    caption,
+    totalStars,
+    position = 5,
+    starStyle,
+    selectedColor,
+    unSelectedColor,
+    isDisabled,
+    size,
+    onRatingClick,
 }) => {
-    switch (score){
-        case 1:
-            return (
-                <TouchableOpacity>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={undefined}/> 
-                    <Icon name="Star" fill={undefined}/>  
-                    <Icon name="Star" fill={undefined}/>  
-                    <Icon name="Star" fill={undefined}/> 
-                </TouchableOpacity>
-            )
-        case 2:
-            return (
-                <View>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={undefined}/>  
-                    <Icon name="Star" fill={undefined}/>  
-                    <Icon name="Star" fill={undefined}/> 
-                </View>
-            )
-        case 3:
-            return (
-                <View>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={undefined}/>  
-                    <Icon name="Star" fill={undefined}/> 
-                </View>
-            )
-        case 4:
-            return (
-                <View>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={undefined}/> 
-                </View>
-            )
-        case 5:
-            return (
-                <View>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/> 
-                </View>
-            )
-        default:
-            return (
-                <View>
-                    <Icon name="Star" fill={color.yellow}/> 
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/>  
-                    <Icon name="Star" fill={color.yellow}/> 
-                </View> 
-            )
+    const [selected, setSelected] = useState<boolean>(false);
+    const springValue = new Animated.Value(1);
+
+    const spring = () => {
+        springValue.setValue(1.2);
+
+        Animated.spring(springValue, {
+            toValue: 1,
+            friction: 2,
+            tension: 1,
+            useNativeDriver: true,
+        }).start();
+
+        setSelected(!selected);
+        onRatingClick(position);
     }
+
+    const starSource = 
+        fill && selectedColor === null ? <Icon name="Star"/> : <Icon name="StarHollow"/>;
+
+    return (
+        <TouchableOpacity>
+           {starSource}
+        </TouchableOpacity>
+    )
 }

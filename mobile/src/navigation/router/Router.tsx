@@ -20,7 +20,7 @@ export const Router = () => {
   // To LogOut
   // removeToken('key')
 
-  if (token) return <AppNavigation />;
-  else if (!token) return <AuthNavigation />;
+  if (!token) return <AppNavigation />;
+  else if (token) return <AuthNavigation />;
   else return <></>
 };

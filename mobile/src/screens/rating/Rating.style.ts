@@ -19,18 +19,19 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontFamily: font.semiBold,
-        fontSize: size.lg,
+        fontSize: 18,
         color: color.black,
         marginTop: size.rg,
+        textAlign: 'center'
     },
     subtitle: {
-        width: '65%',
         marginBottom: size.lg,
+        textAlign: 'center'
     },
     delivered: {
-        width: '65%',
         color: color.green,
         marginBottom: size.lg,
+        textAlign: 'center',
     },
     rating: {
         fontSize: size.lg,
