@@ -5,12 +5,13 @@ import {Container} from '../../components/container/Container';
 import {size} from '../../theme';
 import {styles} from './PhoneRegistration.style';
 import {TPhoneRegistrationViewProps} from './PhoneRegistration.type';
-import {BackgroundImage} from '../../assets/background/auth_background.png';
+import BackgroundImage from '../../assets/background/auth_background.png';
 
 export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   title,
   subtitle,
   handleSendRequest,
+  handleBackRequest,
 }) => {
   return (
     <Container
@@ -20,6 +21,8 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
       header={
         <Header
           leftIconName="ChevronLeft"
+          leftIconStyle={styles.backIconStyle}
+          leftPress={handleBackRequest}
           iconWidth={size.md}
           iconHeight={size.md}
         />

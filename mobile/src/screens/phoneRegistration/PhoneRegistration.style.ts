@@ -5,6 +5,10 @@ export const styles = StyleSheet.create({
   headerContainer: {
     padding: size.rg,
   },
+  backIconStyle: {
+    backgroundColor: 'white',
+    borderRadius: size.md,
+  },
   title: {
     fontFamily: font.semiBold,
     fontSize: size.lg,

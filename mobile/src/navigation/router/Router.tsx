@@ -8,8 +8,8 @@ export const Router = () => {
   SplashScreen.hide();
   return (
     <NavigationContainer>
-      {/* <AuthNavigation /> */}
-      <AppNavigation />
+      <AuthNavigation />
+      {/* <AppNavigation /> */}
     </NavigationContainer>
   );
 };

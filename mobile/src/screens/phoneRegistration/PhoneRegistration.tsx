@@ -14,6 +14,7 @@ export const PhoneRegistration: FC<TPhoneRegistrationNavigation> = ({
       title="Registration"
       subtitle="Enter your phone number to verify your account"
       handleSendRequest={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      handleBackRequest={() => navigation.goBack()}
     />
   );
 };
