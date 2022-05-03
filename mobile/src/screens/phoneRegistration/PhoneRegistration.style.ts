@@ -3,7 +3,11 @@ import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
   headerContainer: {
-    paddingTop: size.lg,
+    padding: size.rg,
+  },
+  backIconStyle: {
+    backgroundColor: 'white',
+    borderRadius: size.md,
   },
   title: {
     fontFamily: font.semiBold,
