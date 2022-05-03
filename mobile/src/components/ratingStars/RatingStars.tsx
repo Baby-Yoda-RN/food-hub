@@ -19,7 +19,9 @@ export const RatingStars: FC<TRatingStarsProps> = () => {
             {
                 rating.map((item, key) => {
                     return(
-                        <TouchableOpacity onPress = {() => setDefaultRating(item)}>
+                        <TouchableOpacity 
+                        key = {item} 
+                        onPress = {() => setDefaultRating(item)}>
                             <View>
                                 <Icon 
                                 name = {item <= defaultRating ? 'Star' : 'StarHollow'}
