@@ -18,7 +18,7 @@ export const ImageButton: FC<TImageButton> = ({
         data.value === selected && styles.selected,
         buttonStyle,
       ]}>
-      <Image style={styles.imageContainer} source={{uri: data.image}} />
+      <Image resizeMode='cover' style={styles.imageContainer} source={{uri: data.image}} />
       <View style={styles.divider} />
       <Text
         numberOfLines={1}

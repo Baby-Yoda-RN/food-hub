@@ -32,7 +32,8 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           }
           containerStyle={styles.headerContainer}
         />
-      }>
+      }
+      footer={<BottomTabNavigator fillPin={color.primary} />}>
       <Text style={styles.title}>What would you like to order</Text>
       <TextInput
         leftIcon="Magnify"
@@ -88,15 +89,16 @@ export const HomeScreenView: FC<THomeScreenView> = ({
             return (
               <TouchableOpacity
                 onPress={() => onPressFoodCard(String(index))}
-                style={styles.foodItemContainer}
+                style={[styles.foodItemContainer, styles.shadow]}
                 key={String(index)}>
-                <FoodCard foodItem={food} />
+                <View style={styles.shadow}>
+                  <FoodCard foodItem={food} />
+                </View>
               </TouchableOpacity>
             );
           })}
         </View>
       </View>
-      <BottomTabNavigator fillPin={color.primary} />
     </Container>
   );
 };

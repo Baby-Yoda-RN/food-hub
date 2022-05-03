@@ -26,10 +26,14 @@ export const styles = StyleSheet.create({
   },
   foodCardContainer: {
     flex: 1,
+    justifyContent:'space-between',
     flexWrap: 'wrap',
   },
   foodItemContainer:{
-    width:'50%',
+    width:'46%',
+    backgroundColor:color.white,
+    borderRadius:size.rg,
+    marginBottom:size.lg,
   },
   headerContainer: {
     marginHorizontal: size.rg,
@@ -43,18 +47,30 @@ export const styles = StyleSheet.create({
     shadowRadius: 6.27,
     elevation: 10,
   },
+  shadow:{
+    shadowColor: color.black,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 1,
+    elevation: 3,
+  },
   sectionContainer: {
     marginVertical: size.md,
   },
   title: {
     fontFamily: font.bold,
-    fontSize: 32,
+    fontSize: size.lg,
     lineHeight: size.lg + 10,
-    marginBottom: size.sm,
+    marginVertical:size.rg,
+    color:color.title,
   },
   subtitle: {
     fontFamily: font.bold,
     fontSize: size.rg + 5,
+    color:color.title,
   },
   viewAll: {
     color: color.primary,
