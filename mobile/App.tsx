@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router} from './src/navigation';
 import {NavigationContainer} from '@react-navigation/native';
-import {AppTheme} from './src/theme/apptheme/AppTheme';
+import {AppTheme} from './src/theme/';
 
 const App = () => {
   return (
