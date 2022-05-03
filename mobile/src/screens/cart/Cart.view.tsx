@@ -28,7 +28,7 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
   ];
 
   return (
-    <Container containerStyle={styles.container} isScrollViewDisabled={true} >
+    <Container containerStyle={styles.container} isScrollViewDisabled={false}>
       <Header
         containerStyle={styles.header}
         title={title}
@@ -58,7 +58,13 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
         />
       ))}
 
-      <TextInput type="regular" placeholder="Promo Code" />
+      <TextInput
+        type="regular"
+        placeholder="Promo Code"
+        containerStyle={styles.textInput}
+        rightButton="Apply"
+        rightButtonStyle={styles.rightButton}
+      />
 
       <View style={styles.billContainer}>
         {oderSummary.map(item => (

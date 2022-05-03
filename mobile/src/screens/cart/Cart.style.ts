@@ -11,6 +11,14 @@ export const styles = StyleSheet.create({
         paddingLeft: 0,
         marginTop: size.md,
     },
+    textInput: {
+        borderRadius: size.xxl,
+    },
+    rightButton: {
+        paddingVertical: size.md,
+        paddingHorizontal: size.lg,
+        borderRadius: size.xxl,
+    },
     billContainer: {
         flexDirection: 'column',
     },

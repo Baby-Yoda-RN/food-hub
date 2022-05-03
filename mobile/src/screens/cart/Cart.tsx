@@ -1,12 +1,14 @@
-import React, {FC, useState, useEffect, Dispatch} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
 import {TCartNavigation, THandleGeneric} from './Cart.type';
 import {CartScreenView} from './Cart.view';
-import {TListItem, TListItemArray} from '../../types/data';
+import {TListItemArray} from '../../types/data';
 import {foodDummyData} from './foodDummyData';
+import {roundToTwoDecimals} from '../../utilities/';
 
 export const CartScreen: FC<TCartNavigation> = ({navigation}) => {
-  const [listItemArray, setListItemArray] = useState<TListItemArray>(foodDummyData);
+  const [listItemArray, setListItemArray] =
+    useState<TListItemArray>(foodDummyData);
   const [subTotal, setSubTotal] = useState<number>(0);
   const [tax, setTax] = useState<number>(0);
   const [delivery, setDelivery] = useState<number>(0);
@@ -21,34 +23,34 @@ export const CartScreen: FC<TCartNavigation> = ({navigation}) => {
       (previous, current) => current.price * current.quantity + previous,
       0,
     );
-    const tax = Math.round(subTotal * taxRate * 100) / 100;
-    const delivery = Math.round(subTotal * deliveryRate * 100) / 100;
-    const total = Math.round((subTotal + tax + delivery) * 100) / 100;
+    const tax = roundToTwoDecimals(subTotal * taxRate);
+    const delivery = roundToTwoDecimals(subTotal * deliveryRate);
+    const total = roundToTwoDecimals(subTotal + tax + delivery);
     const itemCount = listItemArray.reduce(
       (previous, current) => current.quantity + previous,
       0,
     );
 
-    setSubTotal(Math.round(subTotal * 100) / 100);
+    setSubTotal(roundToTwoDecimals(subTotal));
     setTax(tax);
     setDelivery(delivery);
     setTotal(total);
     setItemCount(itemCount);
   }, [listItemArray]);
 
-  const handleDelete: THandleGeneric<
-    TListItemArray,
-    TListItem,
-    Dispatch<TListItemArray>
-  > = (listItemArray, listItem, setListItemArray) => {
+  const handleDelete: THandleGeneric = (
+    listItemArray,
+    listItem,
+    setListItemArray,
+  ) => {
     setListItemArray(listItemArray.filter(item => item.uuid !== listItem.uuid));
   };
 
-  const handleIncrement: THandleGeneric<
-    TListItemArray,
-    TListItem,
-    Dispatch<TListItemArray>
-  > = (listItemArray, listItem, setListItemArray) => {
+  const handleIncrement: THandleGeneric = (
+    listItemArray,
+    listItem,
+    setListItemArray,
+  ) => {
     setListItemArray(
       listItemArray.map(item => {
         if (listItem.uuid === item.uuid)
@@ -61,11 +63,11 @@ export const CartScreen: FC<TCartNavigation> = ({navigation}) => {
     );
   };
 
-  const handleDecrement: THandleGeneric<
-    TListItemArray,
-    TListItem,
-    Dispatch<TListItemArray>
-  > = (listItemArray, listItem, setListItemArray) => {
+  const handleDecrement: THandleGeneric = (
+    listItemArray,
+    listItem,
+    setListItemArray,
+  ) => {
     setListItemArray(
       listItemArray.map(item => {
         if (listItem.uuid === item.uuid && item.quantity > 0)

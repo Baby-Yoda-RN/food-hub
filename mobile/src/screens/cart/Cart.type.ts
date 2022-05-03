@@ -2,10 +2,10 @@ import { Dispatch } from 'react';
 import { TAppNavigation } from '../../navigation';
 import { TListItem, TListItemArray } from '../../types/data';
 
-export type THandleGeneric<T1, T2, T3> = (
-    listItemArray: T1,
-    listItem: T2,
-    setListItemArray: T3,
+export type THandleGeneric = (
+    listItemArray:TListItemArray,
+    listItem: TListItem,
+    setListItemArray: Dispatch<TListItemArray>
 ) => void;
 
 export type TOrderSummary = Array<{ id: number, text: string, price: number }>;
@@ -20,9 +20,9 @@ export type TCartScreenViewProps = {
     delivery: number;
     total: number;
     itemCount: number;
-    handleDelete: THandleGeneric<TListItemArray, TListItem, Dispatch<TListItemArray>>;
-    handleIncrement: THandleGeneric<TListItemArray, TListItem, Dispatch<TListItemArray>>;
-    handleDecrement: THandleGeneric<TListItemArray, TListItem, Dispatch<TListItemArray>>;
+    handleDelete: THandleGeneric;
+    handleIncrement: THandleGeneric;
+    handleDecrement: THandleGeneric;
 };
 
 export type TCartNavigation = {
