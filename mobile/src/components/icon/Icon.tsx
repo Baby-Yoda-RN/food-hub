@@ -285,7 +285,7 @@ export const Icon: FC<TIcon> = ({
     case 'Magnify':
       icon = (
         <Magnify
-          fill={fill || color.grayDisabled}
+          fill={color.white || color.grayDisabled}
           height={height}
           width={width}
         />

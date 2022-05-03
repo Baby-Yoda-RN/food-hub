@@ -9,27 +9,45 @@ export type TRestaurant = {
   foodItems?: string;
   imageName?: string;
   items?: string[];
-}
+};
 
 export type TOrder = {
-  uuid?:string
-  restaurantName:string
-  date:string //dev
-  status:string
-  items:number //dev
-  delivered?:boolean
-  restaurantImage?:string
-  estimatedTime?:string
-  total?:string
-}
+  uuid?: string;
+  restaurantName: string;
+  date: string; //dev
+  status: string;
+  items: number; //dev
+  delivered?: boolean;
+  restaurantImage?: string;
+  estimatedTime?: string;
+  total?: string;
+};
 
-export type TFoodItem = {
+export type TItem = {
   uuid?: string;
   name?: string;
   description?: string;
+  price?: number;
+  imageName?: string;
+}
+
+export type TFoodItem = TItem & {
   rating?: number;
   usersVoted?: number;
-  price?: number;
   favorite?: boolean;
-  imageName?: string;
+};
+
+export type TListItem = Omit<TItem, 'price'> & {
+  quantity: number;
+  price: number;
+};
+
+export type TListItemArray = Array<TListItem>;
+
+export type TReview = {
+  name: string;
+  date: string;
+  profileImage: string;
+  reviewText: string;
+  reviewScore: number;
 };
