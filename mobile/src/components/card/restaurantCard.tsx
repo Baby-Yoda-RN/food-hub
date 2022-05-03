@@ -19,8 +19,8 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
     imageName,
   } = restaurant;
 
-  const render = () => (
-    <>
+  return (
+    <Card>
       <View>
         <Image
           style={styles.cardImage}
@@ -59,8 +59,6 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
           ))}
         </ScrollView>
       </View>
-    </>
+    </Card>
   );
-
-  return <Card renderDetails={render} />;
 };
