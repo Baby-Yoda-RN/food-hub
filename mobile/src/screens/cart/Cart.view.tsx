@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 import {View, Text} from 'react-native';
-import {TCartScreenViewProps} from './Cart.type';
+import {TCartScreenViewProps, TOrderSummary} from './Cart.type';
 import {Container, Header, ListItem, TextInput, Button} from '../../components';
 import {size} from '../../theme';
 import {styles} from './Cart.style';
+import {checkIfLastItemOfArray} from '../../utilities';
 
 export const CartScreenView: FC<TCartScreenViewProps> = ({
   title,
@@ -19,8 +20,15 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
   handleIncrement,
   handleDecrement,
 }) => {
+  const oderSummary: TOrderSummary = [
+    {id: 0, text: 'Subtotal', price: subTotal},
+    {id: 1, text: 'Tax and Fees', price: tax},
+    {id: 2, text: 'Delivery', price: delivery},
+    {id: 3, text: 'Total', price: total},
+  ];
+
   return (
-    <Container containerStyle={styles.container}>
+    <Container containerStyle={styles.container} isScrollViewDisabled={true} >
       <Header
         containerStyle={styles.header}
         title={title}
@@ -53,41 +61,23 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
       <TextInput type="regular" placeholder="Promo Code" />
 
       <View style={styles.billContainer}>
-        <View style={styles.billItemContainer}>
-          <Text style={styles.text}>Subtotal</Text>
-          <View style={styles.rightColumn}>
-            <Text style={styles.price}>${subTotal}</Text>
-            <Text style={styles.symbol}>USD</Text>
+        {oderSummary.map(item => (
+          <View key={item.id}>
+            <View style={styles.billItemContainer}>
+              <Text style={styles.text}>{item.text}</Text>
+              {checkIfLastItemOfArray(oderSummary, item.id) && (
+                <Text> ({itemCount} items)</Text>
+              )}
+              <View style={styles.rightColumn}>
+                <Text style={styles.price}>${item.price}</Text>
+                <Text style={styles.symbol}>USD</Text>
+              </View>
+            </View>
+            {!checkIfLastItemOfArray(oderSummary, item.id) && (
+              <View style={styles.divider}></View>
+            )}
           </View>
-        </View>
-        <View style={styles.divider}></View>
-
-        <View style={styles.billItemContainer}>
-          <Text style={styles.text}>Tax and Fees </Text>
-          <View style={styles.rightColumn}>
-            <Text style={styles.price}>${tax}</Text>
-            <Text style={styles.symbol}>USD</Text>
-          </View>
-        </View>
-        <View style={styles.divider}></View>
-
-        <View style={styles.billItemContainer}>
-          <Text style={styles.text}>Delivery </Text>
-          <View style={styles.rightColumn}>
-            <Text style={styles.price}>${delivery}</Text>
-            <Text style={styles.symbol}>USD</Text>
-          </View>
-        </View>
-        <View style={styles.divider}></View>
-
-        <View style={styles.billItemContainer}>
-          <Text style={styles.text}>Total </Text>
-          <Text>({itemCount} items)</Text>
-          <View style={styles.rightColumn}>
-            <Text style={styles.price}>${total}</Text>
-            <Text style={styles.symbol}>USD</Text>
-          </View>
-        </View>
+        ))}
       </View>
 
       <Button title="CHECKOUT" containerStyle={styles.button} />

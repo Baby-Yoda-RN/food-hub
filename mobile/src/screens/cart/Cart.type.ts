@@ -8,6 +8,8 @@ export type THandleGeneric<T1, T2, T3> = (
     setListItemArray: T3,
 ) => void;
 
+export type TOrderSummary = Array<{ id: number, text: string, price: number }>;
+
 export type TCartScreenViewProps = {
     title: string;
     onPress: () => void;

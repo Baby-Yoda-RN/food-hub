@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { size, color, font } from '../../theme';
 
 export const styles = StyleSheet.create({
-  Container: {
+  container: {
     backgroundColor: color.white,
     borderRadius: size.rg,
     flexDirection: 'row',
@@ -10,36 +10,30 @@ export const styles = StyleSheet.create({
     paddingVertical: size.sm,
     alignItems: 'center',
   },
-  TextContainer: {
+  textContainer: {
     paddingHorizontal: size.rg,
     flex: 1,
   },
-  IconContainer: {
+  iconContainer: {
     flexDirection: 'row',
     paddingHorizontal: size.xs,
     paddingTop: size.sm,
   },
-
-  TopRightIconContainer: {
+  topRightIconContainer: {
     alignItems: 'flex-end',
   },
-
-  Title: {
+  title: {
     fontFamily: font.semiBold,
     fontSize: size.rg,
     fontWeight: 'bold',
     color: color.black,
-
   },
-
-  SubTitle: {
+  subTitle: {
     fontFamily: font.semiBold,
     fontSize: size.md,
     color: color.grayMid,
-
   },
-
-  ItemQuantity: {
+  itemQuantity: {
     fontFamily: font.semiBold,
     fontSize: size.rg,
     fontWeight: 'bold',
@@ -47,15 +41,13 @@ export const styles = StyleSheet.create({
     paddingVertical: size.sm,
     marginHorizontal: size.sm,
   },
-
-  Price: {
+  price: {
     fontFamily: font.semiBold,
     fontSize: size.rg,
     color: color.primary,
     paddingTop: size.xs,
   },
-
-  Image: {
+  image: {
     borderRadius: size.rg,
     width: size.xl,
     height: size.xl,
@@ -64,5 +56,4 @@ export const styles = StyleSheet.create({
     shadowColor: color.black,
     elevation: size.md,
   }
-
 });
