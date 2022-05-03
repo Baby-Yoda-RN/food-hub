@@ -6,6 +6,8 @@ import {
   ReviewScreen,
   WelcomeScreen,
   FoodDetailsScreen,
+  HomeScreen,
+  CategoryScreen,
 } from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
@@ -17,6 +19,13 @@ export const AppNavigation = () => {
         name={EAppNavigationRoutes.FOODDETAIL}
         component={FoodDetailsScreen}
       />
+      <Stack.Screen name={EAppNavigationRoutes.HOME} component={HomeScreen} />
+
+      <Stack.Screen
+        name={EAppNavigationRoutes.CATEGORY}
+        component={CategoryScreen}
+      />
+      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
     </Stack.Navigator>
   );
 };

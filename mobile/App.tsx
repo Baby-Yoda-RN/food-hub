@@ -1,16 +1,13 @@
-import React, {useEffect} from 'react';
-import SplashScreen from 'react-native-splash-screen';
-import {ReviewCard} from './src/components/reviewCard/ReviewCard';
+import React from 'react';
 import {Router} from './src/navigation';
-import {TReview} from './src/types/data';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
-  useEffect(() => {
-    setTimeout(() => {}, 1000);
-    SplashScreen.hide();
-  }, []);
-
-  return <Router />;
+  return (
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
+  );
 };
 
 export default App;
