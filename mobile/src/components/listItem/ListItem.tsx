@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import React, {FC} from 'react';
 import {styles} from './ListItem.styles';
-import {Icon} from '../../components';
+import {Icon} from '../icon/Icon';
 import {TListItemProps} from './ListItem.type';
 
 export const ListItem: FC<TListItemProps> = ({
