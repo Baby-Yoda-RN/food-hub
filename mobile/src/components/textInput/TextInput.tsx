@@ -7,16 +7,25 @@ import {
 } from 'react-native';
 import {size} from '../../theme';
 import {phone_validator} from '../../utilities/phone_validator';
+import {Button} from '../button/Button';
 import {Icon} from '../icon/Icon';
 import {style} from './TextInput.style';
 import {TTextInputProps} from './TextInput.type';
 
 export const TextInput: FC<TTextInputProps> = ({
   leftIcon,
+  leftIconStyle,
+  leftIconSize,
   rightIcon,
+  rightIconStyle,
+  rightIconSize,
+  rightButton,
+  rightButtonStyle,
   isSensitive = false,
   placeholder = 'Enter Text',
   type,
+  containerStyle,
+  textStyle,
   ...rest
 }) => {
   const [isActive, setIsActive] = useState(false);
@@ -27,6 +36,9 @@ export const TextInput: FC<TTextInputProps> = ({
   let currentContainerStyle = isActive
     ? style.containerFocus
     : style.containerBlur;
+
+  const leftElement = leftIcon;
+  const rightElement = rightIcon || rightButton;
 
   const whenFocused = () => {
     setIsActive(true);
@@ -70,14 +82,21 @@ export const TextInput: FC<TTextInputProps> = ({
   }, []);
 
   return (
-    <TouchableOpacity style={currentContainerStyle} {...rest} onPress={onPress}>
-      {!!leftIcon && (
-        <TouchableOpacity>
-          <Icon name={leftIcon} height={size.rg} width={size.rg} />
+    <TouchableOpacity
+      style={[currentContainerStyle, containerStyle]}
+      {...rest}
+      onPress={onPress}>
+      {!!leftElement && (
+        <TouchableOpacity style={leftIconStyle}>
+          <Icon
+            name={leftIcon}
+            height={leftIconSize || size.lg}
+            width={leftIconSize || size.lg}
+          />
         </TouchableOpacity>
       )}
       <NativeInput
-        style={style.textInput}
+        style={[style.textInput, textStyle]}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
         onFocus={whenFocused}
@@ -88,9 +107,25 @@ export const TextInput: FC<TTextInputProps> = ({
         ref={textInputRef}
       />
 
-      {!!rightIcon && (
-        <TouchableOpacity onPressIn={whenPressIn} onPressOut={whenPressOut}>
-          <Icon name={rightIcon} height={size.m} width={size.m} />
+      {!!rightElement && (
+        <TouchableOpacity
+          style={rightIconStyle}
+          onPressIn={whenPressIn}
+          onPressOut={whenPressOut}>
+          {!!rightIcon && (
+            <Icon
+              name={rightIcon}
+              height={rightIconSize || size.rg}
+              width={rightIconSize || size.rg}
+            />
+          )}
+          {!!rightButton && (
+            <Button
+              title={rightButton}
+              containerStyle={rightButtonStyle}
+              {...rest}
+            />
+          )}
         </TouchableOpacity>
       )}
     </TouchableOpacity>

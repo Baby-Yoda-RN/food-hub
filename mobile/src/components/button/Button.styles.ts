@@ -3,6 +3,7 @@ import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
+    padding:size.sm,
     borderRadius: size.rg,
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -16,8 +17,8 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: color.white,
-    fontSize: size.m,
-    lineHeight: size.m,
+    fontSize: size.rg,
+    lineHeight: size.rg,
     textAlign: 'center',
   },
 
