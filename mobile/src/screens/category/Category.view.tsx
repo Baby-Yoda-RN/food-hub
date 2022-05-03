@@ -70,12 +70,14 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
       <ImageBackground
         style={styles.imageBackground}
         source={require('../../assets/images/category_pizza.png')}>
+        <Header
+          leftIconName="ChevronLeft"
+          iconWidth={size.rg}
+          iconHeight={size.rg}
+          leftIconStyle={{marginHorizontal: size.xs}}
+        />
+
         <View style={styles.header}>
-          <Header
-            leftIconName="ChevronLeft"
-            iconWidth={size.rg}
-            iconHeight={size.rg}
-          />
           <View>
             <Text style={styles.headerText1}>{titleCategory1}</Text>
             <Text style={styles.headerText2}>{titleCategory2}</Text>
@@ -95,6 +97,7 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
             <Icon name="Slide" width={size.rg} height={size.rg} />
           </View>
         </View>
+
         <FlatList
           data={foodTypeList}
           renderItem={({item}) => <FoodCard foodItem={item} />}

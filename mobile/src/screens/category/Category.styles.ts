@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   container: {},
   header: {
     margin: size.md,
+    marginHorizontal: size.rg + size.sm,
   },
   imageBackground: {},
   headerText1: {
@@ -26,6 +27,7 @@ export const styles = StyleSheet.create({
     fontSize: size.sm + size.xs,
   },
   foodList: {
+    flex: 1,
     margin: size.md,
     justifyContent: 'center',
     alignContent: 'center',
@@ -34,6 +36,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignContent: 'center',
+    marginHorizontal: size.rg,
   },
   aligner: {
     paddingVertical: size.lg,
