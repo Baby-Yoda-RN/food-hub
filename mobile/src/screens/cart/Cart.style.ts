@@ -7,8 +7,10 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'column',
     },
+    headerContainer: {
+        paddingHorizontal: size.rg,
+    },
     header: {
-        paddingLeft: 0,
         marginTop: size.md,
     },
     textInput: {
