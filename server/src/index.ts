@@ -1,7 +1,10 @@
 import express from "express";
 import { login, register } from "./routes";
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
+
 const port = 80;
 
 app.use(express.json({ limit: "5MB", }));
