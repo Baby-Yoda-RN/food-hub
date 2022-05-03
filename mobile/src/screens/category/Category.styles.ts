@@ -1,20 +1,20 @@
 import {StyleSheet} from 'react-native';
-import {size, color} from '../../theme';
+import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
-  container: {},
   header: {
-    margin: size.md,
-    marginHorizontal: size.rg + size.sm,
+    height: size.xxl + size.xl,
   },
-  imageBackground: {},
+  imageBackground: {
+    height: size.xxl * 2,
+  },
   headerText1: {
-    fontWeight: 'bold', //TODO use FontFamily better
-    fontSize: size.lg,
+    fontWeight: 'bold',
+    fontSize: size.lg + size.sm,
     color: color.black,
   },
   headerText2: {
-    fontWeight: 'bold', //TODO use FontFamily better
+    fontWeight: 'bold',
     fontSize: size.lg + size.rg,
     color: color.primary,
   },
@@ -23,22 +23,16 @@ export const styles = StyleSheet.create({
     color: color.grayMid,
   },
   text: {
+    fontFamily: font.regular,
     color: color.black,
-    fontSize: size.sm + size.xs,
+    fontSize: size.rg,
   },
-  foodList: {
-    flex: 1,
-    margin: size.md,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
+  foodList: {},
   sort: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    alignContent: 'center',
-    marginHorizontal: size.rg,
   },
   aligner: {
-    paddingVertical: size.lg,
+    paddingVertical: size.rg,
   },
 });
