@@ -14,5 +14,10 @@ export const color: Color = {
   success: '#4EE476',
   yellow: '#FFC529',
   red: '#FE724C',
+<<<<<<< HEAD
   blue: 'blue',
+=======
+  transparent: 'rgb(0,0,0,0)',
+  title: '#323643',
+>>>>>>> b577905c7f3af17a33cf6ce9d60002ada50c6195
 };

@@ -1,17 +1,26 @@
-import React from 'react';
-import {
-  NavigationContainer,
-  DefaultTheme,
-  DarkTheme,
-} from '@react-navigation/native';
+import React, {useLayoutEffect, useState} from 'react';
 import {AuthNavigation} from '../authNavigation/AuthNavigation';
 import {AppNavigation} from '../appNavigation/AppNavigation';
-import {AppTheme} from '../../theme/apptheme/AppTheme';
+import SplashScreen from 'react-native-splash-screen';
+import {getToken, removeToken} from '../../utilities';
+import {TGetTokenFromLocalStorage} from './Router.type';
+
 export const Router = () => {
-  return (
-    <NavigationContainer theme={AppTheme.orange}>
-      <AuthNavigation />
-      {/* <AppNavigation /> */}
-    </NavigationContainer>
-  );
+  const [token, setToken] = useState<string>();
+
+  useLayoutEffect(() => {
+    const getTokenFromLocalStorage: TGetTokenFromLocalStorage = async () => {
+      setToken(await getToken('key'));
+    };
+    getTokenFromLocalStorage();
+  }, []);
+
+  SplashScreen.hide();
+
+  // To LogOut
+  // removeToken('key')
+
+  if (token) return <AppNavigation />;
+  else if (!token) return <AuthNavigation />;
+  else return <></>;
 };

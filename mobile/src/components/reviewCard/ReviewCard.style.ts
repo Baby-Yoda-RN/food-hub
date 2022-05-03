@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
     fontFamily: font.regular,
   },
   reviewText: {
+    marginTop: size.rg,
     fontSize: size.rg,
     fontFamily: font.regular,
   },
