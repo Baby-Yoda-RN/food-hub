@@ -64,9 +64,6 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
   const titleCategory2 = 'Food';
   const typeOfFood = 'pizza';
   const countsOfType = 80;
-  const renderItem = (item: TFoodItem) => {
-    <FoodCard foodItem={item} />;
-  };
 
   return (
     <>
@@ -74,21 +71,19 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
         backgroundImage={require('../../assets/images/category_pizza.png')}
         backgroundImageStyle={styles.imageBackground}
         isScrollViewDisabled={true}>
-        <View>
-          <Header
-            leftIconName="ChevronLeft"
-            iconWidth={size.rg}
-            iconHeight={size.rg}
-          />
+        <Header
+          leftIconName="ChevronLeft"
+          iconWidth={size.rg}
+          iconHeight={size.rg}
+        />
 
-          <View style={styles.header}>
-            <View>
-              <Text style={styles.headerText1}>{titleCategory1}</Text>
-              <Text style={styles.headerText2}>{titleCategory2}</Text>
-              <Text style={styles.subHeader}>
-                {countsOfType} type of {typeOfFood}
-              </Text>
-            </View>
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.headerText1}>{titleCategory1}</Text>
+            <Text style={styles.headerText2}>{titleCategory2}</Text>
+            <Text style={styles.subHeader}>
+              {countsOfType} type of {typeOfFood}
+            </Text>
           </View>
         </View>
         <View style={styles.foodList}>
