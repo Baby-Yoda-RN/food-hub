@@ -1,35 +1,45 @@
 import {StyleSheet} from 'react-native';
-import {size, color} from '../../theme';
+import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: color.white,
-    alignContent: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
 
   input: {
-    fontFamily: 'Sofia Pro',
-    height: 65,
-    width: 65,
-    margin: 12,
+    fontFamily: font.semiBold,
+    paddingTop: 0,
+    paddingBottom: 0,
+    height: size.xl,
+    width: size.xl,
+    marginHorizontal: size.sm,
     borderWidth: 1,
     borderRadius: 10,
     borderColor: color.grayLow,
-    fontSize: 27,
+    fontSize: size.lg,
+    color: color.red,
+
+    shadowColor: color.black,
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 
   inputColor: {
-    fontFamily: 'Sofia Pro',
-    height: 65,
-    width: 65,
-    margin: 12,
+    fontFamily: font.semiBold,
+    paddingTop: 0,
+    paddingBottom: 0,
+    height: size.xl,
+    width: size.xl,
+    marginHorizontal: size.sm,
     borderWidth: 1,
     borderRadius: 10,
-    fontSize: size.rg,
-
+    fontSize: size.lg,
+    color: color.red,
     borderColor: color.red,
+
+    shadowColor: color.black,
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 });

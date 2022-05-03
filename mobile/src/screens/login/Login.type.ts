@@ -1,11 +1,11 @@
-import { StackScreenProps } from '@react-navigation/stack';
-import { TAuthNavigationRoutes, EAuthNavigationRoutes, TAuthNavigation } from '../../navigation';
-
-export type TLoginScreenProps = StackScreenProps<TAuthNavigationRoutes, EAuthNavigationRoutes.LOGIN>;
+import { TAuthNavigation } from '../../navigation';
 
 export type TLoginScreenViewProps = {
     title: string;
-    press: () => void;
+    goToSignUp: () => void;
+    goBack: () => void;
+    goToResetPassword: () => void;
+    isLoading: boolean;
 };
 
 export type TLoginNavigation = {
