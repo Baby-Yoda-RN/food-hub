@@ -18,8 +18,11 @@ export const Container: FC<TContainer> = ({
   contentStyle,
   header,
   headerStyle,
+  footer,
+  footerStyle,
   isScrollViewDisabled = false,
   backgroundImage,
+  backgroundImageStyle,
   ...rest
 }) => {
 
@@ -42,12 +45,13 @@ export const Container: FC<TContainer> = ({
       <ImageBackground
         source={backgroundImage!}
         resizeMode='stretch'
-        style={styles.backgroundImageContainer}
+        style={[styles.backgroundImageContainer,backgroundImageStyle]}
         >
         {header && <View style={[styles.header, headerStyle]}>{header}</View>}
         <Container {...containerDynamicStyle} {...rest}>
           <View style={[styles.content, contentStyle]}>{children}</View>
         </Container>
+        {footer && <View style={[styles.footer, footerStyle]}>{footer}</View>}
       </ImageBackground>
     </SafeAreaView>
   );
