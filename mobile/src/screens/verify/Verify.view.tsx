@@ -12,7 +12,16 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   OnPressResend,
 }) => {
   return (
-    <Container isScrollViewDisabled={true}>
+    <Container
+      isScrollViewDisabled={true}
+      header={
+        <Header
+          leftIconName="ChevronLeft"
+          iconWidth={size.rg}
+          iconHeight={size.rg}
+          containerStyle={styles.header}
+        />
+      }>
       <Header
         leftIconName="ChevronLeft"
         iconWidth={size.rg}
