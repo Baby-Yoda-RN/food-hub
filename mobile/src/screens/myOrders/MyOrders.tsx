@@ -54,7 +54,7 @@ const orders: Array<TOrder> = [
   },
 ];
 
-export const MyOrdersScreen:FC<TMyOrdersScreen> = () => {
+export const MyOrdersScreen:FC<TMyOrdersScreen> = ({navigation}) => {
 
   const [option, setOption] = useState<boolean>(true)
 
