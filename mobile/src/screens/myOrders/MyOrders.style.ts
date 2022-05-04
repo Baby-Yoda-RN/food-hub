@@ -1,17 +1,31 @@
-import { StyleSheet } from "react-native";
-import { color, font, size } from "../../theme";
+import {StyleSheet} from 'react-native';
+import {color, font, size} from '../../theme';
 
 export const styles = StyleSheet.create({
-  lastOrders:{
-    paddingVertical:size.lg,
-    color:color.black,
-    fontSize:18,
-    fontFamily:font.medium
+  header: {
+    backgroundColor:color.white,
+    paddingHorizontal: size.rg,
+    paddingVertical:size.rg,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
-  divider:{
-    marginVertical:size.rg,
+  pastOrders: {
+    paddingTop: size.lg,
+    paddingBottom: size.md,
+    color: color.black,
+    fontSize: 18,
+    fontFamily: font.medium,
   },
-  toggleButtonContainer:{
-    paddingVertical:size.lg,
-  }
-})
+  divider: {
+    marginVertical: size.rg,
+  },
+  toggleButtonContainer: {
+    paddingVertical: size.lg,
+  },
+});

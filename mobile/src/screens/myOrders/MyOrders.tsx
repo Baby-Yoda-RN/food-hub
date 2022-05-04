@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { TOrder } from '../../types/data';
 import { TMyOrdersScreen } from './MyOrders.type'
-import { MyOrdersView } from './MyOrders.view'
+import { MyOrdersScreenView } from './MyOrders.view'
 
 const orders: Array<TOrder> = [
   {
@@ -54,10 +54,14 @@ const orders: Array<TOrder> = [
   },
 ];
 
-export const MyOrders:FC<TMyOrdersScreen> = () => {
+export const MyOrdersScreen:FC<TMyOrdersScreen> = () => {
+
+  const [option, setOption] = useState<boolean>(true)
 
   return (
-    <MyOrdersView 
+    <MyOrdersScreenView 
+    showUpcomingOrders={option}
+    setShowUpcomingOrders={setOption}
     upcomingOrders={orders.filter(order => {
       return order.delivered === false
     })}
