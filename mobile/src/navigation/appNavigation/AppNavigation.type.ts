@@ -5,6 +5,7 @@ export enum EAppNavigationRoutes {
   REVIEW = 'Review',
   HOME = 'Home',
   CATEGORY = 'Category',
+  MYORDERS = 'MyOrders',
 }
 
 export type TAppNavigationRoutes = {
@@ -12,6 +13,7 @@ export type TAppNavigationRoutes = {
   [EAppNavigationRoutes.REVIEW]: undefined;
   [EAppNavigationRoutes.HOME]: undefined;
   [EAppNavigationRoutes.CATEGORY]: undefined;
+  [EAppNavigationRoutes.MYORDERS]: undefined;
 };
 
 export type TAppNavigation = StackNavigationProp<TAppNavigationRoutes>;
