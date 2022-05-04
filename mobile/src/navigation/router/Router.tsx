@@ -24,5 +24,5 @@ export const Router = () => {
   if (__DEV__) return <StorybookUIRoot />
   else if (token) return <AppNavigation />;
   else if (!token) return <AuthNavigation />;
-  else return <></>
+  else return <></>;
 };

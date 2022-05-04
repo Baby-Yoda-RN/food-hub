@@ -45,6 +45,7 @@ export type TListItem = Omit<TItem, 'price'> & {
 export type TListItemArray = Array<TListItem>;
 
 export type TReview = {
+  uuid?: string;
   name: string;
   date: string;
   profileImage: string;
