@@ -4,7 +4,7 @@ export type TListItemProps = {
     title?: string;
     subTitle?: string;
     image?: string;
-    price?: string;
+    price?: number;
     itemQuantity?: number;
     iconSize?: number;
     pressCross?: (event: GestureResponderEvent) => void;
