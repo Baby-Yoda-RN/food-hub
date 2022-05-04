@@ -6,14 +6,17 @@ import {TextInput} from '../../components/textInput/TextInput';
 import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
 import {TProfileNavigation} from './Profile.type';
 import {ProfileView} from './Profile.view';
+import {profileDummyData} from  './profileDummyData';
 
-export const Profile: FC<TProfileNavigation> = ({navigation}) => {
+export const Profile: FC<TProfileNavigation> = ({
+  navigation,
+}) => {
   return (
     <ProfileView
-      name="Eljad Eendaz"
-      email="EljadEendaz@gmail.com"
-      phoneNumber="(201)867-5309"
-      profileURL="https://i.imgur.com/imwXQ08.png"
+      name='Eljad Eendaz'
+      email='EljadEendaz@gmail.com'
+      phoneNumber='(123)456-7890'
+      profileURL='https://i.imgur.com/imwXQ08.png'
       goBack={() => navigation.goBack()}
     />
   );
