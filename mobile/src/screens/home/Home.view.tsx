@@ -33,7 +33,8 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           containerStyle={styles.headerContainer}
         />
       }
-      footer={<BottomTabNavigator fillPin={color.primary} />}>
+      // footer={<BottomTabNavigator fillPin={color.primary} />}
+    >
       <Text style={styles.title}>What would you like to order</Text>
       <TextInput
         leftIcon="Magnify"
