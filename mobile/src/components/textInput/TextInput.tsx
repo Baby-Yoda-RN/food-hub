@@ -26,10 +26,12 @@ export const TextInput: FC<TTextInputProps> = ({
   type,
   containerStyle,
   textStyle,
+  text,
+  setText,
   ...rest
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [text, setText] = useState('');
+  //const [text, setText] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(false);
   const textInputRef = useRef(null);
   let max = type === 'phone' ? 17 : 300;

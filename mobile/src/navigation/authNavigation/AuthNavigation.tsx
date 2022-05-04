@@ -11,6 +11,7 @@ import {
   WelcomeScreen,
   VerifyScreen,
 } from '../../screens';
+import StorybookUIRoot from '../../../storybook';
 
 const Stack = createStackNavigator<TAuthNavigationRoutes>();
 
@@ -18,12 +19,12 @@ export const AuthNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen
-        name={EAuthNavigationRoutes.LOGIN}
-        component={LoginScreen}
-      />
-      <Stack.Screen
         name={EAuthNavigationRoutes.WELCOME}
         component={WelcomeScreen}
+      />
+      <Stack.Screen
+        name={EAuthNavigationRoutes.LOGIN}
+        component={LoginScreen}
       />
       <Stack.Screen
         name={EAuthNavigationRoutes.PHONE_REGISTRATION}
@@ -33,10 +34,13 @@ export const AuthNavigation = () => {
         name={EAuthNavigationRoutes.SIGNUP}
         component={SignUpScreen}
       />
-
       <Stack.Screen
         name={EAuthNavigationRoutes.VERIFY}
         component={VerifyScreen}
+      />
+      <Stack.Screen
+        name={EAuthNavigationRoutes.STORY_BOOK}
+        component={StorybookUIRoot}
       />
     </Stack.Navigator>
   );

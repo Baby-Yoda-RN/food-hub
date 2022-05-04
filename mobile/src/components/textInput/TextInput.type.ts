@@ -1,3 +1,4 @@
+import { Dispatch } from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 
 export type TTextInputProps = {
@@ -14,4 +15,6 @@ export type TTextInputProps = {
   placeholder?: string;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
+  text: string;
+  setText: Dispatch<string>;
 };
