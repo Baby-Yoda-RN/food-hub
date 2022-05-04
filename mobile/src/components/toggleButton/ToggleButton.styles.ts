@@ -4,7 +4,7 @@ import {color, size} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: color.white,
-    borderRadius: size.rg,
+    borderRadius: size.xl,
     borderWidth: 1,
     borderColor: color.primary,
     flexDirection: 'row',
@@ -13,9 +13,10 @@ export const styles = StyleSheet.create({
   },
   button: {
     flex:1,
-    borderRadius: size.rg,
+    borderRadius: size.xl,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical:size.rg,
   },
   buttonDisabled: {
     backgroundColor: color.grayDisabled,
