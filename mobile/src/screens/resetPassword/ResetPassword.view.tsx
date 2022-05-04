@@ -4,35 +4,44 @@ import {
     TextInput,
     Header,
     Button,
+    Container,
 } from "../../components";
-import { size } from "../../theme";
+import { size, color } from "../../theme";
 import { styles } from "./ResetPassword.style";
 import { TResetPasswordViewProps } from "./ResetPassword.type"
 
 export const ResetPasswordView: FC<TResetPasswordViewProps> = ({
     title,
     subtitle,
-    press,
+    sendNewPassword,
+    goBack,
+    isLoading,
 }) => {
     return(
-        <View>
-            <Header 
-                leftIconName="ChevronLeft"
-                iconWidth={size.md}
-                iconHeight={size.md}
-                containerStyle={styles.headerContainer}
-            />
-            <View style={styles.container}>
+        <Container 
+            isLoading={isLoading}
+            backgroundImage={require('../../assets/background/auth_background.png')}
+            isScrollViewDisabled={false}
+            header={
+                <Header
+                    leftIconName="ChevronLeft"
+                    iconWidth={size.rg}
+                    iconHeight={size.rg}
+                    containerStyle={styles.header}
+                    leftIconStyle={{backgroundColor: color.white}}
+                    leftPress={goBack}
+                />}
+                >
                 <Text style={styles.title}>{title}</Text>
-                <Text style={styles.subtitle}>{subtitle}</Text>
-                <TextInput type="email"/>
+                <Text style={styles.text}>{subtitle}</Text>
+                <View style={styles.textInputContainer}>
+                    <TextInput type="regular"/>
+                </View>
                 <Button
                     title="SEND NEW PASSWORD"
-                    containerStyle={styles.buttonContainer}
-                    titleStyle={styles.buttonText}
-                    onPress={press}
+                    containerStyle={styles.button}
+                    onPress={sendNewPassword}
                 />
-            </View>
-        </View>
+        </Container>
     )
 }

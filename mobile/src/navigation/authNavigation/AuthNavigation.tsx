@@ -16,7 +16,11 @@ const Stack = createStackNavigator<TAuthNavigationRoutes>();
 
 export const AuthNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown:false}}>
+      <Stack.Screen
+        name={EAuthNavigationRoutes.SIGNUP}
+        component={SignUpScreen}
+      />
       <Stack.Screen
         name={EAuthNavigationRoutes.LOGIN}
         component={LoginScreen}
@@ -32,10 +36,6 @@ export const AuthNavigation = () => {
       <Stack.Screen
         name={EAuthNavigationRoutes.PHONE_REGISTRATION}
         component={PhoneRegistration}
-      />
-      <Stack.Screen
-        name={EAuthNavigationRoutes.SIGNUP}
-        component={SignUpScreen}
       />
     </Stack.Navigator>
   );

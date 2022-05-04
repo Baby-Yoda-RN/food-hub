@@ -12,7 +12,9 @@ export type TResetPasswordProps = StackScreenProps<
 export type TResetPasswordViewProps = {
   title: string;
   subtitle: string;
-  press: () => void;
+  sendNewPassword: () => void;
+  goBack: () => void;
+  isLoading: boolean;
 };
 export type TResetPasswordNavigation = {
   navigation: TAuthNavigation;
