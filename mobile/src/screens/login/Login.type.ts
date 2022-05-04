@@ -14,8 +14,6 @@ export type TLoginScreenViewProps = {
     isLoading: boolean;
 };
 
-export type THandleLogin = (email: string, password: string) => void;
-
 export type TLoginNavigation = {
     navigation: TAuthNavigation
 };
