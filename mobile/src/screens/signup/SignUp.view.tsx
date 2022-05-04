@@ -1,24 +1,21 @@
 import React, {FC} from 'react';
 import {View, Text} from 'react-native';
-import {TextInput, Button} from '../../components';
+import {TextInput, Button, Container} from '../../components';
 import {TSignUpScreenViewProps} from './SignUp.type';
 import {styles} from './SignUp.style';
-import {size, color} from '../../theme';
-import {Container} from '../../components';
-import BackgroundImage from '../../assets/background/background.svg';
 import {Footer} from '../../components';
+import images from '../../assets/images'
 
 export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
   title,
   onPressGoToLogin,
   isLoading = false,
 }) => {
-
     return (
 
       <Container 
       isLoading={isLoading}
-      backgroundImage={require('../../assets/background/auth_background.png')}
+      backgroundImage={images.authBackground}
       isScrollViewDisabled={false}>
         <Text style={styles.title}>{title}</Text>
 
