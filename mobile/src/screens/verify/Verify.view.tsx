@@ -22,13 +22,6 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
           containerStyle={styles.header}
         />
       }>
-      <Header
-        leftIconName="ChevronLeft"
-        iconWidth={size.rg}
-        iconHeight={size.rg}
-        containerStyle={styles.header}
-      />
-
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtext}>
         {`Please type the verification code send to \n${emailName}`}
