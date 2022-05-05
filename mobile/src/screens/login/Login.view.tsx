@@ -4,6 +4,7 @@ import {TextInput, Header, Button, Footer, Container} from '../../components';
 import {TLoginScreenViewProps} from './Login.type';
 import {styles} from './Login.style';
 import {size, color, font} from '../../theme';
+import images from '../../assets/images';
 
 export const LoginScreenView: FC<TLoginScreenViewProps> = ({
   title,
@@ -15,7 +16,7 @@ export const LoginScreenView: FC<TLoginScreenViewProps> = ({
   return (
     <Container
       isLoading={isLoading}
-      backgroundImage={require('../../assets/background/auth_background.png')}
+      backgroundImage={images.authBackground}
       isScrollViewDisabled={false}
       header={
         <Header

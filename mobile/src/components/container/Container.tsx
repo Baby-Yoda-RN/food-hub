@@ -1,3 +1,4 @@
+import {useTheme} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {
   SafeAreaView,
@@ -25,6 +26,7 @@ export const Container: FC<TContainer> = ({
   backgroundImageStyle,
   ...rest
 }) => {
+  const {colors} = useTheme();
 
   const Container = isScrollViewDisabled ? View : ScrollView;
 
@@ -34,19 +36,29 @@ export const Container: FC<TContainer> = ({
 
   if (isLoading) {
     return (
-      <SafeAreaView style={[styles.loading, safeAreaStyle]} {...rest}>
+      <SafeAreaView
+        style={[
+          styles.loading,
+          safeAreaStyle,
+          {backgroundColor: colors.background},
+        ]}
+        {...rest}>
         <ActivityIndicator size="large" color={color.primary} />
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={[styles.safeAreaContainer, safeAreaStyle]}>
+    <SafeAreaView
+      style={[
+        styles.safeAreaContainer,
+        safeAreaStyle,
+        {backgroundColor: colors.background},
+      ]}>
       <ImageBackground
         source={backgroundImage!}
-        resizeMode='stretch'
-        style={[styles.backgroundImageContainer,backgroundImageStyle]}
-        >
+        resizeMode="stretch"
+        style={[styles.backgroundImageContainer, backgroundImageStyle]}>
         {header && <View style={[styles.header, headerStyle]}>{header}</View>}
         <Container {...containerDynamicStyle} {...rest}>
           <View style={[styles.content, contentStyle]}>{children}</View>
