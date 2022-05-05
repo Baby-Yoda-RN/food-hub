@@ -6,8 +6,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: color.white,
     justifyContent: 'space-around',
-    paddingTop: size.rg,
-    paddingBottom: size.sm,
     shadowColor: color.black,
     shadowOffset: {
       width: 0,
@@ -16,10 +14,9 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 20,
     elevation: 20,
+    height: size.xl,
   },
-  tabContainer: {
-    padding: 6,
-  },
+  tabContainer: {},
   badgeContainer: {
     position: 'absolute',
     right: 0,
