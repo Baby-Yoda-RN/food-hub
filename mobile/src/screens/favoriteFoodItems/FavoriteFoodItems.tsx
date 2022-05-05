@@ -1,7 +1,5 @@
-import React, {FC} from 'react';
-import { Alert } from 'react-native';
-import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
-import {TFavoriteFoodItemsNavigation, TGetItemId} from './FavoriteFoodItems.type';
+import React, {FC, useState} from 'react';
+import {TFavoriteFoodItemsNavigation} from './FavoriteFoodItems.type';
 import {FavoriteFoodItemsScreenView} from './FavoriteFoodItems.view';
 
 const FavoriteFoods = [
@@ -57,15 +55,36 @@ const FavoriteFoods = [
   },
 ];
 
+const restaurants = [
+  {
+  uuid: '1234',
+  name: "McDonald's",
+  rating: 4,
+  usersVoted: 25,
+  favorite: true,
+  freeDelivery: 'Free Delivery',
+  deliveryTime: 10,
+  items: ['Burger', 'Chicken', 'Fast Food', 'Breakfast', 'American'],
+  imageName:
+    'https://www.tasteofhome.com/wp-content/uploads/2021/03/mcdonalds-1200x630-GettyImages-1285446341.jpg',
+  },
+];
+
+
 export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({navigation}) => {
   const handleOnPress = () => {
     console.log('navigate to screen');
   };
- 
+  
+  const [option, setOption] = useState<boolean>(true)
+
   return (
     <FavoriteFoodItemsScreenView
       favoriteFoodItems={FavoriteFoods}
+      favoriteResturants={restaurants}
       onPress={handleOnPress} 
-      isLoading={false}    />
+      isLoading={false} 
+      showFavoriteFoods={option}
+      setShowFavoriteFoods={setOption}   />
   );
 };

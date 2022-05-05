@@ -7,11 +7,9 @@ export const styles = StyleSheet.create({
         flex: 1,
         margin: size.rg,
     },
-    buttonContainer:{
-        paddingVertical: size.rg,
-        justifyContent: 'center',
-        flexDirection: 'row',
-    },
+    toggleButtonContainer: {
+        paddingVertical: size.lg,
+      },
     header: {
         paddingVertical: size.rg,
     },

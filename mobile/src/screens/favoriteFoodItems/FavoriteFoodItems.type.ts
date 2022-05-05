@@ -1,4 +1,5 @@
 import { StackScreenProps } from '@react-navigation/stack';
+import { Dispatch, SetStateAction } from 'react';
 import { TAppNavigationRoutes, EAppNavigationRoutes, TAppNavigation } from '../../navigation';
 import { TFoodItem } from '../../types/data';
 
@@ -7,7 +8,10 @@ export type TFavoriteFoodItemsScreenProps = StackScreenProps<TAppNavigationRoute
 export type TFavoriteFoodItemsScreenViewProps = {
     onPress: () => void;
     favoriteFoodItems:Array<Object>
+    favoriteResturants:Array<Object>
     isLoading: boolean
+    showFavoriteFoods?:boolean
+    setShowFavoriteFoods?:Dispatch<SetStateAction<boolean
 };
 
 export type TFavoriteFoodItemsNavigation = {
