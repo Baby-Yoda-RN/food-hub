@@ -7,6 +7,7 @@ import {
   HomeScreen,
   CategoryScreen,
   MyOrdersScreen,
+  AddNewAddress,
 } from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
@@ -14,7 +15,10 @@ const Stack = createStackNavigator<TAppNavigationRoutes>();
 export const AppNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name={EAppNavigationRoutes.MYORDERS} component={MyOrdersScreen}/>
+      <Stack.Screen
+        name={EAppNavigationRoutes.MYORDERS}
+        component={MyOrdersScreen}
+      />
       <Stack.Screen name={EAppNavigationRoutes.HOME} component={HomeScreen} />
       <Stack.Screen
         name={EAppNavigationRoutes.REVIEW}
@@ -25,6 +29,10 @@ export const AppNavigation = () => {
         component={CategoryScreen}
       />
       <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
+      <Stack.Screen
+        name={EAppNavigationRoutes.ADDNEWADDRESS}
+        component={AddNewAddress}
+      />
     </Stack.Navigator>
   );
 };
