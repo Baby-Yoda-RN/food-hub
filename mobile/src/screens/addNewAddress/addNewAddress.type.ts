@@ -15,5 +15,5 @@ export type TaddNewAddressViewProps = {
 };
 
 export type TaddNewAddressNavigation = {
-    navigation: TAuthNavigation
+    navigation?: TAuthNavigation
 };
