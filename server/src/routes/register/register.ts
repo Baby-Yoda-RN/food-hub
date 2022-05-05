@@ -4,7 +4,7 @@ import { TRequestBody, TUserInfo, TResponseBody } from "./register.type";
 
 export const register = express.Router();
 
-register.post("/", (request, response) => { 
+register.post("/api", (request, response) => { 
     const { email, password, name}: TRequestBody = request.body;
 
     const userInfo: TUserInfo = {

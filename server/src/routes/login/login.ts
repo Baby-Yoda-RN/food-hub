@@ -3,7 +3,7 @@ import { TRequestBody, TUserInfo, TResponseBody } from "./login.type";
 
 export const login = express.Router();
 
-login.post("/", (request, response) => {
+login.post("/api", (request, response) => {
 
   const { email, password }: TRequestBody = request.body;
 

@@ -3,7 +3,7 @@ import { TRequestBody, TUserInfo, TResponseBody } from "./phoneRegister.type";
 
 export const phoneRegister = express.Router();
 
-phoneRegister.post("/", (request, response) => {
+phoneRegister.post("/api", (request, response) => {
 
   const { email, password }: TRequestBody = request.body;
 

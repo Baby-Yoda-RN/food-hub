@@ -1,5 +1,5 @@
 import express from "express";
-import { login, register,review ,category, resetPassword, phoneRegister, favorites, foodDetail, restaurant, search, cart} from "./routes";
+import { login, register,review ,category, resetPassword, phoneRegister, favorites, foodDetail, restaurant, search, cart, order, address} from "./routes";
 const cors = require('cors');
 
 const app = express();
@@ -10,17 +10,19 @@ const port = 80;
 app.use(express.json({ limit: "5MB", }));
 app.use(express.urlencoded({ limit: "5MB", extended: true }));
 
-app.use('/api/login', login);
-app.use('/api/register', register);
-app.use('/api/review', review);
-app.use('/api/resetPassword', resetPassword);
-app.use('/api/phoneRegister', phoneRegister);
-app.use('/api/category', category);
-app.use('/api/favorites', favorites);
-app.use('/api/foodDetail', foodDetail);
-app.use('/api/restaurant', restaurant);
-app.use('/api/search', search);
-app.use('/api/cart', cart);
+app.use('/login', login);
+app.use('/register', register);
+app.use('/review', review);
+app.use('/resetPassword', resetPassword);
+app.use('/phoneRegister', phoneRegister);
+app.use('/category', category);
+app.use('/favorites', favorites);
+app.use('/foodDetail', foodDetail);
+app.use('/restaurant', restaurant);
+app.use('/search', search);
+app.use('/cart', cart);
+app.use('/order', order)
+app.use('/address', address)
 
 
 

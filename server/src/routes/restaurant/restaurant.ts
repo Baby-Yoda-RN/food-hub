@@ -39,7 +39,7 @@ export const popularItems: TPopularItemList = [
 },
 ]
 
-restaurant.post("/", (request, response) => {
+restaurant.post("/api", (request, response) => {
 
     const home = {
         categoryList,

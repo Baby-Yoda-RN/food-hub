@@ -51,7 +51,7 @@ export const myFavorites: TFavoritesList= [
 ]
 
 
-favorites.post("/", (request, response) => {
+favorites.post("/api", (request, response) => {
 
   const { token}: TRequestBody = request.body;
 

@@ -16,7 +16,7 @@ export const groundBeefTacos: TFoodDetail= {
     ]
 }
 
-foodDetail.post("/", (request, response) => {
+foodDetail.post("/api", (request, response) => {
 
   const { token}: TRequestBody = request.body;
 

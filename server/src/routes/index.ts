@@ -9,5 +9,7 @@ export * from './foodDetail/foodDetail';
 export * from './restaurant/restaurant';
 export * from './search/search';
 export * from './cart/cart';
+export * from './order/order';
+export * from './address/address';
 
 
