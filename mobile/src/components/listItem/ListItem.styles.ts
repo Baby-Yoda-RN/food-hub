@@ -1,64 +1,59 @@
-import {StyleSheet} from 'react-native';
-import {size, color} from '../../theme';
+import { StyleSheet } from 'react-native';
+import { size, color, font } from '../../theme';
 
 export const styles = StyleSheet.create({
-  Container: {
+  container: {
     backgroundColor: color.white,
-    borderRadius: size.rg, 
+    borderRadius: size.rg,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: size.sm,
     alignItems: 'center',
   },
-  TextContainer: {
-    paddingHorizontal: 27,
+  textContainer: {
+    paddingHorizontal: size.rg,
     flex: 1,
   },
-  IconContainer: {
-    flexDirection:'row',
+  iconContainer: {
+    flexDirection: 'row',
     paddingHorizontal: size.xs,
-    paddingTop: size.rg,
+    paddingTop: size.sm,
   },
-
-  TopRightIconContainer:{
-    paddingLeft: 48,
+  topRightIconContainer: {
+    alignItems: 'flex-end',
   },
-
-  Title: {
-    fontFamily: 'Sofia Pro',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: color.black,
-
-  },
-
-  SubTitle: {
-    fontFamily: 'Sofia Pro',
-    fontSize: 14,
-    color: color.grayMid,
-
-  },
-
-  ItemQuantity: {
-    fontFamily: 'Sofia Pro',
+  title: {
+    fontFamily: font.semiBold,
     fontSize: size.rg,
     fontWeight: 'bold',
     color: color.black,
-    paddingVertical: 6,
+  },
+  subTitle: {
+    fontFamily: font.semiBold,
+    fontSize: size.md,
+    color: color.grayMid,
+  },
+  itemQuantity: {
+    fontFamily: font.semiBold,
+    fontSize: size.rg,
+    fontWeight: 'bold',
+    color: color.black,
+    paddingVertical: size.sm,
     marginHorizontal: size.sm,
   },
-
-  Price:{
-    fontFamily: 'Sofia Pro',
+  price: {
+    fontFamily: font.semiBold,
     fontSize: size.rg,
     color: color.primary,
-    paddingTop:size.xs,
+    paddingTop: size.xs,
   },
-  
-  Image:{
-    borderRadius: size.rg, 
-    width:size.xl,
+  image: {
+    borderRadius: size.rg,
+    width: size.xl,
     height: size.xl,
+  },
+  imageContainer: {
+    shadowColor: color.black,
+    elevation: size.md,
   }
-
 });
