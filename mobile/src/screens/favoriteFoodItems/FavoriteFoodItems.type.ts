@@ -10,7 +10,7 @@ export type TFavoriteFoodItemsScreenViewProps = {
     favoriteResturants:Array<Object>
     isLoading: boolean
     showFavoriteFoods?:boolean
-    setShowFavoriteFoods?:Dispatch<SetStateAction<boolean
+    setShowFavoriteFoods?:Dispatch<SetStateAction<boolean>>
 };
 
 export type TFavoriteFoodItemsNavigation = {
