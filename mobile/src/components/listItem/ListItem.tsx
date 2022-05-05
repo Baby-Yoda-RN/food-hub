@@ -12,9 +12,9 @@ export const ListItem: FC<TListItemProps> = ({
   price ='',
   itemQuantity = 0,
   iconSize,
-  pressCross,
-  pressMinus,
-  pressPlus,
+  onPressCross,
+  onPressMinus,
+  onPressPlus,
   ...rest
 }) => {
  
