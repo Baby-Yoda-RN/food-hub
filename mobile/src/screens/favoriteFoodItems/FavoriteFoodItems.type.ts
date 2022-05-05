@@ -5,12 +5,12 @@ import { TFoodItem } from '../../types/data';
 export type TFavoriteFoodItemsScreenProps = StackScreenProps<TAppNavigationRoutes, EAppNavigationRoutes.FAVORITEFOODITEMS>;
 
 export type TFavoriteFoodItemsScreenViewProps = {
-    title: string;
     onPress: () => void;
-    foodCard: TFoodItem;
+    favoriteFoodItems:Array<Object>
     isLoading: boolean
 };
 
 export type TFavoriteFoodItemsNavigation = {
     navigation: TAppNavigation
 };
+
