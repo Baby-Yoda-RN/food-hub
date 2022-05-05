@@ -7,6 +7,7 @@ import {
   HomeScreen,
   CategoryScreen,
   MyOrdersScreen,
+  Profile,
 } from '../../screens';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
@@ -25,6 +26,7 @@ export const AppNavigation = () => {
         component={CategoryScreen}
       />
       <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
+      <Stack.Screen name={EAppNavigationRoutes.PROFILE} component={Profile} />
     </Stack.Navigator>
   );
 };

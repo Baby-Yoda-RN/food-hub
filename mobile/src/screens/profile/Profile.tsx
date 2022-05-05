@@ -13,10 +13,6 @@ export const Profile: FC<TProfileNavigation> = ({
 }) => {
   return (
     <ProfileView
-      name='Eljad Eendaz'
-      email='EljadEendaz@gmail.com'
-      phoneNumber='(123)456-7890'
-      profileURL='https://i.imgur.com/imwXQ08.png'
       goBack={() => navigation.goBack()}
     />
   );
