@@ -7,8 +7,8 @@ export type TFavoriteFoodItemsScreenProps = StackScreenProps<TAppNavigationRoute
 
 export type TFavoriteFoodItemsScreenViewProps = {
     onPress: () => void;
-    favoriteFoodItems: TFoodItem 
-    favoriteResturants: TRestaurant 
+    favoriteFoodItems: TFoodItem []
+    favoriteResturants: TRestaurant []
     isLoading: boolean
     showFavoriteFoods?:boolean
     setShowFavoriteFoods?:Dispatch<SetStateAction<boolean>>
