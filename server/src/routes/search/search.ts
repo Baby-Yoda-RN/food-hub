@@ -3,7 +3,7 @@ import { TSearch } from "./search.type";
 
 export const search = express.Router();
 
-search.post("/api", (request, response) => {
+search.post("/", (request, response) => {
 
   const { token,search }: TSearch = request.body;
 

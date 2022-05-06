@@ -1,7 +1,7 @@
 import express from 'express';
 import { TOrderList, TRequestBody } from './order.type';
 
-export const order = express()
+export const order = express.Router()
 
 const myOrder:TOrderList = [{
     delivered: true,
@@ -11,7 +11,7 @@ const myOrder:TOrderList = [{
     total: '19.99', 
 }]
 
-order.get("/api", (request, response) => {
+order.get("/", (request, response) => {
     const {token}: TRequestBody = request.body;
 
     try{

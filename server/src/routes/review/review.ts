@@ -3,7 +3,7 @@ import { TReviewArray } from "./review.type";
 
 export const review = express.Router();
 
-review.get("/api", (request, response) => {
+review.get("/", (request, response) => {
 
     const reviews: TReviewArray = [
         {

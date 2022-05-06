@@ -51,7 +51,7 @@ export const pineapplePizzas: TCategoryList= [
 ]
 
 
-category.post("/api", (request, response) => {
+category.post("/", (request, response) => {
 
   const { token}: TRequestBody = request.body;
 

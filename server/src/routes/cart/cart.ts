@@ -38,7 +38,7 @@ export const myCart: TCartList= [
     }
 ]
 
-cart.post("/cart", (request, response) => {
+cart.post("/", (request, response) => {
 
   const { token}: TRequestBody = request.body;
 

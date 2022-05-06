@@ -1,7 +1,7 @@
 import express from "express";
 import { TAddress, TRequestBody } from "./address.type";
 
-export const address = express();
+export const address = express.Router();
 
 const myAddress = {
     name: "john doe", 
@@ -11,12 +11,11 @@ const myAddress = {
     street: "123 drive rd",
 }
 
-address.get('/address', (request, response) =>{
-    const {token}: TRequestBody= request.body;
+address.get('/', (request, response) =>{
+    // const {token}: TRequestBody= request.body;
 
     try{
-        token ? response.status(200).send(myAddress) : 
-        response.status(400).send('Wrong Credential')
+        response.status(200).send(myAddress) 
     } catch(error){
         console.error(error);
         response.status(400).send("Bad Request")

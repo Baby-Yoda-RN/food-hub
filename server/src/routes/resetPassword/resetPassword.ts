@@ -3,7 +3,7 @@ import { TRequestBody, TUserInfo, TResponseBody } from "./resetPassword.type";
 
 export const resetPassword = express.Router();
 
-resetPassword.post("/api", (request, response) => {
+resetPassword.post("/", (request, response) => {
 
   const { email, password }: TRequestBody = request.body;
 
