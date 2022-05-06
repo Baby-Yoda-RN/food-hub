@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
     elevation: 20,
     height: size.xl,
   },
-  tabContainer: {},
   badgeContainer: {
     position: 'absolute',
     right: 0,

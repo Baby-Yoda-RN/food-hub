@@ -6,6 +6,8 @@ import {Badge} from '../badge/Badge';
 import {Icon} from '../icon/Icon';
 import {color, size} from '../../theme';
 
+// This file can be deleted. It's not being used right now but I am keeping it in case it can be used in the future.
+
 export const BottomTabNavigator: FC<TBottomTabNavigator> = ({
   iconSize = size.lg,
   fillPin = color.grayDisabled,

@@ -1,11 +1,9 @@
 import React, {FC} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {Container, Header, Icon, TextInput} from '../../components';
-import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
 import {ImageButton} from '../../components/imageButton/ImageButton';
-import {color} from '../../theme';
 import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
 
@@ -32,9 +30,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           }
           containerStyle={styles.headerContainer}
         />
-      }
-      // footer={<BottomTabNavigator fillPin={color.primary} />}
-    >
+      }>
       <Text style={styles.title}>What would you like to order</Text>
       <TextInput
         leftIcon="Magnify"

@@ -14,14 +14,19 @@ import {
 } from '../../screens';
 import {styles} from './BottomTabNavigation.style';
 import {View} from 'react-native';
-import {Icon} from '../../components';
+import {Badge, Icon} from '../../components';
 import {color, size} from '../../theme';
 
 const Tab = createBottomTabNavigator<TAppNavigationRoutes>();
 
-const DisplayTab = (iconName: string, buttonColor: string) => (
-  <View style={styles.tabContainer}>
+const DisplayTab = (
+  iconName: string,
+  buttonColor: string,
+  badge: boolean = false,
+) => (
+  <View>
     <Icon name={iconName} height={size.lg} width={size.lg} fill={buttonColor} />
+    {badge && <Badge containerStyle={styles.badgeContainer} value={3} />}
   </View>
 );
 
@@ -81,7 +86,7 @@ export const BottomTabNavigation = () => {
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
-            return DisplayTab('Bell', buttonColor);
+            return DisplayTab('Bell', buttonColor, true);
           },
         }}
       />
