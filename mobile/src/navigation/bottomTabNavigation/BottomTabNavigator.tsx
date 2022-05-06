@@ -10,6 +10,7 @@ import {
   CategoryScreen,
   CartScreen,
   Rating,
+  MyOrdersScreen,
 } from '../../screens';
 import {styles} from './BottomTabNavigation.style';
 import {View} from 'react-native';
@@ -63,6 +64,7 @@ export const BottomTabNavigation = () => {
           },
         }}
       />
+      {/* Will be favorites screen */}
       <Tab.Screen
         name={EAppNavigationRoutes.REVIEW}
         component={ReviewScreen}
@@ -74,8 +76,8 @@ export const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={EAppNavigationRoutes.RATING}
-        component={Rating}
+        name={EAppNavigationRoutes.MYORDERS}
+        component={MyOrdersScreen}
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
