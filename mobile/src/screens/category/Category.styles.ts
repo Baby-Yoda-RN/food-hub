@@ -1,44 +1,43 @@
 import {StyleSheet} from 'react-native';
-import {size, color} from '../../theme';
+import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
-  container: {},
   header: {
-    margin: size.md,
-    marginHorizontal: size.rg + size.sm,
+    marginTop: size.md,
+    marginLeft: size.rg,
   },
-  imageBackground: {},
-  headerText1: {
-    fontWeight: 'bold', //TODO use FontFamily better
-    fontSize: size.lg,
+  imageBackground: {
+    height: size.xxl * 2,
+  },
+  topSection: {
+    height: size.xxl + size.xl,
+  },
+  title1: {
+    fontFamily: font.bold,
+    fontSize: size.lg + size.sm,
     color: color.black,
   },
-  headerText2: {
-    fontWeight: 'bold', //TODO use FontFamily better
+  title2: {
+    fontFamily: font.bold,
     fontSize: size.lg + size.rg,
     color: color.primary,
+    marginTop: -size.lg,
   },
   subHeader: {
     fontSize: size.rg,
     color: color.grayMid,
   },
   text: {
+    fontFamily: font.regular,
     color: color.black,
-    fontSize: size.sm + size.xs,
+    fontSize: size.rg,
   },
-  foodList: {
-    flex: 1,
-    margin: size.md,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
+  foodList: {},
   sort: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    alignContent: 'center',
-    marginHorizontal: size.rg,
   },
   aligner: {
-    paddingVertical: size.lg,
+    paddingVertical: size.rg,
   },
 });
