@@ -3,20 +3,25 @@ import {size, color, font} from '../../theme';
 
 export const styles = StyleSheet.create({
   header: {
-    height: size.xxl + size.xl,
+    marginTop: size.md,
+    marginLeft: size.rg,
   },
   imageBackground: {
     height: size.xxl * 2,
   },
-  headerText1: {
-    fontWeight: 'bold',
+  topSection: {
+    height: size.xxl + size.xl,
+  },
+  title1: {
+    fontFamily: font.bold,
     fontSize: size.lg + size.sm,
     color: color.black,
   },
-  headerText2: {
-    fontWeight: 'bold',
+  title2: {
+    fontFamily: font.bold,
     fontSize: size.lg + size.rg,
     color: color.primary,
+    marginTop: -size.lg,
   },
   subHeader: {
     fontSize: size.rg,

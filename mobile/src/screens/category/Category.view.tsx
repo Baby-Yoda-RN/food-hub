@@ -70,17 +70,19 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
       <Container
         backgroundImage={require('../../assets/images/category_pizza.png')}
         backgroundImageStyle={styles.imageBackground}
-        isScrollViewDisabled={true}>
-        <Header
-          leftIconName="ChevronLeft"
-          iconWidth={size.rg}
-          iconHeight={size.rg}
-        />
-
-        <View style={styles.header}>
+        isScrollViewDisabled={true}
+        header={
+          <Header
+            containerStyle={styles.header}
+            leftIconName="ChevronLeft"
+            iconWidth={size.rg}
+            iconHeight={size.rg}
+          />
+        }>
+        <View style={styles.topSection}>
           <View>
-            <Text style={styles.headerText1}>{titleCategory1}</Text>
-            <Text style={styles.headerText2}>{titleCategory2}</Text>
+            <Text style={styles.title1}>{titleCategory1}</Text>
+            <Text style={styles.title2}>{titleCategory2}</Text>
             <Text style={styles.subHeader}>
               {countsOfType} type of {typeOfFood}
             </Text>
