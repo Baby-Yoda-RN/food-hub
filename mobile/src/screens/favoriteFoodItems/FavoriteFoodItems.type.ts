@@ -16,3 +16,4 @@ export type TFavoriteFoodItemsScreenViewProps = {
 export type TFavoriteFoodItemsNavigation = {
     navigation: TAppNavigation
 };
+

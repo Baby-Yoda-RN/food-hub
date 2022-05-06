@@ -75,8 +75,8 @@ export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({navigation}
   const handleOnPress = () => {
     console.log('navigate to screen');
   };
-
-  const [option, setOption] = useState<boolean>(true)
+  
+  const [showFavoriteFoods, setShowFavoriteFoods] = useState<boolean>(true)
 
   return (
     <FavoriteFoodItemsScreenView
@@ -84,7 +84,7 @@ export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({navigation}
       favoriteResturants={restaurants}
       onPress={handleOnPress} 
       isLoading={false} 
-      showFavoriteFoods={option}
-      setShowFavoriteFoods={setOption}   />
+      showFavoriteFoods={showFavoriteFoods}
+      setShowFavoriteFoods={setShowFavoriteFoods}   />
   );
 };

@@ -11,8 +11,10 @@ export const styles = StyleSheet.create({
         paddingVertical: size.lg,
       },
     header: {
+        marginHorizontal: size.rg,
         paddingVertical: size.rg,
     },
+    
     title: {
         fontSize: size.lg,
         fontFamily: font.semiBold,
