@@ -19,18 +19,6 @@ export const styles = StyleSheet.create({
         color: color.black,
         paddingVertical: size.xs,
     },
-    button: {
-        padding: size.rg,
-        borderRadius: size.xxl,
-        width: 160,
-    },
-    clearButton:{
-        padding: size.rg,
-        borderRadius: size.xxl,
-        backgroundColor: color.transparent,
-
-        width: 160,
-    },
     text: {
         textAlign: 'center',
         margin: size.rg,
