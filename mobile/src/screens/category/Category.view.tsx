@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {FlatList, ImageBackground, Text, View} from 'react-native';
-import {Header, Icon, Dropdown, TextInput} from '../../components';
+import {Header, Icon, Dropdown, TextInput, Container} from '../../components';
 import {FoodCard} from '../../components/card/foodCard';
 import {size} from '../../theme';
 import {TFoodItem} from '../../types/data';
@@ -16,7 +16,8 @@ const foodTypeList: Array<TFoodItem> = [
     usersVoted: 1,
     price: 1,
     favorite: true,
-    imageName: 'pineapple1',
+    imageName:
+      'https://mysliceofitaly.com/images/hero-BG-Slice-of-Italy-Bakersfield-CA.jpg',
   },
   {
     uuid: '2',
@@ -26,7 +27,8 @@ const foodTypeList: Array<TFoodItem> = [
     usersVoted: 2,
     price: 2,
     favorite: true,
-    imageName: 'pineapple2',
+    imageName:
+      'https://rustyspizza.com/images/default-source/default-album/rspechero.jpg?sfvrsn=79bcf8e0_2',
   },
   {
     uuid: '3',
@@ -36,7 +38,8 @@ const foodTypeList: Array<TFoodItem> = [
     usersVoted: 3,
     price: 3,
     favorite: true,
-    imageName: 'pineapple3',
+    imageName:
+      'https://images.happycow.net/venues/1024/11/78/hcmp117849_388183.jpeg',
   },
   {
     uuid: '4',
@@ -46,7 +49,8 @@ const foodTypeList: Array<TFoodItem> = [
     usersVoted: 4,
     price: 4,
     favorite: true,
-    imageName: 'pineapple4',
+    imageName:
+      'https://popmenucloud.com/pqkcorbf/ae2985ed-ae39-4377-8190-9c0ad9e0d06c.jpg',
   },
 ];
 
@@ -61,40 +65,40 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
   const typeOfFood = 'pizza';
   const countsOfType = 80;
 
-  const renderItem = (item: TFoodItem) => {
-    <FoodCard foodItem={item} />;
-  };
-
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        style={styles.imageBackground}
-        source={require('../../assets/images/category_pizza.png')}>
-        <Header
-          leftIconName="ChevronLeft"
-          iconWidth={size.rg}
-          iconHeight={size.rg}
-          leftIconStyle={{marginHorizontal: size.xs}}
-        />
-
-        <View style={styles.header}>
+    <>
+      <Container
+        backgroundImage={require('../../assets/images/category_pizza.png')}
+        backgroundImageStyle={styles.imageBackground}
+        isScrollViewDisabled={true}
+        header={
+          <Header
+            containerStyle={styles.header}
+            leftIconName="ChevronLeft"
+            iconWidth={size.rg}
+            iconHeight={size.rg}
+          />
+        }>
+        <View style={styles.topSection}>
           <View>
-            <Text style={styles.headerText1}>{titleCategory1}</Text>
-            <Text style={styles.headerText2}>{titleCategory2}</Text>
+            <Text style={styles.title1}>{titleCategory1}</Text>
+            <Text style={styles.title2}>{titleCategory2}</Text>
             <Text style={styles.subHeader}>
               {countsOfType} type of {typeOfFood}
             </Text>
           </View>
         </View>
-      </ImageBackground>
-      <View style={styles.foodList}>
-        <View style={styles.sort}>
-          <View style={styles.aligner}>
-            <Text style={styles.text}>Sort by: </Text>
-          </View>
-          <Dropdown data={DropdownList} />
-          <View style={styles.aligner}>
-            <Icon name="Slide" width={size.rg} height={size.rg} />
+        <View style={styles.foodList}>
+          <View style={styles.sort}>
+            <View style={styles.aligner}>
+              <Text style={styles.text}>Sort by: </Text>
+            </View>
+            <View>
+              <Dropdown data={DropdownList}></Dropdown>
+            </View>
+            <View style={styles.aligner}>
+              <Icon name="Slide" width={size.rg} height={size.rg} />
+            </View>
           </View>
         </View>
 
@@ -103,7 +107,7 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
           renderItem={({item}) => <FoodCard foodItem={item} />}
           keyExtractor={item => item.uuid}
         />
-      </View>
-    </View>
+      </Container>
+    </>
   );
 };
