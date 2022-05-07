@@ -1,23 +1,23 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
-  EAppNavigationRoutes,
-  TAppNavigationRoutes,
-} from '../appNavigation/AppNavigation.type';
-import {
   HomeScreen,
   ReviewScreen,
   CategoryScreen,
   CartScreen,
-  Rating,
   MyOrdersScreen,
+  FavoriteFoodItems,
 } from '../../screens';
 import {styles} from './BottomTabNavigation.style';
 import {View} from 'react-native';
 import {Badge, Icon} from '../../components';
 import {color, size} from '../../theme';
+import {
+  EBottomTabNavigationRoutes,
+  TBottomTabNavigationRoutes,
+} from './BottomTabNavigator.type';
 
-const Tab = createBottomTabNavigator<TAppNavigationRoutes>();
+const Tab = createBottomTabNavigator<TBottomTabNavigationRoutes>();
 
 const DisplayTab = (
   iconName: string,
@@ -40,7 +40,7 @@ export const BottomTabNavigation = () => {
         tabBarHideOnKeyboard: true,
       }}>
       <Tab.Screen
-        name={EAppNavigationRoutes.HOME}
+        name={EBottomTabNavigationRoutes.HOME}
         component={HomeScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -50,7 +50,7 @@ export const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={EAppNavigationRoutes.CATEGORY}
+        name={EBottomTabNavigationRoutes.CATEGORY}
         component={CategoryScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -60,7 +60,7 @@ export const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={EAppNavigationRoutes.CART}
+        name={EBottomTabNavigationRoutes.CART}
         component={CartScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -69,10 +69,9 @@ export const BottomTabNavigation = () => {
           },
         }}
       />
-      {/* Will be favorites screen */}
       <Tab.Screen
-        name={EAppNavigationRoutes.REVIEW}
-        component={ReviewScreen}
+        name={EBottomTabNavigationRoutes.FAVORITES}
+        component={FavoriteFoodItems}
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
@@ -81,7 +80,7 @@ export const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={EAppNavigationRoutes.MYORDERS}
+        name={EBottomTabNavigationRoutes.MYORDERS}
         component={MyOrdersScreen}
         options={{
           tabBarIcon: ({focused}) => {

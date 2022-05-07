@@ -1,4 +1,4 @@
-import {View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity, Alert} from 'react-native';
 import React, {FC} from 'react';
 import {styles} from './BottomTabNavigator.styles';
 import {TBottomTabNavigator} from './BottomTabNavigator.type';
@@ -6,56 +6,49 @@ import {Badge} from '../badge/Badge';
 import {Icon} from '../icon/Icon';
 import {color, size} from '../../theme';
 
-// This file can be deleted. It's not being used right now but I am keeping it in case it can be used in the future.
-
 export const BottomTabNavigator: FC<TBottomTabNavigator> = ({
   iconSize = size.lg,
   fillPin = color.grayDisabled,
+  pressHome,
+  pressCategory,
+  pressCart,
+  pressFavorites,
+  pressBell,
+  focusTab,
 }) => {
-  return null;
-};
-
-export const HomeButton = (highlight: boolean) => {
-  console.log(highlight ? color.primary : color.secondary);
-
   return (
-    <View style={styles.tabContainer}>
-      <Icon
-        name="Compass"
-        height={size.lg}
-        width={size.lg}
-        fill={highlight ? color.primary : color.secondary}
-      />
+    <View style={styles.container}>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={pressHome}>
+          <Icon
+            name="Compass"
+            height={iconSize}
+            width={iconSize}
+            fill={fillPin}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={pressCategory}>
+          <Icon name="Pin" height={iconSize} width={iconSize} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={pressCart}>
+          <Icon name="Bag" height={iconSize} width={iconSize} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={pressFavorites}>
+          <Icon name="Heart" height={iconSize} width={iconSize} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={pressBell}>
+          <Icon name="Bell" height={iconSize} width={iconSize} />
+        </TouchableOpacity>
+        <Badge containerStyle={styles.badgeContainer} value={3} />
+      </View>
     </View>
   );
 };
-
-export const PinButton = (highlight: any) => (
-  <View style={styles.tabContainer}>
-    <Icon
-      name="Pin"
-      height={size.lg}
-      width={size.lg}
-      fill={highlight ? color.primary : color.secondary}
-    />
-  </View>
-);
-
-export const BagButton = () => (
-  <View style={styles.tabContainer}>
-    <Icon name="Bag" height={size.lg} width={size.lg} />
-  </View>
-);
-
-export const FavoritesButton = () => (
-  <View style={styles.tabContainer}>
-    <Icon name="Heart" height={size.lg} width={size.lg} />
-  </View>
-);
-
-export const NotificationsButton = () => (
-  <View style={styles.tabContainer}>
-    <Icon name="Bell" height={size.lg} width={size.lg} />
-    <Badge containerStyle={styles.badgeContainer} value={3} />
-  </View>
-);
