@@ -38,4 +38,8 @@ export const styles = StyleSheet.create({
         color: color.primary,
         marginTop: size.rg,
     },
+    review: {
+        height: 168,
+        alignItems: 'flex-start',
+    },
 })
