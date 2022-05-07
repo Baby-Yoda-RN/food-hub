@@ -29,7 +29,7 @@ export type TItem = {
   description?: string;
   price?: number;
   imageName?: string;
-}
+};
 
 export type TFoodItem = TItem & {
   rating?: number;
@@ -51,4 +51,8 @@ export type TReview = {
   profileImage: string;
   reviewText: string;
   reviewScore: number;
+};
+
+export type TIdProps = {
+  uuid: string;
 };
