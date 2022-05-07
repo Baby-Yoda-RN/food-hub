@@ -3,7 +3,7 @@ import {
   TAppNavigationRoutes,
   EAppNavigationRoutes,
   TAppNavigation,
-} from '../../navigation';
+} from '../../navigation/appNavigation/AppNavigation.type';
 
 export type TCategoryScreenProps = StackScreenProps<
   TAppNavigationRoutes,
