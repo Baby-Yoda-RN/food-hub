@@ -1,5 +1,5 @@
 import express from "express";
-import { login, register,review ,category, resetPassword, phoneRegister, favorites, foodDetail, restaurant, search, cart, order, address} from "./routes";
+import { login, register, review, category, resetPassword, phoneRegister, favorites, foodDetail, restaurant, search, cart, order, address, userInfo } from "./routes";
 const cors = require('cors');
 
 const app = express();
@@ -23,9 +23,7 @@ app.use('/api/search', search);
 app.use('/api/cart', cart);
 app.use('/api/order', order)
 app.use('/api/address', address)
-
-
-
+app.use('/api/userInfo', userInfo)
 
 
 app.listen(port, () => {
