@@ -33,8 +33,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressOrder} style={styles.itemContainer}>
         <Icon
           name="List"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>My Order</Text>
@@ -42,8 +42,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressProfile} style={styles.itemContainer}>
         <Icon
           name="Profile"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>My Profile</Text>
@@ -51,8 +51,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressDelivery} style={styles.itemContainer}>
         <Icon
           name="Pin"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>Delivery Address</Text>
@@ -60,8 +60,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressCart} style={styles.itemContainer}>
         <Icon
           name="Bag"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>Cart</Text>
@@ -69,8 +69,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressReview} style={styles.itemContainer}>
         <Icon
           name="Colon"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>Reviews</Text>
@@ -78,23 +78,21 @@ export const SideMenu: FC<TSideMenuProps> = ({
       <TouchableOpacity onPress={pressCategory} style={styles.itemContainer}>
         <Icon
           name="Category"
-          height={size.lg}
-          width={size.lg}
+          height={size.rg}
+          width={size.rg}
           containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>Category</Text>
       </TouchableOpacity>
 
-      <View style={styles.buttonContainer}>
-        <Button
-          containerStyle={styles.button}
-          title="Log Out"
-          titleStyle={styles.buttonText}
-          leftIconName="Logout"
-          leftIconStyle={styles.buttonIconContainer}
-          onPress={pressLogout}
-        />
-      </View>
+      <Button
+        containerStyle={styles.button}
+        title="Log Out"
+        titleStyle={styles.buttonText}
+        leftIconName="Logout"
+        leftIconStyle={styles.buttonIconContainer}
+        onPress={pressLogout}
+      />
     </ScrollView>
   );
 };

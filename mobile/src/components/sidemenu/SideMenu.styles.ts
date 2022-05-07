@@ -37,17 +37,13 @@ export const styles = StyleSheet.create({
     fontFamily: font.semiBold,
     marginHorizontal: size.rg,
   },
-  buttonContainer: {
-    flex: 1,
-    alignSelf: 'stretch',
-    flexDirection: 'column-reverse',
-  },
   button: {
     backgroundColor: color.primary,
     borderRadius: size.xl,
     alignItems: 'center',
     padding: size.sm,
     alignSelf: 'flex-start',
+    marginTop: 'auto',
   },
   buttonText: {
     color: color.white,

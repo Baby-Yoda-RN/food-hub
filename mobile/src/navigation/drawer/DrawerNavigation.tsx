@@ -17,31 +17,20 @@ export const MyDrawer: FC = () => {
   return (
     <Drawer.Navigator
       screenOptions={{headerShown: false}}
-      drawerContent={props => (
+      drawerContent={({navigation: {navigate}}) => (
         <SideMenu
           image="https://i.imgur.com/vWqQwxo.jpg"
           name="Willy Wonka"
           email="Willy.Wonka@Chocolate.com"
-          pressOrder={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.MYORDERS)
-          }
-          pressProfile={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.PROFILE)
-          }
+          pressOrder={() => navigate(EDrawerNavigationRoutes.MYORDERS)}
+          pressProfile={() => navigate(EDrawerNavigationRoutes.PROFILE)}
           pressDelivery={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.DELIVERY_ADDRESS)
+            navigate(EDrawerNavigationRoutes.DELIVERY_ADDRESS)
           }
-          pressCart={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.CART)
-          }
-          pressReview={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.REVIEW)
-          }
-          pressCategory={() =>
-            props.navigation.navigate(EDrawerNavigationRoutes.CATEGORY)
-          }
+          pressCart={() => navigate(EDrawerNavigationRoutes.CART)}
+          pressReview={() => navigate(EDrawerNavigationRoutes.REVIEW)}
+          pressCategory={() => navigate(EDrawerNavigationRoutes.CATEGORY)}
           pressLogout={() => removeToken('key')}
-          {...props}
         />
       )}>
       <Drawer.Screen
