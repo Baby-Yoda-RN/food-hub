@@ -3,7 +3,7 @@ import {color, size} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    padding:size.sm,
+    padding: size.sm,
     borderRadius: size.rg,
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -21,5 +21,4 @@ export const styles = StyleSheet.create({
     lineHeight: size.rg,
     textAlign: 'center',
   },
-
 });
