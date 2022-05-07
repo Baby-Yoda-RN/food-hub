@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 
 export enum EDrawerNavigationRoutes {
     CART = 'Cart',
@@ -18,3 +19,15 @@ export type TDrawerNavigationRoutes = {
     [EDrawerNavigationRoutes.DELIVERY_ADDRESS]: undefined;
     [EDrawerNavigationRoutes.PROFILE]: undefined;
 };
+
+export type TUserInfo = {
+    name: string;
+    image: string;
+    email: string;
+}
+
+export type TSetUserInfo = Dispatch<{
+    name: string;
+    image: string;
+    email: string;
+}>

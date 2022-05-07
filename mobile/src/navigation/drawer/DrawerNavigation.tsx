@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {
   HomeScreen,
@@ -8,20 +8,27 @@ import {
   CategoryScreen,
 } from '../../screens';
 import {SideMenu} from '../../components';
-import {EDrawerNavigationRoutes} from './DrawerNavigation.type';
+import {EDrawerNavigationRoutes, TUserInfo} from './DrawerNavigation.type';
 import {removeToken} from '../../utilities';
+import {fetchUserInfo} from './fetchUserInfo';
 
 const Drawer = createDrawerNavigator();
 
 export const MyDrawer: FC = () => {
+  const [userInfo, setUserInfo] = useState<TUserInfo>();
+
+  useEffect(() => {
+    fetchUserInfo(setUserInfo);
+  }, []);
+
   return (
     <Drawer.Navigator
       screenOptions={{headerShown: false}}
       drawerContent={({navigation: {navigate}}) => (
         <SideMenu
-          image="https://i.imgur.com/vWqQwxo.jpg"
-          name="Willy Wonka"
-          email="Willy.Wonka@Chocolate.com"
+          image={userInfo?.image}
+          name={userInfo?.name}
+          email={userInfo?.email}
           pressOrder={() => navigate(EDrawerNavigationRoutes.MYORDERS)}
           pressProfile={() => navigate(EDrawerNavigationRoutes.PROFILE)}
           pressDelivery={() =>

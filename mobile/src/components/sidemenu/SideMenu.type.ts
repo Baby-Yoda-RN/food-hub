@@ -1,7 +1,7 @@
 export type TSideMenuProps = {
-    image: string;
-    name: string;
-    email: string;
+    image: string | undefined;
+    name: string | undefined;
+    email: string | undefined;
     pressOrder: () => void;
     pressProfile: () => void;
     pressDelivery: () => void;
