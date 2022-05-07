@@ -6,14 +6,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: color.white,
     justifyContent: 'space-around',
-    shadowColor: color.black,
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: 20,
-    elevation: 20,
     height: size.xl,
   },
   badgeContainer: {

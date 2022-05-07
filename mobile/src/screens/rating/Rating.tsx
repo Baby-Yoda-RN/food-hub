@@ -8,10 +8,5 @@ import {Button} from '../../components';
 import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
 
 export const Rating: FC<TRating> = ({navigation}) => {
-  return (
-    //<RatingScreenView/>
-    <Button
-      onPress={() => navigation.navigate(EAppNavigationRoutes.MYORDERS)}
-    />
-  );
+  return <RatingScreenView />;
 };

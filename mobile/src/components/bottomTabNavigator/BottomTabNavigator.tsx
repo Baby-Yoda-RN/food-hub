@@ -9,46 +9,38 @@ import {color, size} from '../../theme';
 export const BottomTabNavigator: FC<TBottomTabNavigator> = ({
   iconSize = size.lg,
   fillPin = color.grayDisabled,
-  pressHome,
-  pressCategory,
-  pressCart,
-  pressFavorites,
-  pressBell,
+  pressHome = () => console.log('Home'),
+  pressCategory = () => console.log('Cat'),
+  pressCart = () => console.log('Cart'),
+  pressFavorites = () => console.log('Fav'),
+  pressBell = () => console.log('Bell'),
   focusTab,
 }) => {
+  const displayIcon = (name: string, onPress: () => void) => {
+    return (
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={onPress}>
+          <Icon name={name} height={iconSize} width={iconSize} fill={fillPin} />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const iconArray = [
+    displayIcon('Compass', pressHome),
+    displayIcon('Pin', pressCategory),
+    displayIcon('Bag', pressCart),
+    displayIcon('Heart', pressFavorites),
+    displayIcon('Bell', pressBell),
+  ];
+
   return (
     <View style={styles.container}>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={pressHome}>
-          <Icon
-            name="Compass"
-            height={iconSize}
-            width={iconSize}
-            fill={fillPin}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={pressCategory}>
-          <Icon name="Pin" height={iconSize} width={iconSize} />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={pressCart}>
-          <Icon name="Bag" height={iconSize} width={iconSize} />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={pressFavorites}>
-          <Icon name="Heart" height={iconSize} width={iconSize} />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.tabContainer}>
-        <TouchableOpacity onPress={pressBell}>
-          <Icon name="Bell" height={iconSize} width={iconSize} />
-        </TouchableOpacity>
-        <Badge containerStyle={styles.badgeContainer} value={3} />
-      </View>
+      {iconArray.map((item, key) => (
+        <View style={styles.tabContainer} key={key}>
+          {item}
+        </View>
+      ))}
     </View>
   );
 };
