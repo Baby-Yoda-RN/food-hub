@@ -19,7 +19,7 @@ const DropdownList = [
   {label: 'Price', value: 'price'},
 ];
 
-export const CategoryScreenView: FC<TCategoryViewProps> = () => {
+export const CategoryScreenView: FC<TCategoryViewProps> = ({leftPress}) => {
   const titleCategory1 = 'Fast';
   const titleCategory2 = 'Food';
   const typeOfFood = 'pizza';
@@ -37,6 +37,7 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
             leftIconName="ChevronLeft"
             iconWidth={size.rg}
             iconHeight={size.rg}
+            leftPress={leftPress}
           />
         }>
         <View style={styles.topSection}>
