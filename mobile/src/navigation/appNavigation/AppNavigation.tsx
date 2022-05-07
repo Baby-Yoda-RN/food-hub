@@ -2,20 +2,28 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
-import {Rating} from '../../screens';
+import {CartScreen, ReviewScreen, FavoriteFoodItems} from '../../screens';
 
-const RootStack = createStackNavigator<TAppNavigationRoutes>();
+const Stack = createStackNavigator<TAppNavigationRoutes>();
 
 export const AppNavigation = () => {
   return (
-    <RootStack.Navigator
+    <Stack.Navigator
       initialRouteName={EAppNavigationRoutes.BOTTOM_TAB_STACK}
       screenOptions={{headerShown: false}}>
-      <RootStack.Screen
+      <Stack.Screen
         name={EAppNavigationRoutes.BOTTOM_TAB_STACK}
         component={BottomTabNavigation}
       />
-      <RootStack.Screen name={EAppNavigationRoutes.RATING} component={Rating} />
-    </RootStack.Navigator>
+      <Stack.Screen
+        name={EAppNavigationRoutes.REVIEW}
+        component={ReviewScreen}
+      />
+      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
+      <Stack.Screen
+        name={EAppNavigationRoutes.FAVORITEFOODITEMS}
+        component={FavoriteFoodItems}
+      />
+    </Stack.Navigator>
   );
 };
