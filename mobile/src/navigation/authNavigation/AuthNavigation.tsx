@@ -9,7 +9,7 @@ import {
   LoginScreen,
   PhoneRegistration,
   WelcomeScreen,
-  ResetPasswordScreen
+  ResetPasswordScreen,
   VerifyScreen,
 } from '../../screens';
 
