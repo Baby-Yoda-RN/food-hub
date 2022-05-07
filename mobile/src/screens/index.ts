@@ -9,3 +9,4 @@ export * from './home/Home';
 export * from './category/Category';
 export * from './welcome/Welcome';
 export * from './myOrders/MyOrders';
+export * from './favoriteFoodItems/FavoriteFoodItems';
