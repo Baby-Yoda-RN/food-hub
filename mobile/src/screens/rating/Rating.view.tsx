@@ -10,7 +10,6 @@ import {
     Header,
     Container,
 } from "../../components";
-import { RestaurantCard } from "../../components/card/restaurantCard";
 import { size } from "../../theme";
 import { styles } from "./Rating.style";
 import { TRatingView } from "./Rating.type";
