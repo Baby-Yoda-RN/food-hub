@@ -8,11 +8,3 @@ export type TGlobalProvider = {
   reducer:any
   state:any
 }
-
-export type TGlobalReducer = {
-
-}
-
-export type TDispatch = {
-
-}

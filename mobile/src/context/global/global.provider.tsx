@@ -1,9 +1,9 @@
 import React, {useContext, useReducer, Dispatch, FC} from 'react'
 import { GlobalContext } from './global.context'
-import { TDispatch, TGlobalProvider, TGlobalState } from './global.type'
+import { TGlobalProvider, TGlobalState } from './global.type'
 
 export const useGlobalState = () => {
-  const [state, dispatch] = useContext<[TGlobalState, Dispatch<TDispatch>]>(GlobalContext)
+  const [state, dispatch] = useContext<[TGlobalState, Dispatch<any>]>(GlobalContext)
 
   return {state, dispatch}
 }

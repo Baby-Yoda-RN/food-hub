@@ -1,16 +1,18 @@
 export type TUserState = {
-  isSignOut: boolean
-  token: string | null
-  isLoading: boolean
+  email: string | null
+  name: string | null
+  phoneNumber: string | null
+  address:{
+    street:string | null
+    city: string | null
+    state: string | null
+  }
 }
 
 export type TUserAction = {
   type:EUserAction
-  token: string | null
 }
 
 export enum EUserAction {
-  RESTORE_TOKEN = 'RESTORE_TOKEN',
-  SIGN_IN = 'SIGN_IN',
-  SIGN_OUT = 'SIGN_OUT',
+
 }
