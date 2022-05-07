@@ -5,9 +5,8 @@ export type TSideMenuProps = {
     pressOrder: () => void;
     pressProfile: () => void;
     pressDelivery: () => void;
-    pressPayment: () => void;
-    pressContact: () => void;
-    pressSetting: () => void;
-    pressHelp: () => void;
+    pressCart: () => void;
+    pressReview: () => void;
+    pressCategory: () => void;
     pressLogout: () => void;
 }

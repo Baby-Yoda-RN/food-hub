@@ -4,6 +4,7 @@ import {AppNavigation} from '../appNavigation/AppNavigation';
 import SplashScreen from 'react-native-splash-screen';
 import {getToken, removeToken} from '../../utilities';
 import {TGetTokenFromLocalStorage} from './Router.type';
+import { MyDrawer } from '../drawer/DrawerNavigation';
 
 export const Router = () => {
   const [token, setToken] = useState<string>();
@@ -20,7 +21,7 @@ export const Router = () => {
   // To LogOut
   // removeToken('key')
 
-  if (token) return <AppNavigation />;
+  if (!token) return <MyDrawer />;
   else if (!token) return <AuthNavigation />;
   else return <></>;
 };
