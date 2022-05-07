@@ -22,11 +22,13 @@ const Tab = createBottomTabNavigator<TBottomTabNavigationRoutes>();
 const DisplayTab = (
   iconName: string,
   buttonColor: string,
-  badge: boolean = false,
+  badgeValue?: number,
 ) => (
   <View>
     <Icon name={iconName} height={size.lg} width={size.lg} fill={buttonColor} />
-    {badge && <Badge containerStyle={styles.badgeContainer} value={3} />}
+    {badgeValue && (
+      <Badge containerStyle={styles.badgeContainer} value={badgeValue} />
+    )}
   </View>
 );
 
@@ -85,7 +87,7 @@ export const BottomTabNavigation = () => {
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
-            return DisplayTab('Bell', buttonColor, true);
+            return DisplayTab('Bell', buttonColor, 3);
           },
         }}
       />
