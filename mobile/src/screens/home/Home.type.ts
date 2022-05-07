@@ -1,8 +1,9 @@
+import { DrawerNavigationProp } from "@react-navigation/drawer"
 import { TData } from "../../components/imageButton/ImageButton.type"
-import { TDrawerNavigation } from "../../navigation/appNavigation/drawer/DrawerNavigation.type"
+import { TDrawerNavigationRoutes } from "../../navigation/drawer/DrawerNavigation.type"
 
 export type THomeScreenNavigation = {
-  navigation: TDrawerNavigation
+  navigation: DrawerNavigationProp<TDrawerNavigationRoutes>
 }
 
 export type THomeScreenView = {
