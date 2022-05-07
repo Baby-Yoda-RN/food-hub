@@ -21,17 +21,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: font.regular,
   },
-  icon: {
-    alignItems: 'center',
-    padding: size.sm,
-    borderRadius: size.md,
-    borderColor: '#ddd',
-    borderBottomWidth: size.xxs,
-    borderRightWidth: size.xxs,
-    shadowColor: color.black,
-    shadowOffset: {width: size.xxs, height: size.xxs},
-    shadowOpacity: 0.9,
-    shadowRadius: size.sm,
-  },
+
 
 });
