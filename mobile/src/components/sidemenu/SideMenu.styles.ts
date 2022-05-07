@@ -4,6 +4,8 @@ import { size, color, font } from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     padding: size.rg,
+    backgroundColor: color.white,
+    flexDirection: 'row',
     flex: 1,
   },
   image: {
@@ -26,6 +28,9 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  iconContainer: {
+    padding: 0,
+  },
   itemText: {
     color: color.black,
     fontSize: size.rg,
@@ -36,10 +41,9 @@ export const styles = StyleSheet.create({
     backgroundColor: color.primary,
     borderRadius: size.xl,
     alignItems: 'center',
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    marginTop: 'auto',
     padding: size.sm,
+    alignSelf: 'flex-start',
+    marginTop: 'auto',
   },
   buttonText: {
     color: color.white,
@@ -51,4 +55,5 @@ export const styles = StyleSheet.create({
     height: size.lg,
     width: size.lg,
   },
+
 });

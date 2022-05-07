@@ -11,5 +11,5 @@ export * from './search/search';
 export * from './cart/cart';
 export * from './order/order';
 export * from './address/address';
-
+export * from './userInfo/userInfo';
 

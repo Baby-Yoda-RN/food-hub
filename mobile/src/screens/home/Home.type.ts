@@ -1,6 +1,8 @@
 import { TData } from "../../components/imageButton/ImageButton.type"
+import { TDrawerNavigation } from "../../navigation/appNavigation/drawer/DrawerNavigation.type"
 
-export type THomeScreen = {
+export type THomeScreenNavigation = {
+  navigation: TDrawerNavigation
 }
 
 export type THomeScreenView = {
@@ -11,6 +13,7 @@ export type THomeScreenView = {
   onPressFoodCard:(id:string)=> any
   categories?:Array<TData>
   categoryState:any
+  leftPress: () => void
 }
 
 export type TGetItemId = (id:string) => any

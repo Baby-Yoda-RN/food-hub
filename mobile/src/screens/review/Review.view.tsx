@@ -40,7 +40,7 @@ const reviewsList: Array<TReview> = [
   },
 ];
 
-export const ReviewScreenView: FC<TReviewScreenViewProps> = ({}) => {
+export const ReviewScreenView: FC<TReviewScreenViewProps> = ({leftPress}) => {
   return (
     <Container
       isScrollViewDisabled={true}
@@ -51,6 +51,7 @@ export const ReviewScreenView: FC<TReviewScreenViewProps> = ({}) => {
           leftIconName="ChevronLeft"
           iconWidth={size.md}
           iconHeight={size.md}
+          leftPress={leftPress}
         />
       }>
       <TextInput

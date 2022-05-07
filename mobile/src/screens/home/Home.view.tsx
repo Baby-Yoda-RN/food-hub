@@ -15,6 +15,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   popularItems,
   categories,
   categoryState,
+  leftPress,
 }) => {
   const [category, setCategory] = categoryState;
   return (
@@ -25,6 +26,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           leftIconName="Hamburger"
           iconHeight={20}
           iconWidth={20}
+          leftPress={leftPress}
           rightIconLocation={
             'https://icons.veryicon.com/png/o/business/multi-color-financial-and-business-icons/user-139.png'
           }
