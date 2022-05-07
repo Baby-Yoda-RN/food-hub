@@ -7,11 +7,11 @@ import { size} from '../../theme';
 import { TRatingStarsProps } from './RatingStars.type';
 
 export const RatingStars: FC<TRatingStarsProps> = () => {
-    const [defaultRating, setDefaultRating] = useState(0);
-    const [rating, setRating] = useState([1,2,3,4,5]);
+    const [currentRating, setCurrentRating] = useState(0);
+    const ratingsArray: number[] = [1,2,3,4,5];
     let ratingDescription: string = '';
 
-    switch(defaultRating) {
+    switch(currentRating) {
         case 1:
             ratingDescription = 'Bad';
             break;  
@@ -39,14 +39,14 @@ export const RatingStars: FC<TRatingStarsProps> = () => {
         <View style = {styles.container}>
             
             {
-                rating.map((item, key) => {
+                ratingsArray.map((item, key) => {
                     return(
                         <TouchableOpacity 
                         key = {item} 
-                        onPress = {() => setDefaultRating(item)}>
+                        onPress = {() => setCurrentRating(item)}>
                             <View>
                                 <Icon 
-                                name = {item <= defaultRating ? 'Star' : 'StarHollow'}
+                                name = {item <= currentRating ? 'Star' : 'StarHollow'}
                                 width={size.lg} 
                                 height={size.lg}
                                 />
