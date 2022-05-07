@@ -3,11 +3,10 @@ import {Text, View, TouchableOpacity} from 'react-native';
 import {Icon} from '../icon/Icon';
 import { styles } from './RatingStars.styles';
 import { size} from '../../theme';
-
 import { TRatingStarsProps } from './RatingStars.type';
 
-export const RatingStars: FC<TRatingStarsProps> = () => {
-    const [currentRating, setCurrentRating] = useState(0);
+export const RatingStars: FC<TRatingStarsProps> = ({userRating = 0}) => {
+    const [currentRating, setCurrentRating] = useState(userRating);
     const ratingsArray: number[] = [1,2,3,4,5];
     let ratingDescription: string = '';
 
