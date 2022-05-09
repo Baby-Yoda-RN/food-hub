@@ -9,3 +9,5 @@ export * from './home/Home';
 export * from './category/Category';
 export * from './welcome/Welcome';
 export * from './foodDetails/FoodDetails';
+export * from './myOrders/MyOrders';
+export * from './favoriteFoodItems/FavoriteFoodItems';

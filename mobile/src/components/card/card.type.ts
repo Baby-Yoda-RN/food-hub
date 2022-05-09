@@ -8,9 +8,9 @@ export type TCardProps = {
 };
 
 export type TRestaurantCardProps = {
-  restaurant: TRestaurant;
+  restaurantId: string;
 };
 
 export type TFoodItemCardProps = {
-  foodItem: TFoodItem;
+  foodItemId: string;
 };

@@ -1,4 +1,3 @@
-export * from './pincodeInput/PinInput';
 export * from './badge/Badge';
 export * from './card/card';
 export * from './icon/Icon';
@@ -12,3 +11,4 @@ export * from './dropdown/Dropdown';
 export * from './container/Container';
 export * from './footer/Footer';
 export * from './listItem/ListItem';
+export * from './ratingStars/RatingStars';
