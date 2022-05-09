@@ -66,13 +66,13 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
     );
   };
 
-  const addOnSelections = (imageSource, title = 'Pepper', price = '$1.00') => {
+  const addOnSelections = (imageSource, title, price) => {
     const [Selected, SelectedChange] = useState(false);
     return (
       <>
         <View style={styles.containerAddOn}>
           <View style={styles.containerAddOnPriceSelection}>
-            <Image source={images.pepperJulienned} />
+            <Image source={imageSource} />
             <Text style={styles.titleAddOn}>{title}</Text>
           </View>
           <TouchableOpacity
@@ -122,7 +122,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
 
       <Text style={styles.subtitle}>{subtitle}</Text>
 
-      {addOnSelections()}
+      {addOnSelections(images.pepperJulienned, 'Pepper', '$1.00')}
 
       <Button title="ADD TO CART" containerStyle={styles.button} />
     </Container>
