@@ -68,6 +68,7 @@ export const MyOrdersScreen:FC<TMyOrdersScreen> = ({navigation}) => {
     lastOrders={orders.filter(order => {
       return order.delivered
     })}
+    leftPress={() => navigation.goBack()}
     />
   )
 }

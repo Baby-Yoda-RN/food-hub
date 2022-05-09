@@ -1,5 +1,4 @@
 import React, {FC, useState, useEffect} from 'react';
-import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
 import {TCartNavigation, THandleGeneric} from './Cart.type';
 import {CartScreenView} from './Cart.view';
 import {TListItemArray} from '../../types/data';
@@ -83,7 +82,7 @@ export const CartScreen: FC<TCartNavigation> = ({navigation}) => {
   return (
     <CartScreenView
       title="Cart"
-      onPress={() => navigation.navigate(EAppNavigationRoutes.REVIEW)}
+      onPress={() => navigation.goBack()}
       listItemArray={listItemArray}
       setListItemArray={setListItemArray}
       subTotal={subTotal}

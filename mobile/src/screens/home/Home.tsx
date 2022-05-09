@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Alert} from 'react-native';
 import {TFoodItem, TRestaurant} from '../../types/data';
-import {TGetItemId, THomeScreen} from './Home.type';
+import {TGetItemId, THomeScreenNavigation} from './Home.type';
 import {HomeScreenView} from './Home.view';
 
 const restaurantDummy: TRestaurant = {
@@ -38,7 +38,8 @@ const popularItems = [
     usersVoted: 2,
     price: 20.99,
     favorite: true,
-    imageName: 'https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg',
+    imageName:
+      'https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg',
   },
   {
     uuid: '12347',
@@ -48,7 +49,8 @@ const popularItems = [
     usersVoted: 2,
     price: 7.99,
     favorite: true,
-    imageName: 'https://estaticos.elmundo.es/assets/multimedia/imagenes/2016/07/21/14691145976379.jpg',
+    imageName:
+      'https://estaticos.elmundo.es/assets/multimedia/imagenes/2016/07/21/14691145976379.jpg',
   },
   {
     uuid: '12348',
@@ -58,7 +60,8 @@ const popularItems = [
     usersVoted: 2,
     price: 20.99,
     favorite: true,
-    imageName: 'https://www.eatthis.com/wp-content/uploads/sites/4/2021/01/mcdonalds-chicken-sandwich.jpg?quality=82&strip=all',
+    imageName:
+      'https://www.eatthis.com/wp-content/uploads/sites/4/2021/01/mcdonalds-chicken-sandwich.jpg?quality=82&strip=all',
   },
   {
     uuid: '12349',
@@ -68,22 +71,39 @@ const popularItems = [
     usersVoted: 2,
     price: 20.99,
     favorite: true,
-    imageName: 'https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg',
+    imageName:
+      'https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg',
   },
 ];
 
-
 const categories = [
-  {value:'Burger',image:'https://flyclipart.com/thumb2/burger-energy-food-junk-food-meal-veggie-burger-icon-587826.png'},
-  {value:'Pizza',image:'https://cdn-icons-png.flaticon.com/512/3132/3132693.png'},
-  {value:'Mexican',image:'https://i.pinimg.com/originals/1b/ec/81/1bec818c51ca78276ffa641f2a210612.png'},
-  {value:'Asian',image:'https://cdn.iconscout.com/icon/free/png-256/sushi-hotel-food-fastfood-emoj-symbol-30705.png'},
-  {value:'Coffee',image:'https://cdn-icons-png.flaticon.com/512/924/924514.png'},
-]
+  {
+    value: 'Burger',
+    image:
+      'https://flyclipart.com/thumb2/burger-energy-food-junk-food-meal-veggie-burger-icon-587826.png',
+  },
+  {
+    value: 'Pizza',
+    image: 'https://cdn-icons-png.flaticon.com/512/3132/3132693.png',
+  },
+  {
+    value: 'Mexican',
+    image:
+      'https://i.pinimg.com/originals/1b/ec/81/1bec818c51ca78276ffa641f2a210612.png',
+  },
+  {
+    value: 'Asian',
+    image:
+      'https://cdn.iconscout.com/icon/free/png-256/sushi-hotel-food-fastfood-emoj-symbol-30705.png',
+  },
+  {
+    value: 'Coffee',
+    image: 'https://cdn-icons-png.flaticon.com/512/924/924514.png',
+  },
+];
 
-export const HomeScreen: FC<THomeScreen> = () => {
-
-  const [category, setCategory] = useState<null|string>(null)
+export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
+  const [category, setCategory] = useState<null | string>(null);
   const handleViewAll = () => {
     console.log('navigate to Restaurants Screen');
   };
@@ -100,7 +120,8 @@ export const HomeScreen: FC<THomeScreen> = () => {
       onPressFoodCard={handleOnPressCard}
       onPressViewAll={handleViewAll}
       categories={categories}
-      categoryState={[category,setCategory]}
+      categoryState={[category, setCategory]}
+      leftPress={() => navigation.toggleDrawer() }
     />
   );
 };
