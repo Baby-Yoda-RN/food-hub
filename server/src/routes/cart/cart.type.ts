@@ -1,8 +1,4 @@
-export type TRequestBody = {
-    token: string
-}
-
-export type TCart = {
+export type TCartData = {
     uuid: string,
     name: string,
     description: string,
@@ -17,4 +13,4 @@ export type TResponseBody = {
     token: string
 }
 
-export type TCartList = Array<TCart>
+export type TCartList = Array<TCartData>
