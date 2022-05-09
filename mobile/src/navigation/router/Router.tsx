@@ -29,14 +29,5 @@ export const Router = () => {
 
   SplashScreen.hide();
 
-<<<<<<< HEAD
-  // To LogOut
-  // removeToken('key')
-
-  if (!token) return <AppNavigation />;
-  else if (token) return <AuthNavigation />;
-  else return <></>
-=======
   return auth.token ? <AppNavigation /> : <AuthNavigation />;
->>>>>>> 62cc66d9273778050ae2a506453bf7b1dcadd488
 };
