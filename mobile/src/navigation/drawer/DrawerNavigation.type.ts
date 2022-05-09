@@ -8,6 +8,7 @@ export enum EDrawerNavigationRoutes {
     MYORDERS = 'MyOrders',
     DELIVERY_ADDRESS = 'DeliveryAddress',
     PROFILE = 'Profile',
+    BOTTOM_NAV = 'Bottom_Nav'
 }
 
 export type TDrawerNavigationRoutes = {
@@ -18,6 +19,7 @@ export type TDrawerNavigationRoutes = {
     [EDrawerNavigationRoutes.MYORDERS]: undefined;
     [EDrawerNavigationRoutes.DELIVERY_ADDRESS]: undefined;
     [EDrawerNavigationRoutes.PROFILE]: undefined;
+    [EDrawerNavigationRoutes.BOTTOM_NAV]: undefined;
 };
 
 export type TUserInfo = {
