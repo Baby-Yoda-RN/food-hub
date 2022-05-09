@@ -32,9 +32,9 @@ export type TItem = {
 };
 
 export type TFoodItem = TItem & {
-  rating?: number;
-  usersVoted?: number;
-  favorite?: boolean;
+  rating: number;
+  usersVoted: number;
+  favorite: boolean;
 };
 
 export type TListItem = Omit<TItem, 'price'> & {

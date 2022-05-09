@@ -6,7 +6,7 @@ import {Tag} from './Tag';
 import {styles} from './Tag.style';
 
 type TRatingTagProps = {
-  rating: number;
+  rating?: number;
   usersVoted: number;
   limit?: number;
 };
@@ -18,7 +18,7 @@ export const RatingTag: FC<TRatingTagProps> = ({
 }) => {
   const render = () => (
     <>
-      <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
+      <Text style={styles.ratingText}>{rating?.toFixed(1)}</Text>
       <Icon
         name="Star"
         height={size.md}

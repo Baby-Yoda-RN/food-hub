@@ -13,4 +13,5 @@ export type TRestaurantCardProps = {
 
 export type TFoodItemCardProps = {
   foodItemId: string;
+  isDetails?: boolean;
 };
