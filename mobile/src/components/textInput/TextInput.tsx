@@ -1,4 +1,4 @@
-import React, {FC, useState, useLayoutEffect, useRef} from 'react';
+import React, {FC, useState, useLayoutEffect, useRef, Dispatch} from 'react';
 import {
   TextInput as NativeInput,
   Text,
@@ -13,6 +13,9 @@ import {style} from './TextInput.style';
 import {TTextInputProps} from './TextInput.type';
 
 export const TextInput: FC<TTextInputProps> = ({
+  type,
+  value,
+  onChangeText,
   leftIcon,
   leftIconStyle,
   leftIconSize,
@@ -23,7 +26,6 @@ export const TextInput: FC<TTextInputProps> = ({
   rightButtonStyle,
   isSensitive = false,
   placeholder = 'Enter Text',
-  type,
   containerStyle,
   textStyle,
   text,
@@ -47,19 +49,22 @@ export const TextInput: FC<TTextInputProps> = ({
   const whenBlurred = () => {
     setIsActive(false);
   };
-  const onTextChange = (input: string) => {
+  const handleChangeText = (onChangeText: Dispatch<string>, input: string) => {
     if (type === 'phone') {
-      setText(phone_validator(input));
+      onChangeText(phone_validator(input));
       return;
     }
-    setText(input);
+    onChangeText(input);
   };
+
   const whenPressIn = () => {
     setSecureTextEntry(false);
   };
+
   const whenPressOut = () => {
     setSecureTextEntry(true);
   };
+
   const onPress = () => {
     textInputRef.current.focus();
   };
@@ -85,7 +90,6 @@ export const TextInput: FC<TTextInputProps> = ({
   return (
     <TouchableOpacity
       style={[currentContainerStyle, containerStyle]}
-      {...rest}
       onPress={onPress}>
       {!!leftElement && (
         <TouchableOpacity style={leftIconStyle}>
@@ -102,10 +106,11 @@ export const TextInput: FC<TTextInputProps> = ({
         secureTextEntry={secureTextEntry}
         onFocus={whenFocused}
         onBlur={whenBlurred}
-        onChangeText={onTextChange}
-        value={text}
+        onChangeText={input => handleChangeText(onChangeText, input)}
+        value={value}
         maxLength={max}
         ref={textInputRef}
+        {...rest}
       />
 
       {!!rightElement && (
@@ -121,11 +126,7 @@ export const TextInput: FC<TTextInputProps> = ({
             />
           )}
           {!!rightButton && (
-            <Button
-              title={rightButton}
-              containerStyle={rightButtonStyle}
-              {...rest}
-            />
+            <Button title={rightButton} containerStyle={rightButtonStyle} />
           )}
         </TouchableOpacity>
       )}

@@ -11,6 +11,7 @@ import Bullet from '../../assets/icons/Bullet.svg';
 import BulletGreyHollow from '../../assets/icons/BulletGreyHollow.svg';
 import BulletOrangeFilled from '../../assets/icons/BulletOrangeFilled.svg';
 import Camera from '../../assets/icons/Camera.svg';
+import Category from '../../assets/icons/Category.svg';
 import CheckMark from '../../assets/icons/CheckMark.svg';
 import ChevronDown from '../../assets/icons/ChevronDown.svg';
 import ChevronLeft from '../../assets/icons/ChevronLeft.svg';
@@ -28,6 +29,7 @@ import Gear from '../../assets/icons/Gear.svg';
 import Google from '../../assets/icons/Google.svg';
 import Hamburger from '../../assets/icons/Hamburger.svg';
 import Heart from '../../assets/icons/Heart.svg';
+import Home from '../../assets/icons/Home.svg';
 import List from '../../assets/icons/List.svg';
 import Logout from '../../assets/icons/Logout.svg';
 import Magnify from '../../assets/icons/Magnify.svg';
@@ -55,15 +57,13 @@ export const Icon: FC<TIcon> = ({
 
   switch (name) {
     case 'Bag':
-      icon = <Bag fill={fill || color.grayDisabled} height={height} width={width} />;
+      icon = (
+        <Bag fill={fill || color.grayDisabled} height={height} width={width} />
+      );
       break;
     case 'Bell':
       icon = (
-        <Bell
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Bell fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Brand':
@@ -96,6 +96,15 @@ export const Icon: FC<TIcon> = ({
     case 'BulletOrangeFilled':
       icon = (
         <BulletOrangeFilled
+          fill={fill || color.grayDisabled}
+          height={height}
+          width={width}
+        />
+      );
+      break;
+    case 'Category':
+      icon = (
+        <Category
           fill={fill || color.grayDisabled}
           height={height}
           width={width}
@@ -194,11 +203,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Eye':
       icon = (
-        <Eye
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Eye fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Facebook':
@@ -230,11 +235,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Gear':
       icon = (
-        <Gear
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Gear fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Google':
@@ -264,13 +265,14 @@ export const Icon: FC<TIcon> = ({
         />
       );
       break;
+    case 'Home':
+      icon = (
+        <Home fill={fill || color.grayDisabled} height={height} width={width} />
+      );
+      break;
     case 'List':
       icon = (
-        <List
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <List fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Logout':
@@ -293,11 +295,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Mail':
       icon = (
-        <Mail
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Mail fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Minus':
@@ -320,11 +318,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Pin':
       icon = (
-        <Pin
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Pin fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'PizzaHut':
@@ -338,11 +332,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Plus':
       icon = (
-        <Plus
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Plus fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'Profile':
@@ -374,11 +364,7 @@ export const Icon: FC<TIcon> = ({
       break;
     case 'Star':
       icon = (
-        <Star
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Star fill={fill || color.grayDisabled} height={height} width={width} />
       );
       break;
     case 'StarHollow':
@@ -401,11 +387,7 @@ export const Icon: FC<TIcon> = ({
       break;
     default:
       icon = (
-        <Bag
-          fill={fill || color.grayDisabled}
-          height={height}
-          width={width}
-        />
+        <Bag fill={fill || color.grayDisabled} height={height} width={width} />
       );
   }
   return <View style={[styles.container, containerStyle]}>{icon}</View>;

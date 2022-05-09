@@ -1,3 +1,4 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {View, Text, ImageBackground} from 'react-native';
 import {Button, Footer} from '../../components';
@@ -23,12 +24,14 @@ fast at your door.`;
         style={styles.imageBackground}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <Button
-              title="skip"
-              buttonTheme={color.white}
-              titleStyle={{color: color.primary}}
-              onPress={goToStoryBook}
-            />
+            {__DEV__ && (
+              <Button
+                title="Storybook"
+                buttonTheme={color.white}
+                titleStyle={{color: color.primary}}
+                onPress={() => console.log('TODO to navigate to Storybook')}
+              />
+            )}
           </View>
           <View style={styles.topSection}>
             <Text style={styles.title1}>

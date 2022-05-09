@@ -10,7 +10,8 @@ export const MyOrdersScreenView: FC<TMyOrdersScreenView> = ({
   upcomingOrders,
   lastOrders,
   showUpcomingOrders = true,
-  setShowUpcomingOrders
+  setShowUpcomingOrders,
+  leftPress,
 }) => {
 
   return (
@@ -23,6 +24,7 @@ export const MyOrdersScreenView: FC<TMyOrdersScreenView> = ({
           iconWidth={20}
           rightIconLocation="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
           title="My Orders"
+          leftPress={leftPress}
         />
       }>
       <View style={styles.toggleButtonContainer}>
