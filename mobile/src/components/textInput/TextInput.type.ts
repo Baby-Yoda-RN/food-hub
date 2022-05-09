@@ -1,7 +1,10 @@
+import {Dispatch} from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 
 export type TTextInputProps = {
   type: 'phone' | 'password' | 'email' | 'regular' | 'search' | 'textButton';
+  value: string;
+  onChangeText: Dispatch<string>;
   leftIcon?: string;
   leftIconStyle?: StyleProp<ViewStyle>;
   leftIconSize?: number;

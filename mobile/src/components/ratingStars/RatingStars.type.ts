@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleProp, ViewStyle } from "react-native";
 
 export type TRatingStarsProps = {
@@ -11,4 +12,9 @@ export type TRatingStarsProps = {
     isDisabled?: boolean;
     size?: number;
     onRatingClick?: ( position: number ) => void;
+=======
+
+export type TRatingStarsProps ={
+    userRating?: number;
+>>>>>>> 62cc66d9273778050ae2a506453bf7b1dcadd488
 }
