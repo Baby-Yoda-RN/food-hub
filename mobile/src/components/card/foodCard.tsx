@@ -6,18 +6,7 @@ import {styles} from './card.style';
 import {TFoodItemCardProps} from './card.type';
 import {foodHubAPI} from '../../config';
 
-export const FoodCard: FC<TFoodItemCardProps> = ({foodItemId}) => {
-  const [foodItem, setFoodItem] = useState<TFoodItem>({} as TFoodItem);
-
-  useEffect(() => {
-    getFoodItem();
-  }, []);
-
-  const getFoodItem = async () => {
-    const newFoodItem = await foodHubAPI.get(`/foodItem/${foodItemId}`);
-    setFoodItem(newFoodItem.data);
-  };
-
+export const FoodCard: FC<TFoodItemCardProps> = ({foodItem}) => {
   const {name, description, rating, usersVoted, price, favorite, imageName} =
     foodItem;
 
