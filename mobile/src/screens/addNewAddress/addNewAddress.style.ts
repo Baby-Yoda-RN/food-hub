@@ -8,6 +8,12 @@ export const styles = StyleSheet.create({
         margin: size.rg,
         justifyContent:'space-evenly'
     },
+    section:
+    {
+        flex: 1,
+        margin: size.rg,
+        justifyContent:'space-evenly'
+    },
     header: {
         padding: size.sm,
         fontfamily: font.bold
@@ -18,11 +24,8 @@ export const styles = StyleSheet.create({
         color: color.black,
     },
     button: {
-        padding: size.rg,
-        borderRadius: size.xxl,
         shadowColor: color.black,
         elevation: size.md,
-        margin: size.rg
     },
     text: {
         fontFamily: font.medium,
