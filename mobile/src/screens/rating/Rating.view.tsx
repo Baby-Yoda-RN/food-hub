@@ -9,6 +9,7 @@ import {
     Badge,
     Header,
     Container,
+    RatingStars,
 } from "../../components";
 import { size } from "../../theme";
 import { styles } from "./Rating.style";
@@ -49,6 +50,7 @@ export const RatingScreenView: FC<TRatingView> = ({
                 Order Delivered
             </Text>
             <Text style={styles.title}>Please Rate Delivery Service</Text>
+            <RatingStars />
             <TextInput type={"regular"} containerStyle={{height: 168}}/>
             <Button title="SUBMIT" containerStyle={styles.buttonContainer}/>
         </Container>
