@@ -10,7 +10,9 @@ export type TReviewScreenProps = StackScreenProps<
   EAppNavigationRoutes.REVIEW
 >;
 
-export type TReviewScreenViewProps = {};
+export type TReviewScreenViewProps = {
+  leftPress: () => void;
+};
 
 export type TReviewNavigation = {
   navigation: TAppNavigation;

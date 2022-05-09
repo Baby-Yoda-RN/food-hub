@@ -11,4 +11,6 @@ export type TMyOrdersScreenView = {
   lastOrders?:Array<TOrder>
   showUpcomingOrders?:boolean
   setShowUpcomingOrders?:Dispatch<SetStateAction<boolean>>
+  leftPress: () => void
 }
+
