@@ -12,7 +12,15 @@ export type TFoodDetailsProps = StackScreenProps<
 
 export type TFoodDetailsScreenViewProps = {
   title: string;
+  subtitle: string;
   description: string;
+  price: int;
+  rating: int;
+  reviewCount: int;
+  countPlusMinus: any;
+  countPlusMinusChange: () => {};
+  onPressPlus: () => {};
+  onPressMinus: () => {};
 };
 
 export type TFoodDetailsNavigation = {
