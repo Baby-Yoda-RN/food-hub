@@ -30,16 +30,5 @@ export const Router = () => {
 
   SplashScreen.hide();
 
-<<<<<<< HEAD
-  // To LogOut
-  // removeToken('key')
-
-  // if (__DEV__) return <StorybookUIRoot />
-  // else
-  if (token) return <AppNavigation />;
-  else if (!token) return <AuthNavigation />;
-  else return <></>;
-=======
   return auth.token ? <AppNavigation /> : <AuthNavigation />;
->>>>>>> 87dd67ae3728a7ed22b0010b707c0c7d98134426
 };
