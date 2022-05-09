@@ -11,6 +11,7 @@ import {
   Container,
 } from '../../components';
 import {RestaurantCard} from '../../components/card/restaurantCard';
+import { RatingStars } from '../../components/ratingStars/RatingStars';
 import {size} from '../../theme';
 import {styles} from './RestaurantReview.style';
 import {TRestaurantReviewView} from './RestaurantReview.type';
@@ -31,17 +32,19 @@ export const RestaurantReviewScreenView: FC<TRestaurantReviewView> = ({
           justifyContent: 'center',
           paddingTop: size.xxl,
         }}>
-        {/* <Image source={require('../../assets/images/pizza_hut_logo.png')}
-                style={{
-                    height: 100, 
-                    width: 100, 
-                    borderRadius: 10
-                }}
-                /> */}
+        <Image 
+            source={require('../../assets/images/pizza_hut_logo.png')}
+            style={{
+                height: 100, 
+                width: 100, 
+                borderRadius: 10
+            }}
+        />
       </View>
       <Text style={styles.title}>
         How was your last order from {restaurant}?
       </Text>
+      <RatingStars />
       <TextInput
         type={'regular'}
         value={review}
