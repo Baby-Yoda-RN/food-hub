@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
 import {
@@ -9,6 +9,8 @@ import {
   MyOrdersScreen,
   Profile,
 } from '../../screens';
+import {MyDrawer} from '../drawer/DrawerNavigation';
+import {TAppNavigationRoutes, EAppNavigationRoutes, TAppNavigation} from './AppNavigation.type';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
 
@@ -27,6 +29,7 @@ export const AppNavigation = () => {
       />
       <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
       <Stack.Screen name={EAppNavigationRoutes.PROFILE} component={Profile} />
+      <Stack.Screen name={EAppNavigationRoutes.DRAWER} component={MyDrawer} />
     </Stack.Navigator>
   );
 };

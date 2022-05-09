@@ -3,7 +3,7 @@ import {
   TAppNavigationRoutes,
   EAppNavigationRoutes,
   TAppNavigation,
-} from '../../navigation';
+} from '../../navigation/appNavigation/AppNavigation.type';
 
 export type TCategoryScreenProps = StackScreenProps<
   TAppNavigationRoutes,
@@ -13,6 +13,7 @@ export type TCategoryScreenProps = StackScreenProps<
 export type TCategoryViewProps = {
   title: string;
   press: () => void;
+  leftPress: () => void;
 };
 
 export type TCategoryNavigation = {

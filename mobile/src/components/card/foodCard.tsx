@@ -1,11 +1,23 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Text, View, Image} from 'react-native';
-import {TFoodItem} from '../../types/data';
+import {TFoodItem, TItem} from '../../types/data';
 import {Card} from './card';
 import {styles} from './card.style';
 import {TFoodItemCardProps} from './card.type';
+import {foodHubAPI} from '../../config';
 
-export const FoodCard: FC<TFoodItemCardProps> = ({foodItem}) => {
+export const FoodCard: FC<TFoodItemCardProps> = ({foodItemId}) => {
+  const [foodItem, setFoodItem] = useState<TFoodItem>({} as TFoodItem);
+
+  useEffect(() => {
+    getFoodItem();
+  }, []);
+
+  const getFoodItem = async () => {
+    const newFoodItem = await foodHubAPI.get(`/foodItem/${foodItemId}`);
+    setFoodItem(newFoodItem.data);
+  };
+
   const {name, description, rating, usersVoted, price, favorite, imageName} =
     foodItem;
 
