@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import {Image, Text, View, Alert, TouchableOpacity} from 'react-native';
+import {Image, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {Icon} from '../icon/Icon';
 import {Button} from '../button/Button';
 import {styles} from './SideMenu.styles';
 import {TSideMenuProps} from './SideMenu.type';
-import {size} from '../../theme';
+import {size, color} from '../../theme';
 
 export const SideMenu: FC<TSideMenuProps> = ({
   image,
@@ -13,15 +13,14 @@ export const SideMenu: FC<TSideMenuProps> = ({
   pressOrder,
   pressProfile,
   pressDelivery,
-  pressPayment,
-  pressContact,
-  pressSetting,
-  pressHelp,
+  pressCart,
+  pressReview,
+  pressCategory,
   pressLogout,
   ...rest
 }) => {
   return (
-    <View style={styles.container} {...rest}>
+    <ScrollView style={styles.container} {...rest}>
       <Image
         style={styles.image}
         source={{
@@ -30,23 +29,22 @@ export const SideMenu: FC<TSideMenuProps> = ({
       />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.email}>{email}</Text>
+
       <TouchableOpacity onPress={pressOrder} style={styles.itemContainer}>
         <Icon
           name="List"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
-        <Text onPress={() => {}} style={styles.itemText}>
-          My Orders
-        </Text>
+        <Text style={styles.itemText}>My Order</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={pressProfile} style={styles.itemContainer}>
         <Icon
           name="Profile"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>My Profile</Text>
       </TouchableOpacity>
@@ -55,45 +53,36 @@ export const SideMenu: FC<TSideMenuProps> = ({
           name="Pin"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
         <Text style={styles.itemText}>Delivery Address</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={pressPayment} style={styles.itemContainer}>
+      <TouchableOpacity onPress={pressCart} style={styles.itemContainer}>
         <Icon
-          name="Wallet"
+          name="Bag"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
-        <Text style={styles.itemText}>Payment Methods</Text>
+        <Text style={styles.itemText}>Cart</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={pressContact} style={styles.itemContainer}>
+      <TouchableOpacity onPress={pressReview} style={styles.itemContainer}>
         <Icon
-          name="Mail"
+          name="Colon"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
-        <Text style={styles.itemText}>Contact Us</Text>
+        <Text style={styles.itemText}>Reviews</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={pressSetting} style={styles.itemContainer}>
+      <TouchableOpacity onPress={pressCategory} style={styles.itemContainer}>
         <Icon
-          name="Gear"
+          name="Category"
           height={size.rg}
           width={size.rg}
-          containerStyle={{padding: 0}}
+          containerStyle={styles.iconContainer}
         />
-        <Text style={styles.itemText}>Settings</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={pressHelp} style={styles.itemContainer}>
-        <Icon
-          name="QuestionMark"
-          height={size.rg}
-          width={size.rg}
-          containerStyle={{padding: 0}}
-        />
-        <Text style={styles.itemText}>Helps & FAQs</Text>
+        <Text style={styles.itemText}>Category</Text>
       </TouchableOpacity>
 
       <Button
@@ -104,6 +93,6 @@ export const SideMenu: FC<TSideMenuProps> = ({
         leftIconStyle={styles.buttonIconContainer}
         onPress={pressLogout}
       />
-    </View>
+    </ScrollView>
   );
 };

@@ -1,6 +1,9 @@
+import { DrawerNavigationProp } from "@react-navigation/drawer"
 import { TData } from "../../components/imageButton/ImageButton.type"
+import { TDrawerNavigationRoutes } from "../../navigation/drawer/DrawerNavigation.type"
 
-export type THomeScreen = {
+export type THomeScreenNavigation = {
+  navigation: DrawerNavigationProp<TDrawerNavigationRoutes>
 }
 
 export type THomeScreenView = {
@@ -11,6 +14,7 @@ export type THomeScreenView = {
   onPressFoodCard:(id:string)=> any
   categories?:Array<TData>
   categoryState:any
+  leftPress: () => void
 }
 
 export type TGetItemId = (id:string) => any

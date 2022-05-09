@@ -13,6 +13,7 @@ export type TCategoryScreenProps = StackScreenProps<
 export type TCategoryViewProps = {
   title: string;
   press: () => void;
+  leftPress: () => void;
 };
 
 export type TCategoryNavigation = {
