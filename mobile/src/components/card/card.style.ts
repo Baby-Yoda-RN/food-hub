@@ -21,18 +21,18 @@ export const styles = StyleSheet.create({
   },
   topLeftTag: {
     position: 'absolute',
-    top: 10,
-    left: 10,
+    top: size.md,
+    left: size.md,
   },
   topRightTag: {
     position: 'absolute',
-    top: 10,
-    right: 10,
+    top: size.md,
+    right: size.md,
   },
   bottomTags: {
     position: 'absolute',
     top: 110,
-    left: 10,
+    left: size.md,
   },
   favoriteTag: {
     borderRadius: 100,

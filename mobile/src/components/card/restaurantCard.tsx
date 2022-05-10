@@ -41,7 +41,7 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
           fill={color.white}
         />
       </View>
-      <View style={styles.bottomTags}>
+      <View style={styles.topLeftTag}>
         <RatingTag usersVoted={usersVoted} rating={rating} />
       </View>
       <View style={styles.information}>
