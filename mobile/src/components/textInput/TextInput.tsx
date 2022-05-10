@@ -28,6 +28,8 @@ export const TextInput: FC<TTextInputProps> = ({
   placeholder = 'Enter Text',
   containerStyle,
   textStyle,
+  text,
+  setText,
   ...rest
 }) => {
   const [isActive, setIsActive] = useState(false);
