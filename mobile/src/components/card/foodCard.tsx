@@ -8,7 +8,7 @@ import {foodHubAPI} from '../../config';
 import {PriceTag} from '../tag/PriceTag';
 import {RatingTag} from '../tag/RatingTag';
 import {Icon} from '../icon/Icon';
-import {size} from '../../theme';
+import {color, size} from '../../theme';
 
 export const FoodCard: FC<TFoodItemCardProps> = ({
   foodItemId,
@@ -25,12 +25,18 @@ export const FoodCard: FC<TFoodItemCardProps> = ({
     setFoodItem(newFoodItem.data);
   };
 
-  const {name, description, rating, usersVoted, price, favorite, imageName} =
-    foodItem;
+  const {name, description, rating, usersVoted, price, imageName} = foodItem;
+
+  const favorite = true;
+
+  let favoriteBackgroundColor;
+  favorite
+    ? (favoriteBackgroundColor = color.primary)
+    : (favoriteBackgroundColor = color.transparent);
 
   return (
     <Card>
-      <View style={{borderColor: 'black', borderWidth: 1}}>
+      <View>
         <View>
           <Image
             style={styles.cardImage}
@@ -39,16 +45,26 @@ export const FoodCard: FC<TFoodItemCardProps> = ({
             }}
           />
         </View>
-        <View style={styles.topTags}>
-          <View style={styles.topLeftTag}>
-            <PriceTag price={price} />
-          </View>
-          <View style={styles.topRightTag}>
-            <Icon name="Heart" width={size.lg} height={size.lg} />
-          </View>
+
+        <View style={styles.topLeftTag}>
+          <PriceTag price={10.95} />
         </View>
+        <View style={styles.topRightTag}>
+          <Icon
+            name="Heart"
+            width={size.rg}
+            height={size.rg}
+            containerStyle={{
+              backgroundColor: favoriteBackgroundColor,
+              borderRadius: 100,
+              padding: size.sm,
+            }}
+            fill={color.white}
+          />
+        </View>
+
         <View style={styles.bottomTags}>
-          <RatingTag usersVoted={usersVoted} rating={rating} />
+          <RatingTag usersVoted={30} rating={5} />
         </View>
         <View style={styles.information}>
           <Text style={styles.title}>{name}</Text>

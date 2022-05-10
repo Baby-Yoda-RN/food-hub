@@ -19,17 +19,20 @@ export const styles = StyleSheet.create({
     fontSize: size.rg,
     fontFamily: font.semiBold,
   },
-  topTags: {
-    flexDirection: 'row',
-    flex: 1,
-  },
-  topLeftTag: {borderColor: 'red', borderWidth: 1},
-  topRightTag: {alignSelf: 'flex-end', borderColor: 'blue', borderWidth: 1},
-  bottomTags: {
-    flexDirection: 'row',
+  topLeftTag: {
     position: 'absolute',
-    top: 110,
-    marginLeft: size.md,
+    top: 5,
+    left: 5,
+  },
+  topRightTag: {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+  },
+  bottomTags: {
+    position: 'absolute',
+    bottom: 45,
+    left: 5,
   },
   details: {
     fontSize: size.md,
