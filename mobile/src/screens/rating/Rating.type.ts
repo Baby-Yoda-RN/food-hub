@@ -1,7 +1,5 @@
-import {StackScreenProps} from '@react-navigation/stack';
 import { ImageSourcePropType } from 'react-native';
-import { EAppNavigationRoutes, TAppNavigation, TAppNavigationRoutes } from '../../navigation';
-import { TRestaurant } from '../../types/data';
+import { TAppNavigation} from '../../navigation';
 
 export type TRatingView = {
     restaurant?: string,
