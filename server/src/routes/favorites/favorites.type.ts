@@ -9,7 +9,7 @@ export type TFavorites = {
     rating: number,
     usersVoted: number,
     price: number,
-    favorite: true,
+    favorite: boolean,
     imageName: string,
 }
 
