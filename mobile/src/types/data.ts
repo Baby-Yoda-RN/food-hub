@@ -1,8 +1,8 @@
 export type TRestaurant = {
   uuid?: string;
   name?: string;
-  rating?: number;
-  usersVoted?: number;
+  rating: number;
+  usersVoted: number;
   favorite?: boolean;
   freeDelivery?: string;
   deliveryTime?: number;
@@ -27,7 +27,7 @@ export type TItem = {
   uuid?: string;
   name?: string;
   description?: string;
-  price?: number;
+  price: number;
   imageName?: string;
 };
 

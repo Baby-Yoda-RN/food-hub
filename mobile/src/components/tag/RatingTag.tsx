@@ -6,7 +6,7 @@ import {Tag} from './Tag';
 import {styles} from './Tag.style';
 
 type TRatingTagProps = {
-  rating?: number;
+  rating: number;
   usersVoted: number;
   limit?: number;
 };

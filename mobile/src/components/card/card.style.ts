@@ -12,27 +12,27 @@ export const styles = StyleSheet.create({
   information: {
     marginLeft: size.md,
     marginTop: size.md,
-    justifyContent: 'flex-start',
   },
   title: {
     color: color.black,
     fontSize: size.rg,
     fontFamily: font.semiBold,
+    paddingTop: size.xs,
   },
   topLeftTag: {
     position: 'absolute',
-    top: 5,
-    left: 5,
+    top: 10,
+    left: 10,
   },
   topRightTag: {
     position: 'absolute',
-    top: 5,
-    right: 5,
+    top: 10,
+    right: 10,
   },
   bottomTags: {
     position: 'absolute',
-    bottom: 60,
-    left: 5,
+    top: 110,
+    left: 10,
   },
   favoriteTag: {
     borderRadius: 100,
@@ -67,6 +67,7 @@ export const styles = StyleSheet.create({
   },
   iconContainer: {
     paddingLeft: 0,
+    paddingTop: 0,
     paddingRight: size.xs,
   },
 });
