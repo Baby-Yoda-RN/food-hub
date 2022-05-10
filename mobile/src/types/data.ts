@@ -29,7 +29,7 @@ export type TItem = {
   description?: string;
   price?: number;
   imageName?: string;
-}
+};
 
 export type TFoodItem = TItem & {
   rating?: number;
