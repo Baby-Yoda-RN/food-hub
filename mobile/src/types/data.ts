@@ -52,7 +52,3 @@ export type TReview = {
   reviewText: string;
   reviewScore: number;
 };
-
-export type TIdProps = {
-  uuid: string;
-};

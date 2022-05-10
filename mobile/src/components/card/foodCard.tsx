@@ -1,38 +1,13 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import {Text, View, Image} from 'react-native';
-import {TFoodItem, TItem} from '../../types/data';
+import {TFoodItem} from '../../types/data';
 import {Card} from './card';
 import {styles} from './card.style';
 import {TFoodItemCardProps} from './card.type';
-import {foodHubAPI} from '../../config';
-import {PriceTag} from '../tag/PriceTag';
-import {RatingTag} from '../tag/RatingTag';
-import {Icon} from '../icon/Icon';
-import {color, size} from '../../theme';
 
-export const FoodCard: FC<TFoodItemCardProps> = ({
-  foodItemId,
-  isDetails = false,
-}) => {
-  const [foodItem, setFoodItem] = useState<TFoodItem>({} as TFoodItem);
-
-  useEffect(() => {
-    getFoodItem();
-  }, []);
-
-  const getFoodItem = async () => {
-    const newFoodItem = await foodHubAPI.get(`/foodItem/${foodItemId}`);
-    setFoodItem(newFoodItem.data);
-  };
-
-  const {name, description, rating, usersVoted, price, imageName} = foodItem;
-
-  const favorite = true;
-
-  let favoriteBackgroundColor;
-  favorite
-    ? (favoriteBackgroundColor = color.primary)
-    : (favoriteBackgroundColor = color.transparent);
+export const FoodCard: FC<TFoodItemCardProps> = ({foodItem}) => {
+  const {name, description, rating, usersVoted, price, favorite, imageName} =
+    foodItem;
 
   return (
     <Card>

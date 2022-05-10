@@ -8,10 +8,9 @@ export type TCardProps = {
 };
 
 export type TRestaurantCardProps = {
-  restaurantId: string;
+  restaurant: TRestaurant;
 };
 
 export type TFoodItemCardProps = {
-  foodItemId: string;
-  isDetails?: boolean;
+  foodItem: TFoodItem;
 };
