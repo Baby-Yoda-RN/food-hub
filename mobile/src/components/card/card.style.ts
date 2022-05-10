@@ -31,8 +31,12 @@ export const styles = StyleSheet.create({
   },
   bottomTags: {
     position: 'absolute',
-    bottom: 45,
+    bottom: 60,
     left: 5,
+  },
+  favoriteTag: {
+    borderRadius: 100,
+    backgroundColor: color.transparent,
   },
   details: {
     fontSize: size.md,
