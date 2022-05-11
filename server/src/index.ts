@@ -14,6 +14,7 @@ import {
   order,
   address,
   getFoodItem,
+  userInfo,
 } from "./routes";
 const cors = require("cors");
 
@@ -39,6 +40,7 @@ app.use("/api/cart", cart);
 app.use("/api/order", order);
 app.use("/api/address", address);
 app.use("/api/foodItem", getFoodItem);
+app.use('/api/userInfo', userInfo);
 
 app.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);
