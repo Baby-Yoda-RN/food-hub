@@ -1,4 +1,5 @@
 import { DrawerNavigationProp } from "@react-navigation/drawer"
+import { Dispatch, SetStateAction } from "react"
 import { TDrawerNavigationRoutes } from "../../navigation/drawer/DrawerNavigation.type"
 import { TFoodCategory, TItem, TRestaurant } from "../../types/data"
 
@@ -16,11 +17,11 @@ export type THomeScreenView = {
   featuredRestaurants:Array<TRestaurant> | undefined
   popularItems:Array<TItem> | undefined
   categories:Array<TFoodCategory> | undefined
-  onPressViewAll?:()=> any
-  onPressRestaurantCard:(id:string)=>any
-  onPressFoodCard:(id:string)=> any
-  categoryState:any
+  onPressViewAll?:()=> void
+  onPressRestaurantCard:(id:string)=> void
+  onPressFoodCard:(id:string)=> void
+  categoryState:[string|null, Dispatch<SetStateAction<string|null>>]
   leftPress: () => void
 }
 
-export type TGetItemId = (id:string) => any
+export type TGetItemId = (id:string) => void

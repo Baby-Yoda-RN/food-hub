@@ -38,7 +38,11 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         leftIcon="Magnify"
         type="search"
         placeholder="Find food by name"
-      />
+        value=''
+        onChangeText={() => { } } 
+        text={''}
+        setText={()=>{}}
+        />
       <ScrollView horizontal>
         {categories?.map(item => {
           return (
