@@ -6,32 +6,16 @@ export const styles = StyleSheet.create({
         padding: size.rg,
         marginTop: size.lg,
     },
-    buttonText: {
-        fontFamily: font.regular,
-    },
-    container: {
-        justifyContent: 'center',
-        padding: size.lg,
-    },
-    headerContainer: {
-        paddingLeft: size.lg,
-        paddingTop: size.lg,
-    },
-    title: {
+    largeText: {
         fontFamily: font.semiBold,
         fontSize: 18,
         color: color.black,
         marginTop: size.rg,
         textAlign: 'center'
     },
-    subtitle: {
+    smallText: {
         marginBottom: size.lg,
         textAlign: 'center'
-    },
-    delivered: {
-        color: color.green,
-        marginBottom: size.lg,
-        textAlign: 'center',
     },
     rating: {
         fontSize: size.lg,
