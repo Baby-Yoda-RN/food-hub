@@ -84,5 +84,6 @@ export const styles = StyleSheet.create({
   },
   restaurantContainer: {
     width: windowWidth - 100,
+    marginRight:size.lg,
   },
 });

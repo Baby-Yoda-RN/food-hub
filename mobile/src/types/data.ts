@@ -52,3 +52,8 @@ export type TReview = {
   reviewText: string;
   reviewScore: number;
 };
+
+export type TFoodCategory = {
+  value:string
+  image:string
+}
