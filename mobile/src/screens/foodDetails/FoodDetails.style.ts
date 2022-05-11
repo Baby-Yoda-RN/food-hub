@@ -5,9 +5,15 @@ export const styles = StyleSheet.create({
   header: {
     padding: size.lg,
   },
-  topLogo: {
-    padding: size.lg,
-    alignSelf: 'flex-start',
+
+  containerTopBackground: {
+    padding: size.xxl,
+    justifyContent: 'center',
+  },
+
+  containerTopBackgroundImageStyle: {
+    borderRadius: size.sm,
+    marginHorizontal: size.rg,
   },
 
   title: {

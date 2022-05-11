@@ -1,5 +1,12 @@
 import React, {FC, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ImageBackground,
+} from 'react-native';
 import {TFoodDetailsScreenViewProps} from './FoodDetails.type';
 import images from '../../assets/images';
 import {
@@ -103,6 +110,8 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   return (
     <Container
       isScrollViewDisabled={true}
+      backgroundImage={images.groundBeefTacos}
+      imageStyle={styles.backgroundImageStyle}
       header={
         <Header
           leftIconName="ChevronLeft"
