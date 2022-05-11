@@ -19,5 +19,5 @@ export type TProfileViewProps = {
 };
 
 export type TProfileNavigation = {
-  navigation: TAppNavigation;
+  navigation?: TAppNavigation;
 };
