@@ -18,18 +18,10 @@ export const RestaurantReviewScreenView: FC<TRestaurantReviewView> = ({
     <Container>
       <SafeAreaView>
         <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingTop: size.xxl,
-          }}>
+          style={styles.containerTop}>
           <Image 
               source={require('../../assets/images/pizza_hut_logo.png')}
-              style={{
-                  height: 100, 
-                  width: 100, 
-                  borderRadius: 10
-              }}
+              style={styles.image}
           />
         </View>
         <Text style={styles.largeText}>

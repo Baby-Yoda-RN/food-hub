@@ -6,6 +6,11 @@ export const styles = StyleSheet.create({
         padding: size.rg,
         marginTop: size.lg,
     },
+    containerTop: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: size.xxl,
+    },
     largeText: {
         fontFamily: font.semiBold,
         fontSize: 18,
@@ -25,5 +30,10 @@ export const styles = StyleSheet.create({
     review: {
         height: 168,
         alignItems: 'flex-start',
+    },
+    image: {
+        height: 100, 
+        width: 100, 
+        borderRadius: 10
     },
 })
