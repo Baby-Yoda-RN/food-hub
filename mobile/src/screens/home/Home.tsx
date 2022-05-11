@@ -1,6 +1,7 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Alert} from 'react-native';
-import {TFoodItem, TRestaurant} from '../../types/data';
+import { foodHubAPI } from '../../config';
+import {TRestaurant} from '../../types/data';
 import {TGetItemId, THomeScreenNavigation} from './Home.type';
 import {HomeScreenView} from './Home.view';
 
@@ -111,6 +112,14 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
   const handleOnPressCard: TGetItemId = (id: string) => {
     Alert.alert('Card Pressed', id);
   };
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await foodHubAPI.get('/home')
+      console.log(response.data)
+    }
+    getData()
+  },[])
 
   return (
     <HomeScreenView
