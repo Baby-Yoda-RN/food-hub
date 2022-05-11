@@ -24,6 +24,7 @@ export const Container: FC<TContainer> = ({
   isScrollViewDisabled = false,
   backgroundImage,
   backgroundImageStyle,
+  imageStyle,
   ...rest
 }) => {
   const {colors} = useTheme();
@@ -58,6 +59,7 @@ export const Container: FC<TContainer> = ({
       <ImageBackground
         source={backgroundImage!}
         resizeMode="stretch"
+        imageStyle={imageStyle}
         style={[styles.backgroundImageContainer, backgroundImageStyle]}>
         {header && <View style={[styles.header, headerStyle]}>{header}</View>}
         <Container {...containerDynamicStyle} {...rest}>

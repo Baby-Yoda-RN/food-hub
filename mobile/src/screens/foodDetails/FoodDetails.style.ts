@@ -2,18 +2,16 @@ import {StyleSheet} from 'react-native';
 import {color, font, size} from '../../theme';
 
 export const styles = StyleSheet.create({
+  mainContainer: {},
   header: {
     padding: size.lg,
   },
 
-  containerTopBackground: {
-    padding: size.xxl,
-    justifyContent: 'center',
-  },
+  Background: {},
 
-  containerTopBackgroundImageStyle: {
-    borderRadius: size.sm,
-    marginHorizontal: size.rg,
+  BackgroundImageStyle: {
+    borderRadius: size.rg,
+    margin: size.rg,
   },
 
   title: {

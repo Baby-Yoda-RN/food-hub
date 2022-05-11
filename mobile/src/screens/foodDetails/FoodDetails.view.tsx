@@ -111,7 +111,9 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
     <Container
       isScrollViewDisabled={true}
       backgroundImage={images.groundBeefTacos}
-      imageStyle={styles.backgroundImageStyle}
+      imageStyle={styles.BackgroundImageStyle}
+      backgroundImageStyle={styles.Background}
+      containerStyle={styles.mainContainer}
       header={
         <Header
           leftIconName="ChevronLeft"

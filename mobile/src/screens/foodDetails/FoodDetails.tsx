@@ -5,6 +5,23 @@ import {FoodDetailsScreenView} from './FoodDetails.view';
 export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
   const [count, countChange] = useState(1);
 
+  function onMinus() {
+    if (count > 1) {
+      countChange(count - 1);
+    }
+  }
+
+  function onPlus() {
+    if (count < 99) {
+      countChange(count + 1);
+    }
+  }
+
+  function calPrice() {
+    const price = 9.99 * count;
+    return price;
+  }
+
   return (
     <FoodDetailsScreenView
       title="Ground Beef Tacos"
@@ -13,17 +30,18 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
       ratings={4.5}
       reviewCount={31}
       countPlusMinus={count}
+      AddOns={[
+        {name: 'Pepper Julienned', price: 2.3},
+        {name: 'Baby Spinach', price: 4.7},
+        {name: 'Mushroom', price: 2.5},
+      ]}
       onPressMinus={() => {
-        if (count > 1) {
-          countChange(count - 1);
-        }
+        onMinus();
       }}
       onPressPlus={() => {
-        if (count < 99) {
-          countChange(count + 1);
-        }
+        onPlus();
       }}
-      price={9.99 * count}
+      price={calPrice()}
     />
   );
 };
