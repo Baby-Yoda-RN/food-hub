@@ -17,6 +17,7 @@ export type TFoodDetailsScreenViewProps = {
   price: int;
   rating: int;
   reviewCount: int;
+  reviewCountMax: int;
   countPlusMinus: any;
   countPlusMinusChange: () => {};
   onPressPlus: () => {};

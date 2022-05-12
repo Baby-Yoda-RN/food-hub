@@ -20,6 +20,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   description,
   ratings,
   reviewCount,
+  reviewCountMax,
   OnPressSeeReview,
   subtitle,
   addOnList,
@@ -55,8 +56,8 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
         <View style={styles.containerRatingReview}>
           <Icon name="Star" width={size.rg} height={size.rg} />
           <Text style={styles.ratings}>{ratings}</Text>
-          {reviewCount > 30 ? (
-            <Text style={styles.reviewCount}>{`(30+)`}</Text>
+          {reviewCount > reviewCountMax ? (
+            <Text style={styles.reviewCount}>{`(${reviewCountMax}+)`}</Text>
           ) : (
             <Text style={styles.reviewCount}>{`(${reviewCount})`}</Text>
           )}
@@ -115,9 +116,9 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   return (
     <Container
       isScrollViewDisabled={false}
-      // backgroundImage={images.groundBeefTacos}
-      // imageStyle={styles.BackgroundImageStyle}
-      // backgroundImageStyle={styles.Background}
+      backgroundImage={images.groundBeefTacos}
+      imageStyle={styles.BackgroundImageStyle}
+      backgroundImageStyle={styles.Background}
       containerStyle={styles.mainContainer}
       header={
         <Header
@@ -126,10 +127,10 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
           iconWidth={size.rg}
           iconHeight={size.rg}
           containerStyle={styles.header}
+          leftIconStyle={styles.leftIconStyle}
+          rightIconStyle={styles.rightIconStyle}
         />
       }>
-      <FoodCard name="Hello" />
-
       <Text style={styles.title}>{title}</Text>
 
       {ratingsAndReview()}

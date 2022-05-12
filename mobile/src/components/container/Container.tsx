@@ -25,6 +25,7 @@ export const Container: FC<TContainer> = ({
   backgroundImage,
   backgroundImageStyle,
   imageStyle,
+  resizeModeName,
   ...rest
 }) => {
   const {colors} = useTheme();
@@ -58,7 +59,7 @@ export const Container: FC<TContainer> = ({
       ]}>
       <ImageBackground
         source={backgroundImage!}
-        resizeMode="stretch"
+        resizeMode={resizeModeName}
         imageStyle={imageStyle}
         style={[styles.backgroundImageContainer, backgroundImageStyle]}>
         {header && <View style={[styles.header, headerStyle]}>{header}</View>}

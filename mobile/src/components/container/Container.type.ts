@@ -14,4 +14,5 @@ export type TContainer = {
   backgroundImage?: ImageSourcePropType;
   backgroundImageStyle?: ImageStyle;
   imageStyle?: ImageStyle;
+  resizeModeName?: string;
 };

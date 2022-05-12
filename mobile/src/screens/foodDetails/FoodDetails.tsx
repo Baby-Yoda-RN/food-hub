@@ -30,6 +30,7 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
       subtitle="Choice of Add On"
       ratings={4.5}
       reviewCount={31}
+      reviewCountMax={30}
       countPlusMinus={count}
       addOns={[
         {image: images.pepperJulienned, name: 'Pepper Julienned', price: 2.3},

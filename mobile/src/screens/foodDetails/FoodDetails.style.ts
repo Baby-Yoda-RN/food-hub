@@ -9,17 +9,26 @@ export const styles = StyleSheet.create({
     padding: size.lg,
   },
 
+  leftIconStyle: {
+    backgroundColor: color.white,
+    borderRadius: size.sm,
+  },
+
+  rightIconStyle: {
+    backgroundColor: color.red,
+    borderRadius: size.xxl,
+  },
+
   BackgroundImageStyle: {
     borderRadius: size.rg,
     margin: size.rg,
-    height: 200,
   },
 
   title: {
     fontSize: size.lg,
     fontFamily: font.semiBold,
     color: color.black,
-    marginTop: size.xxl,
+    marginTop: size.rg,
   },
 
   subtitle: {
@@ -62,7 +71,7 @@ export const styles = StyleSheet.create({
     padding: size.rg,
     borderRadius: size.xxl,
     marginHorizontal: size.xl,
-    marginTop: size.rg,
+    marginVertical: size.lg,
   },
   text: {
     textAlign: 'center',
