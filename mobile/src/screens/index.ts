@@ -12,4 +12,5 @@ export * from './category/Category';
 export * from './welcome/Welcome';
 export * from './myOrders/MyOrders';
 export * from './favoriteFoodItems/FavoriteFoodItems';
-export * from './restaurantReview/RestaurantReview'
+export * from './restaurantReview/RestaurantReview';
+export * from './profile/Profile';
