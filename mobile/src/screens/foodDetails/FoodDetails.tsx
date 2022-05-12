@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import {TFoodDetailsNavigation} from './FoodDetails.type';
 import {FoodDetailsScreenView} from './FoodDetails.view';
+import images from '../../assets/images';
 
 export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
   const [count, countChange] = useState(1);
@@ -30,10 +31,10 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
       ratings={4.5}
       reviewCount={31}
       countPlusMinus={count}
-      AddOns={[
-        {name: 'Pepper Julienned', price: 2.3},
-        {name: 'Baby Spinach', price: 4.7},
-        {name: 'Mushroom', price: 2.5},
+      addOns={[
+        {image: images.pepperJulienned, name: 'Pepper Julienned', price: 2.3},
+        {image: images.pepperJulienned, name: 'Baby Spinach', price: 4.7},
+        {image: images.pepperJulienned, name: 'Mushroom', price: 2.5},
       ]}
       onPressMinus={() => {
         onMinus();

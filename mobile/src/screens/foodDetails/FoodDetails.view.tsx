@@ -9,15 +9,9 @@ import {
 } from 'react-native';
 import {TFoodDetailsScreenViewProps} from './FoodDetails.type';
 import images from '../../assets/images';
-import {
-  Container,
-  Header,
-  Card,
-  Button,
-  Icon,
-  ListItem,
-} from '../../components';
-import {size} from '../../theme';
+import {FoodCard} from '../../components/card/foodCard';
+import {Container, Header, Button, Icon, ListItem} from '../../components';
+import {size, color} from '../../theme';
 import {styles} from './FoodDetails.style';
 
 export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
@@ -33,12 +27,13 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   countPlusMinus,
   onPressMinus,
   onPressPlus,
+  addOns,
 }) => {
   const renderPlusMinus = (price, count, onPressPlus, onPressMinus) => {
     return (
       <>
         <View style={styles.containerPriceAndPlusMinus}>
-          <Text style={styles.textPrice}>{`$${price}`}</Text>
+          <Text style={styles.textPrice}>{`$${price.toFixed(2)}`}</Text>
 
           <View style={styles.containerPlusMinus}>
             <TouchableOpacity onPress={onPressMinus}>
@@ -73,8 +68,17 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
     );
   };
 
-  const addOnSelections = (imageSource, title, price) => {
-    const [Selected, SelectedChange] = useState(false);
+  const [Selected1, SelectedChange1] = useState(false);
+  const [Selected2, SelectedChange2] = useState(false);
+  const [Selected3, SelectedChange3] = useState(false);
+
+  const addOnSelections = (
+    Selected,
+    SelectedChange,
+    imageSource,
+    title,
+    price,
+  ) => {
     return (
       <>
         <View style={styles.containerAddOn}>
@@ -87,7 +91,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
             onPress={() => {
               Selected ? SelectedChange(false) : SelectedChange(true);
             }}>
-            <Text style={styles.titleAddOn}>{`+${price}`}</Text>
+            <Text style={styles.titleAddOn}>{`+${price.toFixed(2)}`}</Text>
 
             {Selected ? (
               <Icon
@@ -100,6 +104,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
                 name={'BulletGreyHollow'}
                 width={size.lg}
                 height={size.lg}
+                fill={color.white}
               />
             )}
           </TouchableOpacity>
@@ -109,10 +114,10 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   };
   return (
     <Container
-      isScrollViewDisabled={true}
-      backgroundImage={images.groundBeefTacos}
-      imageStyle={styles.BackgroundImageStyle}
-      backgroundImageStyle={styles.Background}
+      isScrollViewDisabled={false}
+      // backgroundImage={images.groundBeefTacos}
+      // imageStyle={styles.BackgroundImageStyle}
+      // backgroundImageStyle={styles.Background}
       containerStyle={styles.mainContainer}
       header={
         <Header
@@ -123,6 +128,8 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
           containerStyle={styles.header}
         />
       }>
+      <FoodCard name="Hello" />
+
       <Text style={styles.title}>{title}</Text>
 
       {ratingsAndReview()}
@@ -133,7 +140,28 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
 
       <Text style={styles.subtitle}>{subtitle}</Text>
 
-      {addOnSelections(images.pepperJulienned, 'Pepper', '$1.00')}
+      {addOnSelections(
+        Selected1,
+        SelectedChange1,
+        addOns[0].image,
+        addOns[0].name,
+        addOns[0].price,
+      )}
+
+      {addOnSelections(
+        Selected2,
+        SelectedChange2,
+        addOns[1].image,
+        addOns[1].name,
+        addOns[1].price,
+      )}
+      {addOnSelections(
+        Selected3,
+        SelectedChange3,
+        addOns[2].image,
+        addOns[2].name,
+        addOns[2].price,
+      )}
 
       <Button title="ADD TO CART" containerStyle={styles.button} />
     </Container>

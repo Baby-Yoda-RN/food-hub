@@ -2,34 +2,36 @@ import {StyleSheet} from 'react-native';
 import {color, font, size} from '../../theme';
 
 export const styles = StyleSheet.create({
-  mainContainer: {},
+  mainContainer: {
+    justifyContent: 'space-between',
+  },
   header: {
     padding: size.lg,
   },
 
-  Background: {},
-
   BackgroundImageStyle: {
     borderRadius: size.rg,
     margin: size.rg,
+    height: 200,
   },
 
   title: {
     fontSize: size.lg,
     fontFamily: font.semiBold,
     color: color.black,
+    marginTop: size.xxl,
   },
 
   subtitle: {
     fontSize: size.rg,
     fontFamily: font.semiBold,
     color: color.black,
-    marginTop: size.rg,
+    marginTop: size.sm,
   },
 
   containerRatingReview: {
     flexDirection: 'row',
-    marginTop: size.sm,
+    marginTop: size.xs,
   },
 
   ratings: {
@@ -53,14 +55,14 @@ export const styles = StyleSheet.create({
     fontSize: size.rg,
     fontFamily: font.medium,
     color: color.grayMid,
-    marginTop: size.rg,
+    marginTop: size.sm,
   },
 
   button: {
     padding: size.rg,
     borderRadius: size.xxl,
     marginHorizontal: size.xl,
-    marginTop: size.xl,
+    marginTop: size.rg,
   },
   text: {
     textAlign: 'center',
@@ -71,7 +73,7 @@ export const styles = StyleSheet.create({
   containerPriceAndPlusMinus: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: size.rg,
+    marginTop: size.sm,
   },
   containerPlusMinus: {
     flexDirection: 'row',
