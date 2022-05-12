@@ -1,6 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
 import { TAppNavigation} from '../../navigation';
-
 export type TRatingView = {
     restaurant?: string,
     address?: string;

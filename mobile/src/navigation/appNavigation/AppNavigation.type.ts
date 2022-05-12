@@ -12,6 +12,7 @@ export enum EAppNavigationRoutes {
   FAVORITEFOODITEMS = 'FavoriteFoodItems',
   RESTAURANTREVIEW = 'RestaurantReview'
   DRAWER = 'Drawer',
+  RESTAURANTREVIEW = 'RestaurantReview'
 }
 
 export type TAppNavigationRoutes = {
@@ -26,6 +27,7 @@ export type TAppNavigationRoutes = {
   [EAppNavigationRoutes.FAVORITEFOODITEMS]: undefined;
   [EAppNavigationRoutes.RESTAURANTREVIEW]: undefined;
   [EAppNavigationRoutes.DRAWER]: undefined;
+  [EAppNavigationRoutes.RESTAURANTREVIEW]: undefined;
 };
 
 export type TAppNavigation = StackNavigationProp<TAppNavigationRoutes>;
