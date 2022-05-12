@@ -38,7 +38,11 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         leftIcon="Magnify"
         type="search"
         placeholder="Find food by name"
-      />
+        value=''
+        onChangeText={() => { } } 
+        text={''}
+        setText={()=>{}}
+        />
       <ScrollView horizontal>
         {categories?.map(item => {
           return (
@@ -69,7 +73,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           nestedScrollEnabled
           horizontal
           contentContainerStyle={[styles.horizontalContainer]}>
-          {featuredRestaurants.map((restaurant, index) => {
+          {featuredRestaurants?.map((restaurant, index) => {
             return (
               <TouchableOpacity
                 onPress={() => onPressRestaurantCard(String(index))}
@@ -84,7 +88,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
       <View style={styles.sectionContainer}>
         <Text style={styles.subtitle}>Popular Items</Text>
         <View style={[styles.horizontalContainer, styles.foodCardContainer]}>
-          {popularItems.map((food, index) => {
+          {popularItems?.map((food, index) => {
             return (
               <TouchableOpacity
                 onPress={() => onPressFoodCard(String(index))}

@@ -6,6 +6,8 @@ export enum EAuthNavigationRoutes {
   VERIFY = 'Verify',
   PHONE_REGISTRATION = 'Phone_Registration',
   WELCOME = 'Welcome',
+  RESET_PASSWORD = 'ResetPassword',
+  STORY_BOOK = 'Story_Book',
 }
 
 export type TAuthNavigationRoutes = {
@@ -14,6 +16,8 @@ export type TAuthNavigationRoutes = {
   [EAuthNavigationRoutes.VERIFY]: undefined;
   [EAuthNavigationRoutes.PHONE_REGISTRATION]: undefined;
   [EAuthNavigationRoutes.WELCOME]: undefined;
+  [EAuthNavigationRoutes.RESET_PASSWORD]: undefined;
+  [EAuthNavigationRoutes.STORY_BOOK]: undefined;
 };
 
 export type TAuthNavigation = StackNavigationProp<TAuthNavigationRoutes>;

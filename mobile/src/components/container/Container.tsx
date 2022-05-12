@@ -58,6 +58,7 @@ export const Container: FC<TContainer> = ({
         {backgroundColor: colors.background},
       ]}>
       <ImageBackground
+        imageStyle={imageStyle}
         source={backgroundImage!}
         resizeMode={resizeModeName}
         imageStyle={imageStyle}

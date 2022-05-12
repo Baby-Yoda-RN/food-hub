@@ -1,6 +1,8 @@
 export * from './login/Login';
+export * from './resetPassword/ResetPassword'
 export * from './signup/SignUp';
 export * from './phoneRegistration/PhoneRegistration';
+export * from './resetPassword/ResetPassword'
 export * from './rating/Rating';
 export * from './cart/Cart';
 export * from './review/Review';
@@ -11,3 +13,4 @@ export * from './welcome/Welcome';
 export * from './foodDetails/FoodDetails';
 export * from './myOrders/MyOrders';
 export * from './favoriteFoodItems/FavoriteFoodItems';
+export * from './restaurantReview/RestaurantReview'
