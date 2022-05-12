@@ -9,6 +9,7 @@ import {
   LoginScreen,
   PhoneRegistration,
   WelcomeScreen,
+  ResetPasswordScreen,
   VerifyScreen,
 } from '../../screens';
 import StorybookUIRoot from '../../../storybook';
@@ -31,8 +32,8 @@ export const AuthNavigation = () => {
         component={PhoneRegistration}
       />
       <Stack.Screen
-        name={EAuthNavigationRoutes.SIGNUP}
-        component={SignUpScreen}
+        name={EAuthNavigationRoutes.RESET_PASSWORD}
+        component={ResetPasswordScreen}
       />
       <Stack.Screen
         name={EAuthNavigationRoutes.VERIFY}

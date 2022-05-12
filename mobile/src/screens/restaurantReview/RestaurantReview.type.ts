@@ -1,9 +1,13 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import { ImageSourcePropType } from 'react-native';
-import { TAppNavigation} from '../../navigation';
-export type TRatingView = {
+import {
+  EAppNavigationRoutes,
+  TAppNavigation,
+  TAppNavigationRoutes,
+} from '../../navigation';
+
+export type TRestaurantReviewView = {
     restaurant?: string,
-    address?: string;
-    isDelivered?: boolean;
     restaurantImage?: ImageSourcePropType;
     title?: string;
     starRating?: number;
@@ -11,6 +15,6 @@ export type TRatingView = {
     press?: () => void;
 }
 
-export type TRatingNavigation = {
+export type TRestaurantReviewNavigation = {
     navigation: TAppNavigation;
 }
