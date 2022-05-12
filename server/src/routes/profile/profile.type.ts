@@ -1,4 +1,7 @@
 export type TRequestBody = {
+    name: string,
+    email: string,
+    phoneNumber: string,
     token: string,
 }
 
