@@ -13,4 +13,5 @@ export * from './welcome/Welcome';
 export * from './foodDetails/FoodDetails';
 export * from './myOrders/MyOrders';
 export * from './favoriteFoodItems/FavoriteFoodItems';
-export * from './restaurantReview/RestaurantReview'
+export * from './restaurantReview/RestaurantReview';
+export * from './profile/Profile';

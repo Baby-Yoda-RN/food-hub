@@ -4,8 +4,11 @@ import {AppNavigation} from '../appNavigation/AppNavigation';
 import SplashScreen from 'react-native-splash-screen';
 import {getToken, ELocalStorage} from '../../utilities';
 import {TGetTokenFromLocalStorage} from './Router.type';
+<<<<<<< HEAD
 import {MyDrawer} from '../drawer/DrawerNavigation';
 import StorybookUIRoot from '../../../storybook/index';
+=======
+>>>>>>> 1eca91ee288f847a6d240355cd8df3a6ac0c4f4f
 import {useGlobalState} from '../../context/global/global.provider';
 import {EAuthAction} from '../../context/auth';
 
