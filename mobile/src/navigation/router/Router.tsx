@@ -11,7 +11,7 @@ export const Router = () => {
   SplashScreen.hide();
 
   const {
-    state: {auth},
+    state,
     dispatch,
   } = useGlobalState();
 
@@ -23,5 +23,5 @@ export const Router = () => {
     getTokenFromLocalStorage();
   }, [dispatch]);
 
-  return auth.token ? <AppNavigation /> : <AuthNavigation />;
+  return state.auth.token ? <AppNavigation /> : <AuthNavigation />;
 };
