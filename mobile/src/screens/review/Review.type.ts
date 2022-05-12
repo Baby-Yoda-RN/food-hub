@@ -12,6 +12,7 @@ export type TReviewScreenProps = StackScreenProps<
 
 export type TReviewScreenViewProps = {
   leftPress: () => void;
+  textInputPress: () => void;
 };
 
 export type TReviewNavigation = {

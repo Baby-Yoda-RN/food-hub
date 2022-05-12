@@ -40,7 +40,10 @@ const reviewsList: Array<TReview> = [
   },
 ];
 
-export const ReviewScreenView: FC<TReviewScreenViewProps> = ({leftPress}) => {
+export const ReviewScreenView: FC<TReviewScreenViewProps> = ({
+  leftPress,
+  textInputPress,
+}) => {
   return (
     <Container
       isScrollViewDisabled={true}
@@ -55,9 +58,15 @@ export const ReviewScreenView: FC<TReviewScreenViewProps> = ({leftPress}) => {
         />
       }>
       <TextInput
-        type="search"
+        type="regular"
+        value="Write your review..."
         leftIcon="Profile"
-        placeholder="Write your review..."
+        text=""
+        onChangeText={function (value: string): void {}}
+        setText={function (value: string): void {}}
+        onPress={textInputPress}
+        containerStyle={{justifyContent: 'flex-start'}}
+        props={{editable: false}}
       />
       <FlatList
         data={reviewsList}

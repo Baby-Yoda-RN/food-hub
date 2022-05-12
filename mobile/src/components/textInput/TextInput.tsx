@@ -1,9 +1,17 @@
-import React, {FC, useState, useLayoutEffect, useRef, Dispatch} from 'react';
+import React, {
+  FC,
+  useState,
+  useLayoutEffect,
+  useRef,
+  Dispatch,
+  MutableRefObject,
+} from 'react';
 import {
   TextInput as NativeInput,
   Text,
   View,
   TouchableOpacity,
+  TextInputProps,
 } from 'react-native';
 import {size} from '../../theme';
 import {phone_validator} from '../../utilities/phone_validator';
@@ -28,9 +36,8 @@ export const TextInput: FC<TTextInputProps> = ({
   placeholder = 'Enter Text',
   containerStyle,
   textStyle,
-  text,
-  setText,
-  ...rest
+  onPress,
+  props,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [secureTextEntry, setSecureTextEntry] = useState(false);
@@ -65,9 +72,11 @@ export const TextInput: FC<TTextInputProps> = ({
     setSecureTextEntry(true);
   };
 
-  const onPress = () => {
-    textInputRef.current.focus();
-  };
+  if (!onPress) {
+    onPress = () => {
+      textInputRef.current.focus();
+    };
+  }
 
   switch (type) {
     case 'phone':
@@ -110,7 +119,7 @@ export const TextInput: FC<TTextInputProps> = ({
         value={value}
         maxLength={max}
         ref={textInputRef}
-        {...rest}
+        {...props}
       />
 
       {!!rightElement && (

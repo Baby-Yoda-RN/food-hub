@@ -6,6 +6,7 @@ import {
   CartScreen,
   MyOrdersScreen,
   FavoriteFoodItems,
+  ReviewScreen,
 } from '../../screens';
 import {styles} from './BottomTabNavigation.style';
 import {View} from 'react-native';
@@ -15,6 +16,7 @@ import {
   EBottomTabNavigationRoutes,
   TBottomTabNavigationRoutes,
 } from './BottomTabNavigator.type';
+import {EAppNavigationRoutes} from '../appNavigation/AppNavigation.type';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,8 +53,8 @@ export const BottomTabNavigation: FC<TBottomTabNavigationRoutes> = () => {
         }}
       />
       <Tab.Screen
-        name={EBottomTabNavigationRoutes.CATEGORY}
-        component={CategoryScreen}
+        name={EAppNavigationRoutes.REVIEW}
+        component={ReviewScreen}
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
