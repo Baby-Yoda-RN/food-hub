@@ -1,8 +1,17 @@
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParams } from "../../navigation";
-export type TRating = NativeStackScreenProps<RootStackParams, 'Rating'>
+import { ImageSourcePropType } from 'react-native';
+import { TAppNavigation} from '../../navigation';
 
 export type TRatingView = {
-    isLoading?: boolean;
+    restaurant?: string,
+    address?: string;
+    isDelivered?: boolean;
+    restaurantImage?: ImageSourcePropType;
+    title?: string;
+    starRating?: number;
+    textRating?: string[];
+    press?: () => void;
+}
 
+export type TRatingNavigation = {
+    navigation: TAppNavigation;
 }

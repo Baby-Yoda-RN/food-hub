@@ -13,4 +13,5 @@ export type TContainer = {
   isScrollViewDisabled?: boolean
   backgroundImage?:ImageSourcePropType
   backgroundImageStyle?:ImageStyle
+  imageStyle?:ImageStyle
 }
