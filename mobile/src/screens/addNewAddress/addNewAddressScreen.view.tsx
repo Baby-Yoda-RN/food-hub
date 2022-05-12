@@ -1,8 +1,8 @@
 import React, {FC, useState} from 'react';
 import {View, Text} from 'react-native';
 import {TextInput, Header, Button, Section, Container} from '../../components';
-import {TaddNewAddressViewProps} from './addNewAddress.type';
-import {styles} from './addNewAddress.style';
+import {TaddNewAddressViewProps} from './addNewAddressScreen.type';
+import {styles} from './addNewAddressScreen.style';
 import {size} from '../../theme';
 
 export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
