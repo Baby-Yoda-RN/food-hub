@@ -13,6 +13,7 @@ export type TWelcomeScreenProps = StackScreenProps<
 export type TWelcomeScreenViewProps = {
   title: string;
   press: () => void;
+  goToStoryBook: () => void;
 };
 
 export type TWelcomeNavigation = {

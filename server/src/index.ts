@@ -1,13 +1,30 @@
 import express from "express";
-import { login, register, review, category, resetPassword, phoneRegister, favorites, foodDetail, restaurant, search, cart, order, address, userInfo } from "./routes";
 const cors = require('cors');
+import {
+  login,
+  register,
+  review,
+  category,
+  resetPassword,
+  phoneRegister,
+  favorites,
+  foodDetail,
+  restaurant,
+  search,
+  cart,
+  order,
+  address,
+  getFoodItem,
+  userInfo,
+  home,
+} from "./routes";
 
 const app = express();
 app.use(cors());
 
 const port = 80;
 
-app.use(express.json({ limit: "5MB", }));
+app.use(express.json({ limit: "5MB" }));
 app.use(express.urlencoded({ limit: "5MB", extended: true }));
 
 app.use('/api/login', login);
@@ -23,9 +40,10 @@ app.use('/api/search', search);
 app.use('/api/cart', cart);
 app.use('/api/order', order)
 app.use('/api/address', address)
-app.use('/api/userInfo', userInfo)
-
+app.use("/api/foodItem", getFoodItem);
+app.use('/api/userInfo', userInfo);
+app.use('/api/home', home)
 
 app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`);
+  console.log(`server started at http://localhost:${port}`);
 });

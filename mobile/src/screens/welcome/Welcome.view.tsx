@@ -6,7 +6,7 @@ import {color, size} from '../../theme';
 import {styles} from './Welcome.style';
 import {TWelcomeScreenViewProps} from './Welcome.type';
 
-export const WelcomeScreenView: FC<TWelcomeScreenViewProps> = ({press}) => {
+export const WelcomeScreenView: FC<TWelcomeScreenViewProps> = ({press, goToStoryBook}) => {
   const newTitle = 'FoodHub';
   const subTitle = `Your favourite foods delivered 
 fast at your door.`;

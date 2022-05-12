@@ -1,20 +1,19 @@
 import React, {FC, useEffect, useState} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {
-  HomeScreen,
-  MyOrdersScreen,
-  CartScreen,
-  ReviewScreen,
-  CategoryScreen,
-} from '../../screens';
+import {ReviewScreen} from '../../screens';
 import {SideMenu} from '../../components';
-import {EDrawerNavigationRoutes, TUserInfo} from './DrawerNavigation.type';
+import {
+  EDrawerNavigationRoutes,
+  TDrawerNavigationRoutes,
+  TUserInfo,
+} from './DrawerNavigation.type';
 import {removeToken} from '../../utilities';
 import {fetchUserInfo} from './fetchUserInfo';
+import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
 
 const Drawer = createDrawerNavigator();
 
-export const MyDrawer: FC = () => {
+export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
   const [userInfo, setUserInfo] = useState<TUserInfo>();
 
   useEffect(() => {
@@ -41,24 +40,12 @@ export const MyDrawer: FC = () => {
         />
       )}>
       <Drawer.Screen
-        name={EDrawerNavigationRoutes.HOME}
-        component={HomeScreen}
-      />
-      <Drawer.Screen
-        name={EDrawerNavigationRoutes.MYORDERS}
-        component={MyOrdersScreen}
-      />
-      <Drawer.Screen
-        name={EDrawerNavigationRoutes.CART}
-        component={CartScreen}
+        name={EDrawerNavigationRoutes.BOTTOM_NAV}
+        component={BottomTabNavigation}
       />
       <Drawer.Screen
         name={EDrawerNavigationRoutes.REVIEW}
         component={ReviewScreen}
-      />
-      <Drawer.Screen
-        name={EDrawerNavigationRoutes.CATEGORY}
-        component={CategoryScreen}
       />
     </Drawer.Navigator>
   );

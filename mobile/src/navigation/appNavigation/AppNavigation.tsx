@@ -1,29 +1,35 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
 import {TAppNavigationRoutes, EAppNavigationRoutes} from './AppNavigation.type';
-import {CartScreen, ReviewScreen, FavoriteFoodItems} from '../../screens';
+import {
+  CartScreen,
+  ReviewScreen,
+  HomeScreen,
+  CategoryScreen,
+  MyOrdersScreen,
+  Profile,
+} from '../../screens';
+import {MyDrawer} from '../drawer/DrawerNavigation';
+import {TAppNavigationRoutes, EAppNavigationRoutes, TAppNavigation} from './AppNavigation.type';
 
 const Stack = createStackNavigator<TAppNavigationRoutes>();
 
 export const AppNavigation = () => {
   return (
-    <Stack.Navigator
-      initialRouteName={EAppNavigationRoutes.BOTTOM_TAB_STACK}
-      screenOptions={{headerShown: false}}>
-      <Stack.Screen
-        name={EAppNavigationRoutes.BOTTOM_TAB_STACK}
-        component={BottomTabNavigation}
-      />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name={EAppNavigationRoutes.MYORDERS} component={MyOrdersScreen}/>
+      <Stack.Screen name={EAppNavigationRoutes.HOME} component={HomeScreen} />
       <Stack.Screen
         name={EAppNavigationRoutes.REVIEW}
         component={ReviewScreen}
       />
-      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
       <Stack.Screen
-        name={EAppNavigationRoutes.FAVORITEFOODITEMS}
-        component={FavoriteFoodItems}
+        name={EAppNavigationRoutes.CATEGORY}
+        component={CategoryScreen}
       />
+      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
+      <Stack.Screen name={EAppNavigationRoutes.PROFILE} component={Profile} />
+      <Stack.Screen name={EAppNavigationRoutes.DRAWER} component={MyDrawer} />
     </Stack.Navigator>
   );
 };
