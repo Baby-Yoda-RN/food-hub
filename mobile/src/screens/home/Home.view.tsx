@@ -1,11 +1,9 @@
 import React, {FC} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {Container, Header, Icon, TextInput} from '../../components';
-import {BottomTabNavigator} from '../../components/bottomTabNavigator/BottomTabNavigator';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
 import {ImageButton} from '../../components/imageButton/ImageButton';
-import {color} from '../../theme';
 import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
 
@@ -17,6 +15,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   popularItems,
   categories,
   categoryState,
+  leftPress,
 }) => {
   const [category, setCategory] = categoryState;
   return (
@@ -27,19 +26,23 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           leftIconName="Hamburger"
           iconHeight={20}
           iconWidth={20}
+          leftPress={leftPress}
           rightIconLocation={
             'https://icons.veryicon.com/png/o/business/multi-color-financial-and-business-icons/user-139.png'
           }
           containerStyle={styles.headerContainer}
         />
-      }
-      footer={<BottomTabNavigator fillPin={color.primary} />}>
+      }>
       <Text style={styles.title}>What would you like to order</Text>
       <TextInput
         leftIcon="Magnify"
         type="search"
         placeholder="Find food by name"
-      />
+        value=''
+        onChangeText={() => { } } 
+        text={''}
+        setText={()=>{}}
+        />
       <ScrollView horizontal>
         {categories?.map(item => {
           return (
@@ -70,7 +73,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           nestedScrollEnabled
           horizontal
           contentContainerStyle={[styles.horizontalContainer]}>
-          {featuredRestaurants.map((restaurant, index) => {
+          {featuredRestaurants?.map((restaurant, index) => {
             return (
               <TouchableOpacity
                 onPress={() => onPressRestaurantCard(String(index))}
@@ -85,7 +88,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
       <View style={styles.sectionContainer}>
         <Text style={styles.subtitle}>Popular Items</Text>
         <View style={[styles.horizontalContainer, styles.foodCardContainer]}>
-          {popularItems.map((food, index) => {
+          {popularItems?.map((food, index) => {
             return (
               <TouchableOpacity
                 onPress={() => onPressFoodCard(String(index))}

@@ -1,8 +1,8 @@
 export type TRestaurant = {
   uuid?: string;
   name?: string;
-  rating?: number;
-  usersVoted?: number;
+  rating: number;
+  usersVoted: number;
   favorite?: boolean;
   freeDelivery?: string;
   deliveryTime?: number;
@@ -27,14 +27,14 @@ export type TItem = {
   uuid?: string;
   name?: string;
   description?: string;
-  price?: number;
+  price: number;
   imageName?: string;
-}
+};
 
 export type TFoodItem = TItem & {
-  rating?: number;
-  usersVoted?: number;
-  favorite?: boolean;
+  rating: number;
+  usersVoted: number;
+  favorite: boolean;
 };
 
 export type TListItem = Omit<TItem, 'price'> & {
@@ -52,3 +52,8 @@ export type TReview = {
   reviewText: string;
   reviewScore: number;
 };
+
+export type TFoodCategory = {
+  value:string
+  image:string
+}

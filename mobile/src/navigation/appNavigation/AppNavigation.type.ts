@@ -5,7 +5,13 @@ export enum EAppNavigationRoutes {
   REVIEW = 'Review',
   HOME = 'Home',
   CATEGORY = 'Category',
+  RATING = 'Rating',
   MYORDERS = 'MyOrders',
+  PROFILE = 'Profile',
+  BOTTOM_TAB_STACK = 'Bottom Tab Stack',
+  FAVORITEFOODITEMS = 'FavoriteFoodItems',
+  DRAWER = 'Drawer',
+  RESTAURANTREVIEW = 'RestaurantReview'
 }
 
 export type TAppNavigationRoutes = {
@@ -13,7 +19,13 @@ export type TAppNavigationRoutes = {
   [EAppNavigationRoutes.REVIEW]: undefined;
   [EAppNavigationRoutes.HOME]: undefined;
   [EAppNavigationRoutes.CATEGORY]: undefined;
+  [EAppNavigationRoutes.RATING]: undefined;
   [EAppNavigationRoutes.MYORDERS]: undefined;
+  [EAppNavigationRoutes.PROFILE]: undefined;
+  [EAppNavigationRoutes.BOTTOM_TAB_STACK]: undefined;
+  [EAppNavigationRoutes.FAVORITEFOODITEMS]: undefined;
+  [EAppNavigationRoutes.DRAWER]: undefined;
+  [EAppNavigationRoutes.RESTAURANTREVIEW]: undefined;
 };
 
 export type TAppNavigation = StackNavigationProp<TAppNavigationRoutes>;

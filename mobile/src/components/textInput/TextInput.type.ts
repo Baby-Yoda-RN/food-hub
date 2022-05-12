@@ -17,4 +17,6 @@ export type TTextInputProps = {
   placeholder?: string;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
+  text: string;
+  setText: Dispatch<string>;
 };

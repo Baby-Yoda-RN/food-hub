@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
-import {TRestaurant} from '../../types/data';
 import {Card} from './card';
-import {Text, View, ScrollView, Image} from 'react-native';
+import {Text, View, ScrollView, Image, ViewStyle} from 'react-native';
 import {styles} from './card.style';
-import {Icon} from '../icon/Icon';
-import {size} from '../../theme';
+import {color, size} from '../../theme';
 import {TRestaurantCardProps} from './card.type';
+import {RatingTag, Icon} from '../index';
 
 export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
   const {
@@ -19,6 +18,10 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
     imageName,
   } = restaurant;
 
+  const favoriteBackgroundColor: ViewStyle = favorite
+    ? {backgroundColor: color.primary}
+    : {backgroundColor: color.transparent};
+
   return (
     <Card>
       <View>
@@ -28,6 +31,18 @@ export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {
             uri: imageName,
           }}
         />
+      </View>
+      <View style={styles.topRightTag}>
+        <Icon
+          name="Heart"
+          width={size.rg}
+          height={size.rg}
+          containerStyle={[styles.favoriteTag, favoriteBackgroundColor]}
+          fill={color.white}
+        />
+      </View>
+      <View style={styles.topLeftTag}>
+        <RatingTag usersVoted={usersVoted} rating={rating} />
       </View>
       <View style={styles.information}>
         <Text style={styles.title}>{name}</Text>

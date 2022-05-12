@@ -15,7 +15,7 @@ const foodTypeList: Array<TFoodItem> = [
     rating: 1,
     usersVoted: 1,
     price: 1,
-    favorite: true,
+    favorite: false,
     imageName:
       'https://mysliceofitaly.com/images/hero-BG-Slice-of-Italy-Bakersfield-CA.jpg',
   },
@@ -59,7 +59,7 @@ const DropdownList = [
   {label: 'Price', value: 'price'},
 ];
 
-export const CategoryScreenView: FC<TCategoryViewProps> = () => {
+export const CategoryScreenView: FC<TCategoryViewProps> = ({leftPress}) => {
   const titleCategory1 = 'Fast';
   const titleCategory2 = 'Food';
   const typeOfFood = 'pizza';
@@ -77,6 +77,7 @@ export const CategoryScreenView: FC<TCategoryViewProps> = () => {
             leftIconName="ChevronLeft"
             iconWidth={size.rg}
             iconHeight={size.rg}
+            leftPress={leftPress}
           />
         }>
         <View style={styles.topSection}>
