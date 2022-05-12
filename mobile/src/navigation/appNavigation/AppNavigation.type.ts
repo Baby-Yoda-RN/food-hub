@@ -10,6 +10,7 @@ export enum EAppNavigationRoutes {
   PROFILE = 'Profile',
   BOTTOM_TAB_STACK = 'Bottom Tab Stack',
   FAVORITEFOODITEMS = 'FavoriteFoodItems',
+  RESTAURANTREVIEW = 'RestaurantReview'
   DRAWER = 'Drawer',
   RESTAURANTREVIEW = 'RestaurantReview'
 }
@@ -24,6 +25,7 @@ export type TAppNavigationRoutes = {
   [EAppNavigationRoutes.PROFILE]: undefined;
   [EAppNavigationRoutes.BOTTOM_TAB_STACK]: undefined;
   [EAppNavigationRoutes.FAVORITEFOODITEMS]: undefined;
+  [EAppNavigationRoutes.RESTAURANTREVIEW]: undefined;
   [EAppNavigationRoutes.DRAWER]: undefined;
   [EAppNavigationRoutes.RESTAURANTREVIEW]: undefined;
 };
