@@ -1,10 +1,13 @@
 import React, {FC} from 'react';
-import {Image, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import {Image, Text, TouchableOpacity, ScrollView} from 'react-native';
 import {Icon} from '../icon/Icon';
 import {Button} from '../button/Button';
 import {styles} from './SideMenu.styles';
 import {TSideMenuProps} from './SideMenu.type';
-import {size, color} from '../../theme';
+import {size} from '../../theme';
+import {useGlobalState} from '../../context/global';
+import {EAuthAction} from '../../context/auth';
+import {useHandleLogout} from '../../screens/login/helper';
 
 export const SideMenu: FC<TSideMenuProps> = ({
   image,
@@ -19,6 +22,8 @@ export const SideMenu: FC<TSideMenuProps> = ({
   pressLogout,
   ...rest
 }) => {
+  const {dispatch} = useGlobalState();
+
   return (
     <ScrollView style={styles.container} {...rest}>
       <Image
@@ -91,7 +96,7 @@ export const SideMenu: FC<TSideMenuProps> = ({
         titleStyle={styles.buttonText}
         leftIconName="Logout"
         leftIconStyle={styles.buttonIconContainer}
-        onPress={pressLogout}
+        onPress={() => useHandleLogout(dispatch, EAuthAction.SIGN_OUT)}
       />
     </ScrollView>
   );

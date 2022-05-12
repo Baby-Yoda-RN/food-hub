@@ -13,3 +13,5 @@ export * from './footer/Footer';
 export * from './listItem/ListItem';
 export * from './ratingStars/RatingStars';
 export * from './section/Section'
+export * from './tag/PriceTag';
+export * from './tag/RatingTag';

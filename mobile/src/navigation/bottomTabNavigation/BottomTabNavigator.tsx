@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   HomeScreen,
-  ReviewScreen,
   CategoryScreen,
   CartScreen,
   MyOrdersScreen,
@@ -17,7 +16,7 @@ import {
   TBottomTabNavigationRoutes,
 } from './BottomTabNavigator.type';
 
-const Tab = createBottomTabNavigator<TBottomTabNavigationRoutes>();
+const Tab = createBottomTabNavigator();
 
 const DisplayTab = (
   iconName: string,
@@ -32,7 +31,7 @@ const DisplayTab = (
   </View>
 );
 
-export const BottomTabNavigation = () => {
+export const BottomTabNavigation: FC<TBottomTabNavigationRoutes> = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -47,7 +46,7 @@ export const BottomTabNavigation = () => {
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
-            return DisplayTab('Compass', buttonColor);
+            return DisplayTab('Home', buttonColor);
           },
         }}
       />
@@ -57,7 +56,7 @@ export const BottomTabNavigation = () => {
         options={{
           tabBarIcon: ({focused}) => {
             const buttonColor = focused ? color.primary : color.secondary;
-            return DisplayTab('Pin', buttonColor);
+            return DisplayTab('Category', buttonColor);
           },
         }}
       />

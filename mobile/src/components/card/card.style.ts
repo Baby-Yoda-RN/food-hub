@@ -12,12 +12,31 @@ export const styles = StyleSheet.create({
   information: {
     marginLeft: size.md,
     marginTop: size.md,
-    justifyContent: 'flex-start',
   },
   title: {
     color: color.black,
     fontSize: size.rg,
     fontFamily: font.semiBold,
+    paddingTop: size.xs,
+  },
+  topLeftTag: {
+    position: 'absolute',
+    top: size.md,
+    left: size.md,
+  },
+  topRightTag: {
+    position: 'absolute',
+    top: size.md,
+    right: size.md,
+  },
+  bottomTags: {
+    position: 'absolute',
+    top: 110,
+    left: size.md,
+  },
+  favoriteTag: {
+    borderRadius: 100,
+    backgroundColor: color.transparent,
   },
   details: {
     fontSize: size.md,
@@ -48,6 +67,7 @@ export const styles = StyleSheet.create({
   },
   iconContainer: {
     paddingLeft: 0,
+    paddingTop: 0,
     paddingRight: size.xs,
   },
 });
