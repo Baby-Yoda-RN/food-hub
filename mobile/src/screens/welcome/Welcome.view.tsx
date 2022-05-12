@@ -29,7 +29,7 @@ fast at your door.`;
                 title="Storybook"
                 buttonTheme={color.white}
                 titleStyle={{color: color.primary}}
-                onPress={() => console.log('TODO to navigate to Storybook')}
+                onPress={goToStoryBook}
               />
             )}
           </View>
