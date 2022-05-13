@@ -6,6 +6,7 @@ import {TFavoriteFoodItemsScreenViewProps} from './FavoriteFoodItems.type';
 import {styles} from './FavoriteFoodItems.styles';
 import {Container} from '../../components';
 import {size, color} from '../../theme';
+import { RestaurantCard } from '../../components/card/restaurantCard';
 
 export const FavoriteFoodItemsScreenView: FC<
   TFavoriteFoodItemsScreenViewProps
@@ -16,7 +17,7 @@ export const FavoriteFoodItemsScreenView: FC<
   isLoading = false,
   showFavoriteFoods,
   setShowFavoriteFoods,
-  leftPress,
+  onLeftPress,
 }) => {
   return (
     <Container
@@ -25,7 +26,7 @@ export const FavoriteFoodItemsScreenView: FC<
       header={
         <Header
           leftIconName="ChevronLeft"
-          leftPress={leftPress}
+          leftPress={onLeftPress}
           iconWidth={size.rg}
           iconHeight={size.rg}
           title="Favorites"
@@ -44,12 +45,16 @@ export const FavoriteFoodItemsScreenView: FC<
         </View>
         
         <View>
-        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants)?.map((food, index) => {
+        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants)?.map((item, index) => {
           return (
             <TouchableOpacity
               key={String(index)}>
               <View>
-                <FoodCard foodItem={food} />
+                {showFavoriteFoods ? 
+                <FoodCard foodItem={item} />
+                :
+                <RestaurantCard restaurant={item}/>
+                }
               </View>
             </TouchableOpacity>
           );
