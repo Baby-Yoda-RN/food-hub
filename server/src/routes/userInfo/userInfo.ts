@@ -6,8 +6,8 @@ export const userInfo = express.Router();
 userInfo.get("/", (request, response) => {
 
     const responseBody: TResponseBody = {
-        email: "First Last",
-        name: "First@gmail.com",
+        name: "First Last",
+        email: "First@gmail.com",
         image: "https://i.imgur.com/imwXQ08.png",
     }
 

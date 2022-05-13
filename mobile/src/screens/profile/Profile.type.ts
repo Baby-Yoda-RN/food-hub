@@ -14,10 +14,10 @@ export type TProfileViewProps = {
   name?: string;
   email?: string;
   phoneNumber?: string;
-  profileURL?: string;
   goBack?: () => void;
+  saveButton: () => void;
 };
 
 export type TProfileNavigation = {
-  navigation?: TAppNavigation;
+  navigation: TAppNavigation;
 };
