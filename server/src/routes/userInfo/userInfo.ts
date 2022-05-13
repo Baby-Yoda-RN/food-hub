@@ -6,9 +6,9 @@ export const userInfo = express.Router();
 userInfo.get("/", (request, response) => {
 
     const responseBody: TResponseBody = {
-        email: "Willy Wonka",
-        name: "Willy.Wonka@Chocolate.com",
-        image: "https://i.imgur.com/vWqQwxo.jpg",
+        email: "First Last",
+        name: "First@gmail.com",
+        image: "https://i.imgur.com/imwXQ08.png",
     }
 
     try {

@@ -1,16 +1,16 @@
-export type TRequestBody = {
-    email: string,
-    password: string
-}
+
+export type TPassword = string;
 
 export type TUserInfo = {
-    email: string,
-    password: string,
-    token: string
-}
-
-export type TResponseBody = {
-    email: string,
     name: string,
+    email: string,
+    image: string,
+    address: {
+        street: string,
+        city: string,
+        state: string,
+        zipcode: number
+    },
+    phone: string,
     token: string
 }
