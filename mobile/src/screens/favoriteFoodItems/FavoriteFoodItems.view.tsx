@@ -14,7 +14,7 @@ export const FavoriteFoodItemsScreenView: FC<
   favoriteResturants,
   onPress,
   isLoading = false,
-  showFavoriteFoods = true,
+  showFavoriteFoods,
   setShowFavoriteFoods,
   leftPress,
 }) => {
@@ -44,7 +44,7 @@ export const FavoriteFoodItemsScreenView: FC<
         </View>
         
         <View>
-        {favoriteFoodItems && (showFavoriteFoods ? favoriteFoodItems : favoriteResturants).map((food, index) => {
+        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants)?.map((food, index) => {
           return (
             <TouchableOpacity
               key={String(index)}>
@@ -56,19 +56,6 @@ export const FavoriteFoodItemsScreenView: FC<
         })}
         </View>
 
-      <View>
-        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants).map(
-          (food, index) => {
-            return (
-              <TouchableOpacity key={String(index)}>
-                <View>
-                  <FoodCard foodItem={food} />
-                </View>
-              </TouchableOpacity>
-            );
-          },
-        )}
-      </View>
     </Container>
   );
 };
