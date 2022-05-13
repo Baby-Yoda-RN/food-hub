@@ -24,6 +24,8 @@ export const styles = StyleSheet.create({
         color: color.black,
     },
     button: {
+        paddingVertical: size.rg,
+        marginVertical: size.rg,
         shadowColor: color.black,
         elevation: size.md,
     },

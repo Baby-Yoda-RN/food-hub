@@ -1,4 +1,4 @@
-import { EUserAction, TUserAction, TUserState } from '../user';
+import { EUserAction, TUserAction, TUserState } from '../user/user.type';
 
 export const userReducer = (prevState: TUserState, action: TUserAction) => {
   switch (action.type) {
