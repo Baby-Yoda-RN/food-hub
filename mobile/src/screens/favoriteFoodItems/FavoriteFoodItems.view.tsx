@@ -42,7 +42,7 @@ export const FavoriteFoodItemsScreenView: FC<TFavoriteFoodItemsScreenViewProps> 
         </View>
         
         <View>
-        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants).map((food, index) => {
+        {favoriteFoodItems && (showFavoriteFoods ? favoriteFoodItems : favoriteResturants).map((food, index) => {
           return (
             <TouchableOpacity
               key={String(index)}>
