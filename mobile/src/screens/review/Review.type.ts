@@ -4,6 +4,7 @@ import {
   EAppNavigationRoutes,
   TAppNavigation,
 } from '../../navigation';
+import {TReview} from '../../types/data';
 
 export type TReviewScreenProps = StackScreenProps<
   TAppNavigationRoutes,
@@ -13,8 +14,10 @@ export type TReviewScreenProps = StackScreenProps<
 export type TReviewScreenViewProps = {
   leftPress: () => void;
   textInputPress: () => void;
+  reviewsList: Array<TReview>;
 };
 
 export type TReviewNavigation = {
   navigation: TAppNavigation;
+  restaurantId?: string;
 };
