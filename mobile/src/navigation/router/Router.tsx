@@ -4,7 +4,6 @@ import {AppNavigation} from '../appNavigation/AppNavigation';
 import SplashScreen from 'react-native-splash-screen';
 import {getToken, ELocalStorage} from '../../utilities';
 import {TGetTokenFromLocalStorage} from './Router.type';
-import StorybookUIRoot from '../../../storybook/index';
 import {useGlobalState} from '../../context/global/global.provider';
 import {EAuthAction} from '../../context/auth';
 
@@ -12,7 +11,7 @@ export const Router = () => {
   SplashScreen.hide();
 
   const {
-    state: {auth},
+    state,
     dispatch,
   } = useGlobalState();
 
@@ -24,5 +23,5 @@ export const Router = () => {
     getTokenFromLocalStorage();
   }, [dispatch]);
 
-  return auth.token ? <AppNavigation /> : <AuthNavigation />;
+  return state.auth.token ? <AppNavigation /> : <AuthNavigation />;
 };

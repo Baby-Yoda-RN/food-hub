@@ -15,7 +15,7 @@ const foodTypeList: Array<TFoodItem> = [
     rating: 1,
     usersVoted: 1,
     price: 1,
-    favorite: true,
+    favorite: false,
     imageName:
       'https://mysliceofitaly.com/images/hero-BG-Slice-of-Italy-Bakersfield-CA.jpg',
   },

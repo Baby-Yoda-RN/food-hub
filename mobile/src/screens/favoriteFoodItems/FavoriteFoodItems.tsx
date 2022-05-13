@@ -29,6 +29,8 @@ export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({navigation}
       onPress={handleOnPress} 
       isLoading={false} 
       showFavoriteFoods={showFavoriteFoods}
-      setShowFavoriteFoods={setShowFavoriteFoods}   />
+      setShowFavoriteFoods={setShowFavoriteFoods}
+      leftPress={() => navigation.goBack()}
+    />
   );
 };
