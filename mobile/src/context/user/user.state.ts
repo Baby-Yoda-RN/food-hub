@@ -1,7 +1,14 @@
-import {TAuthState} from '../auth'
+import { TUserState } from '../user';
 
-export const authInitialState:TAuthState = {
-  isSignOut: false,
-  token: null,
-  isLoading: true,
+export const userInitialState: TUserState = {
+  name: '',
+  email: '',
+  picture: '',
+  address: {
+    street: '',
+    city: '',
+    state: '',
+    zipcode: 0
+  },
+  phone: ''
 }

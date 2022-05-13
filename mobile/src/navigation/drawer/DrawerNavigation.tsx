@@ -10,24 +10,30 @@ import {
 import {removeToken} from '../../utilities';
 import {fetchUserInfo} from './fetchUserInfo';
 import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
+import { useGlobalState } from '../../context/global';
+import { EUserAction } from '../../context/user';
 
 const Drawer = createDrawerNavigator();
 
 export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
+  const {state, dispatch} = useGlobalState();
   const [userInfo, setUserInfo] = useState<TUserInfo>();
 
   useEffect(() => {
     fetchUserInfo(setUserInfo);
-  }, []);
+    dispatch({type: EUserAction.SET_NAME, name: userInfo?.name});
+    dispatch({type: EUserAction.SET_EMAIL, email: userInfo?.email});
+    dispatch({type: EUserAction.SET_IMAGE, picture: userInfo?.image});
+  }, [dispatch]);
 
   return (
     <Drawer.Navigator
       screenOptions={{headerShown: false}}
       drawerContent={({navigation: {navigate}}) => (
         <SideMenu
-          image={userInfo?.image}
-          name={userInfo?.name}
-          email={userInfo?.email}
+          name={state.userInfo.name || userInfo?.name}
+          email={state.userInfo.email || userInfo?.email}
+          image={state.userInfo.image || userInfo?.image}
           pressOrder={() => navigate(EDrawerNavigationRoutes.MYORDERS)}
           pressProfile={() => navigate(EDrawerNavigationRoutes.PROFILE)}
           pressDelivery={() =>
