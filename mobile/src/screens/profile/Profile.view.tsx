@@ -9,7 +9,6 @@ export const ProfileView: FC<TProfileViewProps> = ({
   name,
   email,
   phoneNumber,
-  profileURL,
   goBack,
   saveButton,
 }) => {
