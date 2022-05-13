@@ -4,7 +4,7 @@ import {color, size} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     padding: size.sm,
-    borderRadius: size.rg,
+    borderRadius: size.xxl,
     alignItems: 'center',
     justifyContent: 'space-evenly',
     flexDirection: 'row',
