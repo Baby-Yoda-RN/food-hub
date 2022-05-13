@@ -2,19 +2,7 @@ import { Dispatch } from "react";
 
 export type TDispatchData = {
     type: string;
-    token?: string | null;
-    userInfo?: {
-        name: string,
-        email: string,
-        image: string,
-        address: {
-            street: string,
-            city: string,
-            state: string,
-            zipcode: number
-        },
-        phone: string
-    }
+    token: string | undefined | null;
 }
 
 export type THandleLogin = (email: string, password: string, dispatch: Dispatch<TDispatchData>) => void;

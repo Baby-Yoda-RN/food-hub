@@ -1,14 +1,12 @@
-import { TAuthState } from '../auth';
-import { TUserState } from '../user';
+import { TAuthState } from '../auth'
 
 export type TGlobalState = {
-  auth: TAuthState,
-  userInfo: TUserState,
+  auth: TAuthState
 }
 
 export type TGlobalProvider = {
-  reducer: any,
-  state: any
+  reducer:any
+  state:any
 }
 
 export type TGlobalReducer = {

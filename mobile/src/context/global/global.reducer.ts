@@ -1,8 +1,6 @@
-import { TGlobalState } from "./global.type";
 import { authReducer } from "../auth";
-import { userReducer } from "../user";
+import { TGlobalState } from "./global.type";
 
-export const globalReducer = (state: TGlobalState, action: any) => ({
-  auth: authReducer(state.auth, action),
-  userInfo: userReducer(state.userInfo, action),
+export const globalReducer = (state: TGlobalState, action:any) => ({
+  auth:authReducer(state.auth,action)
 })

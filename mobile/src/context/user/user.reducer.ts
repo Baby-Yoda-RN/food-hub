@@ -1,40 +1,25 @@
-import { EUserAction, TUserAction, TUserState } from '../user';
+import {EAuthAction, TAuthAction, TAuthState} from '../auth';
 
-export const userReducer = (prevState: TUserState, action: TUserAction) => {
+export const authReducer = (prevState: TAuthState, action:TAuthAction) => {
   switch (action.type) {
-    case EUserAction.SET_NAME:
+    case EAuthAction.RESTORE_TOKEN:
       return {
         ...prevState,
-        name: action.name,
+        token: action.token,
+        isLoading: false,
       };
-    case EUserAction.SET_EMAIL:
+    case EAuthAction.SIGN_IN:
       return {
         ...prevState,
-        email: action.email,
-      }
-    case EUserAction.SET_IMAGE:
+        token: action.token,
+        isSignout: false,
+      };
+    case EAuthAction.SIGN_OUT:
       return {
         ...prevState,
-        picture: action.image,
-      }
-    case EUserAction.SET_ADDRESS:
-      return {
-        ...prevState,
-        address: action.address,
-      }
-    case EUserAction.SET_PHONE:
-      return {
-        ...prevState,
-        phone: action.phone,
-      }
-    case EUserAction.SET_USER_INFO:
-      return {
-        name: action.userInfo.name,
-        email: action.userInfo.email,
-        picture: action.userInfo.image,
-        address: action.userInfo.address,
-        phone: action.userInfo.phone
-      }
+        token: null,
+        isSignout: true,
+      };
     default:
       return prevState;
   }

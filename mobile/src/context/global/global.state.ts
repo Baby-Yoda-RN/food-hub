@@ -1,8 +1,6 @@
-import { TGlobalState } from "./global.type";
 import { authInitialState } from "../auth";
-import { userInitialState } from "../user";
+import { TGlobalState } from "./global.type";
 
 export const globalInitialState: TGlobalState = {
-  auth: authInitialState,
-  userInfo: userInitialState,
+  auth:authInitialState
 }
