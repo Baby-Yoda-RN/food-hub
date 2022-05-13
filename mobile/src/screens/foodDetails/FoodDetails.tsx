@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import {TFoodDetailsNavigation} from './FoodDetails.type';
 import {FoodDetailsScreenView} from './FoodDetails.view';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
 import images from '../../assets/images';
 
 export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
@@ -44,6 +45,9 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
         onPlus();
       }}
       price={calPrice()}
+      onPressAddToCart={() => {
+        navigation.navigate(EAppNavigationRoutes.CART);
+      }}
     />
   );
 };

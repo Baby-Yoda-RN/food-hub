@@ -78,7 +78,7 @@ export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({
   navigation,
 }) => {
   const handleOnPress = () => {
-    console.log('navigate to screen');
+    navigation.navigate(EAppNavigationRoutes.FOODDETAILS);
   };
 
   const [showFavoriteFoods, setShowFavoriteFoods] = useState<boolean>(true);

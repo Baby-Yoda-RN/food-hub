@@ -29,6 +29,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   onPressMinus,
   onPressPlus,
   addOns,
+  onPressAddToCart,
 }) => {
   const renderPlusMinus = (price, count, onPressPlus, onPressMinus) => {
     return (
@@ -164,7 +165,11 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
         addOns[2].price,
       )}
 
-      <Button title="ADD TO CART" containerStyle={styles.button} />
+      <Button
+        title="ADD TO CART"
+        containerStyle={styles.button}
+        onPress={onPressAddToCart}
+      />
     </Container>
   );
 };
