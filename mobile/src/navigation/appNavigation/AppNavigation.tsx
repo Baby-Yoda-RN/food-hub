@@ -24,7 +24,7 @@ export const AppNavigation = () => {
     <Stack.Navigator
       initialRouteName={EAppNavigationRoutes.BOTTOM_TAB_STACK}
       screenOptions={{headerShown: false}}>
-      <Stack.Screen
+    <Stack.Screen
         name={EAppNavigationRoutes.MYORDERS}
         component={MyOrdersScreen}
       />
@@ -57,7 +57,7 @@ export const AppNavigation = () => {
         component={RestaurantReviewScreen}
       />
       <Stack.Screen name={EAppNavigationRoutes.PROFILE} component={Profile} />
-      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} />
+      <Stack.Screen name={EAppNavigationRoutes.CART} component={CartScreen} /> 
       <Stack.Screen name={EAppNavigationRoutes.DRAWER} component={MyDrawer} />
     </Stack.Navigator>
   );
