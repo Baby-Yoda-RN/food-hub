@@ -1,29 +1,23 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {ReviewScreen} from '../../screens';
 import {SideMenu} from '../../components';
 import {
   EDrawerNavigationRoutes,
   TDrawerNavigationRoutes,
-  TUserInfo,
 } from './DrawerNavigation.type';
 import {removeToken} from '../../utilities';
 import {fetchUserInfo} from './fetchUserInfo';
 import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
-import { useGlobalState } from '../../context/global';
-import { EUserAction } from '../../context/user';
+import {useGlobalState} from '../../context/global';
 
 const Drawer = createDrawerNavigator();
 
 export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
   const {state, dispatch} = useGlobalState();
-  const [userInfo, setUserInfo] = useState<TUserInfo>();
 
   useEffect(() => {
-    fetchUserInfo(setUserInfo);
-    dispatch({type: EUserAction.SET_NAME, name: userInfo?.name});
-    dispatch({type: EUserAction.SET_EMAIL, email: userInfo?.email});
-    dispatch({type: EUserAction.SET_IMAGE, picture: userInfo?.image});
+    fetchUserInfo(dispatch);
   }, [dispatch]);
 
   return (
@@ -31,9 +25,9 @@ export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
       screenOptions={{headerShown: false}}
       drawerContent={({navigation: {navigate}}) => (
         <SideMenu
-          name={state.userInfo.name || userInfo?.name}
-          email={state.userInfo.email || userInfo?.email}
-          image={state.userInfo.image || userInfo?.image}
+          name={state.userInfo.name}
+          email={state.userInfo.email}
+          image={state.userInfo.image}
           pressOrder={() => navigate(EDrawerNavigationRoutes.MYORDERS)}
           pressProfile={() => navigate(EDrawerNavigationRoutes.PROFILE)}
           pressDelivery={() =>

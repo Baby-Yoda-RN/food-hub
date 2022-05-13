@@ -28,8 +28,4 @@ export type TUserInfo = {
     email: string;
 }
 
-export type TSetUserInfo = Dispatch<{
-    name: string;
-    image: string;
-    email: string;
-}>
+export type TDispatchUserInfo = Dispatch<{ type: string, [action: string]: string }>;
