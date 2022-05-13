@@ -15,7 +15,7 @@ export const userReducer = (prevState: TUserState, action: TUserAction) => {
     case EUserAction.SET_IMAGE:
       return {
         ...prevState,
-        picture: action.image,
+        image: action.image,
       }
     case EUserAction.SET_ADDRESS:
       return {
@@ -31,7 +31,7 @@ export const userReducer = (prevState: TUserState, action: TUserAction) => {
       return {
         name: action.userInfo.name,
         email: action.userInfo.email,
-        picture: action.userInfo.image,
+        image: action.userInfo.image,
         address: action.userInfo.address,
         phone: action.userInfo.phone
       }

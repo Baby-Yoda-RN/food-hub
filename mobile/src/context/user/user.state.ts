@@ -3,7 +3,7 @@ import { TUserState } from '../user';
 export const userInitialState: TUserState = {
   name: '',
   email: '',
-  picture: '',
+  image: '',
   address: {
     street: '',
     city: '',
