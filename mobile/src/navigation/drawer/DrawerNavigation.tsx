@@ -1,6 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {ReviewScreen} from '../../screens';
+import {ReviewScreen, Profile, AddNewAddressScreen} from '../../screens';
 import {SideMenu} from '../../components';
 import {
   EDrawerNavigationRoutes,
@@ -10,6 +10,7 @@ import {removeToken} from '../../utilities';
 import {fetchUserInfo} from './fetchUserInfo';
 import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
 import {useGlobalState} from '../../context/global';
+import {ELocalStorage} from '../../utilities';
 
 const Drawer = createDrawerNavigator();
 
@@ -36,7 +37,7 @@ export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
           pressCart={() => navigate(EDrawerNavigationRoutes.CART)}
           pressReview={() => navigate(EDrawerNavigationRoutes.REVIEW)}
           pressCategory={() => navigate(EDrawerNavigationRoutes.CATEGORY)}
-          pressLogout={() => removeToken('key')}
+          pressLogout={() => removeToken(ELocalStorage.TOKEN_KEY)}
         />
       )}>
       <Drawer.Screen
@@ -46,6 +47,14 @@ export const MyDrawer: FC<TDrawerNavigationRoutes> = () => {
       <Drawer.Screen
         name={EDrawerNavigationRoutes.REVIEW}
         component={ReviewScreen}
+      />
+      <Drawer.Screen
+        name={EDrawerNavigationRoutes.PROFILE}
+        component={Profile}
+      />
+      <Drawer.Screen
+        name={EDrawerNavigationRoutes.DELIVERY_ADDRESS}
+        component={AddNewAddressScreen}
       />
     </Drawer.Navigator>
   );
