@@ -8,6 +8,7 @@ export enum EAppNavigationRoutes {
   CATEGORY = 'Category',
   RATING = 'Rating',
   MYORDERS = 'MyOrders',
+  ADDNEWADDRESS = 'AddNewAddress',
   PROFILE = 'Profile',
   BOTTOM_TAB_STACK = 'Bottom Tab Stack',
   FAVORITEFOODITEMS = 'FavoriteFoodItems',
@@ -23,6 +24,7 @@ export type TAppNavigationRoutes = {
   [EAppNavigationRoutes.CATEGORY]: undefined;
   [EAppNavigationRoutes.RATING]: undefined;
   [EAppNavigationRoutes.MYORDERS]: undefined;
+  [EAppNavigationRoutes.ADDNEWADDRESS]: undefined;
   [EAppNavigationRoutes.PROFILE]: undefined;
   [EAppNavigationRoutes.BOTTOM_TAB_STACK]: undefined;
   [EAppNavigationRoutes.FAVORITEFOODITEMS]: undefined;

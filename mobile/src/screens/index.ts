@@ -15,3 +15,4 @@ export * from './myOrders/MyOrders';
 export * from './favoriteFoodItems/FavoriteFoodItems';
 export * from './restaurantReview/RestaurantReview';
 export * from './profile/Profile';
+export * from './addNewAddress/addNewAddressScreen'
