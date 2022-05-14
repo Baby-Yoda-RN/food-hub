@@ -1,7 +1,10 @@
-import React, { FC, useState } from 'react'
-import { TOrder } from '../../types/data';
-import { TMyOrdersScreen } from './MyOrders.type'
-import { MyOrdersScreenView } from './MyOrders.view'
+import React, {FC, useState} from 'react';
+import {useGlobalState} from '../../context/global';
+import {EUserAction} from '../../context/user';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
+import {TOrder} from '../../types/data';
+import {TMyOrdersScreen} from './MyOrders.type';
+import {MyOrdersScreenView} from './MyOrders.view';
 
 const orders: Array<TOrder> = [
   {
@@ -54,21 +57,23 @@ const orders: Array<TOrder> = [
   },
 ];
 
-export const MyOrdersScreen:FC<TMyOrdersScreen> = ({navigation}) => {
-
-  const [option, setOption] = useState<boolean>(true)
+export const MyOrdersScreen: FC<TMyOrdersScreen> = ({navigation}) => {
+  const {state} = useGlobalState();
+  const [option, setOption] = useState<boolean>(true);
 
   return (
-    <MyOrdersScreenView 
-    showUpcomingOrders={option}
-    setShowUpcomingOrders={setOption}
-    upcomingOrders={orders.filter(order => {
-      return order.delivered === false
-    })}
-    lastOrders={orders.filter(order => {
-      return order.delivered
-    })}
-    leftPress={() => navigation.goBack()}
+    <MyOrdersScreenView
+      showUpcomingOrders={option}
+      setShowUpcomingOrders={setOption}
+      upcomingOrders={orders.filter(order => {
+        return order.delivered === false;
+      })}
+      lastOrders={orders.filter(order => {
+        return order.delivered;
+      })}
+      image={state.userInfo.image}
+      leftPress={() => navigation.goBack()}
+      rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
     />
-  )
-}
+  );
+};
