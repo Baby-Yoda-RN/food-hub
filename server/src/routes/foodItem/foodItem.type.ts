@@ -13,8 +13,9 @@ export type TFoodItem = {
   rating: number;
   usersVoted: number;
   price: number;
-  favorite: true;
+  favorite: boolean;
   imageName: string;
+  category?:'burger'|'mexican'|'pizza'|'asian'|'coffee'|string|null;
 };
 
 export type TResponseBody = {
