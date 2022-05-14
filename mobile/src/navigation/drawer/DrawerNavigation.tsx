@@ -1,16 +1,16 @@
 import React, {FC, useEffect} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {ReviewScreen, Profile, AddNewAddressScreen} from '../../screens';
-import {SideMenu} from '../../components';
+import {ReviewScreen, Profile, AddNewAddressScreen} from 'screens';
+import {SideMenu} from 'components';
 import {
   EDrawerNavigationRoutes,
   TDrawerNavigationRoutes,
 } from './DrawerNavigation.type';
-import {removeToken} from '../../utilities';
+import {removeToken} from 'utilities';
 import {fetchUserInfo} from './fetchUserInfo';
 import {BottomTabNavigation} from '../bottomTabNavigation/BottomTabNavigator';
 import {useGlobalState} from '../../context/global';
-import {ELocalStorage} from '../../utilities';
+import {ELocalStorage} from 'utilities';
 
 const Drawer = createDrawerNavigator();
 

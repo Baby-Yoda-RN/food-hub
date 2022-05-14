@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
+import {color, size} from 'theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -12,11 +12,11 @@ export const styles = StyleSheet.create({
     padding: 2,
   },
   button: {
-    flex:1,
+    flex: 1,
     borderRadius: size.xl,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical:size.rg,
+    paddingVertical: size.rg,
   },
   buttonDisabled: {
     backgroundColor: color.grayDisabled,

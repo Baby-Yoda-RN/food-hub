@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {Card} from './card';
 import {Text, View, ScrollView, Image, ViewStyle} from 'react-native';
+import {Card} from './card';
 import {styles} from './card.style';
-import {color, size} from '../../theme';
 import {TRestaurantCardProps} from './card.type';
+import {color, size} from 'theme';
 import {RatingTag, Icon} from '../index';
 
 export const RestaurantCard: FC<TRestaurantCardProps> = ({restaurant}) => {

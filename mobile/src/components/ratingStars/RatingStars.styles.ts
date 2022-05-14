@@ -1,17 +1,17 @@
 import {StyleSheet} from 'react-native';
-import {color, font, size} from '../../theme';
+import {color, font, size} from 'theme';
 
 export const styles = StyleSheet.create({
   container: {
-    padding:size.sm,
+    padding: size.sm,
     borderRadius: size.rg,
     alignItems: 'center',
     justifyContent: 'space-evenly',
     flexDirection: 'row',
   },
-  titleContainer:{
-      alignItems: 'center',
-      alignContent: 'center',
+  titleContainer: {
+    alignItems: 'center',
+    alignContent: 'center',
   },
   title: {
     paddingVertical: size.xs,
@@ -21,6 +21,4 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: font.regular,
   },
-
-
 });

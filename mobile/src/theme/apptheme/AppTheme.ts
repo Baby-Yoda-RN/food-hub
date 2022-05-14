@@ -1,4 +1,3 @@
-import {TAppTheme} from './AppTheme.type';
 import {color} from '../color/color';
 
 export const AppTheme = {

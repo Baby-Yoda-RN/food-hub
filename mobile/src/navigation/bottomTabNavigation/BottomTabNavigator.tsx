@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import {View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   HomeScreen,
@@ -6,11 +7,10 @@ import {
   CartScreen,
   MyOrdersScreen,
   FavoriteFoodItems,
-} from '../../screens';
+} from 'screens';
 import {styles} from './BottomTabNavigation.style';
-import {View} from 'react-native';
-import {Badge, Icon} from '../../components';
-import {color, size} from '../../theme';
+import {Badge, Icon} from 'components';
+import {color, size} from 'theme';
 import {
   EBottomTabNavigationRoutes,
   TBottomTabNavigationRoutes,
