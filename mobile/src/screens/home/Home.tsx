@@ -1,13 +1,16 @@
 import React, {FC, useEffect, useState} from 'react';
 import {foodHubAPI} from '../../config';
 import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
-import {TFoodItem, TRestaurant} from '../../types/data';
+import {TFoodItem, TRestaurant, TUserInfo} from '../../types/data';
 import {TGetItemId, THomeData, THomeScreenNavigation} from './Home.type';
 import {HomeScreenView} from './Home.view';
+import {useGlobalState} from '../../context/global';
 
 export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
+  const {state} = useGlobalState();
+  const [userInfo, setUserInfo] = useState<TUserInfo>(state.userInfo);
+  const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
   const [homeData, setHomeData] = useState<null | THomeData>(null);
   const [filteredFoodItems, setFilteredFoodItems] = useState<
     TFoodItem[] | undefined
@@ -30,11 +33,14 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const response = await foodHubAPI.get('/home');
+      const tempUserInfo = await foodHubAPI.get('/userInfo');
       setHomeData(response.data);
+      setUserInfo(tempUserInfo.data);
     };
     getData();
-    setLoading(false);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -54,6 +60,7 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
 
   return (
     <HomeScreenView
+      isLoading={isLoading}
       featuredRestaurants={
         filteredRestaurants && category
           ? filteredRestaurants
@@ -70,7 +77,9 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       categories={homeData?.categories}
       categoryState={[category, setCategory]}
       leftPress={() => navigation.toggleDrawer()}
-      isLoading={loading}
+      rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
+      deliveryLocation={userInfo.address.street}
+      rightIconLocation={userInfo.image}
     />
   );
 };

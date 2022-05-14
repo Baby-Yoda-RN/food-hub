@@ -32,7 +32,7 @@ export const Header: FC<THeaderProps> = ({
           </TouchableOpacity>
         )}
         {title && <Text style={styles.title}>{title}</Text>}
-        {deliveryLocation && (
+        {!!deliveryLocation && (
           <View style={[styles.locationContainer]}>
             <View>
               <Text style={styles.deliverTo}>
@@ -51,7 +51,7 @@ export const Header: FC<THeaderProps> = ({
           </TouchableOpacity>
         )}
         {rightIconName && (
-          <TouchableOpacity onPress={leftPress} style={rightIconStyle}>
+          <TouchableOpacity onPress={rightPress} style={rightIconStyle}>
             <Icon
               name={rightIconName}
               containerStyle={[styles.rightIcon, rightIconStyle]}

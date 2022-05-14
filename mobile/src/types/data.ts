@@ -1,3 +1,16 @@
+export type TUserInfo = {
+  name: string,
+  email: string,
+  image: string,
+  address: {
+      street: string,
+      city: string,
+      state: string,
+      zipcode: number
+  },
+  phone: string,
+}
+
 export type TRestaurant = {
   uuid?: string;
   name?: string;
