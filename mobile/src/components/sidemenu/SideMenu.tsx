@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {Image, Text, TouchableOpacity, ScrollView} from 'react-native';
-import {Icon, Button} from 'components';
+import {Icon} from '../icon/Icon';
+import {Button} from '../button/Button';
 import {styles} from './SideMenu.styles';
 import {TSideMenuProps} from './SideMenu.type';
 import {size} from 'theme';

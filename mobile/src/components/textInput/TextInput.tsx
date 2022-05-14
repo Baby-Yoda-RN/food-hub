@@ -2,7 +2,8 @@ import React, {FC, useState, useLayoutEffect, useRef, Dispatch} from 'react';
 import {TextInput as NativeInput, TouchableOpacity} from 'react-native';
 import {size} from 'theme';
 import {phoneValidator} from 'utilities';
-import {Button, Icon} from 'components';
+import {Button} from '../button/Button';
+import {Icon} from '../icon/Icon';
 import {style} from './TextInput.style';
 import {TTextInputProps} from './TextInput.type';
 

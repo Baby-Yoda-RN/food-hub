@@ -11,6 +11,7 @@ export const ImageButton: FC<TImageButton> = ({
 }) => {
   return (
     <TouchableOpacity
+      onLongPress={() => onPressButton(null)}
       onPress={() => onPressButton(data.value)}
       style={[
         styles.option,

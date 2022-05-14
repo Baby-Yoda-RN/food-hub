@@ -48,6 +48,7 @@ export type TFoodItem = TItem & {
   rating: number;
   usersVoted: number;
   favorite: boolean;
+  category?:string
 };
 
 export type TListItem = Omit<TItem, 'price'> & {

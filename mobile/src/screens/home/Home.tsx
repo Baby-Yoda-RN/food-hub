@@ -1,24 +1,34 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Alert} from 'react-native';
 import {foodHubAPI} from '../../config';
-import {useGlobalState} from '../../context/global';
-import {TUserInfo} from '../../types/data';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
+import {TFoodItem, TRestaurant, TUserInfo} from '../../types/data';
 import {TGetItemId, THomeData, THomeScreenNavigation} from './Home.type';
 import {HomeScreenView} from './Home.view';
 
 export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
   const {state} = useGlobalState();
-  const [category, setCategory] = useState<null | string>(null);
-  const [homeData, setHomeData] = useState<null | THomeData>(null);
   const [userInfo, setUserInfo] = useState<TUserInfo>(state.userInfo);
   const [isLoading, setIsLoading] = useState(false);
+  const [category, setCategory] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [homeData, setHomeData] = useState<null | THomeData>(null);
+  const [filteredFoodItems, setFilteredFoodItems] = useState<
+    TFoodItem[] | undefined
+  >(undefined);
+  const [filteredRestaurants, setFilteredRestaurants] = useState<
+    TRestaurant[] | undefined
+  >(undefined);
 
   const handleViewAll = () => {
     console.log('navigate to Restaurants Screen');
   };
 
-  const handleOnPressCard: TGetItemId = (id: string) => {
-    Alert.alert('Card Pressed', id);
+  const handleOnPressRestaurantCard: TGetItemId = (id: string) => {
+    navigation.navigate(EAppNavigationRoutes.RATING, {restaurantId: id});
+  };
+
+  const handleOnPressPopularItemCard: TGetItemId = (id: string) => {
+    navigation.navigate(EAppNavigationRoutes.FOODDETAIL, {itemId: id});
   };
 
   useEffect(() => {
@@ -28,18 +38,41 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       const tempUserInfo = await foodHubAPI.get('/userInfo');
       setHomeData(response.data);
       setUserInfo(tempUserInfo.data);
-      setIsLoading(false);
-    };
+      setIsLoading(false);    };
     getData();
+    setLoading(false);
   }, []);
+
+  useEffect(() => {
+    setFilteredFoodItems(
+      homeData?.popularItems?.filter(item => {
+        if (item.category === category?.toLowerCase()) return item;
+      }),
+    );
+
+    setFilteredRestaurants(
+      homeData?.restaurant?.filter(restaurant => {
+        const items = restaurant.items?.map(item => item.toLowerCase());
+        return items?.includes(category?.toLowerCase());
+      }),
+    );
+  }, [category]);
 
   return (
     <HomeScreenView
       isLoading={isLoading}
-      featuredRestaurants={homeData?.restaurant}
-      popularItems={homeData?.popularItems}
-      onPressRestaurantCard={handleOnPressCard}
-      onPressFoodCard={handleOnPressCard}
+      featuredRestaurants={
+        filteredRestaurants && category
+          ? filteredRestaurants
+          : homeData?.restaurant
+      }
+      popularItems={
+        filteredFoodItems && category
+          ? filteredFoodItems
+          : homeData?.popularItems
+      }
+      onPressRestaurantCard={handleOnPressRestaurantCard}
+      onPressFoodCard={handleOnPressPopularItemCard}
       onPressViewAll={handleViewAll}
       categories={homeData?.categories}
       categoryState={[category, setCategory]}
