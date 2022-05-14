@@ -4,6 +4,7 @@ export type TPassword = string;
 export type TUserInfo = {
     name: string,
     email: string,
+    password: string,
     image: string,
     address: {
         street: string,
@@ -14,3 +15,5 @@ export type TUserInfo = {
     phone: string,
     token: string
 }
+
+export type TUserInfoList = Array<TUserInfo>
