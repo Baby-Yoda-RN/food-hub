@@ -4,6 +4,7 @@ import {Container, Header, Icon, TextInput} from '../../components';
 import {FoodCard} from '../../components/card/foodCard';
 import {RestaurantCard} from '../../components/card/restaurantCard';
 import {ImageButton} from '../../components/imageButton/ImageButton';
+import {size} from '../../theme/size/size';
 import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
 
@@ -16,6 +17,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   categories,
   categoryState,
   leftPress,
+  isLoading = false,
 }) => {
   const [category, setCategory] = categoryState;
   return (
@@ -32,17 +34,16 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           }
           containerStyle={styles.headerContainer}
         />
-      }>
+      }
+      isLoading={isLoading}>
       <Text style={styles.title}>What would you like to order</Text>
       <TextInput
         leftIcon="Magnify"
         type="search"
         placeholder="Find food by name"
-        value=''
-        onChangeText={() => { } } 
-        text={''}
-        setText={()=>{}}
-        />
+        value={category!}
+        onChangeText={setCategory}
+        setText={() => { } } text={''}/>
       <ScrollView horizontal>
         {categories?.map(item => {
           return (
@@ -69,37 +70,53 @@ export const HomeScreenView: FC<THomeScreenView> = ({
             <Icon name="ChevronRightOrange" height={12} width={12} />
           </TouchableOpacity>
         </View>
-        <ScrollView
-          nestedScrollEnabled
-          horizontal
-          contentContainerStyle={[styles.horizontalContainer]}>
-          {featuredRestaurants?.map((restaurant, index) => {
-            return (
-              <TouchableOpacity
-                onPress={() => onPressRestaurantCard(String(index))}
-                style={styles.restaurantContainer}
-                key={String(index)}>
-                <RestaurantCard restaurant={restaurant} />
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
+        {featuredRestaurants?.length ? (
+          <ScrollView
+            nestedScrollEnabled
+            horizontal
+            contentContainerStyle={[styles.horizontalContainer]}>
+            {featuredRestaurants?.map((restaurant, index) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => onPressRestaurantCard(String(index))}
+                  style={styles.restaurantContainer}
+                  key={String(index)}>
+                  <RestaurantCard restaurant={restaurant} />
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+        ) : (
+          <View style={{marginBottom: size.lg}}>
+            <Text>
+              No restaurants to show at the moment. Try to change the category.
+            </Text>
+          </View>
+        )}
       </View>
       <View style={styles.sectionContainer}>
         <Text style={styles.subtitle}>Popular Items</Text>
         <View style={[styles.horizontalContainer, styles.foodCardContainer]}>
-          {popularItems?.map((food, index) => {
-            return (
-              <TouchableOpacity
-                onPress={() => onPressFoodCard(String(index))}
-                style={[styles.foodItemContainer, styles.shadow]}
-                key={String(index)}>
-                <View style={styles.shadow}>
-                  <FoodCard foodItem={food} />
-                </View>
-              </TouchableOpacity>
-            );
-          })}
+          {popularItems?.length ? (
+            popularItems?.map((food, index) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => onPressFoodCard(String(index))}
+                  style={[styles.foodItemContainer, styles.shadow]}
+                  key={String(index)}>
+                  <View style={styles.shadow}>
+                    <FoodCard foodItem={food} />
+                  </View>
+                </TouchableOpacity>
+              );
+            })
+          ) : (
+            <View style={{marginBottom: size.lg}}>
+              <Text>
+                No food to show at the moment. Try to change the category.
+              </Text>
+            </View>
+          )}
         </View>
       </View>
     </Container>
