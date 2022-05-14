@@ -1,22 +1,6 @@
-export type TRequestBody = {
-    token: string
-}
+import { TPopularItem, TRestaurant } from "../restaurant/restaurant.type"
 
-export type TFavorites = {
-    uuid: string,
-    name: string,
-    description: string,
-    rating: number,
-    usersVoted: number,
-    price: number,
-    favorite: true,
-    imageName: string,
+export type TFavoritesList = {
+    foods: TPopularItem[]
+    restaurants: TRestaurant[]
 }
-
-export type TResponseBody = {
-    email: string,
-    name: string,
-    token: string
-}
-
-export type TFavoritesList = Array<TFavorites>
