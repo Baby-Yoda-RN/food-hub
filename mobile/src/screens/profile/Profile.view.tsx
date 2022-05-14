@@ -6,14 +6,20 @@ import {styles} from './Profile.style';
 import {TProfileViewProps} from './Profile.type';
 
 export const ProfileView: FC<TProfileViewProps> = ({
+  isLoading,
   name,
   email,
+  image,
   phoneNumber,
   goBack,
   saveButton,
+  setName,
+  setEmail,
+  setPhone,
 }) => {
   return (
     <Container
+      isLoading={isLoading}
       header={
         <Header
           leftIconName="ChevronLeft"
@@ -25,27 +31,29 @@ export const ProfileView: FC<TProfileViewProps> = ({
         />
       }>
       <View style={styles.profileContainer}>
-        <Image
-          style={[styles.image]}
-          source={{uri: 'https://i.imgur.com/imwXQ08.png'}}
-        />
+        <Image style={[styles.image]} source={{uri: image}} />
         <Text style={styles.name}>{name}</Text>
-        <TouchableOpacity>
-          <Text>Edit Profile</Text>
-        </TouchableOpacity>
       </View>
 
       <Section>
         <Text style={styles.text}>Full name</Text>
-        <TextInput type={'regular'} placeholder={name} />
+        <TextInput type={'regular'} placeholder={name} onChangeText={setName} />
       </Section>
       <Section>
         <Text style={styles.text}>E-mail</Text>
-        <TextInput type={'regular'} placeholder={email} />
+        <TextInput
+          type={'regular'}
+          placeholder={email}
+          onChangeText={setEmail}
+        />
       </Section>
       <Section>
         <Text style={styles.text}>Phone number</Text>
-        <TextInput type={'regular'} placeholder={phoneNumber} />
+        <TextInput
+          type={'regular'}
+          placeholder={phoneNumber}
+          onChangeText={setPhone}
+        />
       </Section>
 
       <Button

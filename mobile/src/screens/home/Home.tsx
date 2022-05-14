@@ -38,9 +38,9 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       const tempUserInfo = await foodHubAPI.get('/userInfo');
       setHomeData(response.data);
       setUserInfo(tempUserInfo.data);
+      setIsLoading(false);
     };
     getData();
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {
