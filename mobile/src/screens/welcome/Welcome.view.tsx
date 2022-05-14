@@ -6,7 +6,11 @@ import {color, size} from '../../theme';
 import {styles} from './Welcome.style';
 import {TWelcomeScreenViewProps} from './Welcome.type';
 
-export const WelcomeScreenView: FC<TWelcomeScreenViewProps> = ({press, goToStoryBook}) => {
+export const WelcomeScreenView: FC<TWelcomeScreenViewProps> = ({
+  pressSignIn,
+  pressSignUp,
+  goToStoryBook,
+}) => {
   const newTitle = 'FoodHub';
   const subTitle = `Your favourite foods delivered 
 fast at your door.`;
@@ -41,7 +45,12 @@ fast at your door.`;
           </View>
 
           <View style={styles.footer}>
-            <Footer onPress={press} divider={'Sign in with'} isEmailorPhone />
+            <Footer
+              onPressSignIn={pressSignIn}
+              onPressSignUp={pressSignUp}
+              divider={'Sign in with'}
+              isEmailorPhone
+            />
           </View>
         </View>
       </ImageBackground>

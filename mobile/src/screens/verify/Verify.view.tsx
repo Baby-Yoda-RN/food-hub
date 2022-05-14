@@ -10,6 +10,8 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   emailName = 'test@gmail.com',
   pinEntry,
   OnPressResend,
+  onPressSubmit,
+  goBack,
 }) => {
   return (
     <Container isScrollViewDisabled={true}>
@@ -18,6 +20,7 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         iconWidth={size.rg}
         iconHeight={size.rg}
         containerStyle={styles.header}
+        leftPress={goBack}
       />
 
       <Text style={styles.title}>{title}</Text>
@@ -39,7 +42,11 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         </Text>
       </View>
 
-      <Button containerStyle={styles.button} title="Submit" />
+      <Button
+        containerStyle={styles.button}
+        title="Submit"
+        onPress={onPressSubmit}
+      />
     </Container>
   );
 };

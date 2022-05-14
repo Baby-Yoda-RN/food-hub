@@ -1,9 +1,6 @@
 import React, {FC} from 'react';
-import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
-import {
-  TResetPasswordNavigation,
-  TResetPasswordProps,
-} from './ResetPassword.type';
+import {EAuthNavigationRoutes} from '../../navigation';
+import {TResetPasswordNavigation} from './ResetPassword.type';
 import {ResetPasswordView} from './ResetPassword.view';
 
 export const ResetPasswordScreen: FC<TResetPasswordNavigation> = ({
@@ -13,7 +10,8 @@ export const ResetPasswordScreen: FC<TResetPasswordNavigation> = ({
     <ResetPasswordView
       title="Reset Password"
       subtitle="Please enter your email address to request a password reset"
-      press={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      sendNewPassword={() => navigation.navigate(EAuthNavigationRoutes.VERIFY)}
+      goBack={() => navigation.goBack()}
     />
   );
 };
