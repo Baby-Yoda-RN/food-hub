@@ -11,7 +11,7 @@ import {
   WelcomeScreen,
   ResetPasswordScreen,
   VerifyScreen,
-} from '../../screens';
+} from 'screens';
 import StorybookUIRoot from '../../../storybook';
 
 const Stack = createStackNavigator<TAuthNavigationRoutes>();

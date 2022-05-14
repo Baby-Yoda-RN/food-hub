@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from '../button/Button';
-import {color, size} from '../../theme';
+import {color, size} from 'theme';
 import {styles} from './Footer.style';
 import {TFooter} from './Footer.type';
 

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {size, color} from '../../theme';
+import {size, color} from 'theme';
 
 export const styles = StyleSheet.create({
   picker: {

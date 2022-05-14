@@ -1,5 +1,4 @@
-
-export * from './phone_validator';
+export * from './phoneValidator';
 export * from './checkIfLastItemOfArray/checkIfLastItemOfArray';
 export * from './roundToTwoDecimals/roundToTwoDecimals';
 export * from './localStorage/localStorage';

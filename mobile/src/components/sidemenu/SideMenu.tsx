@@ -4,7 +4,7 @@ import {Icon} from '../icon/Icon';
 import {Button} from '../button/Button';
 import {styles} from './SideMenu.styles';
 import {TSideMenuProps} from './SideMenu.type';
-import {size} from '../../theme';
+import {size} from 'theme';
 import {useGlobalState} from '../../context/global';
 import {EAuthAction} from '../../context/auth';
 import {useHandleLogout} from '../../screens/login/helper';

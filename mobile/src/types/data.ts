@@ -1,3 +1,16 @@
+export type TUserInfo = {
+  name: string,
+  email: string,
+  image: string,
+  address: {
+      street: string,
+      city: string,
+      state: string,
+      zipcode: number
+  },
+  phone: string,
+}
+
 export type TRestaurant = {
   uuid?: string;
   name?: string;
@@ -35,6 +48,7 @@ export type TFoodItem = TItem & {
   rating: number;
   usersVoted: number;
   favorite: boolean;
+  category?:string
 };
 
 export type TListItem = Omit<TItem, 'price'> & {

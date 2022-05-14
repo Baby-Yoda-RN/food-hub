@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { size, color, font } from '../../theme';
+import {StyleSheet} from 'react-native';
+import {size, color, font} from 'theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -55,5 +55,5 @@ export const styles = StyleSheet.create({
   imageContainer: {
     shadowColor: color.black,
     elevation: size.md,
-  }
+  },
 });

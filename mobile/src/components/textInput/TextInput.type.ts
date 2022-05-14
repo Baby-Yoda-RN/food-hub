@@ -1,10 +1,10 @@
 import {Dispatch} from 'react';
-import {StyleProp, View, ViewStyle} from 'react-native';
+import {StyleProp, ViewStyle} from 'react-native';
 
 export type TTextInputProps = {
   type: 'phone' | 'password' | 'email' | 'regular' | 'search' | 'textButton';
-  value: string;
-  onChangeText: Dispatch<string>;
+  value?: string;
+  onChangeText?: Dispatch<string>;
   leftIcon?: string;
   leftIconStyle?: StyleProp<ViewStyle>;
   leftIconSize?: number;
@@ -17,6 +17,6 @@ export type TTextInputProps = {
   placeholder?: string;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
-  text: string;
-  setText: Dispatch<string>;
+  text?: string;
+  setText?: Dispatch<string>;
 };
