@@ -78,7 +78,7 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       categoryState={[category, setCategory]}
       leftPress={() => navigation.toggleDrawer()}
       rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
-      deliveryLocation={userInfo.address.street}
+      deliveryLocation={state.userInfo.address.street || userInfo.address.street}
       rightIconLocation={userInfo.image}
     />
   );
