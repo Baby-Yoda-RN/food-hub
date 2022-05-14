@@ -28,9 +28,9 @@ export const ReviewScreenView: FC<TReviewScreenViewProps> = ({
         type="regular"
         value="Write your review..."
         leftIcon="Profile"
-        onChangeText={function (value: string): void {}}
+        onChangeText={() => {}}
         onPress={textInputPress}
-        containerStyle={{justifyContent: 'flex-start'}}
+        containerStyle={styles.textInputContainer}
         props={{editable: false}}
       />
       <FlatList

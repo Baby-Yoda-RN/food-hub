@@ -9,4 +9,7 @@ export const styles = StyleSheet.create({
   listContainer: {
     marginTop: size.rg,
   },
+  textInputContainer: {
+    justifyContent: 'flex-start',
+  },
 });
