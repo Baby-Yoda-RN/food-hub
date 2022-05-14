@@ -14,7 +14,6 @@ export type TResetPasswordViewProps = {
   subtitle: string;
   sendNewPassword: () => void;
   goBack: () => void;
-  isLoading: boolean;
 };
 export type TResetPasswordNavigation = {
   navigation: TAuthNavigation;
