@@ -1,5 +1,5 @@
 import {Dispatch} from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
+import {StyleProp, TextInputProps, ViewStyle} from 'react-native';
 
 export type TTextInputProps = {
   type: 'phone' | 'password' | 'email' | 'regular' | 'search' | 'textButton';
@@ -17,6 +17,6 @@ export type TTextInputProps = {
   placeholder?: string;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
-  text?: string;
-  setText?: Dispatch<string>;
+  onPress?: () => void;
+  props?: TextInputProps;
 };

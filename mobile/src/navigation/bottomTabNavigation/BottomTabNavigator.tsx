@@ -14,6 +14,7 @@ import {
   EBottomTabNavigationRoutes,
   TBottomTabNavigationRoutes,
 } from './BottomTabNavigator.type';
+import {EAppNavigationRoutes} from '../appNavigation/AppNavigation.type';
 import {styles} from './BottomTabNavigation.style';
 
 const Tab = createBottomTabNavigator();
@@ -51,7 +52,7 @@ export const BottomTabNavigation: FC<TBottomTabNavigationRoutes> = () => {
         }}
       />
       <Tab.Screen
-        name={EBottomTabNavigationRoutes.CATEGORY}
+        name={EAppNavigationRoutes.CATEGORY}
         component={CategoryScreen}
         options={{
           tabBarIcon: ({focused}) => {

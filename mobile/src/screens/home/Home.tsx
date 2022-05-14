@@ -24,7 +24,7 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
   };
 
   const handleOnPressRestaurantCard: TGetItemId = (id: string) => {
-    navigation.navigate(EAppNavigationRoutes.RATING, {restaurantId: id});
+    navigation.navigate(EAppNavigationRoutes.REVIEW, {restaurantId: id});
   };
 
   const handleOnPressPopularItemCard: TGetItemId = (id: string) => {
@@ -78,7 +78,9 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       categoryState={[category, setCategory]}
       leftPress={() => navigation.toggleDrawer()}
       rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
-      deliveryLocation={state.userInfo.address.street || userInfo.address.street}
+      deliveryLocation={
+        state.userInfo.address.street || userInfo.address.street
+      }
       rightIconLocation={userInfo.image}
     />
   );

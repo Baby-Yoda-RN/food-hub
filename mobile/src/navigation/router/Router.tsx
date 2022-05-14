@@ -10,10 +10,7 @@ import {EAuthAction} from '../../context/auth';
 export const Router = () => {
   SplashScreen.hide();
 
-  const {
-    state,
-    dispatch,
-  } = useGlobalState();
+  const {state, dispatch} = useGlobalState();
 
   useLayoutEffect(() => {
     const getTokenFromLocalStorage: TGetTokenFromLocalStorage = async () => {
