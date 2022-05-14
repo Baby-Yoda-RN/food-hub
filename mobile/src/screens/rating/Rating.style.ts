@@ -2,10 +2,9 @@ import { StyleSheet } from "react-native";
 import { color, font, size } from "../../theme";
 
 export const styles = StyleSheet.create({
-    backIcon: {
-        height: 12,
-        width: 12,
-        fill: color.green,
+    leftIcon: {
+        backgroundColor: color.white,
+        borderRadius: size.sm,
     },
     buttonText: {
         fontFamily: font.regular,
@@ -16,10 +15,29 @@ export const styles = StyleSheet.create({
         color: color.green,
         marginLeft: size.rg,
     },
-    container: {
+    logoContainer: {
+        alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: size.xl,
+        marginTop: size.lg,
+        maxWidth: size.xxl,
+    },
+    logo: {
+        height: size.xxl,
+        width: size.xxl,
+        borderWidth: size.md,
+        borderColor: color.white,
+        borderRadius: size.xxl,
+        alignItems: 'center',
+    },
+    checkMark: {
+        position: 'absolute',
+        bottom: size.rg,
+        right: size.rg,
+        padding: 0,
+        borderWidth: size.xs,
+        borderRadius: size.lg,
+        borderColor: color.white,
     },
     headerContainer: {
         paddingLeft: size.lg,
@@ -27,18 +45,18 @@ export const styles = StyleSheet.create({
     },
     largeText: {
         fontFamily: font.semiBold,
-        fontSize: 18,
+        fontSize: size.rg,
         color: color.black,
         marginTop: size.rg,
         textAlign: 'center'
     },
     smallText: {
-        marginBottom: size.lg,
+        marginBottom: size.sm,
         textAlign: 'center'
     },
     delivered: {
         color: color.green,
-        marginBottom: size.lg,
+        marginBottom: size.md,
         textAlign: 'center',
     },
     rating: {
@@ -46,23 +64,22 @@ export const styles = StyleSheet.create({
         color: color.primary,
         marginTop: size.rg,
     },
-    imageContainer: {
-        height: 100, 
-        width: 100, 
-        borderWidth: 10,
-        borderColor: color.white,
-        borderRadius: 100,
-        alignItems: 'center'
-    },
+
     inputContainer: {
         height: 168,
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        margin: 0,
     },
     restaurantImage: {
-        height: 150,
-        margin: 25,
+        height: size.xxl,
+        margin: size.sm,
+        padding: size.md,
     },
     imageStyle: {
-        borderRadius: 10,
+        borderRadius: size.md,
+    },
+    button: {
+        marginVertical: size.rg,
+        padding: size.rg,
     }
 })

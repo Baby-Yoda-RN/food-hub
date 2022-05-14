@@ -9,6 +9,7 @@ export type TRatingView = {
     starRating?: number;
     textRating?: string[];
     press?: () => void;
+    leftPress: () => void;
 }
 
 export type TRatingNavigation = {
