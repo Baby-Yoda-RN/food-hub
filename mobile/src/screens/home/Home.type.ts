@@ -15,20 +15,17 @@ export type THomeData = {
 
 export type THomeScreenView = {
   isLoading: boolean
-  featuredRestaurants:Array<TRestaurant> | undefined
-  popularItems:Array<TFoodItem> | undefined
-  categories:Array<TFoodCategory> | undefined
-  onPressViewAll?:()=> void
-  onPressRestaurantCard:(id:string)=> void
-  onPressFoodCard:(id:string)=> void
-  categoryState:[string|null, Dispatch<SetStateAction<string>>]
+  featuredRestaurants: Array<TRestaurant> | undefined
+  popularItems: Array<TFoodItem> | undefined
+  categories: Array<TFoodCategory> | undefined
+  onPressViewAll?: () => void
+  onPressRestaurantCard: (id: string) => void
+  onPressFoodCard: (id: string) => void
+  categoryState: [string | null, Dispatch<SetStateAction<string>>]
   leftPress: () => void
-<<<<<<< HEAD
+  rightPress: () => void
   deliveryLocation: string
   rightIconLocation: string
-=======
-  isLoading?:boolean
->>>>>>> 4aa24429cf7292440fcdfa0168e7e55a0718acc0
 }
 
-export type TGetItemId = (id:string) => void
+export type TGetItemId = (id: string) => void

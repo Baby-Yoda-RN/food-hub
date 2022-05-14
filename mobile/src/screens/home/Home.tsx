@@ -4,13 +4,13 @@ import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation
 import {TFoodItem, TRestaurant, TUserInfo} from '../../types/data';
 import {TGetItemId, THomeData, THomeScreenNavigation} from './Home.type';
 import {HomeScreenView} from './Home.view';
+import {useGlobalState} from '../../context/global';
 
 export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
   const {state} = useGlobalState();
   const [userInfo, setUserInfo] = useState<TUserInfo>(state.userInfo);
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
   const [homeData, setHomeData] = useState<null | THomeData>(null);
   const [filteredFoodItems, setFilteredFoodItems] = useState<
     TFoodItem[] | undefined
@@ -38,9 +38,9 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       const tempUserInfo = await foodHubAPI.get('/userInfo');
       setHomeData(response.data);
       setUserInfo(tempUserInfo.data);
-      setIsLoading(false);    };
+    };
     getData();
-    setLoading(false);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -77,6 +77,7 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
       categories={homeData?.categories}
       categoryState={[category, setCategory]}
       leftPress={() => navigation.toggleDrawer()}
+      rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
       deliveryLocation={userInfo.address.street}
       rightIconLocation={userInfo.image}
     />

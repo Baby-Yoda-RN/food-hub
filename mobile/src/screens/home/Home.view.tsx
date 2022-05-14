@@ -18,6 +18,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   categories,
   categoryState,
   leftPress,
+  rightPress,
   deliveryLocation,
   rightIconLocation,
 }) => {
@@ -32,6 +33,7 @@ export const HomeScreenView: FC<THomeScreenView> = ({
           iconHeight={20}
           iconWidth={20}
           leftPress={leftPress}
+          rightPress={rightPress}
           rightIconLocation={rightIconLocation}
           containerStyle={styles.headerContainer}
         />
