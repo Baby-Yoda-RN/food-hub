@@ -6,11 +6,12 @@ import {styles} from './Footer.style';
 import {TFooter} from './Footer.type';
 
 export const Footer: FC<TFooter> = ({
-  onPress,
+  onPressSignUp,
   divider,
   dividerStyle,
   dividerTextStyle,
   isEmailorPhone,
+  onPressSignIn,
 }) => {
   const footerNote = 'Already have an account?';
   const emailOrPhone = 'Start with email or phone';
@@ -42,12 +43,16 @@ export const Footer: FC<TFooter> = ({
       </View>
       {!!isEmailorPhone && (
         <>
-          <TouchableOpacity style={styles.bottomButtons} onPress={onPress}>
+          <TouchableOpacity
+            style={styles.bottomButtons}
+            onPress={onPressSignUp}>
             <Text style={styles.bottomButtonText}>{emailOrPhone}</Text>
           </TouchableOpacity>
           <View style={styles.bottomText}>
             <Text style={styles.text}>{footerNote} </Text>
-            <Text style={styles.linkText}>Sign in</Text>
+            <TouchableOpacity onPress={onPressSignIn}>
+              <Text style={styles.linkText}>Sign in</Text>
+            </TouchableOpacity>
           </View>
         </>
       )}

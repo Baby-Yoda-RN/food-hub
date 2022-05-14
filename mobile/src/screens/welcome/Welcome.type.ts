@@ -12,7 +12,8 @@ export type TWelcomeScreenProps = StackScreenProps<
 
 export type TWelcomeScreenViewProps = {
   title: string;
-  press: () => void;
+  pressSignUp: () => void;
+  pressSignIn: () => void;
   goToStoryBook: () => void;
 };
 

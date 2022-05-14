@@ -24,6 +24,10 @@ export const AuthNavigation = () => {
         component={WelcomeScreen}
       />
       <Stack.Screen
+        name={EAuthNavigationRoutes.SIGNUP}
+        component={SignUpScreen}
+      />
+      <Stack.Screen
         name={EAuthNavigationRoutes.LOGIN}
         component={LoginScreen}
       />

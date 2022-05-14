@@ -7,7 +7,8 @@ export const WelcomeScreen: FC<TWelcomeNavigation> = ({navigation}) => {
   return (
     <WelcomeScreenView
       title="Welcome"
-      press={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      pressSignIn={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      pressSignUp={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
       goToStoryBook={() =>
         navigation.navigate(EAuthNavigationRoutes.STORY_BOOK)
       }

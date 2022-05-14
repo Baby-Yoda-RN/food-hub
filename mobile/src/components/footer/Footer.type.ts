@@ -1,7 +1,8 @@
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 
 export type TFooter = {
-  onPress: () => void;
+  onPressSignUp: () => void;
+  onPressSignIn: () => void;
   divider: string;
   dividerStyle?: StyleProp<ViewStyle>;
   dividerTextStyle?: StyleProp<TextStyle>;
