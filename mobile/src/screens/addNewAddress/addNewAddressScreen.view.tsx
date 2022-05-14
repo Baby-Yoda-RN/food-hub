@@ -29,27 +29,27 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
       <View style={styles.container}>
         <Section>
           <Text style={styles.text}>Full name</Text>
-          <TextInput type="search" placeholder="Name" />
+          <TextInput type="search" placeholder={name} />
         </Section>
 
         <Section>
           <Text style={styles.text}>Mobile number</Text>
-          <TextInput type="search" placeholder="Phone Number" />
+          <TextInput type="search" placeholder={phoneNumber} />
         </Section>
 
         <Section>
           <Text style={styles.text}>State</Text>
-          <TextInput type="search" placeholder="State" />
+          <TextInput type="search" placeholder={state} />
         </Section>
 
         <Section>
           <Text style={styles.text}>City</Text>
-          <TextInput type="search" placeholder="City" />
+          <TextInput type="search" placeholder={city} />
         </Section>
 
         <Section>
           <Text style={styles.text}>Street (Include house number)</Text>
-          <TextInput type="search" placeholder="Street" />
+          <TextInput type="search" placeholder={street} />
         </Section>
 
         <Button
