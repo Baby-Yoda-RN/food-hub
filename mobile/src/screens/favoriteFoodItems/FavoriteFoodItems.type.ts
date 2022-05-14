@@ -6,14 +6,14 @@ import { TFoodItem, TRestaurant } from '../../types/data';
 export type TFavoriteFoodItemsScreenProps = StackScreenProps<TAppNavigationRoutes, EAppNavigationRoutes.FAVORITEFOODITEMS>;
 
 export type TFavoriteFoodItemsScreenViewProps = {
+    image: string;
+    favoriteFoodItems: TFoodItem[];
+    favoriteRestaurants: TRestaurant[];
+    isLoading: boolean;
+    showFavoriteFoods?: boolean;
+    setShowFavoriteFoods?: Dispatch<SetStateAction<boolean>>;
     leftPress: () => void;
     rightPress: () => void;
-    image: string;
-    favoriteFoodItems: TFoodItem[]
-    favoriteResturants: TRestaurant[]
-    isLoading: boolean
-    showFavoriteFoods?: boolean
-    setShowFavoriteFoods?: Dispatch<SetStateAction<boolean>>
 };
 
 export type TFavoriteFoodItemsNavigation = {

@@ -6,17 +6,19 @@ import {TFavoriteFoodItemsScreenViewProps} from './FavoriteFoodItems.type';
 import {styles} from './FavoriteFoodItems.styles';
 import {Container} from '../../components';
 import {size, color} from '../../theme';
+import { RestaurantCard } from '../../components/card/restaurantCard';
 
 export const FavoriteFoodItemsScreenView: FC<
   TFavoriteFoodItemsScreenViewProps
 > = ({
   image,
   favoriteFoodItems,
-  favoriteResturants,
-  isLoading = false,
-  showFavoriteFoods = true,
+  favoriteRestaurants,
+  isLoading,
+  showFavoriteFoods,
   setShowFavoriteFoods,
   leftPress,
+  rightPress,
 }) => {
   return (
     <Container
@@ -26,36 +28,41 @@ export const FavoriteFoodItemsScreenView: FC<
         <Header
           leftIconName="ChevronLeft"
           leftPress={leftPress}
+          rightPress={rightPress}
           iconWidth={size.rg}
           iconHeight={size.rg}
           title="Favorites"
           rightIconLocation={image}
           containerStyle={styles.header}
         />
-      }>
-      <View style={styles.toggleButtonContainer}>
-        <ToggleButton
-          primaryText="Food Items"
-          secondaryText="Resturants"
-          buttonTheme={color.primary}
-          option={showFavoriteFoods}
-          setOption={setShowFavoriteFoods}
-        />
-      </View>
+        }>
+        
+        <View style={styles.toggleButtonContainer}>
+            <ToggleButton primaryText='Food Items' 
+            secondaryText='Resturants' 
+            buttonTheme={color.primary}
+            option= {showFavoriteFoods}
+            setOption={setShowFavoriteFoods}
+            />
+        </View>
+        
+        <View>
+        {(showFavoriteFoods ? favoriteFoodItems : favoriteRestaurants)?.map((item, index) => {
+          return (
+            <TouchableOpacity
+              key={String(index)}>
+              <View>
+                {showFavoriteFoods ? 
+                <FoodCard foodItem={item} />
+                :
+                <RestaurantCard restaurant={item}/>
+                }
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+        </View>
 
-      <View>
-        {(showFavoriteFoods ? favoriteFoodItems : favoriteResturants).map(
-          (food, index) => {
-            return (
-              <TouchableOpacity key={String(index)}>
-                <View>
-                  <FoodCard foodItem={food} />
-                </View>
-              </TouchableOpacity>
-            );
-          },
-        )}
-      </View>
     </Container>
   );
 };
