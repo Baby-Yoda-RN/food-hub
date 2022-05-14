@@ -8,6 +8,7 @@ import {styles} from './Home.style';
 import {THomeScreenView} from './Home.type';
 
 export const HomeScreenView: FC<THomeScreenView> = ({
+  isLoading,
   onPressViewAll,
   onPressRestaurantCard,
   onPressFoodCard,
@@ -16,20 +17,21 @@ export const HomeScreenView: FC<THomeScreenView> = ({
   categories,
   categoryState,
   leftPress,
+  deliveryLocation,
+  rightIconLocation,
 }) => {
   const [category, setCategory] = categoryState;
   return (
     <Container
+      isLoading={isLoading}
       header={
         <Header
-          deliveryLocation="4102 Pretty View Lane"
+          deliveryLocation={deliveryLocation}
           leftIconName="Hamburger"
           iconHeight={20}
           iconWidth={20}
           leftPress={leftPress}
-          rightIconLocation={
-            'https://icons.veryicon.com/png/o/business/multi-color-financial-and-business-icons/user-139.png'
-          }
+          rightIconLocation={rightIconLocation}
           containerStyle={styles.headerContainer}
         />
       }>
@@ -38,11 +40,11 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         leftIcon="Magnify"
         type="search"
         placeholder="Find food by name"
-        value=''
-        onChangeText={() => { } } 
+        value=""
+        onChangeText={() => {}}
         text={''}
-        setText={()=>{}}
-        />
+        setText={() => {}}
+      />
       <ScrollView horizontal>
         {categories?.map(item => {
           return (

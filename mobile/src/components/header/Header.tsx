@@ -32,7 +32,7 @@ export const Header: FC<THeaderProps> = ({
           </TouchableOpacity>
         )}
         {title && <Text style={styles.title}>{title}</Text>}
-        {deliveryLocation && (
+        {!!deliveryLocation && (
           <View style={[styles.locationContainer]}>
             <View>
               <Text style={styles.deliverTo}>

@@ -14,6 +14,7 @@ export type THomeData = {
 }
 
 export type THomeScreenView = {
+  isLoading: boolean
   featuredRestaurants:Array<TRestaurant> | undefined
   popularItems:Array<TItem> | undefined
   categories:Array<TFoodCategory> | undefined
@@ -22,6 +23,8 @@ export type THomeScreenView = {
   onPressFoodCard:(id:string)=> void
   categoryState:[string|null, Dispatch<SetStateAction<string|null>>]
   leftPress: () => void
+  deliveryLocation: string
+  rightIconLocation: string
 }
 
 export type TGetItemId = (id:string) => void

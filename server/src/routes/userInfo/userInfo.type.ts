@@ -1,7 +1,13 @@
-
-
-export type TResponseBody = {
-    email: string,
+export type TUserInfo = {
     name: string,
-    image: string
+    email: string,
+    image: string,
+    address: {
+        street: string,
+        city: string,
+        state: string,
+        zipcode: number
+    },
+    phone: string,
+    token: string
 }
