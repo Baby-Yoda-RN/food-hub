@@ -1,15 +1,18 @@
 import {foodHubAPI} from '../../../config';
-import {THandleLogin, TUseHandleLogout} from './helper.type';
+import {THandleSignup, TUseHandleLogout} from './helper.type';
 import {removeToken, storeToken, ELocalStorage} from '../../../utilities';
 import {EAuthAction} from '../../../context/auth';
 import {EUserAction} from '../../../context/user';
+import {fetchUserInfo} from '../../../navigation/drawer/fetchUserInfo';
 
-export const useHandleLogin: THandleLogin = async (
+export const useHandleSignUp: THandleSignup = async (
+  name,
   email,
   password,
   dispatch,
 ) => {
-  const response = await foodHubAPI.post('/login', {
+  const response = await foodHubAPI.post('/register', {
+    name,
     email,
     password,
   });
@@ -17,6 +20,7 @@ export const useHandleLogin: THandleLogin = async (
   try {
     if (response.status === 200) {
       if (response.data.token) {
+        console.log('response', response.data);
         storeToken(ELocalStorage.TOKEN_KEY, response.data.token);
         dispatch({type: EAuthAction.SIGN_IN, token: response.data.token});
         dispatch({
