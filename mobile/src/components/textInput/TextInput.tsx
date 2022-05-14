@@ -1,20 +1,7 @@
-import React, {
-  FC,
-  useState,
-  useLayoutEffect,
-  useRef,
-  Dispatch,
-  MutableRefObject,
-} from 'react';
-import {
-  TextInput as NativeInput,
-  Text,
-  View,
-  TouchableOpacity,
-  TextInputProps,
-} from 'react-native';
-import {size} from '../../theme';
-import {phone_validator} from '../../utilities/phone_validator';
+import React, {FC, useState, useLayoutEffect, useRef, Dispatch} from 'react';
+import {TextInput as NativeInput, TouchableOpacity} from 'react-native';
+import {size} from 'theme';
+import {phoneValidator} from 'utilities';
 import {Button} from '../button/Button';
 import {Icon} from '../icon/Icon';
 import {style} from './TextInput.style';
@@ -58,7 +45,7 @@ export const TextInput: FC<TTextInputProps> = ({
   };
   const handleChangeText = (onChangeText: Dispatch<string>, input: string) => {
     if (type === 'phone') {
-      onChangeText(phone_validator(input));
+      onChangeText(phoneValidator(input));
       return;
     }
     onChangeText(input);

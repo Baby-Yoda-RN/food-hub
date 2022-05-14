@@ -1,4 +1,5 @@
-import { TPopularItem, TRestaurant } from "../restaurant/restaurant.type"
+import { TFoodItem } from "../foodItem/foodItem.type"
+import { TRestaurant } from "../restaurant/restaurant.type"
 
 type TFoodCategory = {
   value:string
@@ -8,5 +9,5 @@ type TFoodCategory = {
 export type THomeList = {
   categories: Array<TFoodCategory>
   restaurant: Array<TRestaurant>
-  popularItems: Array<TPopularItem>
+  popularItems: Array<TFoodItem>
 }

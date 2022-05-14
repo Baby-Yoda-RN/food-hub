@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color, font, size} from '../../theme';
+import {color, font, size} from 'theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     paddingVertical: size.md,
-    flex:1,
+    flex: 1,
   },
   rowDirection: {
     flexDirection: 'row',
@@ -61,30 +61,30 @@ export const styles = StyleSheet.create({
   },
   restaurantText: {
     color: color.black,
-    fontFamily:font.semiBold,
+    fontFamily: font.semiBold,
     fontSize: size.rg,
   },
   orderStatusText: {
     color: color.success,
     fontSize: size.rg,
   },
-  subtitle:{
+  subtitle: {
     textAlign: 'right',
-    color: color.grayMid
+    color: color.grayMid,
   },
-  estimatedTimeText:{
+  estimatedTimeText: {
     color: color.black,
     fontSize: size.lg,
-    fontFamily:font.semiBold,
+    fontFamily: font.semiBold,
   },
-  status2:{
+  status2: {
     color: color.black,
-    fontSize: size.rg
+    fontSize: size.rg,
   },
-  divider:{
-    width:'5%'
+  divider: {
+    width: '5%',
   },
-  centerer:{
-    alignItems:'center',
-  }
+  centerer: {
+    alignItems: 'center',
+  },
 });

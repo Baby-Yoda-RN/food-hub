@@ -10,9 +10,9 @@ import {size, color} from '../../theme';
 export const FavoriteFoodItemsScreenView: FC<
   TFavoriteFoodItemsScreenViewProps
 > = ({
+  image,
   favoriteFoodItems,
   favoriteResturants,
-  onPress,
   isLoading = false,
   showFavoriteFoods = true,
   setShowFavoriteFoods,
@@ -29,7 +29,7 @@ export const FavoriteFoodItemsScreenView: FC<
           iconWidth={size.rg}
           iconHeight={size.rg}
           title="Favorites"
-          rightIconName="Profile"
+          rightIconLocation={image}
           containerStyle={styles.header}
         />
       }>

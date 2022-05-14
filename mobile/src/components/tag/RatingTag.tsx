@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Text} from 'react-native';
-import {size} from '../../theme';
+import {size} from 'theme';
 import {Icon} from '../icon/Icon';
 import {Tag} from './Tag';
 import {styles} from './Tag.style';

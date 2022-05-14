@@ -1,4 +1,6 @@
 import React, {FC, useState} from 'react';
+import {useGlobalState} from '../../context/global';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
 import {TFavoriteFoodItemsNavigation} from './FavoriteFoodItems.type';
 import {FavoriteFoodItemsScreenView} from './FavoriteFoodItems.view';
 
@@ -80,18 +82,20 @@ export const FavoriteFoodItems: FC<TFavoriteFoodItemsNavigation> = ({
   const handleOnPress = () => {
     console.log('navigate to screen');
   };
-
+  const {state} = useGlobalState();
+  const [isLoading, setIsLoading] = useState(false);
   const [showFavoriteFoods, setShowFavoriteFoods] = useState<boolean>(true);
 
   return (
     <FavoriteFoodItemsScreenView
+      image={state.userInfo.image}
       favoriteFoodItems={FavoriteFoods}
       favoriteResturants={restaurants}
-      onPress={handleOnPress}
       isLoading={false}
       showFavoriteFoods={showFavoriteFoods}
       setShowFavoriteFoods={setShowFavoriteFoods}
       leftPress={() => navigation.goBack()}
+      rightPress={() => navigation.navigate(EAppNavigationRoutes.PROFILE)}
     />
   );
 };

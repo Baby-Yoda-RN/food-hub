@@ -1,4 +1,4 @@
-export const phone_validator = (input: string): string => {
+export const phoneValidator = (input: string): string => {
   const cleaned = input.replace(/\D/g, '');
   const match = cleaned.match(/^(\d)?(\d{3})(\d{3})(\d{4})$/);
   if (match) {

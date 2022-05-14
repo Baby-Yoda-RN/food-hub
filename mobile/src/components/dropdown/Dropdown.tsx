@@ -1,5 +1,4 @@
-import React, {useState, FC, useEffect} from 'react';
-import {View} from 'react-native';
+import React, {useState, FC} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {styles} from './Dropdown.style';
 import {TDropdown} from './Dropdown.type';
