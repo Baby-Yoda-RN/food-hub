@@ -6,8 +6,8 @@ export type TData = {
 }
 
 export type TImageButton = {
-  data:TData,
-  selected:string | null,
-  onPressButton:(value:string|null)=> void,
+  data?:TData,
+  selected?:string | null,
+  onPressButton?:(value:string|null)=> void,
   buttonStyle?:StyleProp<ViewStyle>
 }
