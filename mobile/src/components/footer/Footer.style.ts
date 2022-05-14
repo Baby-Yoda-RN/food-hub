@@ -1,16 +1,26 @@
-import {StyleSheet} from 'react-native';
-import {color, size} from 'theme';
+import { StyleSheet } from 'react-native';
+import { color, size, font } from 'theme';
 
 export const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
-  topButtons: {
+  topButtonContainer: {
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     marginTop: size.rg,
+  },
+  topButton: {
+    borderRadius: size.lg,
+    paddingHorizontal: size.md,
+  },
+  topButtonText: {
+    color: color.black,
+    fontSize: size.md,
+    fontFamily: font.semiBold,
+    marginHorizontal: size.sm,
   },
   bottomButtons: {
     backgroundColor: 'rgba(255, 255, 255, .1)',
