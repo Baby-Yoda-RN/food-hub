@@ -7,10 +7,12 @@ export type TMyOrdersScreen = {
 }
 
 export type TMyOrdersScreenView = {
-  upcomingOrders?:Array<TOrder>,
-  lastOrders?:Array<TOrder>
-  showUpcomingOrders?:boolean
-  setShowUpcomingOrders?:Dispatch<SetStateAction<boolean>>
+  upcomingOrders?: Array<TOrder>,
+  lastOrders?: Array<TOrder>
+  showUpcomingOrders?: boolean
+  setShowUpcomingOrders?: Dispatch<SetStateAction<boolean>>
+  image?: string
   leftPress: () => void
+  rightPress: () => void
 }
 

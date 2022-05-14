@@ -6,8 +6,9 @@ import { TFoodItem, TRestaurant } from '../../types/data';
 export type TFavoriteFoodItemsScreenProps = StackScreenProps<TAppNavigationRoutes, EAppNavigationRoutes.FAVORITEFOODITEMS>;
 
 export type TFavoriteFoodItemsScreenViewProps = {
-    onPress: () => void;
     leftPress: () => void;
+    rightPress: () => void;
+    image: string;
     favoriteFoodItems: TFoodItem[]
     favoriteResturants: TRestaurant[]
     isLoading: boolean
