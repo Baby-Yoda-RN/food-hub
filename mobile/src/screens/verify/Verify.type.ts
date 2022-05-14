@@ -10,6 +10,7 @@ export type TVerifyScreenViewProps = {
   emailName: string;
   pinEntry: string;
   onPressResend: () => {};
+  goBack: () => void;
 };
 
 export type TVerifyScreenNavigation = {

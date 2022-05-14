@@ -4,5 +4,5 @@ import {TVerifyScreenNavigation} from './Verify.type';
 import {VerifyScreenView} from './Verify.view';
 
 export const VerifyScreen: FC<TVerifyScreenNavigation> = ({navigation}) => {
-  return <VerifyScreenView />;
+  return <VerifyScreenView goBack={() => navigation.goBack()} />;
 };

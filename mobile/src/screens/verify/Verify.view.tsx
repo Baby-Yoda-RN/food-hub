@@ -10,6 +10,7 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   emailName = 'test@gmail.com',
   pinEntry,
   OnPressResend,
+  goBack,
 }) => {
   return (
     <Container isScrollViewDisabled={true}>
@@ -18,6 +19,7 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         iconWidth={size.rg}
         iconHeight={size.rg}
         containerStyle={styles.header}
+        leftPress={goBack}
       />
 
       <Text style={styles.title}>{title}</Text>
@@ -25,12 +27,12 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         {`Please type the verification code send to \n${emailName}`}
       </Text>
 
-      <PinInput
+      {/* <PinInput
         keyBoardType="numeric"
         digitCount={4}
         onChangePinEntry={pinEntry}
         containerStyle={styles.pinContainer}
-      />
+      /> */}
 
       <View style={styles.container2}>
         <Text style={styles.subtext2}>{"I don't receive a code!"}</Text>
