@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {getToken} from '../../utilities';
+import {getToken} from 'utilities';
 
 const instance = axios.create({
   baseURL: 'http://10.0.2.2/api' || 'http://0.0.0.0/api',

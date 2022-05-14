@@ -1,14 +1,14 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
+import {color, size} from 'theme';
 
 export const styles = StyleSheet.create({
-  divider:{
-    height:size.md,
+  divider: {
+    height: size.md,
   },
   option: {
     marginHorizontal: size.md,
-    marginVertical:20,
-    paddingTop:size.sm,
+    marginVertical: 20,
+    paddingTop: size.sm,
     paddingHorizontal: size.sm,
     paddingBottom: size.rg,
     justifyContent: 'space-evenly',
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     backgroundColor: color.white,
   },
   imageContainer: {
-    backgroundColor:color.white,
+    backgroundColor: color.white,
     borderRadius: 50,
     width: 50,
     height: 50,
@@ -25,8 +25,8 @@ export const styles = StyleSheet.create({
   textOption: {
     color: color.textGray,
   },
-  textOptionSelected:{
-    color:color.white,
+  textOptionSelected: {
+    color: color.white,
   },
   selected: {
     backgroundColor: color.primary,

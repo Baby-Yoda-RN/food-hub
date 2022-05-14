@@ -1,8 +1,8 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {TToggleButtonProps} from './ToggleButton.type';
 import {styles} from './ToggleButton.styles';
-import {color, size} from '../../theme';
+import {color} from 'theme';
 
 export const ToggleButton: FC<TToggleButtonProps> = ({
   primaryText = 'Left Toggle',

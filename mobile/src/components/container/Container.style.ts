@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
-import { Dimensions } from 'react-native';
+import {color, size} from 'theme';
+import {Dimensions} from 'react-native';
 
-const windowWidth = Dimensions.get('window').width
-const ratio = windowWidth/375
+const windowWidth = Dimensions.get('window').width;
+const ratio = windowWidth / 375;
 
 export const styles = StyleSheet.create({
   safeAreaContainer: {
@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
     zIndex: 1,
     elevation: 1,
   },
-  footer:{
-    zIndex:1,
-    elevation:1,
+  footer: {
+    zIndex: 1,
+    elevation: 1,
   },
   loading: {
     flex: 1,
@@ -33,6 +33,6 @@ export const styles = StyleSheet.create({
   },
   backgroundImageContainer: {
     flex: 1,
-    height:91*ratio
+    height: 91 * ratio,
   },
 });

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Text, View, Image, ViewStyle} from 'react-native';
-import {size, color} from '../../theme';
+import {size, color} from 'theme';
 import {PriceTag, Icon, RatingTag} from '../index';
 import {Card} from './card';
 import {styles} from './card.style';

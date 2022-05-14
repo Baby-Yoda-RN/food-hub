@@ -7,7 +7,7 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
-import {color} from '../../theme';
+import {color} from 'theme';
 import {styles} from './Container.style';
 import {TContainer} from './Container.type';
 

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color, size} from '../../theme';
+import {color, size} from 'theme';
 
 export const style = StyleSheet.create({
   containerFocus: {
