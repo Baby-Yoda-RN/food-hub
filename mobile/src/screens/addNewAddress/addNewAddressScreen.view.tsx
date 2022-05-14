@@ -6,6 +6,7 @@ import {styles} from './addNewAddressScreen.style';
 import {size} from 'theme';
 
 export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
+  isLoading,
   name,
   phoneNumber,
   state,
@@ -13,9 +14,15 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
   street,
   saveButton,
   goBack,
+  setName,
+  setPhone,
+  setStreet,
+  setCity,
+  setProvince,
 }) => {
   return (
     <Container
+      isLoading={isLoading}
       header={
         <Header
           leftIconName="ChevronLeft"
@@ -29,27 +36,39 @@ export const AddNewAddressScreenView: FC<TaddNewAddressViewProps> = ({
       <View style={styles.container}>
         <Section>
           <Text style={styles.text}>Full name</Text>
-          <TextInput type="search" placeholder="Name" />
+          <TextInput type="search" placeholder={name} onChangeText={setName} />
         </Section>
 
         <Section>
           <Text style={styles.text}>Mobile number</Text>
-          <TextInput type="search" placeholder="Phone Number" />
-        </Section>
-
-        <Section>
-          <Text style={styles.text}>State</Text>
-          <TextInput type="search" placeholder="State" />
-        </Section>
-
-        <Section>
-          <Text style={styles.text}>City</Text>
-          <TextInput type="search" placeholder="City" />
+          <TextInput
+            type="search"
+            placeholder={phoneNumber}
+            onChangeText={setPhone}
+          />
         </Section>
 
         <Section>
           <Text style={styles.text}>Street (Include house number)</Text>
-          <TextInput type="search" placeholder="Street" />
+          <TextInput
+            type="search"
+            placeholder={street}
+            onChangeText={setStreet}
+          />
+        </Section>
+
+        <Section>
+          <Text style={styles.text}>City</Text>
+          <TextInput type="search" placeholder={city} onChangeText={setCity} />
+        </Section>
+
+        <Section>
+          <Text style={styles.text}>State</Text>
+          <TextInput
+            type="search"
+            placeholder={state}
+            onChangeText={setProvince}
+          />
         </Section>
 
         <Button
