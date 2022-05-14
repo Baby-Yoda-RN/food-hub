@@ -8,13 +8,13 @@ import {
   MyOrdersScreen,
   FavoriteFoodItems,
 } from 'screens';
-import {styles} from './BottomTabNavigation.style';
 import {Badge, Icon} from 'components';
 import {color, size} from 'theme';
 import {
   EBottomTabNavigationRoutes,
   TBottomTabNavigationRoutes,
 } from './BottomTabNavigator.type';
+import {styles} from './BottomTabNavigation.style';
 
 const Tab = createBottomTabNavigator();
 
