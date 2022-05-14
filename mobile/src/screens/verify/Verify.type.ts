@@ -11,6 +11,7 @@ export type TVerifyScreenViewProps = {
   pinEntry: string;
   onPressResend: () => {};
   goBack: () => void;
+  onPressSubmit: () => void;
 };
 
 export type TVerifyScreenNavigation = {

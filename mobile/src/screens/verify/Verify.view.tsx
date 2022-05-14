@@ -10,6 +10,7 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   emailName = 'test@gmail.com',
   pinEntry,
   OnPressResend,
+  onPressSubmit,
   goBack,
 }) => {
   return (
@@ -27,12 +28,12 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         {`Please type the verification code send to \n${emailName}`}
       </Text>
 
-      {/* <PinInput
+      <PinInput
         keyBoardType="numeric"
         digitCount={4}
         onChangePinEntry={pinEntry}
         containerStyle={styles.pinContainer}
-      /> */}
+      />
 
       <View style={styles.container2}>
         <Text style={styles.subtext2}>{"I don't receive a code!"}</Text>
@@ -41,7 +42,11 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
         </Text>
       </View>
 
-      <Button containerStyle={styles.button} title="Submit" />
+      <Button
+        containerStyle={styles.button}
+        title="Submit"
+        onPress={onPressSubmit}
+      />
     </Container>
   );
 };
