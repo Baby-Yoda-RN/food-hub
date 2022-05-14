@@ -1,13 +1,13 @@
 import express from "express";
-
 import { TRequestBody, TUserInfo, TResponseBody } from "./register.type";
+import { mockDelay } from "../../utilities";
 
 export const register = express.Router();
 
-register.post("/", (request, response) => { 
-    const { email, password, name}: TRequestBody = request.body;
+register.post("/", async (request, response) => {
+  const { email, password, name }: TRequestBody = request.body;
 
-    const userInfo: TUserInfo = {
+  const userInfo: TUserInfo = {
     name,
     email,
     password,
@@ -15,9 +15,8 @@ register.post("/", (request, response) => {
   }
 
   try {
-    (name && email && password) ? response.status(200)
-      .send(userInfo) :
-      response.status(400).send("Error: Registration");
+    mockDelay(1000);
+    response.status(200).send(userInfo)
   } catch (error) {
     console.error(error);
     response.status(400).send("Bad Request");
