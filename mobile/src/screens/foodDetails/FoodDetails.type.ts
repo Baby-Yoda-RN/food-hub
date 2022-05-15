@@ -12,8 +12,8 @@ export type TFoodDetailsProps = StackScreenProps<
 >;
 
 export type TFoodDetailsScreenViewProps = {
+  isLoading: boolean;
   title: string;
-  subtitle: string;
   description: string;
   price: number;
   rating: number;

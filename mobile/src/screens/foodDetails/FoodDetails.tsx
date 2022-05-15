@@ -9,17 +9,19 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
   route,
   navigation,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [count, countChange] = useState(1);
   const [foodData, setFoodData] = useState();
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const response = await foodHubAPI.get('/favorites');
       const [matchedFood] = response.data.foods.filter(
         item => item.uuid === route.params.itemId,
       );
-      console.log(matchedFood);
       setFoodData(matchedFood);
+      setIsLoading(false);
     };
     getData();
   }, []);
@@ -34,13 +36,14 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
     countChange(count + 1);
   };
 
-  const calPrice = price => price * count
+  const calPrice = price => price * count;
 
   return (
     <FoodDetailsScreenView
+      isLoading={isLoading}
       title={foodData?.name}
-      description="Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh chopped. Spices – chili powder, cumin, onion powder."
-      subtitle="Choice of Add On"
+      image={foodData?.imageName}
+      description={foodData?.description}
       ratings={4.5}
       reviewCount={31}
       reviewCountMax={30}

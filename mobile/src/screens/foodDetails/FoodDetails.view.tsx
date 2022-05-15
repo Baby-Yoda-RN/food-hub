@@ -15,14 +15,15 @@ import {size, color} from '../../theme';
 import {styles} from './FoodDetails.style';
 
 export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
+  isLoading,
   topImageName,
   title,
+  image,
   description,
   ratings,
   reviewCount,
   reviewCountMax,
   OnPressSeeReview,
-  subtitle,
   addOnList,
   price,
   countPlusMinus,
@@ -117,8 +118,9 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   };
   return (
     <Container
+      isLoading={isLoading}
       isScrollViewDisabled={false}
-      backgroundImage={images.groundBeefTacos}
+      backgroundImage={{uri: image}}
       imageStyle={styles.BackgroundImageStyle}
       backgroundImageStyle={styles.Background}
       containerStyle={styles.mainContainer}
@@ -142,7 +144,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
 
       <Text style={styles.description}>{description}</Text>
 
-      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text style={styles.subtitle}>Choice of Add On</Text>
 
       {addOnSelections(
         Selected1,
