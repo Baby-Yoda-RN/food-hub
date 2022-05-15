@@ -7,4 +7,5 @@ export type TFooter = {
   dividerStyle?: StyleProp<ViewStyle>;
   dividerTextStyle?: StyleProp<TextStyle>;
   isEmailorPhone?: boolean;
+  onPress?: () => void;
 };

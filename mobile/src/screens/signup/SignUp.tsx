@@ -1,22 +1,21 @@
 import React, {FC, useState} from 'react';
-import {foodHubAPI} from '../../config';
 import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
 import {TSignUpNavigation} from './SignUp.type';
 import {SignUpScreenView} from './SignUp.view';
+import {useGlobalState} from '../../context/global';
+import {useHandleSignUp} from './helper';
 
 export const SignUpScreen: FC<TSignUpNavigation> = ({navigation}) => {
+  const {dispatch} = useGlobalState();
   const [isLoading, setIsLoading] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const signUpRequest = async () => {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const signupPress = async () => {
+    useHandleSignUp(name!, email!, password!, dispatch);
     setIsLoading(true);
-    await foodHubAPI.post('/register', {
-      name,
-      email,
-      password,
-    });
 
     setIsLoading(false);
     navigation.navigate(EAuthNavigationRoutes.LOGIN);
@@ -26,11 +25,14 @@ export const SignUpScreen: FC<TSignUpNavigation> = ({navigation}) => {
     <SignUpScreenView
       isLoading={isLoading}
       title="Sign Up"
+      name={name}
       setName={setName}
+      email={email}
       setEmail={setEmail}
+      password={password}
       setPassword={setPassword}
-      pressLogin={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
-      pressSignUp={() => signUpRequest()}
+      signup={() => signupPress()}
+      onPressGoToLogin={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
     />
   );
 };
