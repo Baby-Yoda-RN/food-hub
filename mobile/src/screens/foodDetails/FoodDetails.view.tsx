@@ -29,6 +29,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
   onPressMinus,
   onPressPlus,
   addOns,
+  onPressGoBack,
   onPressAddToCart,
 }) => {
   const renderPlusMinus = (price, count, onPressPlus, onPressMinus) => {
@@ -125,6 +126,7 @@ export const FoodDetailsScreenView: FC<TFoodDetailsScreenViewProps> = ({
         <Header
           leftIconName="ChevronLeft"
           rightIconName="Heart"
+          leftPress={onPressGoBack}
           iconWidth={size.rg}
           iconHeight={size.rg}
           containerStyle={styles.header}

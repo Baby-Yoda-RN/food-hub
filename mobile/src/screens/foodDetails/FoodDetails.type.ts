@@ -1,8 +1,9 @@
-import {StackScreenProps} from '@react-navigation/stack';
+import { StackScreenProps } from '@react-navigation/stack';
 import {
   TAppNavigationRoutes,
   EAppNavigationRoutes,
   TAppNavigation,
+  TAppRouteProp,
 } from '../../navigation';
 
 export type TFoodDetailsProps = StackScreenProps<
@@ -22,10 +23,12 @@ export type TFoodDetailsScreenViewProps = {
   countPlusMinusChange: () => {};
   onPressPlus: () => {};
   onPressMinus: () => {};
-  onPressAddToCart: () => null;
+  onPressGoBack: () => void;
+  onPressAddToCart: () => void;
   addOn: [];
 };
 
 export type TFoodDetailsNavigation = {
   navigation: TAppNavigation;
+  route: TAppRouteProp;
 };
