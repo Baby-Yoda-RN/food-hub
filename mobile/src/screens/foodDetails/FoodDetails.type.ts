@@ -22,6 +22,7 @@ export type TFoodDetailsScreenViewProps = {
   countPlusMinusChange: () => {};
   onPressPlus: () => {};
   onPressMinus: () => {};
+  onPressAddToCart: () => null;
   addOn: [];
 };
 

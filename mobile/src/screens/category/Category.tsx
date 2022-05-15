@@ -7,7 +7,7 @@ export const CategoryScreen: FC<TCategoryNavigation> = ({navigation}) => {
   return (
     <CategoryScreenView
       title="Category"
-      press={() => navigation.navigate(EAppNavigationRoutes.CART)}
+      press={() => navigation.navigate(EAppNavigationRoutes.FOODDETAILS);}
       leftPress={() => navigation.goBack()}
     />
   );
