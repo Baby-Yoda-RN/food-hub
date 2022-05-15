@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { TAppNavigation } from '../../navigation';
+import { TAppNavigation, TAppRouteProp } from '../../navigation';
 import { TListItem, TListItemArray } from '../../types/data';
 
 export type THandleGeneric = (
@@ -26,6 +26,7 @@ export type TCartScreenViewProps = {
 };
 
 export type TCartNavigation = {
-    navigation: TAppNavigation
+    navigation: TAppNavigation;
+    route: TAppRouteProp;
 };
 

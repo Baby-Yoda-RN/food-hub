@@ -3,10 +3,10 @@ export type TUserInfo = {
   email: string,
   image: string,
   address: {
-      street: string,
-      city: string,
-      state: string,
-      zipcode: number
+    street: string,
+    city: string,
+    state: string,
+    zipcode: number
   },
   phone: string,
 }
@@ -44,11 +44,20 @@ export type TItem = {
   imageName?: string;
 };
 
+export type TAddOn = Array<{
+    id: string;
+    image: string;
+    price: number;
+    name: string;
+    selected: boolean;
+  }>
+
 export type TFoodItem = TItem & {
   rating: number;
   usersVoted: number;
   favorite: boolean;
-  category?:string
+  category?: string;
+  addOns?: TAddOn;
 };
 
 export type TListItem = Omit<TItem, 'price'> & {
@@ -68,6 +77,6 @@ export type TReview = {
 };
 
 export type TFoodCategory = {
-  value:string
-  image:string
+  value: string
+  image: string
 }

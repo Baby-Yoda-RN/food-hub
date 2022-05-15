@@ -2,8 +2,8 @@ import React, {FC, useEffect, useState} from 'react';
 import {TFoodDetailsNavigation} from './FoodDetails.type';
 import {FoodDetailsScreenView} from './FoodDetails.view';
 import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
-import images from '../../assets/images';
 import {foodHubAPI} from '../../config';
+import {TFoodItem} from '../../types/data';
 
 export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
   route,
@@ -11,14 +11,16 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [count, countChange] = useState(1);
-  const [foodData, setFoodData] = useState();
+  const [foodData, setFoodData] = useState<TFoodItem>();
+  const [addOnSelected, setAddOnSelected] = useState(false);
+  const [addOnPrice, setAddOnPrice] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
       const response = await foodHubAPI.get('/favorites');
       const [matchedFood] = response.data.foods.filter(
-        item => item.uuid === route.params.itemId,
+        (item: TFoodItem) => item.uuid === route.params!['itemId'],
       );
       setFoodData(matchedFood);
       setIsLoading(false);
@@ -36,29 +38,43 @@ export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
     countChange(count + 1);
   };
 
-  const calPrice = price => price * count;
+  const calPrice = (price: number, addOn: number) => (price + addOn) * count;
+
+  const toggleAddOn = () => {
+    const tempAddOnSeleted = addOnSelected;
+    setAddOnSelected(!addOnSelected);
+    if (!tempAddOnSeleted) setAddOnPrice(foodData!.addOns![0].price);
+    else setAddOnPrice(0);
+  };
 
   return (
     <FoodDetailsScreenView
       isLoading={isLoading}
-      title={foodData?.name}
-      image={foodData?.imageName}
-      description={foodData?.description}
-      ratings={4.5}
-      reviewCount={31}
+      title={foodData?.name!}
+      image={foodData?.imageName!}
+      description={foodData?.description!}
+      ratings={foodData?.rating!}
+      reviewCount={foodData?.usersVoted!}
       reviewCountMax={30}
       countPlusMinus={count}
-      addOns={[
-        {image: images.pepperJulienned, name: 'Pepper Julienned', price: 2.3},
-        {image: images.pepperJulienned, name: 'Baby Spinach', price: 4.7},
-        {image: images.pepperJulienned, name: 'Mushroom', price: 2.5},
-      ]}
+      addOns={foodData?.addOns!}
+      count={count}
+      pressAddOn={() => toggleAddOn()}
+      selected={addOnSelected}
       onPressMinus={() => onMinus()}
       onPressPlus={() => onPlus()}
-      price={calPrice(foodData?.price)}
+      price={calPrice(foodData?.price!, addOnPrice)}
       onPressGoBack={() => navigation.goBack()}
+      onpressSeeReview={() => navigation.navigate(EAppNavigationRoutes.REVIEW)}
       onPressAddToCart={() => {
-        navigation.navigate(EAppNavigationRoutes.CART);
+        navigation.navigate(EAppNavigationRoutes.CART, [{
+          name: foodData?.name,
+          description: foodData?.description,
+          imageName: foodData?.imageName,
+          price: foodData?.price,
+          quantity: count,
+          uuid: foodData?.uuid,
+        }]);
       }}
     />
   );
