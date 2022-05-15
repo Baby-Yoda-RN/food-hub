@@ -5,6 +5,10 @@ export const styles = StyleSheet.create({
   containerBackground: {
     backgroundColor: color.white,
   },
+  leftIconStyle: {
+    backgroundColor: color.white,
+    borderRadius: size.sm,
+  },
   container: {
     flex: 1,
     margin: size.rg,

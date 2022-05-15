@@ -3,7 +3,8 @@ import {Text, View, KeyboardAvoidingView} from 'react-native';
 import {TVerifyScreenViewProps} from './Verify.type';
 import {Button, Header, PinInput, Container} from '../../components';
 import {styles} from './Verify.style';
-import {size} from '../../theme';
+import {size, color} from '../../theme';
+import images from '../../assets/images';
 
 export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   title = 'Verification Code',
@@ -14,9 +15,12 @@ export const VerifyScreenView: FC<TVerifyScreenViewProps> = ({
   goBack,
 }) => {
   return (
-    <Container isScrollViewDisabled={true}>
+    <Container
+      isScrollViewDisabled={true}
+      backgroundImage={images.authBackground}>
       <Header
         leftIconName="ChevronLeft"
+        leftIconStyle={styles.leftIconStyle}
         iconWidth={size.rg}
         iconHeight={size.rg}
         containerStyle={styles.header}
