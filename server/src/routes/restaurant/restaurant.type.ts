@@ -32,6 +32,13 @@ export type TPopularItem = {
     price: number,
     favorite: boolean,
     imageName: string,
+    addOns?: Array<{
+        id: string,
+        name: string,
+        price: number,
+        image: string,
+        selected: boolean
+    }>,
 }
 
 export type TResponseBody = {
