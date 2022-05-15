@@ -23,22 +23,22 @@ export const Footer: FC<TFooter> = ({
         <Text style={[styles.text, dividerTextStyle]}>{divider}</Text>
         <View style={[styles.lineStyle, dividerStyle]} />
       </View>
-      <View style={styles.topButtons}>
+      <View style={styles.topButtonContainer}>
         <Button
           title="FACEBOOK"
           leftIconName="Facebook"
           iconSize={size.lg}
           buttonTheme={color.white}
-          titleStyle={{color: color.black}}
-          containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
+          titleStyle={styles.topButtonText}
+          containerStyle={styles.topButton}
         />
         <Button
           title="GOOGLE"
           leftIconName="Google"
           iconSize={size.lg}
           buttonTheme={color.white}
-          titleStyle={{color: color.black}}
-          containerStyle={{borderRadius: size.lg, height: size.lg + size.sm}}
+          titleStyle={styles.topButtonText}
+          containerStyle={styles.topButton}
         />
       </View>
       {!!isEmailorPhone && (
