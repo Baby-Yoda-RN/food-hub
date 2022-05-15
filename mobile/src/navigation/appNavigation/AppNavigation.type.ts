@@ -1,4 +1,5 @@
-import {StackNavigationProp} from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export enum EAppNavigationRoutes {
   CART = 'Cart',
@@ -33,3 +34,5 @@ export type TAppNavigationRoutes = {
 };
 
 export type TAppNavigation = StackNavigationProp<TAppNavigationRoutes>;
+
+export type TAppRouteProp = RouteProp<TAppNavigationRoutes>;

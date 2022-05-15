@@ -24,7 +24,7 @@ export const HomeScreen: FC<THomeScreenNavigation> = ({navigation}) => {
   };
 
   const handleOnPressRestaurantCard: TGetItemId = (id: string) => {
-    navigation.navigate(EAppNavigationRoutes.REVIEW, {restaurantId: id});
+    navigation.navigate(EAppNavigationRoutes.RATING, {restaurantId: id});
   };
 
   const handleOnPressPopularItemCard: TGetItemId = (id: string) => {
