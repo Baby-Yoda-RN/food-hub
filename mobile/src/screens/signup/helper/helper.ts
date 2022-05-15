@@ -20,7 +20,6 @@ export const useHandleSignUp: THandleSignup = async (
   try {
     if (response.status === 200) {
       if (response.data.token) {
-        console.log('response', response.data);
         storeToken(ELocalStorage.TOKEN_KEY, response.data.token);
         dispatch({type: EAuthAction.SIGN_IN, token: response.data.token});
         dispatch({
