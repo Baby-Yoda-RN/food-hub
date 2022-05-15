@@ -20,6 +20,7 @@ export type TRestaurant = {
     deliveryTime: number,
     items: Array<string>,
     imageName: string,
+    logo?: string,
 }
 
 export type TPopularItem = {

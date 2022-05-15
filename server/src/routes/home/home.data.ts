@@ -36,8 +36,9 @@ export const homeDummyData:THomeList  = {
       deliveryTime: 10,
       items: ["Burger", "Chicken", "Fast Food", "Breakfast", "American"],
       imageName:
-        "https://www.tasteofhome.com/wp-content/uploads/2021/03/mcdonalds-1200x630-GettyImages-1285446341.jpg",
-    },
+        "https://i.imgur.com/bkP20BS.png",
+      logo: "https://i.imgur.com/idpzMBq.png",
+      },
     {
       uuid: "1235",
       name: "Raising Cane's",
@@ -49,7 +50,8 @@ export const homeDummyData:THomeList  = {
       items: ["Burger", "Chicken", "Fast Food", "Breakfast", "American"],
       imageName:
         "https://deseret.brightspotcdn.com/dims4/default/e11a979/2147483647/strip/true/crop/1500x856+0+22/resize/1461x834!/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2FaflZ6hNjH5PX3thfvaEVYDc7It4%3D%2F0x0%3A1500x900%2F1500x900%2Ffilters%3Afocal%28750x450%3A751x451%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F20006954%2Fraising_canes_1.jpeg",
-    },
+      logo: "https://i.imgur.com/E6RwYpv.png"
+      },
     {
       uuid: "1236",
       name: "Taco Bell",
@@ -60,8 +62,9 @@ export const homeDummyData:THomeList  = {
       deliveryTime: 20,
       items: ["Tacos", "Quesadillas", "Burritos", "Mexican"],
       imageName:
-        "https://assets.turbologo.com/blog/es/2020/02/19132624/Taco-Bell-958x575.png",
-    },
+        "https://i.imgur.com/SQHvLhs.jpg",
+      logo: "https://i.imgur.com/4MGZfJG.png"
+      },
   ],
   popularItems: [
     {

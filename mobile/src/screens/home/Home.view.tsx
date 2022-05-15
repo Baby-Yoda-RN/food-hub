@@ -46,7 +46,9 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         placeholder="Find food by name"
         value={category!}
         onChangeText={setCategory}
-        setText={() => { } } text={''}/>
+        setText={() => {}}
+        text={''}
+      />
       <ScrollView horizontal>
         {categories?.map(item => {
           return (
@@ -78,12 +80,12 @@ export const HomeScreenView: FC<THomeScreenView> = ({
             nestedScrollEnabled
             horizontal
             contentContainerStyle={[styles.horizontalContainer]}>
-            {featuredRestaurants?.map((restaurant, index) => {
+            {featuredRestaurants?.map(restaurant => {
               return (
                 <TouchableOpacity
-                  onPress={() => onPressRestaurantCard(String(index))}
+                  onPress={() => onPressRestaurantCard(String(restaurant.uuid))}
                   style={styles.restaurantContainer}
-                  key={String(index)}>
+                  key={String(restaurant.uuid)}>
                   <RestaurantCard restaurant={restaurant} />
                 </TouchableOpacity>
               );

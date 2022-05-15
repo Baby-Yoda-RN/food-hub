@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Text, View, Image, SafeAreaView, ImageBackground} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import {
   TextInput,
   Button,
@@ -13,14 +13,20 @@ import {TRatingView} from './Rating.type';
 import {size} from '../../theme/size/size';
 
 export const RatingScreenView: FC<TRatingView> = ({
+  isLoading,
   restaurant,
   address,
+  background,
+  logo,
   leftPress,
+  setReview,
+  press
 }) => {
   return (
     <Container
+      isLoading={isLoading}
       backgroundImage={{
-        uri: 'https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p.jpg',
+        uri: background,
       }}
       backgroundImageStyle={styles.restaurantImage}
       imageStyle={styles.imageStyle}
@@ -36,7 +42,7 @@ export const RatingScreenView: FC<TRatingView> = ({
       <View style={styles.logoContainer}>
         <Image
           source={{
-            uri: 'https://cdn.mos.cms.futurecdn.net/xDGQ9dbLmMpeEqhiWayMRB-970-80.jpg.webp',
+            uri: logo,
           }}
           style={styles.logo}
         />
@@ -47,13 +53,16 @@ export const RatingScreenView: FC<TRatingView> = ({
           containerStyle={styles.checkMark}
         />
       </View>
-      <Text style={styles.largeText}>Pizza Hut</Text>
+      <Text style={styles.largeText}>{restaurant}</Text>
       <Text style={styles.smallText}>123 Main Street</Text>
       <Text style={styles.delivered}>Order Delivered</Text>
       <Text style={styles.largeText}>Please Rate Delivery Service</Text>
       <RatingStars />
-      <TextInput containerStyle={styles.inputContainer} />
-      <Button containerStyle={styles.button} title="SUBMIT" />
+      <TextInput
+        containerStyle={styles.inputContainer}
+        onChangeText={setReview}
+      />
+      <Button containerStyle={styles.button} title="SUBMIT" onPress={press} />
     </Container>
   );
 };
