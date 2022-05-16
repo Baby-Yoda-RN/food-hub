@@ -8,3 +8,4 @@ import './Dropdown/Dropdown.stories';
 import './PinInput/PinInput.stories';
 import './orderCard/orderCard.stories';
 import './sideMenu/SideMenu';
+import './reviewCard/reviewCard.stories';
