@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {EAuthNavigationRoutes} from '../../navigation';
+import {EAuthNavigationRoutes} from '../../navigation/authNavigation/AuthNavigation.type';
 import {TResetPasswordNavigation} from './ResetPassword.type';
 import {ResetPasswordView} from './ResetPassword.view';
 
