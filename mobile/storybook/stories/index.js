@@ -1,11 +1,11 @@
-import './Button/Button.stories';
-import './Badge/Badge.stories';
-import './Icon/Icon.stories';
+import './button/Button.stories';
+import './badge/Badge.stories';
+import './icon/Icon.stories';
 import './imageButton/ImageButton.stories';
 import './header/Header.stories';
-import './FoodCard/FoodCard.stories';
-import './Dropdown/Dropdown.stories';
-import './PinInput/PinInput.stories';
+import './foodCard/FoodCard.stories';
+import './dropdown/Dropdown.stories';
+import './pinInput/PinInput.stories';
 import './sideMenu/SideMenu.stories';
 import './footer/Footer.stories';
 import './orderCard/orderCard.stories';
