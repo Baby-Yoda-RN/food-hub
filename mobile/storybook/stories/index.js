@@ -10,3 +10,4 @@ import './sideMenu/SideMenu.stories';
 import './footer/Footer.stories';
 import './orderCard/orderCard.stories';
 import './reviewCard/reviewCard.stories';
+import './textInput/textInput.stories';
