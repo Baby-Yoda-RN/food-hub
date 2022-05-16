@@ -38,6 +38,14 @@ export const styles = StyleSheet.create({
     },
     footerLine: {
         borderBottomColor: color.textGray,
+    },
+    errorContainer:{
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    errorText:{
+        textAlign:'center',
+        color:color.red,
+        fontFamily:font.semiBold
     }
-
 });

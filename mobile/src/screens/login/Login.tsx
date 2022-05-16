@@ -10,19 +10,36 @@ export const LoginScreen: FC<TLoginNavigation> = ({navigation}) => {
 
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
+  const [error, setError] = useState<string>();
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const loginPress = async () =>
-    await useHandleLogin(email!, password!, dispatch);
+  const loginPress = async () => {
+    setError('');
+    setLoading(true);
+    if (email && password) {
+      try{
+        await useHandleLogin(email!, password!, dispatch);
+      }catch(error){
+        setError(error+'')
+        setLoading(false);
+      }
+    }else{
+      setError('Credentials required');
+      setLoading(false);
+    }
+
+  };
 
   return (
     <LoginScreenView
+      error={error}
       title="Login"
       email={email!}
       setEmail={setEmail}
       password={password!}
       setPassword={setPassword}
       login={() => loginPress()}
-      isLoading={false}
+      isLoading={loading}
       goToSignUp={() => navigation.navigate(EAuthNavigationRoutes.SIGNUP)}
       goBack={() => navigation.goBack()}
       goToResetPassword={() =>

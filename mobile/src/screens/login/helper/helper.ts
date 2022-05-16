@@ -9,12 +9,11 @@ export const useHandleLogin: THandleLogin = async (
   password,
   dispatch,
 ) => {
-  const response = await foodHubAPI.post('/login', {
-    email,
-    password,
-  });
-
   try {
+    const response = await foodHubAPI.post('/login', {
+      email,
+      password,
+    });
     if (response.status === 200) {
       if (response.data.token) {
         storeToken(ELocalStorage.TOKEN_KEY, response.data.token);
@@ -32,7 +31,8 @@ export const useHandleLogin: THandleLogin = async (
       }
     }
   } catch (error) {
-    console.error(error);
+    const response = await JSON.parse(JSON.stringify(error));
+    throw (response.message);
   }
 };
 

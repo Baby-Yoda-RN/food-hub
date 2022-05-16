@@ -12,13 +12,23 @@ export const SignUpScreen: FC<TSignUpNavigation> = ({navigation}) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
   const signupPress = async () => {
-    useHandleSignUp(name!, email!, password!, dispatch);
+    setError('');
     setIsLoading(true);
-
-    setIsLoading(false);
-    navigation.navigate(EAuthNavigationRoutes.LOGIN);
+    if(name && email && password){
+      try{
+        await useHandleSignUp(name!, email!, password!, dispatch);
+        //navigation.navigate(EAuthNavigationRoutes.LOGIN);
+      }catch(error){
+        setError(error+'')
+        setIsLoading(false);
+      }
+    }else{
+      setError('All fields are required')
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -33,6 +43,7 @@ export const SignUpScreen: FC<TSignUpNavigation> = ({navigation}) => {
       setPassword={setPassword}
       signup={() => signupPress()}
       onPressGoToLogin={() => navigation.navigate(EAuthNavigationRoutes.LOGIN)}
+      error={error}
     />
   );
 };

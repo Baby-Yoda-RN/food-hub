@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 import {TextInput, Button, Container} from '../../components';
 import {TSignUpScreenViewProps} from './SignUp.type';
 import {styles} from './SignUp.style';
 import {Footer} from '../../components';
 import images from '../../assets/images';
+import {color} from 'theme';
 
 export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
   title,
@@ -17,15 +18,17 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
   signup,
   onPressGoToLogin,
   isLoading = false,
+  error,
 }) => {
   return (
     <Container
-      isLoading={isLoading}
       backgroundImage={images.authBackground}
       isScrollViewDisabled={false}>
       <Text style={styles.title}>{title}</Text>
-
       <View style={styles.textInputContainer}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
         <Text style={styles.text}>Full Name</Text>
         <TextInput type="regular" value={name} onChangeText={setName} />
 
@@ -40,9 +43,15 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
         value={password}
         onChangeText={setPassword}
       />
-
-      <Button title="SIGN UP" containerStyle={styles.button} onPress={signup} />
-
+      {isLoading ? (
+        <ActivityIndicator size="small" color={color.primary} />
+      ) : (
+        <Button
+          title="SIGN UP"
+          containerStyle={styles.button}
+          onPress={signup}
+        />
+      )}
       <View style={styles.textContainer}>
         <Text style={styles.text}>Don't have an account? </Text>
         <Text

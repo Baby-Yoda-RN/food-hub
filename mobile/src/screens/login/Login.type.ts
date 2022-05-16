@@ -12,6 +12,7 @@ export type TLoginScreenViewProps = {
     goBack: () => void;
     goToResetPassword: () => void;
     isLoading: boolean;
+    error:string|undefined;
 };
 
 export type TLoginNavigation = {
