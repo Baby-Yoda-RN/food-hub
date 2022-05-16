@@ -26,7 +26,6 @@ export const TextInputComponent = () => {
           leftIcon="Magnify"
           type="search"
           placeholder="Find food by name"
-          value={text}
           onChangeText={onChangeText2}
           setText={() => {}}
           text={''}
