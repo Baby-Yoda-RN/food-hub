@@ -12,6 +12,7 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
   subtitle,
   handleSendRequest,
   handleBackRequest,
+  setPhoneNumber,
 }) => {
   return (
     <Container
@@ -30,7 +31,7 @@ export const PhoneRegistrationView: FC<TPhoneRegistrationViewProps> = ({
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
       <View style={styles.textInputContainer}>
-        <TextInput type="phone" leftIcon="FlagUSA" />
+        <TextInput type="phone" leftIcon="FlagUSA" onChangeText={setPhoneNumber}/>
       </View>
       <Button
         title="SEND"

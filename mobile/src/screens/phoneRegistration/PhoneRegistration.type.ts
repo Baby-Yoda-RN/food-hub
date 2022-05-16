@@ -1,4 +1,5 @@
 import {StackScreenProps} from '@react-navigation/stack';
+import { Dispatch } from 'react';
 import {
   EAuthNavigationRoutes,
   TAuthNavigation,
@@ -14,6 +15,7 @@ export type TPhoneRegistrationViewProps = {
   subtitle: string;
   handleSendRequest: () => void;
   handleBackRequest: () => void;
+  setPhoneNumber: Dispatch<string>;
 };
 export type TPhoneRegistrationNavigation = {
   navigation: TAuthNavigation;
