@@ -1,4 +1,4 @@
-import { THomeList } from './home.type'
+import { THomeList } from "./home.type";
 export const homeDummyData: THomeList = {
   categories: [
     {
@@ -35,8 +35,7 @@ export const homeDummyData: THomeList = {
       freeDelivery: "Free Delivery",
       deliveryTime: 10,
       items: ["Burger", "Chicken", "Fast Food", "Breakfast", "American"],
-      imageName:
-        "https://i.imgur.com/bkP20BS.png",
+      imageName: "https://i.imgur.com/bkP20BS.png",
       logo: "https://i.imgur.com/idpzMBq.png",
     },
     {
@@ -50,7 +49,7 @@ export const homeDummyData: THomeList = {
       items: ["Burger", "Chicken", "Fast Food", "Breakfast", "American"],
       imageName:
         "https://deseret.brightspotcdn.com/dims4/default/e11a979/2147483647/strip/true/crop/1500x856+0+22/resize/1461x834!/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2FaflZ6hNjH5PX3thfvaEVYDc7It4%3D%2F0x0%3A1500x900%2F1500x900%2Ffilters%3Afocal%28750x450%3A751x451%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F20006954%2Fraising_canes_1.jpeg",
-      logo: "https://i.imgur.com/E6RwYpv.png"
+      logo: "https://i.imgur.com/E6RwYpv.png",
     },
     {
       uuid: "1236",
@@ -61,16 +60,40 @@ export const homeDummyData: THomeList = {
       freeDelivery: "Free Delivery",
       deliveryTime: 20,
       items: ["Tacos", "Quesadillas", "Burritos", "Mexican"],
+      imageName: "https://i.imgur.com/SQHvLhs.jpg",
+      logo: "https://i.imgur.com/4MGZfJG.png",
+    },
+    {
+      uuid: "1237",
+      name: "Dairy Queen",
+      rating: 4,
+      usersVoted: 10,
+      favorite: false,
+      freeDelivery: "Free Delivery",
+      deliveryTime: 10,
+      items: ["Ice Cream", "American"],
       imageName:
-        "https://i.imgur.com/SQHvLhs.jpg",
-      logo: "https://i.imgur.com/4MGZfJG.png"
+        "https://sportshub.cbsistatic.com/i/2021/08/05/e39a52eb-6e4a-4067-ac31-5a027b5e655d/dairy-queen-20108318.jpg",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/1200px-Dairy_Queen_logo.svg.png",
+    },
+    {
+      uuid: "1238",
+      name: "In-N-Out Burger",
+      rating: 4,
+      usersVoted: 10000,
+      favorite: true,
+      freeDelivery: "Free Delivery",
+      deliveryTime: 30,
+      items: ["Burger", "American"],
+      imageName: "https://i.ytimg.com/vi/ldaJ_jQEVGk/maxresdefault.jpg",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/InNOut.svg/1200px-InNOut.svg.pnghttps://i.imgur.com/4MGZfJG.png",
     },
   ],
   popularItems: [
     {
       uuid: "12345",
       name: "Vegan Pizza",
-      category: 'pizza',
+      category: "pizza",
       description: "Vegan Pizza",
       rating: 5,
       usersVoted: 100,
@@ -81,7 +104,7 @@ export const homeDummyData: THomeList = {
     {
       uuid: "12346",
       name: "Boneless",
-      category: 'chicken',
+      category: "chicken",
       description: "Delicious Boneless",
       rating: 5,
       usersVoted: 2,
@@ -93,7 +116,7 @@ export const homeDummyData: THomeList = {
     {
       uuid: "12347",
       name: "Big Mac",
-      category: 'burger',
+      category: "burger",
       description: "The classic Big Mac",
       rating: 5,
       usersVoted: 2,
@@ -105,8 +128,8 @@ export const homeDummyData: THomeList = {
     {
       uuid: "12348",
       name: "Cripsy Chicken Sandwich",
-      category: 'burger',
-      description: "Arriba Mexico Cabrones",
+      category: "burger",
+      description: "Arriba Mexico",
       rating: 5,
       usersVoted: 2,
       price: 5.99,
@@ -117,7 +140,7 @@ export const homeDummyData: THomeList = {
     {
       uuid: "12349",
       name: "Burrito",
-      category: 'mexican',
+      category: "mexican",
       description: "The classic burrito",
       rating: 5,
       usersVoted: 2,
