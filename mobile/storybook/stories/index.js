@@ -15,3 +15,4 @@ import './toggleButton/ToggleButton.stories';
 import './container/container.stories';
 import './tag/tag.stories';
 import './ratingStars/RatingStars.stories';
+import './bottomTabNavigator/BottomTabNavigator.stories';
