@@ -17,3 +17,4 @@ export * from './tag/PriceTag';
 export * from './tag/RatingTag';
 export * from './imageButton/ImageButton';
 export * from './pincodeInput/PinInput';
+export * from './addOn/AddOn';

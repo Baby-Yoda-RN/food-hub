@@ -17,22 +17,7 @@ export const cartData: TCartList = [
         price: 19.99,
         quantity: 1,
     },
-    {
-        uuid: '2',
-        name: 'Pizza',
-        description: 'Pinnaple, Pepperoni',
-        imageName: 'https://i.imgur.com/vRxiT35.jpg',
-        price: 19.99,
-        quantity: 1,
-    },
-    {
-        uuid: '3',
-        name: 'Pizza',
-        description: 'Pinnaple, Pepperoni',
-        imageName: 'https://i.imgur.com/vRxiT35.jpg',
-        price: 19.99,
-        quantity: 1,
-    }
+
 ]
 
 

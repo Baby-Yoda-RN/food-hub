@@ -1,49 +1,81 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {TFoodDetailsNavigation} from './FoodDetails.type';
 import {FoodDetailsScreenView} from './FoodDetails.view';
-import images from '../../assets/images';
+import {EAppNavigationRoutes} from '../../navigation/appNavigation/AppNavigation.type';
+import {foodHubAPI} from '../../config';
+import {TFoodItem} from '../../types/data';
 
-export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({navigation}) => {
+export const FoodDetailsScreen: FC<TFoodDetailsNavigation> = ({
+  route,
+  navigation,
+}) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [count, countChange] = useState(1);
+  const [foodData, setFoodData] = useState<TFoodItem>();
+  const [addOnSelected, setAddOnSelected] = useState(false);
+  const [addOnPrice, setAddOnPrice] = useState(0);
 
-  function onMinus() {
+  useEffect(() => {
+    const getData = async () => {
+      setIsLoading(true);
+      const response = await foodHubAPI.get('/favorites');
+      const [matchedFood] = response.data.foods.filter(
+        (item: TFoodItem) => item.uuid === route.params!['itemId'],
+      );
+      setFoodData(matchedFood);
+      setIsLoading(false);
+    };
+    getData();
+  }, []);
+
+  const onMinus = () => {
     if (count > 1) {
       countChange(count - 1);
     }
-  }
+  };
 
-  function onPlus() {
-    if (count < 99) {
-      countChange(count + 1);
-    }
-  }
+  const onPlus = () => {
+    countChange(count + 1);
+  };
 
-  function calPrice() {
-    const price = 9.99 * count;
-    return price;
-  }
+  const calPrice = (price: number, addOn: number) => (price + addOn) * count;
+
+  const toggleAddOn = () => {
+    const tempAddOnSeleted = addOnSelected;
+    setAddOnSelected(!addOnSelected);
+    if (!tempAddOnSeleted) setAddOnPrice(foodData!.addOns![0].price);
+    else setAddOnPrice(0);
+  };
 
   return (
     <FoodDetailsScreenView
-      title="Ground Beef Tacos"
-      description="Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh chopped. Spices – chili powder, cumin, onion powder."
-      subtitle="Choice of Add On"
-      ratings={4.5}
-      reviewCount={31}
+      isLoading={isLoading}
+      title={foodData?.name!}
+      image={foodData?.imageName!}
+      description={foodData?.description!}
+      ratings={foodData?.rating!}
+      reviewCount={foodData?.usersVoted!}
       reviewCountMax={30}
       countPlusMinus={count}
-      addOns={[
-        {image: images.pepperJulienned, name: 'Pepper Julienned', price: 2.3},
-        {image: images.pepperJulienned, name: 'Baby Spinach', price: 4.7},
-        {image: images.pepperJulienned, name: 'Mushroom', price: 2.5},
-      ]}
-      onPressMinus={() => {
-        onMinus();
+      addOns={foodData?.addOns!}
+      count={count}
+      pressAddOn={() => toggleAddOn()}
+      selected={addOnSelected}
+      onPressMinus={() => onMinus()}
+      onPressPlus={() => onPlus()}
+      price={calPrice(foodData?.price!, addOnPrice)}
+      onPressGoBack={() => navigation.goBack()}
+      onpressSeeReview={() => navigation.navigate(EAppNavigationRoutes.REVIEW)}
+      onPressAddToCart={() => {
+        navigation.navigate(EAppNavigationRoutes.CART, [{
+          name: foodData?.name,
+          description: foodData?.description,
+          imageName: foodData?.imageName,
+          price: foodData?.price,
+          quantity: count,
+          uuid: foodData?.uuid,
+        }]);
       }}
-      onPressPlus={() => {
-        onPlus();
-      }}
-      price={calPrice()}
     />
   );
 };
