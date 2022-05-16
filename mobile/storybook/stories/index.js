@@ -6,4 +6,5 @@ import './header/Header.stories';
 import './FoodCard/FoodCard.stories';
 import './Dropdown/Dropdown.stories';
 import './PinInput/PinInput.stories';
-import './sideMenu/SideMenu';
+import './sideMenu/SideMenu.stories';
+import './footer/Footer.stories';
