@@ -4,8 +4,6 @@ import {size, color, font} from '../../../src/theme';
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    flex: 1,
-    padding: 20,
   },
   text: {
     margin: size.rg,
