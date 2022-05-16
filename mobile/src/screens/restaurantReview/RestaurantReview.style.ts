@@ -2,6 +2,9 @@ import { StyleSheet } from "react-native";
 import { color, font, size } from "../../theme";
 
 export const styles = StyleSheet.create({
+    header: {
+        padding: size.rg,
+    },
     buttonContainer: {
         padding: size.rg,
         marginTop: size.lg,
