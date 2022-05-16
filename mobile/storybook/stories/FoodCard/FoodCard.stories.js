@@ -3,14 +3,13 @@ import React from 'react';
 import {FoodCard} from '../../../src/components/card/foodCard';
 import {RestaurantCard} from '../../../src/components/card/restaurantCard';
 import CenterView from '../CenterView';
-import {styles} from './FoodCard.style';
 import {Container, Section} from '../../../src/components';
 
 storiesOf('Card', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('FoodCard', () => (
-    <Container>
-      <Section style={styles.container}>
+    <Container isScrollViewDisabled={false}>
+      <Section>
         <FoodCard
           foodItem={{
             name: 'pineapple2',
@@ -24,10 +23,64 @@ storiesOf('Card', module)
           }}
         />
       </Section>
+      <Section>
+        <FoodCard
+          foodItem={{
+            name: 'Pepperoni Pizza',
+            description: 'Two layers of pepperoni sandwiched between provolone',
+            rating: 1,
+            usersVoted: 16,
+            price: 11.49,
+            favorite: true,
+            imageName: 'https://i.imgur.com/rcYxMyJ.jpeg',
+          }}
+        />
+      </Section>
+      <Section>
+        <FoodCard
+          foodItem={{
+            name: 'Supreme Pizza',
+            description:
+              'Italian sausage, fresh green peppers, fresh mushrooms, fresh onions',
+            rating: 4,
+            usersVoted: 38,
+            price: 14.48,
+            favorite: true,
+            imageName: 'https://i.imgur.com/9Sd1QRO.jpeg',
+          }}
+        />
+      </Section>
+      <Section>
+        <FoodCard
+          foodItem={{
+            name: 'Veggie Pizza',
+            description:
+              'Roasted red peppers, fresh baby spinach, fresh onions, fresh mushrooms, tomatoes, black olives',
+            rating: 3,
+            usersVoted: 9,
+            price: 12.99,
+            favorite: true,
+            imageName: 'https://i.imgur.com/NqMr2mT.jpeg',
+          }}
+        />
+      </Section>
+      <Section>
+        <FoodCard
+          foodItem={{
+            name: 'Chicken Bacon Ranch Pizza',
+            description: 'Grilled chicken breast, ranch, smoked bacon',
+            rating: 3,
+            usersVoted: 14,
+            price: 10.99,
+            favorite: true,
+            imageName: 'https://i.imgur.com/0Ijt9vt.jpeg',
+          }}
+        />
+      </Section>
     </Container>
   ))
   .add('RestaurantCard', () => (
-    <Container isScrollViewDisabled={true}>
+    <Container>
       <RestaurantCard
         restaurant={{
           name: "McDonald's",
