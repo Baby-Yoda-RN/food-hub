@@ -14,6 +14,7 @@ export const CartScreen: FC<TCartNavigation> = ({route, navigation}) => {
   const [delivery, setDelivery] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
   const [itemCount, setItemCount] = useState<number>(0);
+  const [promo, setPromo] = useState<string>();
 
   const taxRate: number = 0.08;
   const deliveryRate: number = 0.05;
@@ -94,6 +95,8 @@ export const CartScreen: FC<TCartNavigation> = ({route, navigation}) => {
       handleDelete={handleDelete}
       handleIncrement={handleIncrement}
       handleDecrement={handleDecrement}
+      promo={promo}
+      setPromo={setPromo}
     />
   );
 };

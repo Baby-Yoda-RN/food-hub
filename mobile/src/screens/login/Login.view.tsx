@@ -36,13 +36,13 @@ export const LoginScreenView: FC<TLoginScreenViewProps> = ({
       <Text style={styles.title}>{title}</Text>
       <View style={styles.textInputContainer}>
         <Text style={styles.text}>E-mail</Text>
-        <TextInput type="regular" text={email} onChangeText={setEmail} />
+        <TextInput type="regular" value={email} onChangeText={setEmail} />
       </View>
       <Text style={styles.text}>Password</Text>
       <TextInput
         type="password"
         rightIcon="Eye"
-        text={password}
+        value={password}
         onChangeText={setPassword}
       />
       <View style={styles.textContainer}>

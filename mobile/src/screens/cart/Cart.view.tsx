@@ -19,6 +19,8 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
   handleDelete,
   handleIncrement,
   handleDecrement,
+  promo,
+  setPromo,
 }) => {
   const oderSummary: TOrderSummary = [
     {id: 0, text: 'Subtotal', price: subTotal},
@@ -41,8 +43,7 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
           leftPress={onPress}
         />
       }
-      headerStyle={styles.headerContainer}
-      >
+      headerStyle={styles.headerContainer}>
       {listItemArray.map(listItem => (
         <ListItem
           key={listItem.uuid}
@@ -66,6 +67,8 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
 
       <TextInput
         type="regular"
+        value={promo}
+        onChangeText={setPromo}
         placeholder="Promo Code"
         containerStyle={styles.textInput}
         rightButton="Apply"

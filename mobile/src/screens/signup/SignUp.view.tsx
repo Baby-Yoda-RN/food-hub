@@ -8,12 +8,15 @@ import images from '../../assets/images';
 
 export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
   title,
-  pressLogin,
-  pressSignUp,
-  isLoading,
+  name,
   setName,
+  email,
   setEmail,
+  password,
   setPassword,
+  signup,
+  onPressGoToLogin,
+  isLoading = false,
 }) => {
   return (
     <Container
@@ -24,24 +27,27 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
 
       <View style={styles.textInputContainer}>
         <Text style={styles.text}>Full Name</Text>
-        <TextInput type="regular" onChangeText={setName} />
+        <TextInput type="regular" value={name} onChangeText={setName} />
 
         <Text style={styles.text}>E-mail</Text>
-        <TextInput type="regular" onChangeText={setEmail} />
+        <TextInput type="regular" value={email} onChangeText={setEmail} />
       </View>
 
       <Text style={styles.text}>Password</Text>
-      <TextInput type="password" rightIcon="Eye" onChangeText={setPassword} />
-
-      <Button
-        title="SIGN UP"
-        containerStyle={styles.button}
-        onPress={pressSignUp}
+      <TextInput
+        type="password"
+        rightIcon="Eye"
+        value={password}
+        onChangeText={setPassword}
       />
+
+      <Button title="SIGN UP" containerStyle={styles.button} onPress={signup} />
 
       <View style={styles.textContainer}>
         <Text style={styles.text}>Don't have an account? </Text>
-        <Text style={[styles.text, styles.textNavigate]} onPress={pressLogin}>
+        <Text
+          style={[styles.text, styles.textNavigate]}
+          onPress={onPressGoToLogin}>
           Login
         </Text>
       </View>
@@ -51,6 +57,7 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
         dividerTextStyle={styles.footerText}
         dividerStyle={styles.footerLine}
         isEmailorPhone={false}
+        onPress={() => {}}
       />
     </Container>
   );
