@@ -16,4 +16,5 @@ export * from './section/Section';
 export * from './tag/PriceTag';
 export * from './tag/RatingTag';
 export * from './imageButton/ImageButton';
-export * from './bottomTabNavigator/BottomTabNavigator';
+export * from './pincodeInput/PinInput';
+export * from './addOn/AddOn';

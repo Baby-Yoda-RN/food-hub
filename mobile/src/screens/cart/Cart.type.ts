@@ -1,5 +1,5 @@
 import {Dispatch} from 'react';
-import {TAppNavigation} from '../../navigation';
+import {TAppNavigation, TAppRouteProp} from '../../navigation';
 import {TListItem, TListItemArray} from '../../types/data';
 
 export type THandleGeneric = (
@@ -11,8 +11,10 @@ export type THandleGeneric = (
 export type TOrderSummary = Array<{id: number; text: string; price: number}>;
 
 export type TCartScreenViewProps = {
+  isLoading: boolean;
   title: string;
-  onPress: () => void;
+  pressGoBack: () => void;
+  pressCheckOut: () => void;
   listItemArray: TListItemArray;
   setListItemArray: Dispatch<TListItemArray>;
   subTotal: number;
@@ -28,5 +30,6 @@ export type TCartScreenViewProps = {
 };
 
 export type TCartNavigation = {
-  navigation: TAppNavigation;
+    navigation: TAppNavigation;
+    route: TAppRouteProp;
 };

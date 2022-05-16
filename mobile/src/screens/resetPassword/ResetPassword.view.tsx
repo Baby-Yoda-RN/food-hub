@@ -10,6 +10,7 @@ export const ResetPasswordView: FC<TResetPasswordViewProps> = ({
   subtitle,
   sendNewPassword,
   goBack,
+  setEmail,
 }) => {
   return (
     <Container
@@ -28,7 +29,7 @@ export const ResetPasswordView: FC<TResetPasswordViewProps> = ({
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.text}>{subtitle}</Text>
       <View style={styles.textInputContainer}>
-        <TextInput type="regular" />
+        <TextInput type="regular" onChangeText={setEmail}/>
       </View>
       <Button
         title="SEND NEW PASSWORD"

@@ -7,8 +7,10 @@ import {styles} from './Cart.style';
 import {checkIfLastItemOfArray} from '../../utilities';
 
 export const CartScreenView: FC<TCartScreenViewProps> = ({
+  isLoading,
   title,
-  onPress,
+  pressGoBack,
+  pressCheckOut,
   listItemArray,
   setListItemArray,
   subTotal,
@@ -31,6 +33,7 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
 
   return (
     <Container
+      isLoading={isLoading}
       containerStyle={styles.container}
       isScrollViewDisabled={false}
       header={
@@ -40,11 +43,11 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
           leftIconName="ChevronLeft"
           iconHeight={size.rg}
           iconWidth={size.rg}
-          leftPress={onPress}
+          leftPress={pressGoBack}
         />
       }
       headerStyle={styles.headerContainer}>
-      {listItemArray.map(listItem => (
+      {listItemArray?.map(listItem => (
         <ListItem
           key={listItem.uuid}
           title={listItem.name}
@@ -95,7 +98,11 @@ export const CartScreenView: FC<TCartScreenViewProps> = ({
         ))}
       </View>
 
-      <Button title="CHECKOUT" containerStyle={styles.button} />
+      <Button
+        title="CHECKOUT"
+        containerStyle={styles.button}
+        onPress={pressCheckOut}
+      />
     </Container>
   );
 };

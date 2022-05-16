@@ -1,4 +1,5 @@
 import {StackScreenProps} from '@react-navigation/stack';
+import { Dispatch } from 'react';
 import {
   EAuthNavigationRoutes,
   TAuthNavigation,
@@ -14,6 +15,7 @@ export type TResetPasswordViewProps = {
   subtitle: string;
   sendNewPassword: () => void;
   goBack: () => void;
+  setEmail: Dispatch<string>;
 };
 export type TResetPasswordNavigation = {
   navigation: TAuthNavigation;
