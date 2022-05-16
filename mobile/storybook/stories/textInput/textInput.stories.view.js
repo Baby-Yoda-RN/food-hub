@@ -31,21 +31,6 @@ export const TextInputComponent = () => {
           text={''}
         />
       </Section>
-      <Section style={styles.section}>
-        <TextInput
-          type="search"
-          placeholder={'search'}
-          onChangeText={onChangeText3}
-        />
-      </Section>
-      <Section style={styles.section}>
-        <TextInput
-          type="regular"
-          onChangeText={onChangeText4}
-          placeholder="Promo Code"
-          rightButton="Apply"
-        />
-      </Section>
 
       <Section style={styles.section}>
         <TextInput
@@ -61,10 +46,6 @@ export const TextInputComponent = () => {
           leftIcon="FlagUSA"
           onChangeText={onChangeText6}
         />
-      </Section>
-
-      <Section style={styles.section}>
-        <TextInput onChangeText={onChangeText7} multiline={true} />
       </Section>
     </Container>
   );
