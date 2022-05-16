@@ -6,3 +6,4 @@ import './header/Header.stories';
 import './FoodCard/FoodCard.stories';
 import './Dropdown/Dropdown.stories';
 import './PinInput/PinInput.stories';
+import './sideMenu/SideMenu';
