@@ -26,6 +26,7 @@ export const PinInput: FC<TPinEntryProps> = ({
 
       textInputArray.push(
         <TextInput
+          key={i}
           ref={refTextBox[current]}
           style={
             onRef === current
@@ -85,10 +86,6 @@ export const PinInput: FC<TPinEntryProps> = ({
   };
 
   return (
-    <>
-      <View style={[styles.container, containerStyle]}>
-        {renderTextBoxes()}
-      </View>
-    </>
+    <View style={[styles.container, containerStyle]}>{renderTextBoxes()}</View>
   );
 };
