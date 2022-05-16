@@ -44,7 +44,7 @@ export const SignUpScreenView: FC<TSignUpScreenViewProps> = ({
       <Button title="SIGN UP" containerStyle={styles.button} onPress={signup} />
 
       <View style={styles.textContainer}>
-        <Text style={styles.text}>Don't have an account? </Text>
+        <Text style={styles.text}>Already Have an account? </Text>
         <Text
           style={[styles.text, styles.textNavigate]}
           onPress={onPressGoToLogin}>
