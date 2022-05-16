@@ -3,22 +3,26 @@ import React from 'react';
 import {FoodCard} from '../../../src/components/card/foodCard';
 import {RestaurantCard} from '../../../src/components/card/restaurantCard';
 import CenterView from '../CenterView';
+import {styles} from './FoodCard.style';
+import {Container} from '../../../src/components';
 
 storiesOf('Card', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('FoodCard', () => (
-    <FoodCard
-      foodItem={{
-        name: 'pineapple2',
-        description: 'pineapple2 desc',
-        rating: 2,
-        usersVoted: 2,
-        price: 2,
-        favorite: true,
-        imageName:
-          'https://rustyspizza.com/images/default-source/default-album/rspechero.jpg?sfvrsn=79bcf8e0_2',
-      }}
-    />
+    <Container containerStyle={styles.container}>
+      <FoodCard
+        foodItem={{
+          name: 'pineapple2',
+          description: 'pineapple2 desc',
+          rating: 2,
+          usersVoted: 2,
+          price: 2,
+          favorite: true,
+          imageName:
+            'https://rustyspizza.com/images/default-source/default-album/rspechero.jpg?sfvrsn=79bcf8e0_2',
+        }}
+      />
+    </Container>
   ))
   .add('RestaurantCard', () => (
     <RestaurantCard
