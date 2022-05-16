@@ -15,8 +15,5 @@ import './toggleButton/ToggleButton.stories';
 import './container/container.stories';
 import './tag/tag.stories';
 import './ratingStars/RatingStars.stories';
-<<<<<<< HEAD
 import './listItem/listItem.stories';
-=======
 import './bottomTabNavigator/BottomTabNavigator.stories';
->>>>>>> fbf16b49306338dbf02335430a28f0a3a393bf68
