@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 import {TextInput, Header, Button, Footer, Container} from '../../components';
 import {TLoginScreenViewProps} from './Login.type';
 import {styles} from './Login.style';
@@ -17,10 +17,10 @@ export const LoginScreenView: FC<TLoginScreenViewProps> = ({
   goBack,
   goToResetPassword,
   isLoading,
+  error,
 }) => {
   return (
     <Container
-      isLoading={isLoading}
       backgroundImage={images.authBackground}
       isScrollViewDisabled={false}
       header={
@@ -34,6 +34,11 @@ export const LoginScreenView: FC<TLoginScreenViewProps> = ({
         />
       }>
       <Text style={styles.title}>{title}</Text>
+      {(typeof error !== 'undefined') && (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
+      )}
       <View style={styles.textInputContainer}>
         <Text style={styles.text}>E-mail</Text>
         <TextInput type="regular" value={email} onChangeText={setEmail} />
@@ -52,7 +57,12 @@ export const LoginScreenView: FC<TLoginScreenViewProps> = ({
           Forgot password?
         </Text>
       </View>
-      <Button title="LOGIN" containerStyle={styles.button} onPress={login} />
+      {isLoading?
+        <ActivityIndicator size={'small'} color={color.primary}/>
+        :
+        <Button title="LOGIN" containerStyle={styles.button} onPress={login} />
+      }
+      
       <View style={styles.textContainer}>
         <Text style={styles.text}>Don't have an account? </Text>
         <Text style={[styles.text, styles.textNavigate]} onPress={goToSignUp}>

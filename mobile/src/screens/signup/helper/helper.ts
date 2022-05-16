@@ -11,13 +11,13 @@ export const useHandleSignUp: THandleSignup = async (
   password,
   dispatch,
 ) => {
-  const response = await foodHubAPI.post('/register', {
-    name,
-    email,
-    password,
-  });
-
   try {
+    const response = await foodHubAPI.post('/register', {
+      name,
+      email,
+      password,
+    });
+
     if (response.status === 200) {
       if (response.data.token) {
         storeToken(ELocalStorage.TOKEN_KEY, response.data.token);
@@ -35,7 +35,8 @@ export const useHandleSignUp: THandleSignup = async (
       }
     }
   } catch (error) {
-    console.error(error);
+    const response = await JSON.parse(JSON.stringify(error))
+    throw (response.message)
   }
 };
 

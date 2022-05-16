@@ -22,6 +22,7 @@ export type TSignUpScreenViewProps = {
   signup: () => void;
   onPressGoToLogin: () => void;
   isLoading?: boolean;
+  error?:string;
 };
 
 export type TSignUpNavigation = {
