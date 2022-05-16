@@ -5,7 +5,8 @@ import {TListItemArray} from '../../types/data';
 import {foodDummyData} from './foodDummyData';
 import {roundToTwoDecimals} from '../../utilities/';
 
-export const CartScreen: FC<TCartNavigation> = ({navigation}) => {
+export const CartScreen: FC<TCartNavigation> = ({route, navigation}) => {
+  
   const [listItemArray, setListItemArray] =
     useState<TListItemArray>(foodDummyData);
   const [subTotal, setSubTotal] = useState<number>(0);

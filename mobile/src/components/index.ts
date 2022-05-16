@@ -16,3 +16,4 @@ export * from './section/Section'
 export * from './tag/PriceTag';
 export * from './tag/RatingTag';
 export * from './imageButton/ImageButton';
+export * from './addOn/AddOn';

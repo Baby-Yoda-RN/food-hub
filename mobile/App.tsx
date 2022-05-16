@@ -6,6 +6,7 @@ import {GlobalProvider} from './src/context/global/global.provider';
 import { globalInitialState, globalReducer } from './src/context/global/';
 
 const App = () => {
+
   return (
     <GlobalProvider state={globalInitialState} reducer={globalReducer}>
       <NavigationContainer theme={AppTheme.white}>

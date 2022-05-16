@@ -28,5 +28,6 @@ export type TCartScreenViewProps = {
 };
 
 export type TCartNavigation = {
-  navigation: TAppNavigation;
+    navigation: TAppNavigation;
+    route: TAppRouteProp;
 };

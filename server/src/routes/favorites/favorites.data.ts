@@ -1,6 +1,6 @@
 import { TFavoritesList } from "./favorites.type"
 
-export const myFavorites: TFavoritesList  = {
+export const myFavorites: TFavoritesList = {
   restaurants: [
     {
       uuid: "1234",
@@ -46,13 +46,22 @@ export const myFavorites: TFavoritesList  = {
       description: "Vegan Pizza",
       rating: 5,
       usersVoted: 100,
-      price: 5.5,
+      price: 29.99,
       favorite: false,
       imageName: "https://foodish-api.herokuapp.com/images/pizza/pizza29.jpg",
+      addOns: [
+        {
+          id: '0',
+          name: 'Mushroom',
+          price: 2.49,
+          image: 'https://i.imgur.com/oLW00IP.jpg',
+          selected: false,
+        },
+      ],
     },
     {
       uuid: "12346",
-      name: "Boneless",
+      name: "Boneless Wings",
       description: "Delicious Boneless",
       rating: 5,
       usersVoted: 2,
@@ -60,6 +69,15 @@ export const myFavorites: TFavoritesList  = {
       favorite: true,
       imageName:
         "https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg",
+      addOns: [
+        {
+          id: '0',
+          name: 'Celery',
+          price: 2.55,
+          image: 'https://i.imgur.com/V04OPVT.jpg',
+          selected: false,
+        }
+      ],
     },
     {
       uuid: "12347",
@@ -67,10 +85,19 @@ export const myFavorites: TFavoritesList  = {
       description: "The classic Big Mac",
       rating: 5,
       usersVoted: 2,
-      price: 7.99,
+      price: 4.99,
       favorite: true,
       imageName:
         "https://estaticos.elmundo.es/assets/multimedia/imagenes/2016/07/21/14691145976379.jpg",
+      addOns: [
+        {
+          id: '0',
+          name: 'Soft Drink',
+          price: 1.49,
+          image: 'https://i.imgur.com/r1Z7B89.jpg',
+          selected: false,
+        }
+      ],
     },
     {
       uuid: "12348",
@@ -78,21 +105,39 @@ export const myFavorites: TFavoritesList  = {
       description: "Arriba Mexico Cabrones",
       rating: 5,
       usersVoted: 2,
-      price: 20.99,
+      price: 5.99,
       favorite: true,
       imageName:
         "https://www.eatthis.com/wp-content/uploads/sites/4/2021/01/mcdonalds-chicken-sandwich.jpg?quality=82&strip=all",
+      addOns: [
+        {
+          id: '0',
+          name: 'French Fries',
+          price: 1.79,
+          image: 'https://i.imgur.com/K8OORnq.jpg',
+          selected: false,
+        },
+      ],
     },
     {
       uuid: "12349",
-      name: "Boneless",
-      description: "Delicious Boneless",
+      name: "Burrito",
+      description: "The classic burrito",
       rating: 5,
       usersVoted: 2,
-      price: 20.99,
+      price: 8.99,
       favorite: true,
       imageName:
-        "https://dinnerthendessert.com/wp-content/uploads/2018/08/Boneless-Buffalo-Wings-3.jpg",
+        "https://cdn.pixabay.com/photo/2017/06/29/20/09/mexican-2456038_1280.jpg",
+      addOns: [
+        {
+          id: '0',
+          name: 'Salsa',
+          price: 0.79,
+          image: 'https://i.imgur.com/iuRtuXq.jpg',
+          selected: false,
+        },
+      ],
     },
   ],
 };

@@ -103,12 +103,12 @@ export const HomeScreenView: FC<THomeScreenView> = ({
         <Text style={styles.subtitle}>Popular Items</Text>
         <View style={[styles.horizontalContainer, styles.foodCardContainer]}>
           {popularItems?.length ? (
-            popularItems?.map((food, index) => {
+            popularItems?.map((food) => {
               return (
                 <TouchableOpacity
-                  onPress={() => onPressFoodCard(String(index))}
+                  onPress={() => onPressFoodCard(String(food.uuid))}
                   style={[styles.foodItemContainer, styles.shadow]}
-                  key={String(index)}>
+                  key={String(food.uuid)}>
                   <View style={styles.shadow}>
                     <FoodCard foodItem={food} />
                   </View>
