@@ -9,10 +9,14 @@ storiesOf('Footer', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('Variants', () => (
     <>
-      <Section style={[styles.section, {borderWidth: 1}]}>
-        <Footer divider="sign in with" dividerTextStyle={{color: color.greyDisabled}} dividerStyle={{borderColor: color.greyDisabled}} />
+      <Section style={[styles.section, styles.login]}>
+        <Footer
+          divider="sign in with"
+          dividerTextStyle={styles.dividerText}
+          dividerStyle={styles.divider}
+        />
       </Section>
-      <Section style={{ backgroundColor: 'black'}}>
+      <Section style={[styles.section, styles.welcome]}>
         <Footer isEmailorPhone={true} divider="sign in with" />
       </Section>
     </>
