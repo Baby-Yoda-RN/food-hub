@@ -33,12 +33,15 @@ LOGIN INFO
 `password: 123`
 
 USER LOGIN
+
 ![UserLogin](Login.gif "User Login")
 
 STORYBOOK (**DEV**)
+
 ![StoryBook](StoryBook.gif "Story Book")
 
 APP NAVIGATION
+
 ![FoodNavigation](FoodNavigation.gif "Food Navigation")
 
 #### FIGMA https://www.figma.com/file/t5tNPEShkY8bjwiqosocIw/Food-App---FoodHub-(Community)-(Community)?node-id=814%3A7045
